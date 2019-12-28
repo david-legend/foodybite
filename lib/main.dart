@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:potbelly/change_language_widget/change_language_widget.dart';
+
+import 'login_screen/login.dart';
+//import 'login_screen/login_screen.dart';
+
 
 void main() => runApp(App());
 
@@ -11,7 +14,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
   
     return MaterialApp(
-      home: ChangeLanguageWidget(),
+      debugShowCheckedModeBanner: false,
+      home: LoginScreen(),
+      routes: {
+        LoginScreen.ROUTE_NAME: (context) => LoginScreen(),
+      },
     );
   }
 }

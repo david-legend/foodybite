@@ -29,7 +29,7 @@ class ForgotPasswordWidget extends StatelessWidget {
                     left: 0,
                     right: 0,
                     child: Image.asset(
-                      "assets/images/joseph-gonzalez-176749-unsplash.png",
+                      "assets/images/boiled_eggs.png",
                       fit: BoxFit.cover,
                     ),
                   ),

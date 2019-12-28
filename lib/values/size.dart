@@ -1,0 +1,27 @@
+part of values;
+
+class Sizes {
+  //Dimensions
+  static const double HEIGHT_240 = 240.0;
+  static const double HEIGHT_60 = 60.0;
+  static const double WIDTH_300 = 300.0;
+
+  //TextSize
+  static const double TEXT_SIZE_40 = 40.0;
+  static const double TEXT_SIZE_16 = 16.0;
+
+  //Padding
+  static const double MARGIN_16 = 16.0;
+  static const double MARGIN_48 = 48.0;
+
+  //Margin
+  static const double PADDING_22 = 22.0;
+  static const double PADDING_16 = 16.0;
+  static const double PADDING_0 = 0.0;
+
+  //BorderRadius
+  static const double BORDER_RADIUS_12 = 12.0;
+
+  //BorderWidth
+  static const double BORDER_WIDTH_0 = 0.0;
+}
