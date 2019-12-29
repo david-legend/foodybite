@@ -25,4 +25,12 @@ class Decorations  {
     ],
     borderRadius: BorderRadius.all(Radius.circular(12)),
   );
+
+  static const BoxDecoration regularDecoration = BoxDecoration(
+    color: Color.fromARGB(255, 255, 255, 255),
+  );
+
+  static const BoxDecoration horizontalBarDecoration = BoxDecoration(
+    color: Color.fromARGB(255, 248, 249, 255),
+  );
 }

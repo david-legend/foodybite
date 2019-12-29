@@ -4,6 +4,7 @@ import 'package:potbelly/values/values.dart';
 
 
 class ForgotPasswordWidget extends StatelessWidget {
+  static const String ROUTE_NAME = StringConst.FORGOT_PASSWORD_ROUTE;
   
   @override
   Widget build(BuildContext context) {

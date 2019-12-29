@@ -8,7 +8,7 @@ part 'gradients.dart';
 part 'borders.dart';
 part 'shadows.dart';
 part 'images.dart';
-part 'size.dart';
+part 'sizes.dart';
 part 'strings.dart';
 part 'styles.dart';
 part 'decorations.dart';

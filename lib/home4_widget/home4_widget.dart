@@ -4,6 +4,7 @@ import 'package:potbelly/values/values.dart';
 
 
 class Home4Widget extends StatelessWidget {
+  static const String ROUTE_NAME = StringConst.HOME_ROUTE;
   
   @override
   Widget build(BuildContext context) {

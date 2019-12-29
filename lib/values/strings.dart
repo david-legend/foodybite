@@ -14,6 +14,9 @@ class StringConst {
 
   //Routes
   static const String LOGIN_ROUTE = "/login";
+  static const String SIGN_UP_ROUTE = "/signUp";
+  static const String FORGOT_PASSWORD_ROUTE = "/forgotPassword";
+  static const String HOME_ROUTE = "/home";
 
   //Font Family
   static const String FONT_FAMILY = "Josefin Sans";

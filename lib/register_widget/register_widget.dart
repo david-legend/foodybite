@@ -4,6 +4,7 @@ import 'package:potbelly/values/values.dart';
 
 
 class RegisterWidget extends StatelessWidget {
+  static const String ROUTE_NAME = StringConst.SIGN_UP_ROUTE;
   
   @override
   Widget build(BuildContext context) {
