@@ -1,23 +1,22 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
-
+import 'package:potbelly/widgets/custom_text_form_field.dart';
+import 'package:potbelly/widgets/potbelly_button.dart';
 
 class LoginScreen extends StatelessWidget {
-
   static const String ROUTE_NAME = StringConst.LOGIN_ROUTE;
 
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Container(
         constraints: BoxConstraints.expand(),
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 255, 255, 255),
-        ),
+        decoration: Decorations.regularDecoration,
         child: Stack(
           alignment: Alignment.center,
-          children: [
+          children: <Widget>[
             Positioned(
               left: -158,
               right: -45,
@@ -30,221 +29,131 @@ class LoginScreen extends StatelessWidget {
               left: -1,
               right: -0,
               child: Container(
-                height: 812,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment(0.51436, 1.07565),
-                    end: Alignment(0.51436, -0.03208),
-                    stops: [
-                      0,
-                      0.17571,
-                      1,
-                    ],
-                    colors: [
-                      Color.fromARGB(255, 0, 0, 0),
-                      Color.fromARGB(255, 8, 8, 8),
-                      Color.fromARGB(105, 45, 45, 45),
-                    ],
-                  ),
-                ),
+                height: MediaQuery.of(context).size.height,
+                decoration: Decorations.footerDecoration,
                 child: Container(),
               ),
             ),
             Positioned(
               left: 0,
               top: 0,
-              right: -0,
+              right: 0,
               bottom: 36,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
+                children: <Widget>[
                   Align(
                     alignment: Alignment.topCenter,
                     child: Container(
-                      margin: EdgeInsets.only(top: 68),
+                      margin: EdgeInsets.only(top: Sizes.MARGIN_60),
                       child: Text(
-                        "Foodybite",
+                        StringConst.FOODY_BITE,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: AppColors.secondaryText,
-                          fontFamily: "Josefin Sans",
-                          fontWeight: FontWeight.w700,
-                          fontSize: 41,
-                        ),
+                        style: Styles.titleTextStyle,
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      width: 297,
-                      height: 60,
-                      margin: EdgeInsets.only(top: 239),
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(57, 255, 255, 255),
-                        border: Border.all(
-                          width: 0.66667,
-                          color: Color.fromARGB(57, 0, 0, 0),
-                        ),
-                        boxShadow: [
-                          Shadows.secondaryShadow,
-                        ],
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 20,
-                            height: 16,
-                            margin: EdgeInsets.only(left: 22),
-                            child: Image.asset(
-                              "assets/images/group-333.png",
-                              fit: BoxFit.none,
+                  SizedBox(height: Sizes.HEIGHT_240),
+                  Form(
+                    child: Column(
+                      children: <Widget>[
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                            width: Sizes.WIDTH_300,
+                            height: Sizes.HEIGHT_60,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: CustomTextFormField(
+                                    ImagePath.emailIcon,
+                                    hintText: StringConst.HINT_TEXT_EMAIL,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          Container(
-                            margin: EdgeInsets.only(left: 15),
-                            child: Text(
-                              "Email",
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                color: AppColors.secondaryText,
-                                fontFamily: "Josefin Sans",
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16.66667,
+                        ),
+                        SizedBox(height: Sizes.HEIGHT_16),
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                            width: Sizes.WIDTH_300,
+                            height: Sizes.HEIGHT_60,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: CustomTextFormField(
+                                    ImagePath.passwordIcon,
+                                    hintText: StringConst.HINT_TEXT_PASSWORD,
+                                    obscured: true,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: InkWell(
+                            onTap: () => Navigator.pushNamed(
+                                context, StringConst.FORGOT_PASSWORD_ROUTE),
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  top: Sizes.MARGIN_16, right: Sizes.MARGIN_48),
+                              child: Text(
+                                StringConst.FORGOT_PASSWORD_QUESTION,
+                                textAlign: TextAlign.right,
+                                style: Styles.normalTextStyle,
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      width: 297,
-                      height: 59,
-                      margin: EdgeInsets.only(top: 18),
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(57, 255, 255, 255),
-                        border: Border.all(
-                          width: 0.66667,
-                          color: Color.fromARGB(57, 0, 0, 0),
                         ),
-                        boxShadow: [
-                          Shadows.secondaryShadow,
-                        ],
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 20,
-                            height: 21,
-                            margin: EdgeInsets.only(left: 21),
-                            child: Image.asset(
-                              "assets/images/group-328.png",
-                              fit: BoxFit.none,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 16),
-                            child: Text(
-                              "Password",
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                color: AppColors.secondaryText,
-                                fontFamily: "Josefin Sans",
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16.66667,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      margin: EdgeInsets.only(top: 14, right: 38),
-                      child: Text(
-                        "Forgot Password?",
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: AppColors.secondaryText,
-                          fontFamily: "Josefin Sans",
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16.66667,
-                        ),
-                      ),
+                      ],
                     ),
                   ),
                   Spacer(),
                   Align(
                     alignment: Alignment.topCenter,
-                    child: Container(
-                      width: 297,
-                      height: 60,
-                      margin: EdgeInsets.only(bottom: 57),
-                      decoration: BoxDecoration(
-                        color: AppColors.secondaryElement,
-                        boxShadow: [
-                          Shadows.secondaryShadow,
-                        ],
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Login",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: AppColors.secondaryText,
-                              fontFamily: "Josefin Sans",
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16.66667,
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: PotbellyButton(
+                      StringConst.LOGIN,
+                      onTap: () =>
+                          Navigator.pushNamed(context, StringConst.HOME_ROUTE),
                     ),
                   ),
+                  SizedBox(height: Sizes.HEIGHT_60),
                   Align(
                     alignment: Alignment.topCenter,
-                    child: Container(
-                      width: 160,
-                      height: 26,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            "Create New Account",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: AppColors.secondaryText,
-                              fontFamily: "Josefin Sans",
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16.66667,
+                    child: InkWell(
+                      onTap: () => Navigator.pushNamed(
+                          context, StringConst.SIGN_UP_ROUTE),
+                      child: Container(
+                        width: Sizes.WIDTH_150,
+                        height: Sizes.HEIGHT_24,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              StringConst.CREATE_NEW_ACCOUNT,
+                              textAlign: TextAlign.center,
+                              style: Styles.normalTextStyle,
                             ),
-                          ),
-                          Spacer(),
-                          Container(
-                            height: 1,
-                            margin: EdgeInsets.symmetric(horizontal: 1),
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 248, 249, 255),
+                            Spacer(),
+                            Container(
+                              height: 1,
+                              margin: EdgeInsets.symmetric(horizontal: 1),
+                              decoration: Decorations.horizontalBarDecoration,
+                              child: Container(),
                             ),
-                            child: Container(),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),

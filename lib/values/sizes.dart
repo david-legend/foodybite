@@ -3,7 +3,10 @@ part of values;
 class Sizes {
   //Dimensions - height
   static const double HEIGHT_240 = 240.0;
+  static const double HEIGHT_180 = 180.0;
   static const double HEIGHT_60 = 60.0;
+  static const double HEIGHT_40 = 40.0;
+  static const double HEIGHT_32 = 32.0;
   static const double HEIGHT_24 = 24.0;
   static const double HEIGHT_16 = 16.0;
 
@@ -13,14 +16,16 @@ class Sizes {
 
   //TextSize
   static const double TEXT_SIZE_40 = 40.0;
+  static const double TEXT_SIZE_20 = 20.0;
   static const double TEXT_SIZE_16 = 16.0;
 
-  //Padding
-  static const double MARGIN_16 = 16.0;
-  static const double MARGIN_48 = 48.0;
-  static const double MARGIN_60 = 60.0;
-
   //Margin
+  static const double MARGIN_60 = 60.0;
+  static const double MARGIN_48 = 48.0;
+  static const double MARGIN_24 = 24.0;
+  static const double MARGIN_16 = 16.0;
+
+  //Padding
   static const double PADDING_22 = 22.0;
   static const double PADDING_16 = 16.0;
   static const double PADDING_0 = 0.0;

@@ -15,5 +15,10 @@ class Styles {
   fontWeight: FontWeight.w400,
   fontSize: Sizes.TEXT_SIZE_16,
   );
-
+  static const TextStyle mediumTextStyle =  TextStyle(
+    color: AppColors.secondaryText,
+    fontFamily: StringConst.FONT_FAMILY,
+    fontWeight: FontWeight.w400,
+    fontSize: Sizes.TEXT_SIZE_20,
+  );
 }

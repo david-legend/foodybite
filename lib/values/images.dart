@@ -7,6 +7,7 @@ class ImagePath {
   static const String boiledEggs = "$imageDir/boiled_eggs.png";
   static const String emailIcon = "$imageDir/email_icon.png";
   static const String passwordIcon = "$imageDir/password_icon.png";
+  static const String arrowBackIcon = "$imageDir/arrow_back.png";
 }
 
 

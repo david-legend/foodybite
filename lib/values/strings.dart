@@ -5,11 +5,15 @@ class StringConst {
   static const String APP_NAME = "App Name";
 
   static const String FOODY_BITE = "Foodybite";
-  static const String FORGOT_PASSWORD = "Forgot Password?";
+  static const String FORGOT_PASSWORD_QUESTION = "Forgot Password?";
+  static const String FORGOT_PASSWORD = "Forgot Password";
+  static const String RESET_PASSWORD_DESCRIPTION =
+      "Enter your email and we will sendyou instructions on how to reset it";
 
   static const String HINT_TEXT_EMAIL = "Email";
   static const String HINT_TEXT_PASSWORD = "Password";
   static const String LOGIN = "Login";
+  static const String SEND = "Send";
   static const String CREATE_NEW_ACCOUNT = "Create New Account";
 
   //Routes
@@ -20,6 +24,4 @@ class StringConst {
 
   //Font Family
   static const String FONT_FAMILY = "Josefin Sans";
-
-
 }
