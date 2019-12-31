@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/login_screen/login_screen.dart';
+import 'package:potbelly/screens/login_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
 import 'package:potbelly/widgets/dark_overlay.dart';

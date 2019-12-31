@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'forgot_password_screen/forgot_password_screen.dart';
-import 'login_screen/login_screen.dart';
+import 'screens/forgot_password_screen.dart';
+import 'screens/login_screen.dart';
 import 'home_widget/home_widget.dart';
-import 'register_screen/register_screen.dart';
-import 'set_location_widget/set_location_screen.dart';
+import 'screens/register_screen.dart';
+import 'screens/set_location_screen.dart';
 
 void main() => runApp(App());
 
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SetLocationScreen(),
+      home: HomeWidget(),
       routes: {
         LoginScreen.ROUTE_NAME: (context) => LoginScreen(),
         ForgotPasswordScreen.ROUTE_NAME: (context) => ForgotPasswordScreen(),
