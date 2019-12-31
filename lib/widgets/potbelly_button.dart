@@ -6,12 +6,14 @@ class PotbellyButton extends StatelessWidget {
   final double buttonHeight;
   final BoxDecoration decoration;
   final String buttonText;
+  final TextStyle buttonTextStyle;
   final GestureTapCallback onTap;
 
   PotbellyButton(this.buttonText, {
     this.buttonWidth = Sizes.WIDTH_300,
     this.buttonHeight = Sizes.HEIGHT_60,
     this.decoration = Decorations.primaryButtonDecoration,
+    this.buttonTextStyle = Styles.normalTextStyle,
     this.onTap
   });
 
@@ -30,7 +32,7 @@ class PotbellyButton extends StatelessWidget {
             Text(
               buttonText,
               textAlign: TextAlign.center,
-              style: Styles.normalTextStyle,
+              style: buttonTextStyle,
             ),
           ],
         ),

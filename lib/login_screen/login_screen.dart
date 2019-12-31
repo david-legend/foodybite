@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
+import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -25,15 +26,7 @@ class LoginScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Positioned(
-              left: -1,
-              right: -0,
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                decoration: Decorations.footerDecoration,
-                child: Container(),
-              ),
-            ),
+            DarkOverLay(),
             Positioned(
               left: 0,
               top: 0,
@@ -49,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                       child: Text(
                         StringConst.FOODY_BITE,
                         textAlign: TextAlign.center,
-                        style: Styles.titleTextStyle,
+                        style: Styles.titleTextStyleWithSecondaryTextColor,
                       ),
                     ),
                   ),
@@ -104,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                               child: Text(
                                 StringConst.FORGOT_PASSWORD_QUESTION,
                                 textAlign: TextAlign.right,
-                                style: Styles.normalTextStyle,
+                                style: Styles.customNormalTextStyle(),
                               ),
                             ),
                           ),
@@ -126,7 +119,7 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     child: InkWell(
                       onTap: () => Navigator.pushNamed(
-                          context, StringConst.SIGN_UP_ROUTE),
+                          context, StringConst.REGISTER_ROUTE),
                       child: Container(
                         width: Sizes.WIDTH_150,
                         height: Sizes.HEIGHT_24,
@@ -137,7 +130,7 @@ class LoginScreen extends StatelessWidget {
                             Text(
                               StringConst.CREATE_NEW_ACCOUNT,
                               textAlign: TextAlign.center,
-                              style: Styles.normalTextStyle,
+                              style: Styles.customNormalTextStyle(),
                             ),
                             Spacer(),
                             Container(

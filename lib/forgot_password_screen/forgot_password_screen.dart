@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
+import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
@@ -26,20 +27,12 @@ class ForgotPasswordScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Positioned(
-              left: -1,
-              right: -0,
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                decoration: Decorations.footerDecoration,
-                child: Container(),
-              ),
-            ),
+            DarkOverLay(),
             Positioned(
               left: 0,
               top: 0,
               right: 0,
-              bottom: 36,
+              bottom: 0,
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_24),
                 child: Column(
@@ -49,14 +42,17 @@ class ForgotPasswordScreen extends StatelessWidget {
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
-                        Image.asset(
-                        ImagePath.arrowBackIcon,
-                          fit: BoxFit.none,
+                        InkWell(
+                          onTap:() => Navigator.pop(context),
+                          child: Image.asset(
+                          ImagePath.arrowBackIcon,
+                            fit: BoxFit.none,
+                          ),
                         ),
                         Spacer(),
                         Text(
                           StringConst.FORGOT_PASSWORD,
-                          style: Styles.mediumTextStyle,
+                          style: Styles.customMediumTextStyle(),
                         ),
                         Spacer(),
                       ],
@@ -68,7 +64,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                         child: Text(
                           StringConst.RESET_PASSWORD_DESCRIPTION,
                           textAlign: TextAlign.center,
-                          style: Styles.mediumTextStyle,
+                          style: Styles.customMediumTextStyle(),
                         ),
                       ),
                     ),

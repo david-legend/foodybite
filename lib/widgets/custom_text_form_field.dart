@@ -18,7 +18,7 @@ class CustomTextFormField extends StatelessWidget {
 
   CustomTextFormField(
     this.prefixIconImagePath, {
-    this.textFormFieldStyle = Styles.normalTextStyle,
+    this.textFormFieldStyle =  Styles.normalTextStyle,
     this.hintTextStyle = Styles.normalTextStyle,
     this.borderStyle = BorderStyle.none,
     this.borderRadius = Sizes.BORDER_RADIUS_12,

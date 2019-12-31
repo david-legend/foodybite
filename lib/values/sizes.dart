@@ -16,10 +16,13 @@ class Sizes {
 
   //TextSize
   static const double TEXT_SIZE_40 = 40.0;
+  static const double TEXT_SIZE_32 = 32.0;
+  static const double TEXT_SIZE_22 = 22.0;
   static const double TEXT_SIZE_20 = 20.0;
   static const double TEXT_SIZE_16 = 16.0;
 
   //Margin
+  static const double MARGIN_200 = 200.0;
   static const double MARGIN_60 = 60.0;
   static const double MARGIN_48 = 48.0;
   static const double MARGIN_24 = 24.0;
