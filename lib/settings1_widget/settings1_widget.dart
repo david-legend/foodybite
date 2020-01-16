@@ -625,7 +625,7 @@ class Settings1Widget extends StatelessWidget {
                 width: 327,
                 height: 219,
                 decoration: BoxDecoration(
-                  color: AppColors.primaryBackground,
+                  color: AppColors.primaryColor,
                   borderRadius: BorderRadius.all(Radius.circular(29)),
                 ),
                 child: Stack(

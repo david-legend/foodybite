@@ -6,9 +6,11 @@ class ImagePath {
 
   //Icons
   static const String personIcon = "$imageDir/person_icon.png";
+  static const String personIconMedium = "$imageDir/person_icon_md.png";
   static const String emailIcon = "$imageDir/email_icon.png";
   static const String passwordIcon = "$imageDir/password_icon.png";
   static const String arrowBackIcon = "$imageDir/arrow_back.png";
+  static const String uploadIcon = "$imageDir/upload_icon.png";
 
   //High quality pictures
   static const String boiledEggs = "$imageDir/boiled_eggs.png";

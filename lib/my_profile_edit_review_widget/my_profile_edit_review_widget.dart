@@ -20,7 +20,7 @@ class MyProfileEditReviewWidget extends StatelessWidget {
             Container(
               height: 85,
               decoration: BoxDecoration(
-                color: AppColors.primaryBackground,
+                color: AppColors.primaryColor,
               ),
               child: Stack(
                 alignment: Alignment.topCenter,
@@ -579,7 +579,7 @@ class MyProfileEditReviewWidget extends StatelessWidget {
                         width: 299,
                         height: 179,
                         decoration: BoxDecoration(
-                          color: AppColors.primaryBackground,
+                          color: AppColors.primaryColor,
                           border: Border.fromBorderSide(Borders.secondaryBorder),
                           borderRadius: BorderRadius.all(Radius.circular(11.66667)),
                         ),

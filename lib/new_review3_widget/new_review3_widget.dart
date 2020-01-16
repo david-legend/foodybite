@@ -20,7 +20,7 @@ class NewReview3Widget extends StatelessWidget {
             Container(
               height: 85,
               decoration: BoxDecoration(
-                color: AppColors.primaryBackground,
+                color: AppColors.primaryColor,
               ),
               child: Stack(
                 alignment: Alignment.topCenter,
@@ -691,7 +691,7 @@ class NewReview3Widget extends StatelessWidget {
                       width: 298,
                       height: 178,
                       decoration: BoxDecoration(
-                        color: AppColors.primaryBackground,
+                        color: AppColors.primaryColor,
                         border: Border.fromBorderSide(Borders.secondaryBorder),
                         borderRadius: BorderRadius.all(Radius.circular(11.66667)),
                       ),
@@ -761,7 +761,7 @@ class NewReview3Widget extends StatelessWidget {
                                         width: 76,
                                         height: 72,
                                         decoration: BoxDecoration(
-                                          color: AppColors.primaryBackground,
+                                          color: AppColors.primaryColor,
                                           borderRadius: BorderRadius.all(Radius.circular(26.66667)),
                                         ),
                                         child: Container(),
@@ -830,7 +830,7 @@ class NewReview3Widget extends StatelessWidget {
                                         width: 76,
                                         height: 72,
                                         decoration: BoxDecoration(
-                                          color: AppColors.primaryBackground,
+                                          color: AppColors.primaryColor,
                                         ),
                                         child: Container(),
                                       ),

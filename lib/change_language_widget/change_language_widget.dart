@@ -128,7 +128,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                             child: Container(
                               height: 69,
                               decoration: BoxDecoration(
-                                color: AppColors.secondaryBackground,
+                                color: AppColors.secondaryColor,
                               ),
                               child: Container(),
                             ),
@@ -232,7 +232,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                                   height: 70,
                                   margin: EdgeInsets.only(top: 69),
                                   decoration: BoxDecoration(
-                                    color: AppColors.secondaryBackground,
+                                    color: AppColors.secondaryColor,
                                   ),
                                   child: Container(),
                                 ),
@@ -266,7 +266,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                                 child: Container(
                                   height: 70,
                                   decoration: BoxDecoration(
-                                    color: AppColors.secondaryBackground,
+                                    color: AppColors.secondaryColor,
                                   ),
                                   child: Container(),
                                 ),
@@ -365,7 +365,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                                   height: 69,
                                   margin: EdgeInsets.only(top: 69),
                                   decoration: BoxDecoration(
-                                    color: AppColors.secondaryBackground,
+                                    color: AppColors.secondaryColor,
                                   ),
                                   child: Container(),
                                 ),
@@ -424,7 +424,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                                 child: Container(
                                   height: 70,
                                   decoration: BoxDecoration(
-                                    color: AppColors.secondaryBackground,
+                                    color: AppColors.secondaryColor,
                                   ),
                                   child: Container(),
                                 ),
@@ -435,7 +435,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                                   height: 69,
                                   margin: EdgeInsets.only(top: 70),
                                   decoration: BoxDecoration(
-                                    color: AppColors.secondaryBackground,
+                                    color: AppColors.secondaryColor,
                                   ),
                                   child: Container(),
                                 ),
@@ -562,7 +562,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                             child: Container(
                               height: 70,
                               decoration: BoxDecoration(
-                                color: AppColors.secondaryBackground,
+                                color: AppColors.secondaryColor,
                               ),
                               child: Container(),
                             ),
@@ -655,7 +655,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                             child: Container(
                               height: 70,
                               decoration: BoxDecoration(
-                                color: AppColors.secondaryBackground,
+                                color: AppColors.secondaryColor,
                               ),
                               child: Container(),
                             ),
@@ -733,7 +733,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                             child: Container(
                               height: 70,
                               decoration: BoxDecoration(
-                                color: AppColors.secondaryBackground,
+                                color: AppColors.secondaryColor,
                               ),
                               child: Container(),
                             ),
@@ -811,7 +811,7 @@ class ChangeLanguageWidget extends StatelessWidget {
                             child: Container(
                               height: 70,
                               decoration: BoxDecoration(
-                                color: AppColors.secondaryBackground,
+                                color: AppColors.secondaryColor,
                               ),
                               child: Container(),
                             ),

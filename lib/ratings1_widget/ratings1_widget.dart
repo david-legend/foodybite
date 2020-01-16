@@ -217,7 +217,7 @@ class Ratings1Widget extends StatelessWidget {
                               width: 298,
                               height: 178,
                               decoration: BoxDecoration(
-                                color: AppColors.primaryBackground,
+                                color: AppColors.primaryColor,
                                 border: Border.fromBorderSide(Borders.secondaryBorder),
                                 borderRadius: BorderRadius.all(Radius.circular(11.66667)),
                               ),

@@ -1082,7 +1082,7 @@ class MyProfilePopUpWidget extends StatelessWidget {
                                               child: Container(
                                                 height: 80,
                                                 decoration: BoxDecoration(
-                                                  color: AppColors.primaryBackground,
+                                                  color: AppColors.primaryColor,
                                                   boxShadow: [
                                                     BoxShadow(
                                                       color: Color.fromARGB(10, 0, 0, 0),
@@ -1420,7 +1420,7 @@ class MyProfilePopUpWidget extends StatelessWidget {
                 width: 327,
                 height: 217,
                 decoration: BoxDecoration(
-                  color: AppColors.primaryBackground,
+                  color: AppColors.primaryColor,
                   borderRadius: BorderRadius.all(Radius.circular(29)),
                 ),
                 child: Column(

@@ -1255,7 +1255,7 @@ class MyFavouriteWidget extends StatelessWidget {
                                       child: Container(
                                         height: 80,
                                         decoration: BoxDecoration(
-                                          color: AppColors.primaryBackground,
+                                          color: AppColors.primaryColor,
                                           border: Border.all(
                                             width: 0.33333,
                                             color: Color.fromARGB(255, 243, 243, 243),

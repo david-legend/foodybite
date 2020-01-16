@@ -467,7 +467,7 @@ class HomeFindFriendsWidget extends StatelessWidget {
                               width: 334,
                               height: 61,
                               decoration: BoxDecoration(
-                                color: AppColors.primaryBackground,
+                                color: AppColors.primaryColor,
                                 border: Border.fromBorderSide(Borders.primaryBorder),
                               ),
                               child: Container(),

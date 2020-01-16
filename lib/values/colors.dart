@@ -3,8 +3,8 @@ part of values;
 
 
 class AppColors {
-  static const Color primaryBackground = Color.fromARGB(255, 255, 255, 255);
-  static const Color secondaryBackground = Color.fromARGB(255, 246, 247, 255);
+  static const Color primaryColor = Color.fromARGB(255, 255, 255, 255); //Color(0xFFFFFFFF)
+  static const Color secondaryColor = Color.fromARGB(255, 246, 247, 255);
   static const Color ternaryBackground = Color.fromARGB(255, 238, 247, 255);
   static const Color primaryElement = Color.fromARGB(255, 255, 255, 255);
   static const Color secondaryElement = Color.fromARGB(255, 86, 99, 255);
@@ -14,4 +14,5 @@ class AppColors {
   static const Color accentText = Color.fromARGB(255, 110, 127, 170);
 
   static const Color fillColor = Color.fromARGB(57, 255, 255, 255);
+  static const Color kFoodyBiteYellow = Color(0xFFFFCC00);
 }

@@ -33,46 +33,46 @@ class RegisterScreen extends StatelessWidget {
               top: 0,
               right: 0,
               bottom: 40,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+              child: ListView(
+//                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(height: 35.0),
                   Center(
                     child: Container(
-                        width: 150,
-                        height: 150,
-                        margin: EdgeInsets.only(top: 28),
-                        decoration: BoxDecoration(
-                          color: AppColors.fillColor,
-                          border: Border.all(
-                            width: 1,
-                            color: Color.fromARGB(125, 0, 0, 0),
-                          ),
-                          boxShadow: [
-                            Shadows.secondaryShadow,
-                          ],
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(76)),
+                      width: 150,
+                      height: 150,
+                      margin: EdgeInsets.only(top: 28),
+                      decoration: BoxDecoration(
+                        color: AppColors.fillColor,
+                        border: Border.all(
+                          width: 1,
+                          color: Color.fromARGB(125, 0, 0, 0),
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            SizedBox(height: 50.0),
-                            Center(
-                              child: Image.asset(
-                                "assets/images/group-345.png",
-                                fit: BoxFit.none,
-                              ),
+                        boxShadow: [
+                          Shadows.secondaryShadow,
+                        ],
+                        borderRadius: BorderRadius.all(Radius.circular(76)),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          SizedBox(height: 50.0),
+                          Center(
+                            child: Image.asset(
+                              ImagePath.personIconMedium,
+                              fit: BoxFit.none,
                             ),
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: Image.asset(
-                                "assets/images/group-347-2.png",
-                                fit: BoxFit.none,
-                              ),
-                            )
-                          ],
-                        )),
+                          ),
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Image.asset(
+                              ImagePath.uploadIcon,
+                              fit: BoxFit.none,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(height: Sizes.HEIGHT_16),
                   Align(
@@ -148,16 +148,16 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  SizedBox(height: Sizes.HEIGHT_40),
                   Align(
                     alignment: Alignment.topCenter,
                     child: PotbellyButton(
                       StringConst.REGISTER,
-                      onTap: () =>
-                          Navigator.pushNamed(context, StringConst.SET_LOCATION_ROUTE),
+                      onTap: () => Navigator.pushNamed(
+                          context, StringConst.SET_LOCATION_ROUTE),
                     ),
                   ),
-                  Spacer(),
+                  SizedBox(height: Sizes.HEIGHT_40),
                   Align(
                     alignment: Alignment.topCenter,
                     child: Container(
@@ -172,12 +172,13 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 16.0),
                           InkWell(
-                            onTap: () => Navigator.pushNamed(context, LoginScreen.ROUTE_NAME),
+                            onTap: () => Navigator.pushNamed(
+                                context, LoginScreen.ROUTE_NAME),
                             child: Text(
                               StringConst.LOGIN,
                               textAlign: TextAlign.left,
-                              style:
-                                  Styles.customNormalTextStyle(color: AppColors.secondaryElement),
+                              style: Styles.customNormalTextStyle(
+                                  color: AppColors.secondaryElement),
                             ),
                           ),
                         ],
@@ -193,3 +194,36 @@ class RegisterScreen extends StatelessWidget {
     );
   }
 }
+
+// Widget build(BuildContext context) {
+//   return LayoutBuilder(
+//     builder: (BuildContext context, BoxConstraints viewportConstraints) {
+//       return SingleChildScrollView(
+//         child: ConstrainedBox(
+//           constraints: BoxConstraints(
+//             minHeight: viewportConstraints.maxHeight,
+//           ),
+//           child: IntrinsicHeight(
+//             child: Column(
+//               children: <Widget>[
+//                 Container(
+//                   // A fixed-height child.
+//                   color: const Color(0xff808000), // Yellow
+//                   height: 120.0,
+//                 ),
+//                 Expanded(
+//                   // A flexible child that will grow to fit the viewport but
+//                   // still be at least as big as necessary to fit its contents.
+//                   child: Container(
+//                     color: const Color(0xff800000), // Red
+//                     height: 120.0,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       );
+//     },
+//   );
+// }

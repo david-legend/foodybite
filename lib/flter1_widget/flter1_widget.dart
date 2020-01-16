@@ -702,7 +702,7 @@ class Flter1Widget extends StatelessWidget {
                               width: 188,
                               height: 66,
                               decoration: BoxDecoration(
-                                color: AppColors.primaryBackground,
+                                color: AppColors.primaryColor,
                                 border: Border.fromBorderSide(Borders.primaryBorder),
                               ),
                               child: Container(),

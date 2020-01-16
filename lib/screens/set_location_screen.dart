@@ -42,7 +42,8 @@ class SetLocationScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.topRight,
                       child: InkWell(
-                        onTap: () => Navigator.pushNamed(context, StringConst.HOME_ROUTE),
+                        onTap: () => Navigator.pushNamed(
+                            context, StringConst.HOME_ROUTE),
                         child: Container(
                           width: 80,
                           height: 40,
@@ -86,7 +87,9 @@ class SetLocationScreen extends StatelessWidget {
                                   StringConst.FOODY_BITE,
                                   textAlign: TextAlign.left,
                                   style: Styles.customTitleTextStyle(
-                                      fontSize: Sizes.TEXT_SIZE_32),
+                                    fontSize: Sizes.TEXT_SIZE_32,
+                                    color: AppColors.kFoodyBiteYellow,
+                                  ),
                                 )
                               ],
                             )
@@ -112,8 +115,8 @@ class SetLocationScreen extends StatelessWidget {
                       child: PotbellyButton(
                         StringConst.TURN_GPS,
                         buttonWidth: MediaQuery.of(context).size.width,
-                        onTap: () =>
-                          Navigator.pushNamed(context, StringConst.HOME_ROUTE),
+                        onTap: () => Navigator.pushNamed(
+                            context, StringConst.HOME_ROUTE),
                       ),
                     ),
                     Spacer(),

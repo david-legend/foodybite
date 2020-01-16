@@ -37,7 +37,7 @@ class Artboard1Widget extends StatelessWidget {
                               width: 327,
                               height: 217,
                               decoration: BoxDecoration(
-                                color: AppColors.primaryBackground,
+                                color: AppColors.primaryColor,
                                 borderRadius: BorderRadius.all(Radius.circular(29)),
                               ),
                               child: Column(
@@ -134,7 +134,7 @@ class Artboard1Widget extends StatelessWidget {
                                       width: 327,
                                       height: 217,
                                       decoration: BoxDecoration(
-                                        color: AppColors.primaryBackground,
+                                        color: AppColors.primaryColor,
                                         borderRadius: BorderRadius.all(Radius.circular(29)),
                                       ),
                                       child: Column(
@@ -222,7 +222,7 @@ class Artboard1Widget extends StatelessWidget {
                                       width: 327,
                                       height: 219,
                                       decoration: BoxDecoration(
-                                        color: AppColors.primaryBackground,
+                                        color: AppColors.primaryColor,
                                         borderRadius: BorderRadius.all(Radius.circular(29)),
                                       ),
                                       child: Stack(
@@ -325,7 +325,7 @@ class Artboard1Widget extends StatelessWidget {
                                       width: 327,
                                       height: 219,
                                       decoration: BoxDecoration(
-                                        color: AppColors.primaryBackground,
+                                        color: AppColors.primaryColor,
                                         borderRadius: BorderRadius.all(Radius.circular(29)),
                                       ),
                                       child: Stack(
@@ -480,7 +480,7 @@ class Artboard1Widget extends StatelessWidget {
                                           child: Container(
                                             height: 79,
                                             decoration: BoxDecoration(
-                                              color: AppColors.primaryBackground,
+                                              color: AppColors.primaryColor,
                                               border: Border.all(
                                                 width: 0.33333,
                                                 color: Color.fromARGB(255, 243, 243, 243),
@@ -733,7 +733,7 @@ class Artboard1Widget extends StatelessWidget {
                             child: Container(
                               height: 80,
                               decoration: BoxDecoration(
-                                color: AppColors.primaryBackground,
+                                color: AppColors.primaryColor,
                                 border: Border.all(
                                   width: 0.33333,
                                   color: Color.fromARGB(255, 243, 243, 243),
@@ -3888,7 +3888,7 @@ class Artboard1Widget extends StatelessWidget {
                                             child: Container(
                                               height: 80,
                                               decoration: BoxDecoration(
-                                                color: AppColors.primaryBackground,
+                                                color: AppColors.primaryColor,
                                                 border: Border.all(
                                                   width: 0.33333,
                                                   color: Color.fromARGB(255, 243, 243, 243),
@@ -4136,7 +4136,7 @@ class Artboard1Widget extends StatelessWidget {
                                             child: Container(
                                               height: 80,
                                               decoration: BoxDecoration(
-                                                color: AppColors.primaryBackground,
+                                                color: AppColors.primaryColor,
                                                 border: Border.all(
                                                   width: 0.33333,
                                                   color: Color.fromARGB(255, 243, 243, 243),
@@ -4383,7 +4383,7 @@ class Artboard1Widget extends StatelessWidget {
                                             child: Container(
                                               height: 80,
                                               decoration: BoxDecoration(
-                                                color: AppColors.primaryBackground,
+                                                color: AppColors.primaryColor,
                                                 border: Border.all(
                                                   width: 0.33333,
                                                   color: Color.fromARGB(255, 243, 243, 243),

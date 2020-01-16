@@ -1159,7 +1159,7 @@ class MyProfileWidget extends StatelessWidget {
                                         child: Container(
                                           height: 80,
                                           decoration: BoxDecoration(
-                                            color: AppColors.primaryBackground,
+                                            color: AppColors.primaryColor,
                                             boxShadow: [
                                               BoxShadow(
                                                 color: Color.fromARGB(10, 0, 0, 0),
