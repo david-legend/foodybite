@@ -9,12 +9,6 @@ import 'screens/set_location_screen.dart';
 
 void main() => runApp(App());
 
-//TODO:: Working on creating a theme for the app --done
-//TODO:: overflowing pixels on register screen needs to be fixed
-//TODO:: change color of text foodybite of setLocation screen
-//TODO:: merge changes in the registration-module branch into the branch
-//TODO:: create new branch from the master branch for the next task
-
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
