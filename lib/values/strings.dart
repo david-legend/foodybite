@@ -15,6 +15,7 @@ class StringConst {
   static const String HINT_TEXT_EMAIL = "Email";
   static const String HINT_TEXT_PASSWORD = "Password";
   static const String HINT_TEXT_CONFIRM_PASSWORD = "Confirm Password";
+  static const String HINT_TEXT_HOME_SEARCH_BAR = "Find Restaurants";
   static const String LOGIN = "Login";
   static const String SKIP = "Skip";
   static const String REGISTER = "Register";
@@ -24,14 +25,28 @@ class StringConst {
   static const String HELLO_MESSAGE = "Hi David,";
   static const String WELCOME_MESSAGE = "Welcome to";
   static const String SEND = "Send";
+  static const String TRENDING_RESTAURANTS = "Trending Restaurants";
+  static const String CATEGORY = "Category";
+  static const String FRIENDS = "Friends";
+  static const String SEE_ALL_45 = "See all (45)";
+  static const String SEE_ALL_9 = "See all (9)";
+  static const String SEE_ALL_56 = "See all (56)";
   static const String CREATE_NEW_ACCOUNT = "Create New Account";
+  static const String STATUS_OPEN = "OPEN";
+  static const String STATUS_CLOSE = "CLOSE";
 
+  //Categories
+  static const String ITALIAN = "Italian";
+  static const String CHINESE = "Chinese";
+  static const String AMERICAN = "American";
+  static const String MEXICAN = "Mexican";
   //Routes
   static const String LOGIN_ROUTE = "/login";
   static const String REGISTER_ROUTE = "/register";
   static const String FORGOT_PASSWORD_ROUTE = "/forgotPassword";
-  static const String HOME_ROUTE = "/home";
   static const String SET_LOCATION_ROUTE = "/setLocation";
+  static const String ROOT_ROUTE = "/root";
+  static const String HOME_ROUTE = "/home";
 
   //Font Family
   static const String FONT_FAMILY = "Josefin Sans";

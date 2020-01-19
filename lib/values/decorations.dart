@@ -18,6 +18,63 @@ class Decorations {
     ),
   );
 
+  static const BoxDecoration italianDecoration = BoxDecoration(
+    gradient: LinearGradient(
+      begin: Alignment(0.5, 0),
+      end: Alignment(0.5, 1),
+      stops: [
+        0,
+        1,
+      ],
+      colors: [
+        Color.fromARGB(255, 255, 86, 115),
+        Color.fromARGB(255, 255, 140, 72),
+      ],
+    ),
+    boxShadow: [
+      Shadows.secondaryShadow,
+    ],
+    borderRadius: BorderRadius.all(Radius.circular(8)),
+  );
+
+  static const BoxDecoration mexicanDecoration = BoxDecoration(
+    gradient: LinearGradient(
+      begin: Alignment(0.5, 0),
+      end: Alignment(0.5, 1),
+      stops: [
+        0,
+        1,
+      ],
+      colors: [
+        Color.fromARGB(255, 45, 206, 248),
+        Color.fromARGB(255, 59, 64, 254),
+      ],
+    ),
+    boxShadow: [
+      Shadows.secondaryShadow,
+    ],
+    borderRadius: BorderRadius.all(Radius.circular(7.33333)),
+  );
+
+  static const BoxDecoration chineseDecoration = BoxDecoration(
+    gradient: LinearGradient(
+      begin: Alignment(0.5, 0),
+      end: Alignment(0.5, 1),
+      stops: [
+        0,
+        1,
+      ],
+      colors: [
+        Color.fromARGB(255, 131, 43, 246),
+        Color.fromARGB(255, 255, 70, 101),
+      ],
+    ),
+    boxShadow: [
+      Shadows.secondaryShadow,
+    ],
+    borderRadius: BorderRadius.all(Radius.circular(7.33333)),
+  );
+
   static const BoxDecoration fullScreenOverDecoration = BoxDecoration(
     gradient: LinearGradient(
       begin: Alignment(0.51436, 1.07565),

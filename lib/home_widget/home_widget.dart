@@ -168,11 +168,10 @@ class HomeWidget extends StatelessWidget {
                           child: Text(
                             "Trending Restaurants",
                             textAlign: TextAlign.left,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 34, 36, 85),
-                              fontFamily: "Josefin Sans",
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
+                            style: Styles.customTitleTextStyle(
+                              color: AppColors.headingText,
+                              fontWeight: FontWeight.w600,
+                              fontSize: Sizes.TEXT_SIZE_20,
                             ),
                           ),
                         ),
