@@ -9,9 +9,11 @@ import 'screens/bookmarks_screen.dart';
 import 'screens/forgot_password_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
+import 'screens/notification_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/set_location_screen.dart';
 
+//TODO::  build profile screen
 void main() => runApp(App());
 
 class App extends StatelessWidget {
@@ -31,6 +33,7 @@ class App extends StatelessWidget {
         TrendingRestaurantsScreen.ROUTE_NAME: (context) => TrendingRestaurantsScreen(),
         RestaurantDetailScreen.ROUTE_NAME: (context) => RestaurantDetailScreen(),
         BookmarksScreen.ROUTE_NAME: (context) => BookmarksScreen(),
+        NotificationsScreen.ROUTE_NAME: (context) => NotificationsScreen(),
       },
     );
   }

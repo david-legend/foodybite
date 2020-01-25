@@ -6,6 +6,7 @@ import 'package:potbelly/values/values.dart';
 
 import 'bookmarks_screen.dart';
 import 'home_screen.dart';
+import 'notification_screen.dart';
 
 class Root extends StatefulWidget {
   static const String ROUTE_NAME = StringConst.ROOT_ROUTE;
@@ -91,7 +92,7 @@ class _RootState extends State<Root> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   bottomNavigationIcon(
-                    destination: ForgotPasswordScreen(),
+                    destination: NotificationsScreen(),
                     currentTab: 2,
                     activeIcon: ImagePath.activeNotificationIcon,
                     nonActiveIcon: ImagePath.notificationIcon,

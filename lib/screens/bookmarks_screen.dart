@@ -4,8 +4,6 @@ import 'package:potbelly/screens/root.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
 
-//TODO:: build the bookmarks screen
-//TODO:: then restaurant details screen
 
 class BookmarksScreen extends StatelessWidget {
   static const String ROUTE_NAME = StringConst.BOOKMARKS_ROUTE;
@@ -32,7 +30,7 @@ class BookmarksScreen extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(right: Sizes.MARGIN_16),
             child: InkWell(
-              onTap: () => Navigator.pushNamed(context, Root.ROUTE_NAME),
+              onTap: () {},
               child: Image.asset(
                 ImagePath.searchIconBlue,
                 color: AppColors.headingText,
