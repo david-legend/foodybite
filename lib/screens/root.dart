@@ -50,6 +50,15 @@ class _RootState extends State<Root> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
+        elevation: 8.0,
+        shape: AutomaticNotchedShape(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20),
+              topLeft: Radius.circular(20),
+            ),
+          ),
+        ),
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 24.0),
           height: 60,

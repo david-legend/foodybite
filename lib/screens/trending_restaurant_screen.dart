@@ -6,9 +6,7 @@ import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/search_input_field.dart';
 
-//TODO:: add the correct icon for arrow back
-//TODO:: add proper styling for the title
-//TODO:: add border radius on bottom navigation bar
+
 //TODO:: assess minor errors and commit
 //TODO:: build the bookmarks screen
 //TODO:: then restaurant details screen

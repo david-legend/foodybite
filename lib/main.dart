@@ -19,7 +19,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: kLightFoodyBiteTheme,
-      home: TrendingRestaurantsScreen(),
+      home: Root(),
       routes: {
         LoginScreen.ROUTE_NAME: (context) => LoginScreen(),
         ForgotPasswordScreen.ROUTE_NAME: (context) => ForgotPasswordScreen(),
