@@ -16,6 +16,7 @@ class StringConst {
   static const String HINT_TEXT_PASSWORD = "Password";
   static const String HINT_TEXT_CONFIRM_PASSWORD = "Confirm Password";
   static const String HINT_TEXT_HOME_SEARCH_BAR = "Find Restaurants";
+  static const String HINT_TEXT_TRENDING_SEARCH_BAR = "Search";
   static const String LOGIN = "Login";
   static const String SKIP = "Skip";
   static const String REGISTER = "Register";
@@ -47,6 +48,8 @@ class StringConst {
   static const String SET_LOCATION_ROUTE = "/setLocation";
   static const String ROOT_ROUTE = "/root";
   static const String HOME_ROUTE = "/home";
+  static const String TRENDING_RESTAURANTS_ROUTE = "/trendingRestaurants";
+  static const String RESTAURANT_DETAIL_ROUTE = "/restaurantDetail";
 
   //Font Family
   static const String FONT_FAMILY = "Josefin Sans";

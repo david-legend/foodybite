@@ -9,8 +9,6 @@ class HomeScreen extends StatelessWidget {
   static const String ROUTE_NAME = StringConst.HOME_ROUTE;
   static const int TAB_NO = 0;
 
-  List<String> friendsImages = [];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

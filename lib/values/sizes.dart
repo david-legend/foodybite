@@ -14,6 +14,7 @@ class Sizes {
   //Dimensions - width
   static const double WIDTH_300 = 300.0;
   static const double WIDTH_150 = 150.0;
+  static const double WIDTH_16 = 16.0;
   static const double WIDTH_14 = 14.0;
   static const double WIDTH_12 = 12.0;
   static const double WIDTH_8 = 8.0;
