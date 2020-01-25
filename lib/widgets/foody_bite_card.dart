@@ -10,8 +10,10 @@ class FoodyBiteCard extends StatelessWidget {
   final String distance;
   final String address;
   final GestureTapCallback onTap;
+  final bool bookmark;
   final double tagRadius;
   final double width;
+  final double height;
   final double cardElevation;
   final double ratingsAndStatusCardElevation;
   final List<String> followersImagePath;
@@ -25,8 +27,10 @@ class FoodyBiteCard extends StatelessWidget {
     this.distance,
     this.address,
     this.width = 340.0,
+    this.height = 280.0,
     this.tagRadius = 8.0,
     this.onTap,
+    this.bookmark = false,
     this.cardElevation = 4.0,
     this.ratingsAndStatusCardElevation = 8.0,
     this.followersImagePath,
@@ -38,6 +42,7 @@ class FoodyBiteCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: width,
+        height: height,
         child: Card(
           elevation: cardElevation,
           child: Stack(
@@ -52,7 +57,8 @@ class FoodyBiteCard extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.symmetric(
-                          horizontal: Sizes.MARGIN_16, vertical: Sizes.MARGIN_16),
+                          horizontal: Sizes.MARGIN_16,
+                          vertical: Sizes.MARGIN_16),
                       child: Column(
                         children: <Widget>[
                           Row(
@@ -90,7 +96,8 @@ class FoodyBiteCard extends StatelessWidget {
                               Spacer(
                                 flex: 1,
                               ),
-                              Container(
+
+                             bookmark ? Container() : Container(
                                 width: 40,
                                 height: 20,
                                 child: Stack(
@@ -120,7 +127,6 @@ class FoodyBiteCard extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              //overlapping images
                             ],
                           ),
                           SizedBox(height: 12.0),
@@ -158,14 +164,22 @@ class FoodyBiteCard extends StatelessWidget {
                       elevation: ratingsAndStatusCardElevation,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: Sizes.WIDTH_12, vertical: Sizes.HEIGHT_8),
+                            horizontal: Sizes.WIDTH_12,
+                            vertical: Sizes.HEIGHT_8),
                         child: Text(
                           status,
-                          style: Styles.customNormalTextStyle(
-                            color: AppColors.kFoodyBiteGreen,
-                            fontSize: Sizes.TEXT_SIZE_10,
-                            fontWeight: FontWeight.w700,
-                          ),
+                          style: status.toLowerCase() ==
+                                  StringConst.STATUS_OPEN.toLowerCase()
+                              ? Styles.customNormalTextStyle(
+                                  color: AppColors.kFoodyBiteGreen,
+                                  fontSize: Sizes.TEXT_SIZE_10,
+                                  fontWeight: FontWeight.w700,
+                                )
+                              : Styles.customNormalTextStyle(
+                                  color: Colors.red,
+                                  fontSize: Sizes.TEXT_SIZE_10,
+                                  fontWeight: FontWeight.w700,
+                                ),
                         ),
                       ),
                     ),
@@ -198,6 +212,21 @@ class FoodyBiteCard extends StatelessWidget {
                   ],
                 ),
               ),
+              bookmark ? Positioned(
+                top: (height / 2) + 16,
+                left: width - 60,
+                child: Container(
+                  height: 60,
+                  width: 60,
+                  child: Card(
+                    elevation: 4.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    child: Image.asset(ImagePath.activeBookmarksIcon2),
+                  )
+                ),
+              ) : Container()
             ],
           ),
         ),

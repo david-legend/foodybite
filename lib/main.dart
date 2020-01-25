@@ -5,6 +5,7 @@ import 'package:potbelly/screens/root.dart';
 import 'package:potbelly/screens/trending_restaurant_screen.dart';
 import 'package:potbelly/theme.dart';
 
+import 'screens/bookmarks_screen.dart';
 import 'screens/forgot_password_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
@@ -29,6 +30,7 @@ class App extends StatelessWidget {
         Root.ROUTE_NAME: (context) => Root(),
         TrendingRestaurantsScreen.ROUTE_NAME: (context) => TrendingRestaurantsScreen(),
         RestaurantDetailScreen.ROUTE_NAME: (context) => RestaurantDetailScreen(),
+        BookmarksScreen.ROUTE_NAME: (context) => BookmarksScreen(),
       },
     );
   }

@@ -25,6 +25,7 @@ class ImagePath {
   static const String activeBookmarksIcon = "$imageDir/bookmarks_icon_selected.png";
   static const String activeBookmarksIcon2 = "$imageDir/bookmarks_icon_selected_2.png";
   static const String starIcon = "$imageDir/star_icon.png";
+  static const String searchIconBlue = "$imageDir/search_icon_blue.png";
 
   //High quality pictures
   static const String boiledEggs = "$imageDir/boiled_eggs.png";

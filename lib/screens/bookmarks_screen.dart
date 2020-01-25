@@ -3,12 +3,12 @@ import 'package:potbelly/screens/restaurant_details_screen.dart';
 import 'package:potbelly/screens/root.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
-import 'package:potbelly/widgets/search_input_field.dart';
 
+//TODO:: build the bookmarks screen
+//TODO:: then restaurant details screen
 
-
-class TrendingRestaurantsScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.TRENDING_RESTAURANTS_ROUTE;
+class BookmarksScreen extends StatelessWidget {
+  static const String ROUTE_NAME = StringConst.BOOKMARKS_ROUTE;
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +19,27 @@ class TrendingRestaurantsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        leading: InkWell(
-          onTap: () => Navigator.pushNamed(context, Root.ROUTE_NAME),
-          child: Image.asset(
-            ImagePath.arrowBackIcon,
-            color: AppColors.headingText,
-          ),
-        ),
+        centerTitle: true,
         title: Text(
-          'Trending Restaurant',
+          'My Favourite',
           style: Styles.customTitleTextStyle(
             color: AppColors.headingText,
             fontWeight: FontWeight.w600,
-            fontSize: Sizes.TEXT_SIZE_20,
+            fontSize: Sizes.TEXT_SIZE_22,
           ),
         ),
+        actions: <Widget>[
+          Container(
+            margin: EdgeInsets.only(right: Sizes.MARGIN_16),
+            child: InkWell(
+              onTap: () => Navigator.pushNamed(context, Root.ROUTE_NAME),
+              child: Image.asset(
+                ImagePath.searchIconBlue,
+                color: AppColors.headingText,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Container(
         margin: EdgeInsets.symmetric(
@@ -41,18 +47,6 @@ class TrendingRestaurantsScreen extends StatelessWidget {
         child: ListView(
           scrollDirection: Axis.vertical,
           children: <Widget>[
-            FoodyBiteSearchInputField(
-              ImagePath.searchIcon,
-              textFormFieldStyle:
-                  Styles.customNormalTextStyle(color: AppColors.accentText),
-              hintText: StringConst.HINT_TEXT_TRENDING_SEARCH_BAR,
-              hintTextStyle:
-                  Styles.customNormalTextStyle(color: AppColors.accentText),
-              suffixIconImagePath: ImagePath.settingsIcon,
-              borderWidth: 0.0,
-              borderStyle: BorderStyle.solid,
-            ),
-            SizedBox(height: Sizes.WIDTH_16),
             FoodyBiteCard(
               imagePath: ImagePath.breakfastInBed,
               status: StringConst.STATUS_OPEN,
@@ -60,6 +54,7 @@ class TrendingRestaurantsScreen extends StatelessWidget {
               category: StringConst.ITALIAN,
               distance: "12 km",
               address: "394 Broome St, New York, NY 10013, USA",
+              bookmark: true,
               onTap: () => navigateToDetailScreen(),
             ),
             SizedBox(height: Sizes.WIDTH_16),
@@ -71,6 +66,7 @@ class TrendingRestaurantsScreen extends StatelessWidget {
               category: StringConst.CHINESE,
               distance: "2 km",
               address: "917 Zoom St, California, CA 20093, USA",
+              bookmark: true,
               onTap: () => navigateToDetailScreen(),
             ),
             SizedBox(height: Sizes.WIDTH_16),
@@ -82,6 +78,7 @@ class TrendingRestaurantsScreen extends StatelessWidget {
               category: StringConst.ITALIAN,
               distance: "4 km",
               address: "34 Devil St, New York, NY 11013, USA",
+              bookmark: true,
               onTap: () => navigateToDetailScreen(),
             ),
             SizedBox(height: Sizes.WIDTH_16),
@@ -93,6 +90,7 @@ class TrendingRestaurantsScreen extends StatelessWidget {
               category: StringConst.CHINESE,
               distance: "5 km",
               address: "417 Doom St, California, CA 90013, USA",
+              bookmark: true,
               onTap: () => navigateToDetailScreen(),
             ),
           ],

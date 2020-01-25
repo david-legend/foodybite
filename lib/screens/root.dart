@@ -4,6 +4,7 @@ import 'package:potbelly/screens/login_screen.dart';
 import 'package:potbelly/screens/register_screen.dart';
 import 'package:potbelly/values/values.dart';
 
+import 'bookmarks_screen.dart';
 import 'home_screen.dart';
 
 class Root extends StatefulWidget {
@@ -75,9 +76,9 @@ class _RootState extends State<Root> {
                     activeIcon: ImagePath.activeHomeIcon2,
                     nonActiveIcon: ImagePath.homeIcon,
                   ),
-                  SizedBox(width: 60),
+                  SizedBox(width: 40),
                   bottomNavigationIcon(
-                    destination: RegisterScreen(),
+                    destination: BookmarksScreen(),
                     currentTab: 1,
                     activeIcon: ImagePath.activeBookmarksIcon2,
                     nonActiveIcon: ImagePath.bookmarksIcon,
@@ -95,7 +96,7 @@ class _RootState extends State<Root> {
                     activeIcon: ImagePath.activeNotificationIcon,
                     nonActiveIcon: ImagePath.notificationIcon,
                   ),
-                  SizedBox(width: 60),
+                  SizedBox(width: 40),
                   bottomNavigationIcon(
                     destination: LoginScreen(),
                     currentTab: 3,
