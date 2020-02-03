@@ -97,7 +97,7 @@ class Decorations {
     boxShadow: [
       Shadows.secondaryShadow,
     ],
-    borderRadius: BorderRadius.all(Radius.circular(Sizes.BORDER_RADIUS_12)),
+    borderRadius: BorderRadius.all(Radius.circular(Sizes.BORDER_RADIUS_8)),
   );
 
   static BoxDecoration customDecoration({

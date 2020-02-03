@@ -51,6 +51,7 @@ class StringConst {
   static const String TRENDING_RESTAURANTS_ROUTE = "/trendingRestaurants";
   static const String BOOKMARKS_ROUTE = "/bookmarks";
   static const String NOTIFICATIONS_ROUTE = "/notifications";
+  static const String PROFILE_ROUTE = "/profile";
   static const String RESTAURANT_DETAIL_ROUTE = "/restaurantDetail";
 
   //Font Family

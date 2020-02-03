@@ -26,6 +26,7 @@ class Sizes {
   static const double TEXT_SIZE_32 = 32.0;
   static const double TEXT_SIZE_22 = 22.0;
   static const double TEXT_SIZE_20 = 20.0;
+  static const double TEXT_SIZE_18 = 18.0;
   static const double TEXT_SIZE_16 = 16.0;
   static const double TEXT_SIZE_14 = 14.0;
   static const double TEXT_SIZE_10 = 10.0;
@@ -45,6 +46,7 @@ class Sizes {
 
   //BorderRadius
   static const double BORDER_RADIUS_12 = 12.0;
+  static const double BORDER_RADIUS_8 = 8.0;
 
   //BorderWidth
   static const double BORDER_WIDTH_0 = 0.0;

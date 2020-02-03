@@ -85,7 +85,6 @@ class NotificationsScreen extends StatelessWidget {
     void navigateToDetailScreen() {
       Navigator.pushNamed(context, RestaurantDetailScreen.ROUTE_NAME);
     }
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,

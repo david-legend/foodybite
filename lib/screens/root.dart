@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/screens/forgot_password_screen.dart';
-import 'package:potbelly/screens/login_screen.dart';
-import 'package:potbelly/screens/register_screen.dart';
+import 'package:potbelly/screens/profile_screen.dart';
 import 'package:potbelly/values/values.dart';
 
 import 'bookmarks_screen.dart';
@@ -99,7 +97,7 @@ class _RootState extends State<Root> {
                   ),
                   SizedBox(width: 40),
                   bottomNavigationIcon(
-                    destination: LoginScreen(),
+                    destination: ProfileScreen(),
                     currentTab: 3,
                     activeIcon: ImagePath.activePersonIcon,
                     nonActiveIcon: ImagePath.personGreyIcon,

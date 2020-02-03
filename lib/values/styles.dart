@@ -31,6 +31,20 @@ class Styles {
     fontSize: Sizes.TEXT_SIZE_16,
   );
 
+  static const TextStyle foodyBiteTitleTextStyle = TextStyle(
+    color: AppColors.headingText,
+    fontFamily: StringConst.FONT_FAMILY,
+    fontWeight: FontWeight.w400,
+    fontSize: Sizes.TEXT_SIZE_20,
+  );
+
+  static const TextStyle foodyBiteSubtitleTextStyle = TextStyle(
+    color: AppColors.accentText,
+    fontFamily: StringConst.FONT_FAMILY,
+    fontWeight: FontWeight.w400,
+    fontSize: Sizes.TEXT_SIZE_14,
+  );
+
   static TextStyle customNormalTextStyle({
     Color color = AppColors.secondaryText,
     String fontFamily = StringConst.FONT_FAMILY,
