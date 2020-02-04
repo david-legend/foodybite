@@ -13,10 +13,11 @@ import 'screens/home_screen.dart';
 import 'screens/notification_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/set_location_screen.dart';
+import 'screens/filter_screen.dart';
 
-//TODO::  build profile screen
-//TODO::  search button in search field screen
 //TODO::  onPress of settings opens filter screen
+//TODO::  clean up filter and profile screen
+//TODO::  search button in search field screen
 //TODO::  see all on trending restaurants opens trending restaurants screen
 //TODO::  onPress of card open detail screen
 //TODO::  see all on categories opens category_list screen
@@ -31,7 +32,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: kLightFoodyBiteTheme,
-      home: Root(),
+      home: FilterScreen(),
       routes: {
         LoginScreen.ROUTE_NAME: (context) => LoginScreen(),
         ForgotPasswordScreen.ROUTE_NAME: (context) => ForgotPasswordScreen(),
@@ -44,6 +45,7 @@ class App extends StatelessWidget {
         BookmarksScreen.ROUTE_NAME: (context) => BookmarksScreen(),
         NotificationsScreen.ROUTE_NAME: (context) => NotificationsScreen(),
         ProfileScreen.ROUTE_NAME: (context) => ProfileScreen(),
+        FilterScreen.ROUTE_NAME: (context) => FilterScreen(),
       },
     );
   }

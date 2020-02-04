@@ -103,6 +103,7 @@ class ProfileScreen extends StatelessWidget {
                     category: StringConst.ITALIAN,
                     distance: "12 km",
                     address: "394 Broome St, New York, NY 10013, USA",
+                    isThereStatus: false,
                     onTap: () {},
                   ),
                   SizedBox(height: 16.0),
@@ -113,6 +114,7 @@ class ProfileScreen extends StatelessWidget {
                     category: StringConst.ITALIAN,
                     distance: "12 km",
                     address: "394 Broome St, New York, NY 10013, USA",
+                    isThereStatus: false,
                     onTap: () {},
                   ),
                 ],
@@ -122,13 +124,6 @@ class ProfileScreen extends StatelessWidget {
         ));
   }
 
-  Widget verticalDivider() {
-    return Container(
-      width: 2.0,
-      color: Colors.red,
-      child: Container(),
-    );
-  }
 
   Widget detail({@required String number, @required String text}) {
     return Container(

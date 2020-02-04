@@ -11,6 +11,8 @@ class FoodyBiteCard extends StatelessWidget {
   final String address;
   final GestureTapCallback onTap;
   final bool bookmark;
+  final bool isThereStatus;
+  final bool isThereRatings;
   final double tagRadius;
   final double width;
   final double height;
@@ -30,6 +32,8 @@ class FoodyBiteCard extends StatelessWidget {
     this.height = 280.0,
     this.tagRadius = 8.0,
     this.onTap,
+    this.isThereStatus = true,
+    this.isThereRatings = true,
     this.bookmark = false,
     this.cardElevation = 4.0,
     this.ratingsAndStatusCardElevation = 8.0,
@@ -160,7 +164,7 @@ class FoodyBiteCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Card(
+                    isThereStatus ? Card(
                       elevation: ratingsAndStatusCardElevation,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -182,8 +186,8 @@ class FoodyBiteCard extends StatelessWidget {
                                 ),
                         ),
                       ),
-                    ),
-                    Card(
+                    ) : Container(),
+                    isThereRatings ? Card(
                       elevation: ratingsAndStatusCardElevation,
                       child: Container(
                         padding: EdgeInsets.symmetric(
@@ -208,7 +212,7 @@ class FoodyBiteCard extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ),
+                    ) : Container(),
                   ],
                 ),
               ),
