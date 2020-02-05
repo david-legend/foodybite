@@ -45,6 +45,7 @@ class Sizes {
   static const double PADDING_0 = 0.0;
 
   //BorderRadius
+  static const double BORDER_RADIUS_24 = 24.0;
   static const double BORDER_RADIUS_12 = 12.0;
   static const double BORDER_RADIUS_8 = 8.0;
 
