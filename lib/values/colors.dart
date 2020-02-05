@@ -18,4 +18,7 @@ class AppColors {
   static const Color fillColors = Color.fromARGB(0, 183, 190, 210);
   static const Color kFoodyBiteGreen = Color.fromRGBO(76, 217, 100, 1);
   static const Color kFoodyBiteYellow = Color(0xFFFFCC00);
+//  static const Color kFoodyBiteGoldRatingStar = Color(0xFFFFCC00);
+  static const Color kFoodyBiteGreyRatingStar = Color(0xFFDFE4ED);
+  static const Color kFoodyBiteSkyBlue = Color(0xFFEEF7FF);
 }

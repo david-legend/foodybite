@@ -11,8 +11,21 @@ class FilterScreen extends StatefulWidget {
 
 class _FilterScreenState extends State<FilterScreen> {
   double initialSliderValue = 10;
+  int ratingValue = 4;
+  int activeButtonValue = 1;
   TextStyle buttonTextStyle =
       Styles.customNormalTextStyle(fontWeight: FontWeight.w600);
+
+  TextStyle subTitleTextStyle = Styles.customTitleTextStyle(
+    color: AppColors.headingText,
+    fontWeight: FontWeight.w600,
+    fontSize: Sizes.TEXT_SIZE_20,
+  );
+
+  TextStyle lightTextStyle = Styles.customNormalTextStyle(
+    color: AppColors.accentText,
+    fontSize: Sizes.TEXT_SIZE_16,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +65,10 @@ class _FilterScreenState extends State<FilterScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('Select Category'),
+                    Text(
+                      'Select Category',
+                      style: subTitleTextStyle,
+                    ),
                   ],
                 ),
                 SizedBox(height: 24.0),
@@ -60,55 +76,70 @@ class _FilterScreenState extends State<FilterScreen> {
                   direction: Axis.horizontal,
                   spacing: 16,
                   runAlignment: WrapAlignment.spaceBetween,
-                  children: <Widget>[
-                    categoryButton(buttonTitle: "Italian"),
-                    categoryButton(buttonTitle: "Chinese"),
-                    categoryButton(buttonTitle: "Mexican"),
-                    categoryButton(buttonTitle: "Thai"),
-                    categoryButton(buttonTitle: "Arabian"),
-                    categoryButton(buttonTitle: "Indian"),
-                    categoryButton(buttonTitle: "American"),
-                    categoryButton(buttonTitle: "Korean"),
-                    categoryButton(buttonTitle: "European"),
-                  ],
+                  children: createCategoryButtons(numberOfButtons: 9),
                 ),
                 SizedBox(height: 24.0),
-                Row(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('Distance'),
+                    Text(
+                      'Distance',
+                      style: subTitleTextStyle,
+                    ),
+                    SizedBox(height: 24.0),
+                    Slider(
+                      value: initialSliderValue,
+                      min: 0,
+                      max: 100,
+                      activeColor: Colors.red,
+                      inactiveColor: Colors.grey,
+                      label: "$initialSliderValue",
+                      onChanged: (newValue) {
+                        setState(() {
+                          initialSliderValue = newValue;
+                        });
+                      },
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(left: 24),
+                          child: Text(
+                            '0',
+                            style: lightTextStyle,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(right: 24),
+                          child: Text(
+                            '100',
+                            style: lightTextStyle,
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
                 SizedBox(height: 24.0),
-                Slider(
-                  value: initialSliderValue,
-                  min: 0,
-                  max: 100,
-                  activeColor: Colors.red,
-                  inactiveColor: Colors.grey,
-                  label: "$initialSliderValue",
-                  onChanged: (newValue) {
-                    setState(() {
-                      initialSliderValue = newValue;
-                    });
-                  },
-                ),
-                SizedBox(height: 24.0),
-                Row(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('Ratings'),
+                    Text('Ratings', style: subTitleTextStyle),
+                    SizedBox(height: 24.0),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 24.0),
+                      width: MediaQuery.of(context).size.width,
+                      height: 80.0,
+                      decoration: BoxDecoration(
+                          color: AppColors.kFoodyBiteSkyBlue,
+                          borderRadius: BorderRadius.all(Radius.circular(8))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: createRatingStars(numberOfStars: 5),
+                      ),
+                    ),
                   ],
-                ),
-                SizedBox(height: 24.0),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 24.0),
-                  width: MediaQuery.of(context).size.width,
-                  height: 60.0,
-                  color: Colors.grey[200],
-                  child: Row(
-                    children: <Widget>[],
-                  ),
                 ),
               ],
             ),
@@ -146,11 +177,13 @@ class _FilterScreenState extends State<FilterScreen> {
     );
   }
 
-  Widget categoryButton(
-      {@required String buttonTitle,
-      Color backgroundColor = AppColors.primaryColor}) {
+  Widget categoryButton({
+    @required String buttonTitle,
+    @required int index,
+    Color backgroundColor = AppColors.primaryColor,
+  }) {
     return InkWell(
-      onTap: () {},
+      onTap: () => setState(() => activeButtonValue = index),
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 12),
         child: PotbellyButton(
@@ -158,7 +191,9 @@ class _FilterScreenState extends State<FilterScreen> {
           buttonWidth: 100,
           buttonHeight: 50,
           decoration: BoxDecoration(
-            color: backgroundColor,
+            color: index == activeButtonValue
+                ? AppColors.kFoodyBiteYellow
+                : backgroundColor,
             border: Border.all(
               color: Colors.grey[400],
             ),
@@ -173,5 +208,54 @@ class _FilterScreenState extends State<FilterScreen> {
         ),
       ),
     );
+  }
+
+  Widget ratingStar(int value) {
+    return InkWell(
+      onTap: () => setState(() => ratingValue = value),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Image.asset(
+          ImagePath.starIcon,
+          color: value <= ratingValue
+              ? AppColors.kFoodyBiteYellow
+              : AppColors.kFoodyBiteGreyRatingStar,
+        ),
+      ),
+    );
+  }
+
+  createRatingStars({@required numberOfStars}) {
+    List<Widget> ratingStars = [];
+
+    List<int> list = List<int>.generate(numberOfStars, (i) => i + 1);
+
+    list.forEach((i) {
+      ratingStars.add(ratingStar(i));
+    });
+    return ratingStars;
+  }
+
+  createCategoryButtons({@required numberOfButtons}) {
+    List<Widget> categoryButtons = <Widget>[];
+    List<String> buttonTitles = [
+      "Italian",
+      "Chinese",
+      "Mexican",
+      "Thai",
+      "Arabian",
+      "Indian",
+      "American",
+      "Korean",
+      "European",
+    ];
+
+    List<int> list = List<int>.generate(numberOfButtons, (i) => i + 1);
+
+    list.forEach((i) {
+      categoryButtons
+          .add(categoryButton(buttonTitle: buttonTitles[i - 1], index: i));
+    });
+    return categoryButtons;
   }
 }
