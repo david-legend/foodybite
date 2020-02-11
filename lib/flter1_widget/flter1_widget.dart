@@ -4,6 +4,7 @@ import 'package:potbelly/values/values.dart';
 
 
 class Flter1Widget extends StatelessWidget {
+  static const String ROUTE_NAME = StringConst.FILTER_ROUTE;
   
   @override
   Widget build(BuildContext context) {

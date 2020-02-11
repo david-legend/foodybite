@@ -27,4 +27,17 @@ class Gradients {
       Color.fromARGB(255, 255, 140, 72),
     ],
   );
+
+  static const Gradient secondaryGradient2 = LinearGradient(
+    begin: Alignment(0, 1.0),
+    end: Alignment(1.0, 0.5),
+    stops: [
+      0,
+      1,
+    ],
+    colors: [
+      Color.fromARGB(255, 255, 174, 139),
+      Color.fromARGB(255, 255, 150, 159),
+    ],
+  );
 }

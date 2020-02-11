@@ -33,10 +33,13 @@ class _FilterScreenState extends State<FilterScreen> {
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        leading: Image.asset(
-          ImagePath.arrowBackIcon,
-          fit: BoxFit.none,
-          color: AppColors.headingText,
+        leading: InkWell(
+          onTap: () => Navigator.pop(context),
+          child: Image.asset(
+            ImagePath.arrowBackIcon,
+            fit: BoxFit.none,
+            color: AppColors.headingText,
+          ),
         ),
         title: Text(
           'Filter',
@@ -47,10 +50,13 @@ class _FilterScreenState extends State<FilterScreen> {
           ),
         ),
         actions: <Widget>[
-          Image.asset(
-            ImagePath.arrowBackIcon,
-            fit: BoxFit.none,
-            color: Colors.grey,
+          InkWell(
+            onTap: () => Navigator.pop(context),
+            child: Image.asset(
+              ImagePath.closeIcon,
+              fit: BoxFit.none,
+              color: Colors.grey,
+            ),
           ),
         ],
       ),
@@ -190,19 +196,21 @@ class _FilterScreenState extends State<FilterScreen> {
           buttonTitle,
           buttonWidth: 100,
           buttonHeight: 50,
-          decoration: BoxDecoration(
-            color: index == activeButtonValue
-                ? AppColors.kFoodyBiteYellow
-                : backgroundColor,
-            border: Border.all(
-              color: Colors.grey[400],
-            ),
-            borderRadius: BorderRadius.all(
-              Radius.circular(Sizes.BORDER_RADIUS_8),
-            ),
-          ),
+          decoration: index == activeButtonValue
+              ? Decorations.categoryButtonDecoration
+              : BoxDecoration(
+                  color: backgroundColor,
+                  border: Border.all(
+                    color: Colors.grey[400],
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(Sizes.BORDER_RADIUS_8),
+                  ),
+                ),
           buttonTextStyle: Styles.customNormalTextStyle(
-            color: AppColors.accentText,
+            color: index == activeButtonValue
+                ? AppColors.primaryColor
+                : AppColors.accentText,
             fontSize: Sizes.TEXT_SIZE_16,
           ),
         ),

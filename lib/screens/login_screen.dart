@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
 import 'package:potbelly/widgets/dark_overlay.dart';
@@ -111,7 +112,7 @@ class LoginScreen extends StatelessWidget {
                     child: PotbellyButton(
                       StringConst.LOGIN,
                       onTap: () =>
-                          Navigator.pushNamed(context, StringConst.HOME_ROUTE),
+                          Navigator.pushNamed(context, HomeScreen.ROUTE_NAME),
                     ),
                   ),
                   SizedBox(height: Sizes.HEIGHT_60),

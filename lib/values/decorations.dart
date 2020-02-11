@@ -100,6 +100,16 @@ class Decorations {
     borderRadius: BorderRadius.all(Radius.circular(Sizes.BORDER_RADIUS_8)),
   );
 
+  static const BoxDecoration categoryButtonDecoration = BoxDecoration(
+      gradient: Gradients.secondaryGradient2,
+      boxShadow: [
+        Shadows.secondaryShadow,
+      ],
+    borderRadius: BorderRadius.all(
+      Radius.circular(Sizes.BORDER_RADIUS_8),
+    )
+  );
+
   static const BoxDecoration halfButtonDecoration = BoxDecoration(
     color: AppColors.secondaryElement,
     boxShadow: [
