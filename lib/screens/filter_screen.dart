@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
@@ -93,19 +94,63 @@ class _FilterScreenState extends State<FilterScreen> {
                       style: subTitleTextStyle,
                     ),
                     SizedBox(height: 24.0),
-                    Slider(
-                      value: initialSliderValue,
-                      min: 0,
-                      max: 100,
-                      activeColor: Colors.red,
-                      inactiveColor: Colors.grey,
-                      label: "$initialSliderValue",
-                      onChanged: (newValue) {
-                        setState(() {
-                          initialSliderValue = newValue;
-                        });
-                      },
+                    SliderTheme(
+                      data: SliderTheme.of(context).copyWith(
+                        trackHeight: 8,
+                        activeTrackColor: AppColors.secondaryElement,
+//                        inactiveTrackColor: Color((0xFFEDEEFF)),
+//                        activeTickMarkColor: AppColors.secondaryElement,
+                        trackShape: RetroSliderTrackShape(),
+                        thumbColor: AppColors.secondaryElement,
+                        thumbShape: RetroSliderThumbShape(thumbRadius: 12),
+                        overlayShape:
+                            RoundSliderOverlayShape(overlayRadius: 0.0),
+                      ),
+                      child: Slider(
+                          value: initialSliderValue,
+                          min: 0,
+                          max: 100,
+                          onChanged: (value) {
+                            setState(() {
+                              initialSliderValue = value;
+                            });
+                          }),
                     ),
+//                    SliderTheme(
+//                      data: SliderTheme.of(context).copyWith(
+//                        activeTrackColor: AppColors.secondaryElement,
+//                        inactiveTrackColor: Colors.white,
+//                        thumbColor: AppColors.secondaryElement,
+//                        trackHeight: 3.0,
+//                        thumbShape:
+//                            RoundSliderThumbShape(enabledThumbRadius: 12.0),
+//                        overlayColor: Colors.purple.withAlpha(32),
+//                        overlayShape:
+//                            RoundSliderOverlayShape(overlayRadius: 14.0),
+//                      ),
+//                      child: Slider(
+//                          value: initialSliderValue,
+//                          min: 0,
+//                          max: 100,
+//                          onChanged: (value) {
+//                            setState(() {
+//                              initialSliderValue = value;
+//                            });
+//                          }),
+//                    ),
+//                    Slider(
+//                      value: initialSliderValue,
+//                      min: 0,
+//                      max: 100,
+//                      activeColor: Colors.red,
+//                      inactiveColor: Colors.grey,
+//                      label: "$initialSliderValue",
+//                      onChanged: (newValue) {
+//                        setState(() {
+//                          initialSliderValue = newValue;
+//                        });
+//                      },
+//                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -265,5 +310,139 @@ class _FilterScreenState extends State<FilterScreen> {
           .add(categoryButton(buttonTitle: buttonTitles[i - 1], index: i));
     });
     return categoryButtons;
+  }
+}
+
+class RetroSliderThumbShape extends SliderComponentShape {
+  final double thumbRadius;
+
+  const RetroSliderThumbShape({
+    this.thumbRadius = 6.0,
+  });
+
+  @override
+  Size getPreferredSize(bool isEnabled, bool isDiscrete) {
+    return Size.fromRadius(thumbRadius);
+  }
+
+  @override
+  void paint(
+    PaintingContext context,
+    Offset center, {
+    Animation<double> activationAnimation,
+    Animation<double> enableAnimation,
+    bool isDiscrete,
+    TextPainter labelPainter,
+    RenderBox parentBox,
+    SliderThemeData sliderTheme,
+    TextDirection textDirection,
+    double value,
+  }) {
+    final Canvas canvas = context.canvas;
+
+    final rect = Rect.fromCircle(center: center, radius: thumbRadius);
+
+    final rrect = RRect.fromRectAndRadius(
+      Rect.fromPoints(
+        Offset(rect.left - 1, rect.top),
+        Offset(rect.right + 1, rect.bottom),
+      ),
+      Radius.circular(thumbRadius - 2),
+    );
+
+    final fillPaint = Paint()
+      ..color = sliderTheme.activeTrackColor
+      ..style = PaintingStyle.fill;
+
+    final borderPaint = Paint()
+      ..color = Colors.grey
+      ..strokeWidth = 1.5
+      ..style = PaintingStyle.stroke;
+
+    canvas.drawRRect(rrect, fillPaint);
+    canvas.drawRRect(rrect, borderPaint);
+  }
+}
+
+class RetroSliderTrackShape extends SliderTrackShape {
+  @override
+  Rect getPreferredRect({
+    RenderBox parentBox,
+    Offset offset = Offset.zero,
+    SliderThemeData sliderTheme,
+    bool isEnabled,
+    bool isDiscrete,
+  }) {
+    final double thumbWidth =
+        sliderTheme.thumbShape.getPreferredSize(true, isDiscrete).width;
+    final double trackHeight = sliderTheme.trackHeight;
+    assert(thumbWidth >= 0);
+    assert(trackHeight >= 0);
+    assert(parentBox.size.width >= thumbWidth);
+    assert(parentBox.size.height >= trackHeight);
+
+    final double trackLeft = offset.dx + thumbWidth / 2;
+    final double trackTop =
+        offset.dy + (parentBox.size.height - trackHeight) / 2;
+    final double trackWidth = parentBox.size.width - thumbWidth;
+    return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
+  }
+
+  @override
+  void paint(
+    PaintingContext context,
+    Offset offset, {
+    RenderBox parentBox,
+    SliderThemeData sliderTheme,
+    Animation<double> enableAnimation,
+    TextDirection textDirection,
+    Offset thumbCenter,
+    bool isDiscrete,
+    bool isEnabled,
+  }) {
+    if (sliderTheme.trackHeight == 0) {
+      return;
+    }
+
+    final Rect trackRect = getPreferredRect(
+      parentBox: parentBox,
+      offset: offset,
+      sliderTheme: sliderTheme,
+      isEnabled: isEnabled,
+      isDiscrete: isDiscrete,
+    );
+
+    final Paint fillPaint = Paint()
+//      ..color = sliderTheme.activeTrackColor
+      ..style = PaintingStyle.stroke;
+
+    final Paint borderPaint = Paint()
+      ..color = Colors.black
+      ..strokeWidth = 0.1
+      ..style = PaintingStyle.stroke;
+
+    final pathSegment = Path()
+      ..moveTo(trackRect.left, trackRect.top)
+      ..lineTo(trackRect.right, trackRect.top)
+      ..arcTo(
+          Rect.fromPoints(
+            Offset(trackRect.right + 7, trackRect.top),
+            Offset(trackRect.right - 7, trackRect.bottom),
+          ),
+          -pi / 2,
+          pi,
+          false)
+      ..lineTo(trackRect.left, trackRect.bottom)
+      ..arcTo(
+          Rect.fromPoints(
+            Offset(trackRect.left + 7, trackRect.top),
+            Offset(trackRect.left - 7, trackRect.bottom),
+          ),
+          -pi * 3 / 2,
+          pi,
+          false);
+
+    context.canvas.drawPath(pathSegment, fillPaint);
+    context.canvas.drawPath(pathSegment, borderPaint);
   }
 }
