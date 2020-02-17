@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/screens/filter_screen.dart';
+import 'package:potbelly/screens/search_results.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/category_card.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/heading_row.dart';
 import 'package:potbelly/widgets/search_input_field.dart';
 
+class SearchValue {
+  final String value;
+
+  SearchValue(this.value);
+}
+
 class HomeScreen extends StatelessWidget {
   static const String ROUTE_NAME = StringConst.HOME_ROUTE;
   static const int TAB_NO = 0;
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +29,7 @@ class HomeScreen extends StatelessWidget {
             children: <Widget>[
               FoodyBiteSearchInputField(
                 ImagePath.searchIcon,
+                controller: controller,
                 textFormFieldStyle:
                     Styles.customNormalTextStyle(color: AppColors.accentText),
                 hintText: StringConst.HINT_TEXT_HOME_SEARCH_BAR,
@@ -27,6 +37,15 @@ class HomeScreen extends StatelessWidget {
                     Styles.customNormalTextStyle(color: AppColors.accentText),
                 suffixIconImagePath: ImagePath.settingsIcon,
                 borderWidth: 0.0,
+                onTapOfLeadingIcon: () => Navigator.pushNamed(
+                  context,
+                  SearchResultsScreen.ROUTE_NAME,
+                  arguments: SearchValue(
+                    controller.text,
+                  ),
+                ),
+                onTapOfSuffixIcon: () =>
+                    Navigator.pushNamed(context, FilterScreen.ROUTE_NAME),
                 borderStyle: BorderStyle.solid,
               ),
               SizedBox(height: 16.0),

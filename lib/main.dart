@@ -3,6 +3,7 @@ import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/screens/profile_screen.dart';
 import 'package:potbelly/screens/restaurant_details_screen.dart';
 import 'package:potbelly/screens/root.dart';
+import 'package:potbelly/screens/search_results.dart';
 import 'package:potbelly/screens/trending_restaurant_screen.dart';
 import 'package:potbelly/theme.dart';
 
@@ -33,7 +34,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: kLightFoodyBiteTheme,
-      home: FilterScreen(), //Flter1Widget(),
+      home: Root(), //Flter1Widget(),
       routes: {
         LoginScreen.ROUTE_NAME: (context) => LoginScreen(),
         ForgotPasswordScreen.ROUTE_NAME: (context) => ForgotPasswordScreen(),
@@ -48,6 +49,7 @@ class App extends StatelessWidget {
         ProfileScreen.ROUTE_NAME: (context) => ProfileScreen(),
 //        Flter1Widget.ROUTE_NAME: (context) => Flter1Widget(),
         FilterScreen.ROUTE_NAME: (context) => FilterScreen(),
+        SearchResultsScreen.ROUTE_NAME: (context) => SearchResultsScreen(),
       },
     );
   }

@@ -3,9 +3,12 @@ import 'package:potbelly/values/values.dart';
 
 class FoodyBiteSearchInputField extends StatelessWidget {
 
+  final TextEditingController controller;
   final TextStyle textFormFieldStyle;
   final TextStyle hintTextStyle;
   final BorderStyle borderStyle;
+  final GestureTapCallback onTapOfSuffixIcon;
+  final GestureTapCallback onTapOfLeadingIcon;
   final double borderRadius;
   final double borderWidth;
   final double contentPaddingHorizontal;
@@ -22,9 +25,12 @@ class FoodyBiteSearchInputField extends StatelessWidget {
 
   FoodyBiteSearchInputField(
       this.prefixIconImagePath, {
+        this.controller,
         this.textFormFieldStyle =  Styles.normalTextStyle,
         this.hintTextStyle = Styles.normalTextStyle,
         this.borderStyle = BorderStyle.none,
+        this.onTapOfSuffixIcon,
+        this.onTapOfLeadingIcon,
         this.borderRadius = Sizes.BORDER_RADIUS_12,
         this.borderWidth = Sizes.BORDER_WIDTH_0,
         this.contentPaddingHorizontal = Sizes.PADDING_0,
@@ -43,6 +49,7 @@ class FoodyBiteSearchInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: TextFormField(
+        controller: controller,
         style: textFormFieldStyle,
         decoration: InputDecoration(
           enabledBorder:  OutlineInputBorder(
@@ -59,13 +66,19 @@ class FoodyBiteSearchInputField extends StatelessWidget {
               style: borderStyle,
             ),
           ),
-          prefixIcon: ImageIcon(
-            AssetImage(prefixIconImagePath),
-            color: prefixIconColor,
+          prefixIcon: InkWell(
+            onTap: onTapOfLeadingIcon,
+            child: ImageIcon(
+              AssetImage(prefixIconImagePath),
+              color: prefixIconColor,
+            ),
           ),
-          suffixIcon: ImageIcon(
-            AssetImage(suffixIconImagePath),
-            color: suffixIconColor,
+          suffixIcon: InkWell(
+            onTap: onTapOfSuffixIcon,
+            child: ImageIcon(
+              AssetImage(suffixIconImagePath),
+              color: suffixIconColor,
+            ),
           ),
           contentPadding: EdgeInsets.symmetric(
             horizontal: contentPaddingHorizontal,
