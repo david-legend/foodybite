@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/screens/filter_screen.dart';
 import 'package:potbelly/screens/search_results.dart';
+import 'package:potbelly/screens/trending_restaurant_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/category_card.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
@@ -51,7 +52,10 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 16.0),
               HeadingRow(
                   title: StringConst.TRENDING_RESTAURANTS,
-                  number: StringConst.SEE_ALL_45),
+                  number: StringConst.SEE_ALL_45,
+                onTapOfNumber: () =>
+                    Navigator.pushNamed(context, TrendingRestaurantsScreen.ROUTE_NAME),
+              ),
               SizedBox(height: 16.0),
               Container(
                 height: 280,

@@ -17,14 +17,30 @@ import 'screens/register_screen.dart';
 import 'screens/set_location_screen.dart';
 import 'screens/filter_screen.dart';
 
-//TODO::  onPress of settings opens filter screen
-//TODO::  clean up filter and profile screen
-//TODO::  search button in search field screen
-//TODO::  see all on trending restaurants opens trending restaurants screen
+
+
+//Home Details Screen
 //TODO::  onPress of card open detail screen
+
+//Category Screen
 //TODO::  see all on categories opens category_list screen
+
+//Category Detail Screen
 //TODO::  onPress of category opens category screen
+
+//Find Friends
 //TODO::  see all on friends opens find friends screen
+
+//Trending Restaurants Screen
+//TODO::  Add better close_image on search screen
+//TODO::  see all on trending restaurants opens trending restaurants screen
+
+//Profile Screen
+//TODO::  clean up profile screen in terms (use of constants and paddings)
+
+//Filter Screen
+//TODO::  Fix padding issues on filter screen(category buttons ->pointed out by emma)
+//TODO::  clean up filter in terms (use of constants and paddings)
 
 void main() => runApp(App());
 
