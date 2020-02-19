@@ -45,6 +45,7 @@ class Styles {
     fontSize: Sizes.TEXT_SIZE_14,
   );
 
+
   static TextStyle customNormalTextStyle({
     Color color = AppColors.secondaryText,
     String fontFamily = StringConst.FONT_FAMILY,

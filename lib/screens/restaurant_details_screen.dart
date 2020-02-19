@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/screens/review_rating_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/card_tags.dart';
 import 'package:potbelly/widgets/category_card.dart';
 import 'package:potbelly/widgets/heading_row.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
+import 'package:potbelly/widgets/ratings_widget.dart';
 
 import 'home_screen.dart';
 
@@ -18,6 +20,12 @@ class RestaurantDetailsScreen extends StatelessWidget {
   TextStyle openingTimeTextStyle = Styles.customNormalTextStyle(
     color: Colors.red,
     fontSize: Sizes.TEXT_SIZE_14,
+  );
+
+  TextStyle subHeadingTextStyle = Styles.customTitleTextStyle(
+    color: AppColors.headingText,
+    fontWeight: FontWeight.w600,
+    fontSize: Sizes.TEXT_SIZE_18,
   );
 
   @override
@@ -112,10 +120,10 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Spacer(flex: 1),
-                                  ratingsWidget(args.rating)
+                                  RatingsWidget(args.rating)
                                 ],
                               ),
-                              SizedBox(height: 8.0),
+                              SizedBox(height: 16.0),
                               Text(
                                 args.restaurantAddress,
                                 style: addressTextStyle,
@@ -138,7 +146,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                             title: StringConst.MENU_AND_PHOTOS,
                             number: StringConst.SEE_ALL_32,
                           ),
-                          SizedBox(height: 8.0),
+                          SizedBox(height: 16.0),
                           Container(
                             height: 120,
                             width: MediaQuery.of(context).size.width,
@@ -164,8 +172,9 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.REVIEWS_AND_RATINGS,
                             number: StringConst.SEE_ALL_32,
+                            onTapOfNumber: () => Navigator.pushNamed(context, ReviewRatingScreen.ROUTE_NAME),
                           ),
-                          SizedBox(height: 8.0),
+                          SizedBox(height: 16.0),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: createUserListTiles(numberOfUsers: 5),
@@ -193,33 +202,6 @@ class RestaurantDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget ratingsWidget(String rating) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
-      decoration: BoxDecoration(
-        color: AppColors.kFoodyBiteSkyBlue,
-        borderRadius: BorderRadius.all(Radius.circular(8)),
-      ),
-      child: Row(
-        children: <Widget>[
-          Image.asset(
-            ImagePath.starIcon,
-            height: Sizes.WIDTH_14,
-            width: Sizes.WIDTH_14,
-          ),
-          SizedBox(width: Sizes.WIDTH_4),
-          Text(
-            rating,
-            style: Styles.customTitleTextStyle(
-              color: AppColors.headingText,
-              fontWeight: FontWeight.w600,
-              fontSize: Sizes.TEXT_SIZE_14,
-            ),
-          )
-        ],
-      ),
-    );
-  }
 
   List<Widget> createUserListTiles({@required numberOfUsers}) {
     List<Widget> userListTiles = [];
@@ -245,11 +227,11 @@ class RestaurantDetailsScreen extends StatelessWidget {
       "Lorem Ipsum baga fada",
     ];
     List<String> ratings = [
-      "4",
-      "3.5",
-      "4.7",
-      "4.9",
+      "4.0",
       "3.0",
+      "5.0",
+      "2.0",
+      "4.0",
     ];
 
     List<int> list = List<int>.generate(numberOfUsers, (i) => i + 1);
@@ -260,11 +242,14 @@ class RestaurantDetailsScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(userNames[i - 1]),
-            ratingsWidget(ratings[i - 1]),
+            Text(userNames[i - 1], style: subHeadingTextStyle,),
+            RatingsWidget(ratings[i - 1]),
           ],
         ),
-        subtitle: Text(description[i - 1]),
+        contentPadding: EdgeInsets.symmetric(horizontal: 0),
+        subtitle: Text(description[i - 1],
+        style: addressTextStyle,)
+        ,
       ));
     });
     return userListTiles;

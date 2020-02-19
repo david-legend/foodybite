@@ -14,6 +14,7 @@ import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/notification_screen.dart';
 import 'screens/register_screen.dart';
+import 'screens/review_rating_screen.dart';
 import 'screens/set_location_screen.dart';
 import 'screens/filter_screen.dart';
 
@@ -66,6 +67,7 @@ class App extends StatelessWidget {
 //        Flter1Widget.ROUTE_NAME: (context) => Flter1Widget(),
         FilterScreen.ROUTE_NAME: (context) => FilterScreen(),
         SearchResultsScreen.ROUTE_NAME: (context) => SearchResultsScreen(),
+        ReviewRatingScreen.ROUTE_NAME: (context) => ReviewRatingScreen(),
       },
     );
   }

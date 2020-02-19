@@ -26,6 +26,7 @@ class TrendingRestaurantsScreen extends StatelessWidget {
             color: AppColors.headingText,
           ),
         ),
+        centerTitle: true,
         title: Text(
           'Trending Restaurant',
           style: Styles.customTitleTextStyle(
