@@ -3,15 +3,30 @@ import 'package:potbelly/screens/filter_screen.dart';
 import 'package:potbelly/screens/search_results.dart';
 import 'package:potbelly/screens/trending_restaurant_screen.dart';
 import 'package:potbelly/values/values.dart';
+import 'package:potbelly/values/data.dart';
 import 'package:potbelly/widgets/category_card.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/heading_row.dart';
 import 'package:potbelly/widgets/search_input_field.dart';
 
+import 'restaurant_details_screen.dart';
+
 class SearchValue {
   final String value;
 
   SearchValue(this.value);
+}
+
+class RestaurantDetails {
+  final String imagePath;
+  final String restaurantName;
+  final String restaurantAddress;
+
+  RestaurantDetails({
+    @required this.imagePath,
+    @required this.restaurantName,
+    @required this.restaurantAddress,
+  });
 }
 
 class HomeScreen extends StatelessWidget {
@@ -51,58 +66,38 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 16.0),
               HeadingRow(
-                  title: StringConst.TRENDING_RESTAURANTS,
-                  number: StringConst.SEE_ALL_45,
-                onTapOfNumber: () =>
-                    Navigator.pushNamed(context, TrendingRestaurantsScreen.ROUTE_NAME),
+                title: StringConst.TRENDING_RESTAURANTS,
+                number: StringConst.SEE_ALL_45,
+                onTapOfNumber: () => Navigator.pushNamed(
+                    context, TrendingRestaurantsScreen.ROUTE_NAME),
               ),
               SizedBox(height: 16.0),
               Container(
                 height: 280,
                 width: MediaQuery.of(context).size.width,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    FoodyBiteCard(
-                      imagePath: ImagePath.breakfastInBed,
-                      status: StringConst.STATUS_OPEN,
-                      cardTitle: "Happy Bones",
-                      category: StringConst.ITALIAN,
-                      distance: "12 km",
-                      address: "394 Broome St, New York, NY 10013, USA",
-                    ),
-                    SizedBox(width: 8.0),
-                    FoodyBiteCard(
-                      imagePath: ImagePath.dinnerIsServed,
-                      status: StringConst.STATUS_OPEN,
-                      rating: "4.8",
-                      cardTitle: "Pappas Pizza",
-                      category: StringConst.CHINESE,
-                      distance: "2 km",
-                      address: "917 Zoom St, California, CA 20093, USA",
-                    ),
-                    SizedBox(width: 8.0),
-                    FoodyBiteCard(
-                      imagePath: ImagePath.breakfastInBed,
-                      status: StringConst.STATUS_CLOSE,
-                      rating: "3.7",
-                      cardTitle: "Shantell's",
-                      category: StringConst.ITALIAN,
-                      distance: "4 km",
-                      address: "34 Devil St, New York, NY 11013, USA",
-                    ),
-                    SizedBox(width: 8.0),
-                    FoodyBiteCard(
-                      imagePath: ImagePath.dinnerIsServed,
-                      status: StringConst.STATUS_CLOSE,
-                      rating: "2.3",
-                      cardTitle: "Dragon Heart",
-                      category: StringConst.CHINESE,
-                      distance: "5 km",
-                      address: "417 Doom St, California, CA 90013, USA",
-                    ),
-                  ],
-                ),
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 4,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: EdgeInsets.only(right: 4.0),
+                        child: FoodyBiteCard(
+                          onTap: () => Navigator.pushNamed(
+                              context, RestaurantDetailsScreen.ROUTE_NAME,
+                              arguments: RestaurantDetails(
+                                  imagePath: imagePaths[index],
+                                  restaurantName: restaurantNames[index],
+                                  restaurantAddress: addresses[index])),
+                          imagePath: imagePaths[index],
+                          status: status[index],
+                          cardTitle: restaurantNames[index],
+                          rating: ratings[index],
+                          category: category[index],
+                          distance: distance[index],
+                          address: addresses[index],
+                        ),
+                      );
+                    }),
               ),
               SizedBox(height: 16.0),
               HeadingRow(
@@ -110,45 +105,19 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 16.0),
               Container(
                 height: 100,
-                child: ListView(
+                child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    FoodyBiteCategoryCard(
-                      imagePath: ImagePath.italian,
-                      decoration: Decorations.italianDecoration,
-                      category: StringConst.ITALIAN,
-                    ),
-                    SizedBox(width: 15.0),
-                    FoodyBiteCategoryCard(
-                      imagePath: ImagePath.chinese,
-                      decoration: Decorations.chineseDecoration,
-                      category: StringConst.CHINESE,
-                    ),
-                    SizedBox(width: 15.0),
-                    FoodyBiteCategoryCard(
-                      imagePath: ImagePath.mexican,
-                      decoration: Decorations.mexicanDecoration,
-                      category: StringConst.MEXICAN,
-                    ),
-                    SizedBox(width: 15.0),
-                    FoodyBiteCategoryCard(
-                      imagePath: ImagePath.italian,
-                      decoration: Decorations.italianDecoration,
-                      category: StringConst.ITALIAN,
-                    ),
-                    SizedBox(width: 15.0),
-                    FoodyBiteCategoryCard(
-                      imagePath: ImagePath.chinese,
-                      decoration: Decorations.chineseDecoration,
-                      category: StringConst.CHINESE,
-                    ),
-                    SizedBox(width: 15.0),
-                    FoodyBiteCategoryCard(
-                      imagePath: ImagePath.mexican,
-                      decoration: Decorations.mexicanDecoration,
-                      category: StringConst.MEXICAN,
-                    ),
-                  ],
+                  itemCount: 6,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.only(right: 8.0),
+                      child: FoodyBiteCategoryCard(
+                        imagePath: categoryImagePaths[index],
+                        decoration: decorations[index],
+                        category: category[index],
+                      ),
+                    );
+                  },
                 ),
               ),
               SizedBox(height: 16.0),
@@ -157,14 +126,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 16.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  CircleAvatar(backgroundImage: AssetImage(ImagePath.profile1)),
-                  CircleAvatar(backgroundImage: AssetImage(ImagePath.profile2)),
-                  CircleAvatar(backgroundImage: AssetImage(ImagePath.profile3)),
-                  CircleAvatar(backgroundImage: AssetImage(ImagePath.profile4)),
-                  CircleAvatar(backgroundImage: AssetImage(ImagePath.profile1)),
-                  CircleAvatar(backgroundImage: AssetImage(ImagePath.profile2)),
-                ],
+                children: createUserProfilePhotos(numberOfProfilePhotos: 6),
               ),
               SizedBox(height: 16.0),
             ],
@@ -172,5 +134,26 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  List<Widget> createUserProfilePhotos({@required numberOfProfilePhotos}) {
+    List<Widget> profilePhotos = [];
+    List<String> imagePaths = [
+      ImagePath.profile1,
+      ImagePath.profile2,
+      ImagePath.profile3,
+      ImagePath.profile4,
+      ImagePath.profile1,
+      ImagePath.profile2,
+    ];
+
+    List<int> list = List<int>.generate(numberOfProfilePhotos, (i) => i + 1);
+
+    list.forEach((i) {
+      print(i);
+      profilePhotos
+          .add(CircleAvatar(backgroundImage: AssetImage(imagePaths[i-1])));
+    });
+    return profilePhotos;
   }
 }

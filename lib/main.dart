@@ -59,7 +59,7 @@ class App extends StatelessWidget {
         HomeScreen.ROUTE_NAME: (context) => HomeScreen(),
         Root.ROUTE_NAME: (context) => Root(),
         TrendingRestaurantsScreen.ROUTE_NAME: (context) => TrendingRestaurantsScreen(),
-        RestaurantDetailScreen.ROUTE_NAME: (context) => RestaurantDetailScreen(),
+        RestaurantDetailsScreen.ROUTE_NAME: (context) => RestaurantDetailsScreen(),
         BookmarksScreen.ROUTE_NAME: (context) => BookmarksScreen(),
         NotificationsScreen.ROUTE_NAME: (context) => NotificationsScreen(),
         ProfileScreen.ROUTE_NAME: (context) => ProfileScreen(),
