@@ -28,7 +28,7 @@ List<String> category = [
   StringConst.MEXICAN,
   StringConst.ITALIAN,
 ];
-List<String> distance = ["12", "2", "4", "5"];
+List<String> distance = ["12 km", "2 km", "4 km", "5 km"];
 List<String> addresses = [
   "417 Doom St, California, CA 90013, USA",
   "34 Devil St, New York, NY 11013, USA",

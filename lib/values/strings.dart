@@ -29,6 +29,9 @@ class StringConst {
   static const String TRENDING_RESTAURANTS = "Trending Restaurants";
   static const String CATEGORY = "Category";
   static const String FRIENDS = "Friends";
+  static const String MENU_AND_PHOTOS = "Menu & Photos";
+  static const String REVIEWS_AND_RATINGS = "Reviews & Ratings";
+  static const String SEE_ALL_32 = "See all (32)";
   static const String SEE_ALL_45 = "See all (45)";
   static const String SEE_ALL_9 = "See all (9)";
   static const String SEE_ALL_56 = "See all (56)";

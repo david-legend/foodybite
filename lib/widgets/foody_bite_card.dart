@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
 
+import 'card_tags.dart';
+
 class FoodyBiteCard extends StatelessWidget {
   final String status;
   final String rating;
@@ -77,7 +79,7 @@ class FoodyBiteCard extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(width: Sizes.WIDTH_5),
-                              cardTags(
+                              CardTags(
                                 title: category,
                                 decoration: BoxDecoration(
                                   gradient: Gradients.secondaryGradient,
@@ -89,7 +91,7 @@ class FoodyBiteCard extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(width: 5.0),
-                              cardTags(
+                              CardTags(
                                 title: distance,
                                 decoration: BoxDecoration(
                                   color: Color.fromARGB(255, 132, 141, 255),
@@ -238,23 +240,23 @@ class FoodyBiteCard extends StatelessWidget {
     );
   }
 
-  Widget cardTags({String title, BoxDecoration decoration}) {
-    return Opacity(
-      opacity: 0.8,
-      child: Container(
-        width: 40,
-        height: 14,
-        decoration: decoration,
-        child: Center(
-          child: Text(
-            title,
-            textAlign: TextAlign.center,
-            style: Styles.customNormalTextStyle(
-              fontSize: Sizes.TEXT_SIZE_10,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+//  Widget cardTags({String title, BoxDecoration decoration}) {
+//    return Opacity(
+//      opacity: 0.8,
+//      child: Container(
+//        width: 40,
+//        height: 14,
+//        decoration: decoration,
+//        child: Center(
+//          child: Text(
+//            title,
+//            textAlign: TextAlign.center,
+//            style: Styles.customNormalTextStyle(
+//              fontSize: Sizes.TEXT_SIZE_10,
+//            ),
+//          ),
+//        ),
+//      ),
+//    );
+//  }
 }

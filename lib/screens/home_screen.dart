@@ -21,11 +21,17 @@ class RestaurantDetails {
   final String imagePath;
   final String restaurantName;
   final String restaurantAddress;
+  final String category;
+  final String distance;
+  final String rating;
 
   RestaurantDetails({
     @required this.imagePath,
     @required this.restaurantName,
     @required this.restaurantAddress,
+    @required this.category,
+    @required this.distance,
+    @required this.rating,
   });
 }
 
@@ -83,11 +89,17 @@ class HomeScreen extends StatelessWidget {
                         margin: EdgeInsets.only(right: 4.0),
                         child: FoodyBiteCard(
                           onTap: () => Navigator.pushNamed(
-                              context, RestaurantDetailsScreen.ROUTE_NAME,
-                              arguments: RestaurantDetails(
-                                  imagePath: imagePaths[index],
-                                  restaurantName: restaurantNames[index],
-                                  restaurantAddress: addresses[index])),
+                            context,
+                            RestaurantDetailsScreen.ROUTE_NAME,
+                            arguments: RestaurantDetails(
+                              imagePath: imagePaths[index],
+                              restaurantName: restaurantNames[index],
+                              restaurantAddress: addresses[index],
+                              rating: ratings[index],
+                              category: category[index],
+                              distance: distance[index],
+                            ),
+                          ),
                           imagePath: imagePaths[index],
                           status: status[index],
                           cardTitle: restaurantNames[index],
@@ -150,9 +162,8 @@ class HomeScreen extends StatelessWidget {
     List<int> list = List<int>.generate(numberOfProfilePhotos, (i) => i + 1);
 
     list.forEach((i) {
-      print(i);
       profilePhotos
-          .add(CircleAvatar(backgroundImage: AssetImage(imagePaths[i-1])));
+          .add(CircleAvatar(backgroundImage: AssetImage(imagePaths[i - 1])));
     });
     return profilePhotos;
   }

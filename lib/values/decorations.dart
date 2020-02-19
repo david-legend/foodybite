@@ -53,7 +53,7 @@ class Decorations {
     boxShadow: [
       Shadows.secondaryShadow,
     ],
-    borderRadius: BorderRadius.all(Radius.circular(7.33333)),
+    borderRadius: BorderRadius.all(Radius.circular(8)),
   );
 
   static const BoxDecoration chineseDecoration = BoxDecoration(
