@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/screens/add_ratings_screen.dart';
 import 'package:potbelly/screens/review_rating_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/card_tags.dart';
@@ -187,13 +188,13 @@ class RestaurantDetailsScreen extends StatelessWidget {
               ),
               PotbellyButton(
                 'Rate Your Experience ',
+                onTap: () => Navigator.pushNamed(context, AddRatingsScreen.ROUTE_NAME),
                 buttonHeight: 65,
                 buttonWidth: MediaQuery.of(context).size.width,
                 decoration: Decorations.customHalfCurvedButtonDecoration(
                   topleftRadius: Sizes.BORDER_RADIUS_24,
                   topRightRadius: Sizes.BORDER_RADIUS_24,
                 ),
-//                buttonTextStyle: buttonTextStyle,
               ),
             ],
           ),

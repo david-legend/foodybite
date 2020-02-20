@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/screens/add_ratings_screen.dart';
 import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/screens/profile_screen.dart';
 import 'package:potbelly/screens/restaurant_details_screen.dart';
@@ -68,6 +69,7 @@ class App extends StatelessWidget {
         FilterScreen.ROUTE_NAME: (context) => FilterScreen(),
         SearchResultsScreen.ROUTE_NAME: (context) => SearchResultsScreen(),
         ReviewRatingScreen.ROUTE_NAME: (context) => ReviewRatingScreen(),
+        AddRatingsScreen.ROUTE_NAME: (context) => AddRatingsScreen(),
       },
     );
   }
