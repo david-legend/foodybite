@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/screens/add_ratings_screen.dart';
 import 'package:potbelly/screens/home_screen.dart';
+import 'package:potbelly/screens/menu_photos_screen.dart';
 import 'package:potbelly/screens/profile_screen.dart';
 import 'package:potbelly/screens/restaurant_details_screen.dart';
 import 'package:potbelly/screens/root.dart';
@@ -20,6 +21,9 @@ import 'screens/set_location_screen.dart';
 import 'screens/filter_screen.dart';
 
 
+//Restaurant Details Screen
+//TODO::  vertical divider and directions icon on header screen
+//TODO::  see all of menu and photos
 
 //Home Details Screen
 //TODO::  onPress of card open detail screen
@@ -70,6 +74,7 @@ class App extends StatelessWidget {
         SearchResultsScreen.ROUTE_NAME: (context) => SearchResultsScreen(),
         ReviewRatingScreen.ROUTE_NAME: (context) => ReviewRatingScreen(),
         AddRatingsScreen.ROUTE_NAME: (context) => AddRatingsScreen(),
+        MenuPhotosScreen.ROUTE_NAME: (context) => MenuPhotosScreen(),
       },
     );
   }

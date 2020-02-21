@@ -53,3 +53,13 @@ List<String> categoryImagePaths = [
   ImagePath.chinese,
   ImagePath.mexican,
 ];
+
+List<String> menuPhotosImagePaths = [
+  ImagePath.doughnuts,
+  ImagePath.cake_slice,
+  ImagePath.avocado,
+  ImagePath.black_berries,
+  ImagePath.strawberries,
+  ImagePath.cake_small,
+  ImagePath.cake_big,
+];

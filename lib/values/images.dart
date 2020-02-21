@@ -6,6 +6,8 @@ class ImagePath {
 
   //Icons
   static const String personIcon = "$imageDir/person_icon.png";
+  static const String callIcon = "$imageDir/call_icon.png";
+  static const String directionIcon = "$imageDir/direction_icon.png";
   static const String personGreyIcon = "$imageDir/person_grey_icon.png";
   static const String personIconMedium = "$imageDir/person_icon_md.png";
   static const String activePersonIcon = "$imageDir/person_icon_selected.png";
@@ -35,6 +37,15 @@ class ImagePath {
   static const String breakfastInBed = "$imageDir/breakfast_in_bed.png";
   static const String dinnerIsServed = "$imageDir/dinner_served.png";
   static const String pasta = "$imageDir/pasta.png";
+  static const String cake_big = "$imageDir/cake_big.png";
+
+  //small quality sized pics
+  static const String cake_small = "$imageDir/cake_small.png";
+  static const String cake_slice = "$imageDir/cake_slice.png";
+  static const String avocado = "$imageDir/avocado.png";
+  static const String black_berries = "$imageDir/black_berries.png";
+  static const String doughnuts = "$imageDir/doughnuts.png";
+  static const String strawberries = "$imageDir/strawberries.png";
 
 
   static const String friends1 = "$imageDir/friends_1.png";
