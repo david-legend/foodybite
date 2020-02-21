@@ -30,6 +30,7 @@ class StringConst {
   static const String CATEGORY = "Category";
   static const String FRIENDS = "Friends";
   static const String MENU_AND_PHOTOS = "Menu & Photos";
+  static const String PREVIEW = "Preview";
   static const String REVIEWS_AND_RATINGS = "Reviews & Ratings";
   static const String SEE_ALL_32 = "See all (32)";
   static const String SEE_ALL_45 = "See all (45)";
@@ -55,6 +56,7 @@ class StringConst {
   static const String SEARCH_RESULTS_ROUTE = "/searchResults";
   static const String BOOKMARKS_ROUTE = "/bookmarks";
   static const String NOTIFICATIONS_ROUTE = "/notifications";
+  static const String PREVIEW_MENU_PHOTOS_ROUTE = "/previewMenuPhotos";
   static const String PROFILE_ROUTE = "/profile";
   static const String RESTAURANT_DETAILS_ROUTE = "/restaurantDetail";
   static const String MENU_PHOTOS_ROUTE = "/menuPhotos";

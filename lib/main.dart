@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:potbelly/screens/add_ratings_screen.dart';
 import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/screens/menu_photos_screen.dart';
+import 'package:potbelly/screens/preview_menu_photos.dart';
 import 'package:potbelly/screens/profile_screen.dart';
 import 'package:potbelly/screens/restaurant_details_screen.dart';
 import 'package:potbelly/screens/root.dart';
@@ -75,6 +76,7 @@ class App extends StatelessWidget {
         ReviewRatingScreen.ROUTE_NAME: (context) => ReviewRatingScreen(),
         AddRatingsScreen.ROUTE_NAME: (context) => AddRatingsScreen(),
         MenuPhotosScreen.ROUTE_NAME: (context) => MenuPhotosScreen(),
+        PreviewMenuPhotosScreen.ROUTE_NAME: (context) => PreviewMenuPhotosScreen(),
       },
     );
   }

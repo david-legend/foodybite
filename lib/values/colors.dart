@@ -21,4 +21,6 @@ class AppColors {
 //  static const Color kFoodyBiteGoldRatingStar = Color(0xFFFFCC00);
   static const Color kFoodyBiteGreyRatingStar = Color(0xFFDFE4ED);
   static const Color kFoodyBiteSkyBlue = Color(0xFFEEF7FF);
+  static const Color kFoodyBiteDarkBackground = Color(0xFF25262E);
+  static const Color kFoodyBiteUnselectedSliderDot = Color(0xFF6A6A6A);
 }
