@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/routes/router.gr.dart';
+import 'package:potbelly/utils/navigation.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
 import 'package:potbelly/widgets/dark_overlay.dart';
@@ -43,9 +45,9 @@ class ForgotPasswordScreen extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
                         InkWell(
-                          onTap:() => Navigator.pop(context),
+                          onTap: () => Router.navigator.pop(),
                           child: Image.asset(
-                          ImagePath.arrowBackIcon,
+                            ImagePath.arrowBackIcon,
                             fit: BoxFit.none,
                           ),
                         ),
@@ -91,8 +93,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                       alignment: Alignment.topCenter,
                       child: PotbellyButton(
                         StringConst.SEND,
-                        onTap: () =>
-                            Navigator.pushNamed(context, StringConst.LOGIN_ROUTE),
+                        onTap: () => Router.navigator
+                            .pushReplacementNamed(Router.loginScreen),
                       ),
                     ),
                   ],

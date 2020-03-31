@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
@@ -90,8 +91,7 @@ class LoginScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.topRight,
                           child: InkWell(
-                            onTap: () => Navigator.pushNamed(
-                                context, StringConst.FORGOT_PASSWORD_ROUTE),
+                            onTap: () => Router.navigator.pushNamed(Router.forgotPasswordScreen),
                             child: Container(
                               margin: EdgeInsets.only(
                                   top: Sizes.MARGIN_16, right: Sizes.MARGIN_48),
@@ -111,16 +111,14 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     child: PotbellyButton(
                       StringConst.LOGIN,
-                      onTap: () =>
-                          Navigator.pushNamed(context, HomeScreen.ROUTE_NAME),
+                      onTap: () => Router.navigator.pushNamed(Router.rootScreen),
                     ),
                   ),
                   SizedBox(height: Sizes.HEIGHT_60),
                   Align(
                     alignment: Alignment.topCenter,
                     child: InkWell(
-                      onTap: () => Navigator.pushNamed(
-                          context, StringConst.REGISTER_ROUTE),
+                      onTap: () => Router.navigator.pushNamed(Router.registerScreen),
                       child: Container(
                         width: Sizes.WIDTH_150,
                         height: Sizes.HEIGHT_24,
@@ -153,4 +151,7 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+
+
+
 }

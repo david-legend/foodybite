@@ -1,26 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/screens/add_ratings_screen.dart';
-import 'package:potbelly/screens/categories_screen.dart';
-import 'package:potbelly/screens/home_screen.dart';
-import 'package:potbelly/screens/menu_photos_screen.dart';
-import 'package:potbelly/screens/preview_menu_photos.dart';
-import 'package:potbelly/screens/profile_screen.dart';
-import 'package:potbelly/screens/restaurant_details_screen.dart';
-import 'package:potbelly/screens/root.dart';
-import 'package:potbelly/screens/search_results.dart';
-import 'package:potbelly/screens/trending_restaurant_screen.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/theme.dart';
-
-import 'flter1_widget/flter1_widget.dart';
-import 'screens/bookmarks_screen.dart';
-import 'screens/forgot_password_screen.dart';
-import 'screens/login_screen.dart';
-import 'screens/home_screen.dart';
-import 'screens/notification_screen.dart';
-import 'screens/register_screen.dart';
-import 'screens/review_rating_screen.dart';
-import 'screens/set_location_screen.dart';
-import 'screens/filter_screen.dart';
 
 
 //Restaurant Details Screen
@@ -58,28 +38,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: buildLightTheme(context),
-      home: Root(), //Flter1Widget(),
-      routes: {
-        LoginScreen.ROUTE_NAME: (context) => LoginScreen(),
-        ForgotPasswordScreen.ROUTE_NAME: (context) => ForgotPasswordScreen(),
-        RegisterScreen.ROUTE_NAME: (context) => RegisterScreen(),
-        SetLocationScreen.ROUTE_NAME: (context) => SetLocationScreen(),
-        HomeScreen.ROUTE_NAME: (context) => HomeScreen(),
-        Root.ROUTE_NAME: (context) => Root(),
-        TrendingRestaurantsScreen.ROUTE_NAME: (context) => TrendingRestaurantsScreen(),
-        RestaurantDetailsScreen.ROUTE_NAME: (context) => RestaurantDetailsScreen(),
-        BookmarksScreen.ROUTE_NAME: (context) => BookmarksScreen(),
-        NotificationsScreen.ROUTE_NAME: (context) => NotificationsScreen(),
-        ProfileScreen.ROUTE_NAME: (context) => ProfileScreen(),
-//        Flter1Widget.ROUTE_NAME: (context) => Flter1Widget(),
-        FilterScreen.ROUTE_NAME: (context) => FilterScreen(),
-        SearchResultsScreen.ROUTE_NAME: (context) => SearchResultsScreen(),
-        ReviewRatingScreen.ROUTE_NAME: (context) => ReviewRatingScreen(),
-        AddRatingsScreen.ROUTE_NAME: (context) => AddRatingsScreen(),
-        MenuPhotosScreen.ROUTE_NAME: (context) => MenuPhotosScreen(),
-        PreviewMenuPhotosScreen.ROUTE_NAME: (context) => PreviewMenuPhotosScreen(),
-        CategoriesScreen.ROUTE_NAME: (context) => CategoriesScreen(),
-      },
+      initialRoute: Router.loginScreen,
+      onGenerateRoute: Router.onGenerateRoute,
+      navigatorKey: Router.navigator.key,
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 
 final List<String> images = [
@@ -52,7 +53,7 @@ class _PreviewMenuPhotosScreenState extends State<PreviewMenuPhotosScreen> {
         backgroundColor: AppColors.kFoodyBiteDarkBackground,
         elevation: 0.0,
         leading: InkWell(
-          onTap: () => Navigator.pop(context),
+          onTap: () => Router.navigator.pop(context),
           child: Image.asset(
             ImagePath.arrowBackIcon,
             color: AppColors.primaryColor,

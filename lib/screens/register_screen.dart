@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/screens/login_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
@@ -153,8 +154,7 @@ class RegisterScreen extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     child: PotbellyButton(
                       StringConst.REGISTER,
-                      onTap: () => Navigator.pushNamed(
-                          context, StringConst.SET_LOCATION_ROUTE),
+                      onTap: () => Router.navigator.pushNamed(Router.setLocationScreen),
                     ),
                   ),
                   SizedBox(height: Sizes.HEIGHT_40),
@@ -172,8 +172,7 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 16.0),
                           InkWell(
-                            onTap: () => Navigator.pushNamed(
-                                context, LoginScreen.ROUTE_NAME),
+                            onTap: () => Router.navigator.pushReplacementNamed(Router.loginScreen),
                             child: Text(
                               StringConst.LOGIN,
                               textAlign: TextAlign.left,
@@ -193,37 +192,8 @@ class RegisterScreen extends StatelessWidget {
       ),
     );
   }
+
+
 }
 
-// Widget build(BuildContext context) {
-//   return LayoutBuilder(
-//     builder: (BuildContext context, BoxConstraints viewportConstraints) {
-//       return SingleChildScrollView(
-//         child: ConstrainedBox(
-//           constraints: BoxConstraints(
-//             minHeight: viewportConstraints.maxHeight,
-//           ),
-//           child: IntrinsicHeight(
-//             child: Column(
-//               children: <Widget>[
-//                 Container(
-//                   // A fixed-height child.
-//                   color: const Color(0xff808000), // Yellow
-//                   height: 120.0,
-//                 ),
-//                 Expanded(
-//                   // A flexible child that will grow to fit the viewport but
-//                   // still be at least as big as necessary to fit its contents.
-//                   child: Container(
-//                     color: const Color(0xff800000), // Red
-//                     height: 120.0,
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       );
-//     },
-//   );
-// }
+

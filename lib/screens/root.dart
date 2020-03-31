@@ -6,14 +6,14 @@ import 'bookmarks_screen.dart';
 import 'home_screen.dart';
 import 'notification_screen.dart';
 
-class Root extends StatefulWidget {
+class RootScreen extends StatefulWidget {
   static const String ROUTE_NAME = StringConst.ROOT_ROUTE;
 
   @override
-  _RootState createState() => _RootState();
+  _RootScreenState createState() => _RootScreenState();
 }
 
-class _RootState extends State<Root> {
+class _RootScreenState extends State<RootScreen> {
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen;
   int currentTab;

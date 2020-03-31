@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
@@ -42,8 +43,7 @@ class SetLocationScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.topRight,
                       child: InkWell(
-                        onTap: () => Navigator.pushNamed(
-                            context, StringConst.HOME_ROUTE),
+                        onTap: () => Router.navigator.pushNamed(Router.rootScreen),
                         child: Container(
                           width: 80,
                           height: 40,
@@ -115,8 +115,7 @@ class SetLocationScreen extends StatelessWidget {
                       child: PotbellyButton(
                         StringConst.TURN_GPS,
                         buttonWidth: MediaQuery.of(context).size.width,
-                        onTap: () => Navigator.pushNamed(
-                            context, StringConst.HOME_ROUTE),
+                        onTap: () => Router.navigator.pushNamed(Router.rootScreen),
                       ),
                     ),
                     Spacer(),
@@ -129,4 +128,6 @@ class SetLocationScreen extends StatelessWidget {
       ),
     );
   }
+
+
 }

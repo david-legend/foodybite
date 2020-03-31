@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 
 import 'preview_menu_photos.dart';
@@ -21,7 +22,7 @@ class MenuPhotosScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         leading: InkWell(
-          onTap: () => Navigator.pop(context),
+          onTap: () => Router.navigator.pop(),
           child: Image.asset(
             ImagePath.arrowBackIcon,
             color: AppColors.headingText,
@@ -179,6 +180,6 @@ class MenuPhotosScreen extends StatelessWidget {
   }
 
   void navigateToPreviewPhotos(BuildContext context) {
-    Navigator.pushNamed(context, PreviewMenuPhotosScreen.ROUTE_NAME);
+    Router.navigator.pushNamed(Router.previewMenuPhotosScreen);
   }
 }

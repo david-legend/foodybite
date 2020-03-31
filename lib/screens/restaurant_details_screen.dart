@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:potbelly/routes/router.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/screens/add_ratings_screen.dart';
 import 'package:potbelly/screens/review_rating_screen.dart';
 import 'package:potbelly/values/data.dart';
@@ -17,6 +19,10 @@ import 'menu_photos_screen.dart';
 
 class RestaurantDetailsScreen extends StatelessWidget {
   static const String ROUTE_NAME = StringConst.RESTAURANT_DETAILS_ROUTE;
+
+  final RestaurantDetails restaurantDetails;
+
+  RestaurantDetailsScreen({@required this.restaurantDetails});
 
   TextStyle addressTextStyle = Styles.customNormalTextStyle(
     color: AppColors.accentText,
@@ -57,7 +63,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RestaurantDetails args = ModalRoute.of(context).settings.arguments;
+//    final RestaurantDetails args = ModalRoute.of(context).settings.arguments;
     var heightOfStack = MediaQuery.of(context).size.height / 2.8;
     var aPieceOfTheHeightOfStack = heightOfStack - heightOfStack / 3.5;
     return Scaffold(
@@ -73,7 +79,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                       children: <Widget>[
                         Positioned(
                           child: Image.asset(
-                            args.imagePath,
+                            restaurantDetails.imagePath,
                             width: MediaQuery.of(context).size.width,
                             height: heightOfStack,
                             fit: BoxFit.cover,
@@ -86,7 +92,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                             child: Row(
                               children: <Widget>[
                                 InkWell(
-                                  onTap: () => Navigator.pop(context),
+                                  onTap: () => Router.navigator.pop(),
                                   child: Image.asset(ImagePath.arrowBackIcon),
                                 ),
                                 Spacer(flex: 1),
@@ -185,7 +191,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                               Row(
                                 children: <Widget>[
                                   Text(
-                                    args.restaurantName,
+                                    restaurantDetails.restaurantName,
                                     textAlign: TextAlign.left,
                                     style: Styles.customTitleTextStyle(
                                       color: AppColors.headingText,
@@ -195,7 +201,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                   ),
                                   SizedBox(width: 4.0),
                                   CardTags(
-                                    title: args.category,
+                                    title: restaurantDetails.category,
                                     decoration: BoxDecoration(
                                       gradient: Gradients.secondaryGradient,
                                       boxShadow: [
@@ -207,7 +213,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                   ),
                                   SizedBox(width: 4.0),
                                   CardTags(
-                                    title: args.distance,
+                                    title: restaurantDetails.distance,
                                     decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 132, 141, 255),
                                       borderRadius: BorderRadius.all(
@@ -215,12 +221,12 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Spacer(flex: 1),
-                                  RatingsWidget(args.rating)
+                                  RatingsWidget(restaurantDetails.rating)
                                 ],
                               ),
                               SizedBox(height: 16.0),
                               Text(
-                                args.restaurantAddress,
+                                restaurantDetails.restaurantAddress,
                                 style: addressTextStyle,
                               ),
                               SizedBox(height: 8.0),
@@ -240,8 +246,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.MENU_AND_PHOTOS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () => Navigator.pushNamed(
-                                context, MenuPhotosScreen.ROUTE_NAME),
+                            onTapOfNumber: () => Router.navigator.pushNamed(Router.menuPhotosScreen),
                           ),
                           SizedBox(height: 16.0),
                           Container(
@@ -269,8 +274,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.REVIEWS_AND_RATINGS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () => Navigator.pushNamed(
-                                context, ReviewRatingScreen.ROUTE_NAME),
+                            onTapOfNumber: () => Router.navigator.pushNamed(Router.reviewRatingScreen),
                           ),
                           SizedBox(height: 16.0),
                           Column(
@@ -285,8 +289,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
               ),
               PotbellyButton(
                 'Rate Your Experience ',
-                onTap: () =>
-                    Navigator.pushNamed(context, AddRatingsScreen.ROUTE_NAME),
+                onTap: () => Router.navigator.pushNamed(Router.addRatingsScreen),
                 buttonHeight: 65,
                 buttonWidth: MediaQuery.of(context).size.width,
                 decoration: Decorations.customHalfCurvedButtonDecoration(
