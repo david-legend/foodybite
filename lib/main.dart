@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/screens/add_ratings_screen.dart';
+import 'package:potbelly/screens/categories_screen.dart';
 import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/screens/menu_photos_screen.dart';
 import 'package:potbelly/screens/preview_menu_photos.dart';
@@ -56,7 +57,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: kLightFoodyBiteTheme,
+      theme: buildLightTheme(context),
       home: Root(), //Flter1Widget(),
       routes: {
         LoginScreen.ROUTE_NAME: (context) => LoginScreen(),
@@ -77,6 +78,7 @@ class App extends StatelessWidget {
         AddRatingsScreen.ROUTE_NAME: (context) => AddRatingsScreen(),
         MenuPhotosScreen.ROUTE_NAME: (context) => MenuPhotosScreen(),
         PreviewMenuPhotosScreen.ROUTE_NAME: (context) => PreviewMenuPhotosScreen(),
+        CategoriesScreen.ROUTE_NAME: (context) => CategoriesScreen(),
       },
     );
   }

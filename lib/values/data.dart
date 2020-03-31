@@ -8,27 +8,34 @@ List<String> restaurantNames = [
   "Dragon Heart"
 ];
 List<String> ratings = ["4.5", "4.0", "4.0", "4.9"];
+
 List<String> imagePaths = [
   ImagePath.breakfastInBed,
   ImagePath.dinnerIsServed,
   ImagePath.breakfastInBed,
   ImagePath.dinnerIsServed
 ];
+
 List<String> status = [
   StringConst.STATUS_OPEN,
   StringConst.STATUS_OPEN,
   StringConst.STATUS_CLOSE,
   StringConst.STATUS_CLOSE
 ];
+
 List<String> category = [
   StringConst.ITALIAN,
   StringConst.CHINESE,
-  StringConst.ITALIAN,
-  StringConst.CHINESE,
   StringConst.MEXICAN,
-  StringConst.ITALIAN,
+  StringConst.THAI,
+  StringConst.ARABIAN,
+  StringConst.INDIAN,
+  StringConst.AMERICAN,
+  StringConst.KOREAN,
 ];
+
 List<String> distance = ["12 km", "2 km", "4 km", "5 km"];
+
 List<String> addresses = [
   "417 Doom St, California, CA 90013, USA",
   "34 Devil St, New York, NY 11013, USA",
@@ -36,13 +43,15 @@ List<String> addresses = [
   "394 Broome St, New York, NY 10013, USA"
 ];
 
-List<BoxDecoration> decorations = [
-  Decorations.italianDecoration,
-  Decorations.chineseDecoration,
-  Decorations.mexicanDecoration,
-  Decorations.italianDecoration,
-  Decorations.chineseDecoration,
-  Decorations.mexicanDecoration
+List<Gradient> gradients = [
+  Gradients.italianGradient,
+  Gradients.chineseGradient,
+  Gradients.mexicanGradient,
+  Gradients.thaiGradient,
+  Gradients.arabianGradient,
+  Gradients.indianGradient,
+  Gradients.americanGradient,
+  Gradients.koreanGradient,
 ];
 
 List<String> categoryImagePaths = [
@@ -50,8 +59,17 @@ List<String> categoryImagePaths = [
   ImagePath.chinese,
   ImagePath.mexican,
   ImagePath.italian,
-  ImagePath.chinese,
-  ImagePath.mexican,
+];
+
+List<String> categoryListImagePaths = [
+  ImagePath.italianCover,
+  ImagePath.chineseCover,
+  ImagePath.mexicanCover,
+  ImagePath.thaiCover,
+  ImagePath.arabianCover,
+  ImagePath.indianCover,
+  ImagePath.americanCover,
+  ImagePath.koreanCover,
 ];
 
 List<String> menuPhotosImagePaths = [

@@ -79,7 +79,7 @@ class ProfileScreen extends StatelessWidget {
                         color: Colors.grey[400],
                       ),
                       borderRadius: BorderRadius.all(
-                        Radius.circular(Sizes.BORDER_RADIUS_8),
+                        Radius.circular(Sizes.RADIUS_8),
                       ),
                     ),
                     buttonTextStyle: Styles.customNormalTextStyle(

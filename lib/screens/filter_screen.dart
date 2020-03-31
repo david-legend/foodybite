@@ -202,7 +202,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 buttonHeight: 65,
                 buttonWidth: (MediaQuery.of(context).size.width / 2) - 0.25,
                 decoration: Decorations.customHalfCurvedButtonDecoration(
-                  topleftRadius: Sizes.BORDER_RADIUS_24,
+                  topleftRadius: Sizes.RADIUS_24,
                 ),
                 buttonTextStyle: buttonTextStyle,
               ),
@@ -217,7 +217,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 buttonHeight: 65,
                 buttonWidth: (MediaQuery.of(context).size.width / 2) - 0.25,
                 decoration: Decorations.customHalfCurvedButtonDecoration(
-                  topRightRadius: Sizes.BORDER_RADIUS_24,
+                  topRightRadius: Sizes.RADIUS_24,
                 ),
                 buttonTextStyle: buttonTextStyle,
               ),
@@ -249,7 +249,7 @@ class _FilterScreenState extends State<FilterScreen> {
                     color: Colors.grey[400],
                   ),
                   borderRadius: BorderRadius.all(
-                    Radius.circular(Sizes.BORDER_RADIUS_8),
+                    Radius.circular(Sizes.RADIUS_8),
                   ),
                 ),
           buttonTextStyle: Styles.customNormalTextStyle(

@@ -9,6 +9,7 @@ import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/heading_row.dart';
 import 'package:potbelly/widgets/search_input_field.dart';
 
+import 'categories_screen.dart';
 import 'restaurant_details_screen.dart';
 
 class SearchValue {
@@ -113,19 +114,22 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 16.0),
               HeadingRow(
-                  title: StringConst.CATEGORY, number: StringConst.SEE_ALL_9),
+                  title: StringConst.CATEGORY, number: StringConst.SEE_ALL_9,
+                onTapOfNumber: () => Navigator.pushNamed(
+                    context, CategoriesScreen.ROUTE_NAME),
+              ),
               SizedBox(height: 16.0),
               Container(
                 height: 100,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 6,
+                  itemCount: categoryImagePaths.length,
                   itemBuilder: (context, index) {
                     return Container(
                       margin: EdgeInsets.only(right: 8.0),
                       child: FoodyBiteCategoryCard(
                         imagePath: categoryImagePaths[index],
-                        decoration: decorations[index],
+                        gradient: gradients[index],
                         category: category[index],
                       ),
                     );

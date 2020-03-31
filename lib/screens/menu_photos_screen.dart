@@ -85,7 +85,7 @@ class MenuPhotosScreen extends StatelessWidget {
             InkWell(
               onTap: () => navigateToPreviewPhotos(context),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(Sizes.BORDER_RADIUS_8),
+                borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
                 child: Image.asset(
                   ImagePath.avocado,
                   width: widthOfSmallImage,
@@ -98,7 +98,7 @@ class MenuPhotosScreen extends StatelessWidget {
             InkWell(
               onTap: () => navigateToPreviewPhotos(context),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(Sizes.BORDER_RADIUS_8),
+                borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
                 child: Image.asset(
                   ImagePath.strawberries,
                   width: widthOfSmallImage,
@@ -113,7 +113,7 @@ class MenuPhotosScreen extends StatelessWidget {
         InkWell(
           onTap: () => navigateToPreviewPhotos(context),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(Sizes.BORDER_RADIUS_8),
+            borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
             child: Image.asset(
               ImagePath.cake_big,
               width: widthOfLargeImage,
@@ -131,7 +131,7 @@ class MenuPhotosScreen extends StatelessWidget {
     return InkWell(
       onTap: () => navigateToPreviewPhotos(context),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(Sizes.BORDER_RADIUS_8),
+        borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
         child: Image.asset(
           ImagePath.dinnerIsServed,
           width: width,
@@ -163,7 +163,7 @@ class MenuPhotosScreen extends StatelessWidget {
             margin: EdgeInsets.only(
                 right: (i != numberOfImages) ? Sizes.MARGIN_16 : 0),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(Sizes.BORDER_RADIUS_8),
+              borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
               child: Image.asset(
                 imagePaths[i - 1],
                 width: imageWidth,

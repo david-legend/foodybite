@@ -23,4 +23,17 @@ class AppColors {
   static const Color kFoodyBiteSkyBlue = Color(0xFFEEF7FF);
   static const Color kFoodyBiteDarkBackground = Color(0xFF25262E);
   static const Color kFoodyBiteUnselectedSliderDot = Color(0xFF6A6A6A);
+
+  static const Color iconColor = Color.fromRGBO(17, 75, 95, 0.6);
+  static const Color errorColor = Color(0xFFB00020);
+
+  //Black
+  static const Color black = Color(0xFF000000);
+
+  //White
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color whiteShade_50 = Color.fromRGBO(255, 255, 255, 0.51);
+
+  //grey
+  static const Color grey = Color(0xFFA1A1A1);
 }

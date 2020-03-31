@@ -63,8 +63,9 @@ class FoodyBiteCard extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.symmetric(
-                          horizontal: Sizes.MARGIN_16,
-                          vertical: Sizes.MARGIN_16),
+                        horizontal: Sizes.MARGIN_16,
+                        vertical: Sizes.MARGIN_16,
+                      ),
                       child: Column(
                         children: <Widget>[
                           Row(
@@ -78,7 +79,7 @@ class FoodyBiteCard extends StatelessWidget {
                                   fontSize: Sizes.TEXT_SIZE_20,
                                 ),
                               ),
-                              SizedBox(width: Sizes.WIDTH_5),
+                              SizedBox(width: Sizes.WIDTH_4),
                               CardTags(
                                 title: category,
                                 decoration: BoxDecoration(
@@ -102,37 +103,38 @@ class FoodyBiteCard extends StatelessWidget {
                               Spacer(
                                 flex: 1,
                               ),
-
-                             bookmark ? Container() : Container(
-                                width: 40,
-                                height: 20,
-                                child: Stack(
-                                  alignment: Alignment.centerLeft,
-                                  children: [
-                                    Positioned(
-                                      left: 21,
-                                      child: Image.asset(
-                                        "assets/images/cbx-263152-unsplash.png",
-                                        fit: BoxFit.none,
+                              bookmark
+                                  ? Container()
+                                  : Container(
+                                      width: 40,
+                                      height: 20,
+                                      child: Stack(
+                                        alignment: Alignment.centerLeft,
+                                        children: [
+                                          Positioned(
+                                            left: 21,
+                                            child: Image.asset(
+                                              "assets/images/cbx-263152-unsplash.png",
+                                              fit: BoxFit.none,
+                                            ),
+                                          ),
+                                          Positioned(
+                                            left: 12,
+                                            child: Image.asset(
+                                              "assets/images/a-l-l-e-f-v-i-n-i-c-i-u-s-173820-unsplash.png",
+                                              fit: BoxFit.none,
+                                            ),
+                                          ),
+                                          Positioned(
+                                            left: 0,
+                                            child: Image.asset(
+                                              "assets/images/brooke-cagle-274465-unsplash-5.png",
+                                              fit: BoxFit.none,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    Positioned(
-                                      left: 12,
-                                      child: Image.asset(
-                                        "assets/images/a-l-l-e-f-v-i-n-i-c-i-u-s-173820-unsplash.png",
-                                        fit: BoxFit.none,
-                                      ),
-                                    ),
-                                    Positioned(
-                                      left: 0,
-                                      child: Image.asset(
-                                        "assets/images/brooke-cagle-274465-unsplash-5.png",
-                                        fit: BoxFit.none,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
                             ],
                           ),
                           SizedBox(height: 12.0),
@@ -166,73 +168,80 @@ class FoodyBiteCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    isThereStatus ? Card(
-                      elevation: ratingsAndStatusCardElevation,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: Sizes.WIDTH_12,
-                            vertical: Sizes.HEIGHT_8),
-                        child: Text(
-                          status,
-                          style: status.toLowerCase() ==
-                                  StringConst.STATUS_OPEN.toLowerCase()
-                              ? Styles.customNormalTextStyle(
-                                  color: AppColors.kFoodyBiteGreen,
-                                  fontSize: Sizes.TEXT_SIZE_10,
-                                  fontWeight: FontWeight.w700,
-                                )
-                              : Styles.customNormalTextStyle(
-                                  color: Colors.red,
-                                  fontSize: Sizes.TEXT_SIZE_10,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                        ),
-                      ),
-                    ) : Container(),
-                    isThereRatings ? Card(
-                      elevation: ratingsAndStatusCardElevation,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: Sizes.WIDTH_8, vertical: Sizes.WIDTH_5),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: <Widget>[
-                            Image.asset(
-                              ImagePath.starIcon,
-                              height: Sizes.WIDTH_14,
-                              width: Sizes.WIDTH_14,
-                            ),
-                            SizedBox(width: Sizes.WIDTH_4),
-                            Text(
-                              rating,
-                              style: Styles.customTitleTextStyle(
-                                color: AppColors.headingText,
-                                fontWeight: FontWeight.w600,
-                                fontSize: Sizes.TEXT_SIZE_14,
+                    isThereStatus
+                        ? Card(
+                            elevation: ratingsAndStatusCardElevation,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: Sizes.WIDTH_12,
+                                  vertical: Sizes.HEIGHT_8),
+                              child: Text(
+                                status,
+                                style: status.toLowerCase() ==
+                                        StringConst.STATUS_OPEN.toLowerCase()
+                                    ? Styles.customNormalTextStyle(
+                                        color: AppColors.kFoodyBiteGreen,
+                                        fontSize: Sizes.TEXT_SIZE_10,
+                                        fontWeight: FontWeight.w700,
+                                      )
+                                    : Styles.customNormalTextStyle(
+                                        color: Colors.red,
+                                        fontSize: Sizes.TEXT_SIZE_10,
+                                        fontWeight: FontWeight.w700,
+                                      ),
                               ),
                             ),
-                          ],
-                        ),
-                      ),
-                    ) : Container(),
+                          )
+                        : Container(),
+                    isThereRatings
+                        ? Card(
+                            elevation: ratingsAndStatusCardElevation,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: Sizes.WIDTH_8,
+                                vertical: Sizes.WIDTH_4,
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: <Widget>[
+                                  Image.asset(
+                                    ImagePath.starIcon,
+                                    height: Sizes.WIDTH_14,
+                                    width: Sizes.WIDTH_14,
+                                  ),
+                                  SizedBox(width: Sizes.WIDTH_4),
+                                  Text(
+                                    rating,
+                                    style: Styles.customTitleTextStyle(
+                                      color: AppColors.headingText,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: Sizes.TEXT_SIZE_14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        : Container(),
                   ],
                 ),
               ),
-              bookmark ? Positioned(
-                top: (height / 2) + 16,
-                left: width - 60,
-                child: Container(
-                  height: 60,
-                  width: 60,
-                  child: Card(
-                    elevation: 4.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    child: Image.asset(ImagePath.activeBookmarksIcon2),
-                  )
-                ),
-              ) : Container()
+              bookmark
+                  ? Positioned(
+                      top: (height / 2) + 16,
+                      left: width - 60,
+                      child: Container(
+                          height: 60,
+                          width: 60,
+                          child: Card(
+                            elevation: 4.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30.0),
+                            ),
+                            child: Image.asset(ImagePath.activeBookmarksIcon2),
+                          )),
+                    )
+                  : Container()
             ],
           ),
         ),

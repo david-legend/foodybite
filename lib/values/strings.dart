@@ -43,8 +43,13 @@ class StringConst {
   //Categories
   static const String ITALIAN = "Italian";
   static const String CHINESE = "Chinese";
-  static const String AMERICAN = "American";
   static const String MEXICAN = "Mexican";
+  static const String THAI = "Thai";
+  static const String ARABIAN = "Arabian";
+  static const String INDIAN = "Indian";
+  static const String AMERICAN = "American";
+  static const String KOREAN = "Korean";
+
   //Routes
   static const String LOGIN_ROUTE = "/login";
   static const String REGISTER_ROUTE = "/register";
@@ -63,6 +68,7 @@ class StringConst {
   static const String REVIEW_RATING_ROUTE = "/reviewRating";
   static const String ADD_RATINGS_ROUTE = "/addRatings";
   static const String FILTER_ROUTE = "/filter";
+  static const String CATEGORIES_ROUTE = "/categories";
 
   //Font Family
   static const String FONT_FAMILY = "Josefin Sans";

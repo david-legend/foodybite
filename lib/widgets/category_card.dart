@@ -4,17 +4,25 @@ import 'package:potbelly/values/values.dart';
 class FoodyBiteCategoryCard extends StatelessWidget {
   final double width;
   final double height;
+  final double borderRadius;
+  final double opacity;
   final String imagePath;
-  final Decoration decoration;
+  final Gradient gradient;
   final String category;
+  final bool hasHandle;
   final TextStyle categoryTextStyle;
+  final Color handleColor;
 
   FoodyBiteCategoryCard({
-    this.width = 100.0,
-    this.height = 100.0,
+    this.width = Sizes.WIDTH_100,
+    this.height = Sizes.HEIGHT_100,
+    this.borderRadius = Sizes.RADIUS_8,
+    this.opacity = 0.65,
     this.imagePath,
     this.category = "Italian",
-    this.decoration,
+    this.gradient,
+    this.hasHandle = false,
+    this.handleColor = AppColors.whiteShade_50,
     this.categoryTextStyle = Styles.normalTextStyle,
   });
 
@@ -23,35 +31,63 @@ class FoodyBiteCategoryCard extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(borderRadius)),
       child: Stack(
         children: <Widget>[
           Positioned(
-            child: Image.asset(
-              imagePath,
-            ),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            child: Opacity(
-              opacity: 0.65,
-              child: Container(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(borderRadius),
+              child: Image.asset(
+                imagePath,
                 width: width,
                 height: height,
-                decoration: decoration,
-                child: Container(),
+                fit: BoxFit.cover,
               ),
             ),
           ),
           Positioned(
-            top: (height/2) - 5,
-            right: width/4,
-            left: width/4,
-            child: Text(
-              category,
-              textAlign: TextAlign.center,
-              style: categoryTextStyle,
+            child: Opacity(
+              opacity: opacity,
+              child: Container(
+                width: width,
+                height: height,
+                decoration: BoxDecoration(
+                  gradient: gradient,
+                  borderRadius: BorderRadius.circular(borderRadius),
+                ),
+              ),
             ),
+          ),
+          Positioned(
+            top: hasHandle ? Sizes.SIZE_36 : (height / 2) - 4,
+            right: hasHandle ? Sizes.SIZE_24 : width / 4,
+            left: hasHandle ? Sizes.SIZE_8 : width / 4,
+            child: hasHandle
+                ? Row(
+                    children: <Widget>[
+                      Spacer(flex: 1),
+                      Text(
+                        category,
+                        textAlign: TextAlign.center,
+                        style: categoryTextStyle,
+                      ),
+                      Spacer(flex: 1),
+                      Container(
+                        width: Sizes.WIDTH_6,
+                        height: Sizes.HEIGHT_36,
+                        decoration: BoxDecoration(
+                          color: handleColor,
+                          borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
+                        ),
+                      ),
+                    ],
+                  )
+                : Text(
+                    category,
+                    textAlign: TextAlign.center,
+                    style: categoryTextStyle,
+                  ),
           )
         ],
       ),

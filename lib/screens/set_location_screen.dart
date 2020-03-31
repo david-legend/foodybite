@@ -26,7 +26,7 @@ class SetLocationScreen extends StatelessWidget {
               ),
             ),
             DarkOverLay(
-              decoration: Decorations.fullScreenOverDecoration,
+              gradient: Gradients.fullScreenOverGradient,
             ),
             Positioned(
               left: 0,
@@ -63,7 +63,7 @@ class SetLocationScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.topLeft,
                       child: Container(
-                        margin: EdgeInsets.only(top: Sizes.MARGIN_200),
+                        margin: const EdgeInsets.only(top: Sizes.MARGIN_200),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: <Widget>[

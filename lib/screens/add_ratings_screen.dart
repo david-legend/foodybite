@@ -110,8 +110,8 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
                   buttonHeight: 65,
                   buttonWidth: MediaQuery.of(context).size.width,
                   decoration: Decorations.customHalfCurvedButtonDecoration(
-                    topleftRadius: Sizes.BORDER_RADIUS_24,
-                    topRightRadius: Sizes.BORDER_RADIUS_24,
+                    topleftRadius: Sizes.RADIUS_24,
+                    topRightRadius: Sizes.RADIUS_24,
                   ),
                 ),
               ),

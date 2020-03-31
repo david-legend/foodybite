@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:potbelly/screens/add_ratings_screen.dart';
 import 'package:potbelly/screens/review_rating_screen.dart';
 import 'package:potbelly/values/data.dart';
@@ -41,14 +42,14 @@ class RestaurantDetailsScreen extends StatelessWidget {
     bottomRightRadius: 24,
   );
   BoxDecoration leftSideDecorations =
-  Decorations.customHalfCurvedButtonDecoration(
+      Decorations.customHalfCurvedButtonDecoration(
     color: Colors.black.withOpacity(0.1),
     topleftRadius: 24,
     bottomleftRadius: 24,
   );
 
   BoxDecoration rightSideDecorations =
-  Decorations.customHalfCurvedButtonDecoration(
+      Decorations.customHalfCurvedButtonDecoration(
     color: Colors.black.withOpacity(0.1),
     topRightRadius: 24,
     bottomRightRadius: 24,
@@ -56,14 +57,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RestaurantDetails args = ModalRoute
-        .of(context)
-        .settings
-        .arguments;
-    var heightOfStack = MediaQuery
-        .of(context)
-        .size
-        .height / 2.8;
+    final RestaurantDetails args = ModalRoute.of(context).settings.arguments;
+    var heightOfStack = MediaQuery.of(context).size.height / 2.8;
     var aPieceOfTheHeightOfStack = heightOfStack - heightOfStack / 3.5;
     return Scaffold(
       body: SafeArea(
@@ -75,15 +70,11 @@ class RestaurantDetailsScreen extends StatelessWidget {
                   shrinkWrap: true,
                   children: <Widget>[
                     Stack(
-
                       children: <Widget>[
                         Positioned(
                           child: Image.asset(
                             args.imagePath,
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width,
+                            width: MediaQuery.of(context).size.width,
                             height: heightOfStack,
                             fit: BoxFit.cover,
                           ),
@@ -100,10 +91,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                 ),
                                 Spacer(flex: 1),
                                 InkWell(
-                                  child: Image.asset(
-                                    ImagePath.bookmarksIcon,
-                                    color: Colors.white,
-                                  ),
+                                  child: Image.asset(ImagePath.bookmarksIcon,
+                                      color: Colors.white),
                                 ),
                                 SizedBox(width: 16.0),
                                 InkWell(
@@ -123,7 +112,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                             child: BackdropFilter(
                               filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                               child: Container(
-                                padding: EdgeInsets.symmetric( vertical: 4.0),
+                                padding: EdgeInsets.symmetric(vertical: 4.0),
                                 decoration: fullDecorations,
                                 child: Row(
                                   children: <Widget>[
@@ -131,12 +120,9 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 8.0, vertical: 8.0),
                                       width:
-                                      (MediaQuery
-                                          .of(context)
-                                          .size
-                                          .width /
-                                          2) -
-                                          24,
+                                          (MediaQuery.of(context).size.width /
+                                                  2) -
+                                              24,
 //                                      decoration: leftSideDecorations,
                                       child: Row(
                                         children: <Widget>[
@@ -145,8 +131,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                           SizedBox(width: 8.0),
                                           Text(
                                             '+233 549546967',
-                                            style:
-                                            Styles.normalTextStyle,
+                                            style: Styles.normalTextStyle,
                                           )
                                         ],
                                       ),
@@ -175,8 +160,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                           Image.asset(ImagePath.directionIcon),
                                           SizedBox(width: 8.0),
                                           Text(
-                                              'Direction',
-                                              style: Styles.normalTextStyle ,
+                                            'Direction',
+                                            style: Styles.normalTextStyle,
                                           )
                                         ],
                                       ),
@@ -243,27 +228,25 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                   text: TextSpan(
                                       style: openingTimeTextStyle,
                                       children: [
-                                        TextSpan(text: "Open Now "),
-                                        TextSpan(
-                                            text: "daily time ",
-                                            style: addressTextStyle),
-                                        TextSpan(text: "9:30 am to 11:30 am "),
-                                      ]))
+                                    TextSpan(text: "Open Now "),
+                                    TextSpan(
+                                        text: "daily time ",
+                                        style: addressTextStyle),
+                                    TextSpan(text: "9:30 am to 11:30 am "),
+                                  ]))
                             ],
                           ),
                           SizedBox(height: 16.0),
                           HeadingRow(
                             title: StringConst.MENU_AND_PHOTOS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () => Navigator.pushNamed(context, MenuPhotosScreen.ROUTE_NAME),
+                            onTapOfNumber: () => Navigator.pushNamed(
+                                context, MenuPhotosScreen.ROUTE_NAME),
                           ),
                           SizedBox(height: 16.0),
                           Container(
                             height: 120,
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width,
+                            width: MediaQuery.of(context).size.width,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               itemCount: 4,
@@ -272,7 +255,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                   margin: EdgeInsets.only(right: 12.0),
                                   decoration: BoxDecoration(
                                       borderRadius:
-                                      BorderRadius.all(Radius.circular(8))),
+                                          BorderRadius.all(Radius.circular(8))),
                                   child: Image.asset(
                                     menuPhotosImagePaths[index],
                                     fit: BoxFit.fill,
@@ -286,9 +269,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.REVIEWS_AND_RATINGS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () =>
-                                Navigator.pushNamed(
-                                    context, ReviewRatingScreen.ROUTE_NAME),
+                            onTapOfNumber: () => Navigator.pushNamed(
+                                context, ReviewRatingScreen.ROUTE_NAME),
                           ),
                           SizedBox(height: 16.0),
                           Column(
@@ -306,13 +288,10 @@ class RestaurantDetailsScreen extends StatelessWidget {
                 onTap: () =>
                     Navigator.pushNamed(context, AddRatingsScreen.ROUTE_NAME),
                 buttonHeight: 65,
-                buttonWidth: MediaQuery
-                    .of(context)
-                    .size
-                    .width,
+                buttonWidth: MediaQuery.of(context).size.width,
                 decoration: Decorations.customHalfCurvedButtonDecoration(
-                  topleftRadius: Sizes.BORDER_RADIUS_24,
-                  topRightRadius: Sizes.BORDER_RADIUS_24,
+                  topleftRadius: Sizes.RADIUS_24,
+                  topRightRadius: Sizes.RADIUS_24,
                 ),
               ),
             ],

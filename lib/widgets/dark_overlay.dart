@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
 
 class DarkOverLay extends StatelessWidget {
-  BoxDecoration decoration;
+  final Gradient gradient;
 
-  DarkOverLay({this.decoration = Decorations.footerOverlayDecoration});
+  DarkOverLay({this.gradient = Gradients.footerOverlayGradient});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,9 @@ class DarkOverLay extends StatelessWidget {
       right: 0,
       child: Container(
         height: MediaQuery.of(context).size.height,
-        decoration: decoration,
+        decoration: BoxDecoration(
+          gradient: gradient,
+        ),
         child: Container(),
       ),
     );

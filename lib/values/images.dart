@@ -39,6 +39,16 @@ class ImagePath {
   static const String pasta = "$imageDir/pasta.png";
   static const String cake_big = "$imageDir/cake_big.png";
 
+  //see-all category pictures
+  static const String italianCover = "$imageDir/italian_cover.png";
+  static const String chineseCover = "$imageDir/chinese_cover.png";
+  static const String mexicanCover = "$imageDir/mexican_cover.png";
+  static const String thaiCover = "$imageDir/thai_cover.png";
+  static const String arabianCover = "$imageDir/arabian_cover.png";
+  static const String indianCover = "$imageDir/indian_cover.png";
+  static const String americanCover = "$imageDir/american_cover.png";
+  static const String koreanCover = "$imageDir/korean_cover.png";
+
   //small quality sized pics
   static const String cake_small = "$imageDir/cake_small.png";
   static const String cake_slice = "$imageDir/cake_slice.png";
@@ -71,6 +81,9 @@ class ImagePath {
   static const String italian = "$imageDir/italian.png";
   static const String chinese = "$imageDir/chinese.png";
   static const String mexican = "$imageDir/mexican.png";
+
+  //Svg Icons
+//  static const String shareIcon = "$imageDir/share.svg";
 }
 
 
