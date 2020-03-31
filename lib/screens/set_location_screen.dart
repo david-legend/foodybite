@@ -43,7 +43,7 @@ class SetLocationScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.topRight,
                       child: InkWell(
-                        onTap: () => Router.navigator.pushNamed(Router.rootScreen),
+                        onTap: () => Router.navigator.pushReplacementNamed(Router.rootScreen),
                         child: Container(
                           width: 80,
                           height: 40,
@@ -115,7 +115,7 @@ class SetLocationScreen extends StatelessWidget {
                       child: PotbellyButton(
                         StringConst.TURN_GPS,
                         buttonWidth: MediaQuery.of(context).size.width,
-                        onTap: () => Router.navigator.pushNamed(Router.rootScreen),
+                        onTap: () => Router.navigator.pushReplacementNamed(Router.rootScreen),
                       ),
                     ),
                     Spacer(),

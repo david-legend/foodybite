@@ -5,6 +5,8 @@ import 'package:potbelly/values/values.dart';
 class NotificationsScreen extends StatelessWidget {
   static const String ROUTE_NAME = StringConst.NOTIFICATIONS_ROUTE;
 
+  NotificationsScreen({Key key}) : super(key: key);
+
   List<NotificationInfo> notifications = [
     NotificationInfo(
       imageUrl: ImagePath.branson,

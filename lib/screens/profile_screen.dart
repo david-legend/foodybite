@@ -5,6 +5,7 @@ import 'package:potbelly/widgets/potbelly_button.dart';
 
 class ProfileScreen extends StatelessWidget {
   static const String ROUTE_NAME = StringConst.NOTIFICATIONS_ROUTE;
+  ProfileScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
