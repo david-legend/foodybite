@@ -119,7 +119,12 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 16.0),
               HeadingRow(
-                  title: StringConst.FRIENDS, number: StringConst.SEE_ALL_56),
+                title: StringConst.FRIENDS,
+                number: StringConst.SEE_ALL_56,
+                onTapOfNumber: () => Router.navigator.pushNamed(
+                  Router.findFriendsScreen,
+                ),
+              ),
               SizedBox(height: 16.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

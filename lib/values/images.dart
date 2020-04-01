@@ -82,6 +82,9 @@ class ImagePath {
   static const String chinese = "$imageDir/chinese.png";
   static const String mexican = "$imageDir/mexican.png";
 
+  static const String oranges = "$imageDir/oranges.png";
+  static const String bread_on_tray = "$imageDir/bread_on_tray.png";
+
   //Svg Icons
 //  static const String shareIcon = "$imageDir/share.svg";
 }

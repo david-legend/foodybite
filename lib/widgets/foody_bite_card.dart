@@ -17,7 +17,8 @@ class FoodyBiteCard extends StatelessWidget {
   final bool isThereRatings;
   final double tagRadius;
   final double width;
-  final double height;
+  final double cardHeight;
+  final double imageHeight;
   final double cardElevation;
   final double ratingsAndStatusCardElevation;
   final List<String> followersImagePath;
@@ -31,7 +32,8 @@ class FoodyBiteCard extends StatelessWidget {
     this.distance,
     this.address,
     this.width = 340.0,
-    this.height = 280.0,
+    this.cardHeight = 280.0,
+    this.imageHeight = 180.0,
     this.tagRadius = 8.0,
     this.onTap,
     this.isThereStatus = true,
@@ -48,18 +50,25 @@ class FoodyBiteCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: width,
-        height: height,
+        height: cardHeight,
         child: Card(
           elevation: cardElevation,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
           child: Stack(
             children: <Widget>[
               Positioned(
                 child: Column(
                   children: <Widget>[
-                    Image.asset(
-                      imagePath,
-                      width: MediaQuery.of(context).size.width,
-                      fit: BoxFit.cover,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(4),
+                      child: Image.asset(
+                        imagePath,
+                        width: MediaQuery.of(context).size.width,
+                        height: imageHeight,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.symmetric(
@@ -228,7 +237,7 @@ class FoodyBiteCard extends StatelessWidget {
               ),
               bookmark
                   ? Positioned(
-                      top: (height / 2) + 16,
+                      top: (cardHeight / 2) + 16,
                       left: width - 60,
                       child: Container(
                           height: 60,

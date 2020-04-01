@@ -29,9 +29,10 @@ class SearchResultsScreen extends StatelessWidget {
       body: SafeArea(
         child: Container(
           margin: const EdgeInsets.only(
-              left: Sizes.MARGIN_16,
-              right: Sizes.MARGIN_16,
-              top: Sizes.MARGIN_16,),
+            left: Sizes.MARGIN_16,
+            right: Sizes.MARGIN_16,
+            top: Sizes.MARGIN_16,
+          ),
           child: Column(
             children: <Widget>[
               FoodyBiteSearchInputField(

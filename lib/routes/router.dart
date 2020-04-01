@@ -2,7 +2,9 @@ import 'package:auto_route/auto_route_annotations.dart';
 import 'package:potbelly/screens/add_ratings_screen.dart';
 import 'package:potbelly/screens/bookmarks_screen.dart';
 import 'package:potbelly/screens/categories_screen.dart';
+import 'package:potbelly/screens/category_detail_screen.dart';
 import 'package:potbelly/screens/filter_screen.dart';
+import 'package:potbelly/screens/find_friends_screen.dart';
 import 'package:potbelly/screens/forgot_password_screen.dart';
 import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/screens/login_screen.dart';
@@ -45,6 +47,9 @@ class $Router {
   MenuPhotosScreen menuPhotosScreen;
   PreviewMenuPhotosScreen previewMenuPhotosScreen;
   CategoriesScreen categoriesScreen;
+
+  CategoryDetailScreen categoryDetailScreen;
+  FindFriendsScreen findFriendsScreen;
 
 
 }

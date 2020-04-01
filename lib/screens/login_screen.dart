@@ -111,6 +111,7 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     child: PotbellyButton(
                       StringConst.LOGIN,
+
                       onTap: () => Router.navigator.pushReplacementNamed(Router.rootScreen),
                     ),
                   ),

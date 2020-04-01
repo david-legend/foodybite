@@ -5,9 +5,14 @@ import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/category_card.dart';
 import 'package:potbelly/widgets/spaces.dart';
 
-class CategoriesScreen extends StatelessWidget {
+class CategoriesScreen extends StatefulWidget {
   static const String ROUTE_NAME = StringConst.CATEGORIES_ROUTE;
 
+  @override
+  _CategoriesScreenState createState() => _CategoriesScreenState();
+}
+
+class _CategoriesScreenState extends State<CategoriesScreen> {
   @override
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
@@ -50,6 +55,7 @@ class CategoriesScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             return Container(
               child: FoodyBiteCategoryCard(
+                onTap: () => Router.navigator.pushNamed(Router.categoryDetailScreen),
                 width: MediaQuery.of(context).size.width,
                 imagePath: categoryListImagePaths[index],
                 gradient: gradients[index],

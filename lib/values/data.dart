@@ -81,3 +81,9 @@ List<String> menuPhotosImagePaths = [
   ImagePath.cake_small,
   ImagePath.cake_big,
 ];
+
+List<String> categoryDetailImagePaths = [
+  ImagePath.cake_big,
+  ImagePath.oranges,
+  ImagePath.bread_on_tray,
+];

@@ -12,43 +12,43 @@ TextTheme _buildTextTheme(BuildContext context) {
   return GoogleFonts.josefinSansTextTheme(textTheme).copyWith(
     display1: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_36,
-      color: AppColors.secondaryText,
+      color: AppColors.primaryText,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.normal,
     ),
     headline: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_36,
-      color: AppColors.secondaryText,
+      color: AppColors.primaryText,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.normal,
     ),
     subhead: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_18,
-      color: AppColors.secondaryText,
+      color: AppColors.primaryText,
       fontWeight: FontWeight.w600,
       fontStyle: FontStyle.normal,
     ),
     title: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_18,
-      color: AppColors.secondaryText,
+      color: AppColors.primaryText,
       fontWeight: FontWeight.w600,
       fontStyle: FontStyle.normal,
     ),
     body1: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_18,
-      color: AppColors.black,
+      color: AppColors.primaryText,
       fontWeight: FontWeight.normal,
       fontStyle: FontStyle.normal,
     ),
     button: GoogleFonts.josefinSans(
         fontSize: Sizes.TEXT_SIZE_18,
-        color: AppColors.white,
+        color: AppColors.primaryText,
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.bold
     ),
     subtitle: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_18,
-      color: AppColors.grey,
+      color: AppColors.primaryText,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.normal,
     ),

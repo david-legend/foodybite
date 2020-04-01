@@ -36,4 +36,7 @@ class AppColors {
 
   //grey
   static const Color grey = Color(0xFFA1A1A1);
+  //indigo
+  static const Color indigo = Color(0xFF8A98BA);
+  static const Color indigoShade1 = Color.fromRGBO( 34, 36, 85, 0.5);
 }

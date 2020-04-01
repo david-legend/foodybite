@@ -12,6 +12,7 @@ class FoodyBiteCategoryCard extends StatelessWidget {
   final bool hasHandle;
   final TextStyle categoryTextStyle;
   final Color handleColor;
+  final GestureTapCallback onTap;
 
   FoodyBiteCategoryCard({
     this.width = Sizes.WIDTH_100,
@@ -24,72 +25,76 @@ class FoodyBiteCategoryCard extends StatelessWidget {
     this.hasHandle = false,
     this.handleColor = AppColors.whiteShade_50,
     this.categoryTextStyle = Styles.normalTextStyle,
+    this.onTap
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      decoration:
-          BoxDecoration(borderRadius: BorderRadius.circular(borderRadius)),
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(borderRadius),
-              child: Image.asset(
-                imagePath,
-                width: width,
-                height: height,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          Positioned(
-            child: Opacity(
-              opacity: opacity,
-              child: Container(
-                width: width,
-                height: height,
-                decoration: BoxDecoration(
-                  gradient: gradient,
-                  borderRadius: BorderRadius.circular(borderRadius),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        decoration:
+            BoxDecoration(borderRadius: BorderRadius.circular(borderRadius)),
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(borderRadius),
+                child: Image.asset(
+                  imagePath,
+                  width: width,
+                  height: height,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: hasHandle ? Sizes.SIZE_36 : (height / 2) - 4,
-            right: hasHandle ? Sizes.SIZE_24 : width / 4,
-            left: hasHandle ? Sizes.SIZE_8 : width / 4,
-            child: hasHandle
-                ? Row(
-                    children: <Widget>[
-                      Spacer(flex: 1),
-                      Text(
-                        category,
-                        textAlign: TextAlign.center,
-                        style: categoryTextStyle,
-                      ),
-                      Spacer(flex: 1),
-                      Container(
-                        width: Sizes.WIDTH_6,
-                        height: Sizes.HEIGHT_36,
-                        decoration: BoxDecoration(
-                          color: handleColor,
-                          borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
-                        ),
-                      ),
-                    ],
-                  )
-                : Text(
-                    category,
-                    textAlign: TextAlign.center,
-                    style: categoryTextStyle,
+            Positioned(
+              child: Opacity(
+                opacity: opacity,
+                child: Container(
+                  width: width,
+                  height: height,
+                  decoration: BoxDecoration(
+                    gradient: gradient,
+                    borderRadius: BorderRadius.circular(borderRadius),
                   ),
-          )
-        ],
+                ),
+              ),
+            ),
+            Positioned(
+              top: hasHandle ? Sizes.SIZE_36 : (height / 2) - 4,
+              right: hasHandle ? Sizes.SIZE_24 : width / 4,
+              left: hasHandle ? Sizes.SIZE_8 : width / 4,
+              child: hasHandle
+                  ? Row(
+                      children: <Widget>[
+                        Spacer(flex: 1),
+                        Text(
+                          category,
+                          textAlign: TextAlign.center,
+                          style: categoryTextStyle,
+                        ),
+                        Spacer(flex: 1),
+                        Container(
+                          width: Sizes.WIDTH_6,
+                          height: Sizes.HEIGHT_36,
+                          decoration: BoxDecoration(
+                            color: handleColor,
+                            borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
+                          ),
+                        ),
+                      ],
+                    )
+                  : Text(
+                      category,
+                      textAlign: TextAlign.center,
+                      style: categoryTextStyle,
+                    ),
+            )
+          ],
+        ),
       ),
     );
   }
