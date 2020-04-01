@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_app_bar.dart';
 
@@ -52,7 +53,7 @@ class SettingsScreen extends StatelessWidget {
               tiles: <Widget>[
                 SettingsListTile(
                   title: "Change Password",
-                  onTap: () {},
+                  onTap: () => Router.navigator.pushNamed(Router.changePasswordScreen),
                 ),
                 SettingsListTile(
                   title: "Change Language",

@@ -3,6 +3,7 @@ import 'package:potbelly/screens/add_ratings_screen.dart';
 import 'package:potbelly/screens/bookmarks_screen.dart';
 import 'package:potbelly/screens/categories_screen.dart';
 import 'package:potbelly/screens/category_detail_screen.dart';
+import 'package:potbelly/screens/change_password_screen.dart';
 import 'package:potbelly/screens/filter_screen.dart';
 import 'package:potbelly/screens/find_friends_screen.dart';
 import 'package:potbelly/screens/forgot_password_screen.dart';
@@ -52,6 +53,7 @@ class $Router {
   CategoryDetailScreen categoryDetailScreen;
   FindFriendsScreen findFriendsScreen;
   SettingsScreen settingsScreen;
+  ChangePasswordScreen changePasswordScreen;
 
 
 }

@@ -12,6 +12,7 @@ class CustomTextFormField extends StatelessWidget {
   final String prefixIconImagePath;
   final String hintText;
   final Color prefixIconColor;
+  final Color borderColor;
   final Color fillColor;
   final bool filled;
   final bool obscured;
@@ -27,6 +28,7 @@ class CustomTextFormField extends StatelessWidget {
     this.contentPaddingVertical = Sizes.PADDING_22,
     this.hintText,
     this.prefixIconColor = AppColors.secondaryText,
+    this.borderColor = AppColors.greyShade1,
     this.fillColor = AppColors.fillColor,
     this.filled = true,
     this.obscured = false,
@@ -38,9 +40,26 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         style: textFormFieldStyle,
         decoration: InputDecoration(
-          border: UnderlineInputBorder(
+          border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius),
             borderSide: BorderSide(
+              color: borderColor,
+              width: borderWidth,
+              style: borderStyle,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
+            borderSide: BorderSide(
+              color: borderColor,
+              width: borderWidth,
+              style: borderStyle,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
+            borderSide: BorderSide(
+              color: borderColor,
               width: borderWidth,
               style: borderStyle,
             ),
