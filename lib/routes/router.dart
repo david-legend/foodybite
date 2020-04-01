@@ -18,6 +18,7 @@ import 'package:potbelly/screens/review_rating_screen.dart';
 import 'package:potbelly/screens/root.dart';
 import 'package:potbelly/screens/search_results.dart';
 import 'package:potbelly/screens/set_location_screen.dart';
+import 'package:potbelly/screens/settings_screen.dart';
 import 'package:potbelly/screens/trending_restaurant_screen.dart';
 import 'package:meta/meta.dart';
 
@@ -50,6 +51,7 @@ class $Router {
 
   CategoryDetailScreen categoryDetailScreen;
   FindFriendsScreen findFriendsScreen;
+  SettingsScreen settingsScreen;
 
 
 }

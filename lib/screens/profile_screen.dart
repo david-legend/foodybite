@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
@@ -72,6 +73,7 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(width: 16.0),
                   PotbellyButton(
                     'Settings',
+                    onTap: () => Router.navigator.pushNamed(Router.settingsScreen),
                     buttonWidth: MediaQuery.of(context).size.width / 3,
                     buttonHeight: 50,
                     decoration: BoxDecoration(

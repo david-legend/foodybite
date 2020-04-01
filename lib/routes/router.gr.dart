@@ -28,6 +28,7 @@ import 'package:potbelly/screens/preview_menu_photos.dart';
 import 'package:potbelly/screens/categories_screen.dart';
 import 'package:potbelly/screens/category_detail_screen.dart';
 import 'package:potbelly/screens/find_friends_screen.dart';
+import 'package:potbelly/screens/settings_screen.dart';
 
 class Router {
   static const loginScreen = '/';
@@ -50,6 +51,7 @@ class Router {
   static const categoriesScreen = '/categories-screen';
   static const categoryDetailScreen = '/category-detail-screen';
   static const findFriendsScreen = '/find-friends-screen';
+  static const settingsScreen = '/settings-screen';
   static final navigator = ExtendedNavigator();
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -172,6 +174,11 @@ class Router {
       case Router.findFriendsScreen:
         return MaterialPageRoute<dynamic>(
           builder: (_) => FindFriendsScreen(),
+          settings: settings,
+        );
+      case Router.settingsScreen:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => SettingsScreen(),
           settings: settings,
         );
       default:

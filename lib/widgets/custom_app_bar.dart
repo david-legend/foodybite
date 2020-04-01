@@ -6,6 +6,7 @@ class CustomAppBar extends StatelessWidget {
   CustomAppBar({
     this.title,
     this.hasLeading = true,
+    this.hasTrailing = true,
     this.onActionTap,
     this.onLeadingTap,
   });
@@ -13,6 +14,7 @@ class CustomAppBar extends StatelessWidget {
   final GestureTapCallback onLeadingTap;
   final GestureTapCallback onActionTap;
   final bool hasLeading;
+  final bool hasTrailing;
   final String title;
 
   @override
@@ -35,15 +37,15 @@ class CustomAppBar extends StatelessWidget {
           fontSize: Sizes.TEXT_SIZE_20,
         ),
       ),
-      actions: <Widget>[
-        InkWell(
+      actions: hasTrailing ? <Widget>[
+         InkWell(
           onTap: () {},
           child: Image.asset(
             ImagePath.searchIcon,
             color: AppColors.headingText,
-          ),
+          ) ,
         )
-      ],
+      ] : null,
     );
   }
 }
