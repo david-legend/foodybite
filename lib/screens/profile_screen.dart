@@ -67,6 +67,7 @@ class ProfileScreen extends StatelessWidget {
                 children: <Widget>[
                   PotbellyButton(
                     'Edit Profile',
+                    onTap: () => Router.navigator.pushNamed(Router.editProfileScreen),
                     buttonWidth: MediaQuery.of(context).size.width / 3,
                     buttonHeight: 50,
                   ),

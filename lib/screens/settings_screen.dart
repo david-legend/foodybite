@@ -4,6 +4,7 @@ import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_app_bar.dart';
 
 class SettingsScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +40,7 @@ class SettingsScreen extends StatelessWidget {
                 Text(
                   "Account",
                   style: textTheme.title.copyWith(
-                    fontSize: Sizes.TEXT_SIZE_22,
+                    fontSize: Sizes.TEXT_SIZE_20,
                     color: AppColors.indigoShade1,
                   ),
                 ),
@@ -57,7 +58,7 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 SettingsListTile(
                   title: "Change Language",
-                  onTap: () {},
+                  onTap: () => Router.navigator.pushNamed(Router.changeLanguageScreen),
                 )
               ],
             ).toList(),
@@ -84,7 +85,7 @@ class SettingsScreen extends StatelessWidget {
                 Text(
                   "Others",
                   style: textTheme.title.copyWith(
-                    fontSize: Sizes.TEXT_SIZE_22,
+                    fontSize: Sizes.TEXT_SIZE_20,
                     color: AppColors.indigoShade1,
                   ),
                 ),

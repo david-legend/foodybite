@@ -46,7 +46,7 @@ class FindFriendsScreen extends StatelessWidget {
                 Text(
                   "Contacts",
                   style: textTheme.title.copyWith(
-                    fontSize: Sizes.TEXT_SIZE_22,
+                    fontSize: Sizes.TEXT_SIZE_20,
                     color: AppColors.indigoShade1,
                   ),
                 ),
@@ -100,7 +100,7 @@ class FindFriendsScreen extends StatelessWidget {
                 Text(
                   "Suggestions",
                   style: textTheme.title.copyWith(
-                    fontSize: Sizes.TEXT_SIZE_22,
+                    fontSize: Sizes.TEXT_SIZE_20,
                     color: AppColors.indigoShade1,
                   ),
                 ),

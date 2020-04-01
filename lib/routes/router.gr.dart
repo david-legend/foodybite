@@ -30,6 +30,8 @@ import 'package:potbelly/screens/category_detail_screen.dart';
 import 'package:potbelly/screens/find_friends_screen.dart';
 import 'package:potbelly/screens/settings_screen.dart';
 import 'package:potbelly/screens/change_password_screen.dart';
+import 'package:potbelly/screens/change_language_screen.dart';
+import 'package:potbelly/screens/edit_profile_screen.dart';
 
 class Router {
   static const loginScreen = '/';
@@ -54,6 +56,8 @@ class Router {
   static const findFriendsScreen = '/find-friends-screen';
   static const settingsScreen = '/settings-screen';
   static const changePasswordScreen = '/change-password-screen';
+  static const changeLanguageScreen = '/change-language-screen';
+  static const editProfileScreen = '/edit-profile-screen';
   static final navigator = ExtendedNavigator();
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -186,6 +190,16 @@ class Router {
       case Router.changePasswordScreen:
         return MaterialPageRoute<dynamic>(
           builder: (_) => ChangePasswordScreen(),
+          settings: settings,
+        );
+      case Router.changeLanguageScreen:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => ChangeLanguageScreen(),
+          settings: settings,
+        );
+      case Router.editProfileScreen:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => EditProfileScreen(),
           settings: settings,
         );
       default:
