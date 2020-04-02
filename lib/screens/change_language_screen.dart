@@ -3,6 +3,7 @@ import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/data.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_app_bar.dart';
+import 'package:potbelly/widgets/custom_radio_button.dart';
 
 class ChangeLanguageScreen extends StatefulWidget {
   @override
@@ -10,7 +11,19 @@ class ChangeLanguageScreen extends StatefulWidget {
 }
 
 class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
-  String language = "";
+  List<RadioModel> languages = List<RadioModel>();
+
+  @override
+  void initState() {
+    super.initState();
+    loadIt();
+  }
+
+  void loadIt() {
+    for (var i = 0; i < defaultLanguagesList.length; i++) {
+      languages.add(RadioModel(false, defaultLanguagesList[i]));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,39 +81,35 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
                 shrinkWrap: true,
                 children: ListTile.divideTiles(
                   context: context,
-                  tiles: _buildLanguagesTile(defaultLanguagesList),
+                  tiles: _buildLanguageTiles(languages),
                 ).toList(),
               ),
             ),
-
           ],
         ),
       ),
     );
   }
 
-  void _handleRadioValueChange(String language) {}
-
-  List<Widget> _buildLanguagesTile(List<String> languages) {
-    List<Widget> listTiles = [];
-    for (var i = 0; i < languages.length; i++) {
-      listTiles.add(
-        ListTile(
-          title: Text(languages[i]),
-          trailing: Radio(
-            value: languages[i],
-            groupValue: language,
-            onChanged: (value) {
+  List<Widget> _buildLanguageTiles(List languages) {
+    List<Widget> languageTiles = [];
+    for (var index = 0; index < languages.length; index++) {
+      languageTiles.add(
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: Sizes.PADDING_8),
+          child: ListTile(
+            onTap: () {
               setState(() {
-                language = value;
+                languages.forEach((element) => element.isSelected = false);
+                languages[index].isSelected = true;
               });
             },
+            title: Text(defaultLanguagesList[index]),
+            trailing: RadioItem(languages[index]),
           ),
         ),
       );
     }
-    return listTiles;
+    return languageTiles;
   }
-
-
 }
