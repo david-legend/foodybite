@@ -18,7 +18,6 @@ import 'home_screen.dart';
 import 'menu_photos_screen.dart';
 
 class RestaurantDetailsScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.RESTAURANT_DETAILS_ROUTE;
 
   final RestaurantDetails restaurantDetails;
 

@@ -16,7 +16,6 @@ import 'categories_screen.dart';
 import 'restaurant_details_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.HOME_ROUTE;
   static const int TAB_NO = 0;
 
   HomeScreen({Key key}) : super(key: key);

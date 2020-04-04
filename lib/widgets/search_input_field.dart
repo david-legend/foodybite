@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
 
 class FoodyBiteSearchInputField extends StatelessWidget {
-
   final TextEditingController controller;
   final TextStyle textFormFieldStyle;
   final TextStyle hintTextStyle;
@@ -22,28 +21,35 @@ class FoodyBiteSearchInputField extends StatelessWidget {
   final Color fillColor;
   final bool filled;
   final bool obscured;
+  final bool hasSuffixIcon;
+  ValueChanged<String> onChanged;
+  Widget suffixIcon;
+  Widget prefixIcon;
 
-  FoodyBiteSearchInputField(
-      this.prefixIconImagePath, {
-        this.controller,
-        this.textFormFieldStyle =  Styles.normalTextStyle,
-        this.hintTextStyle = Styles.normalTextStyle,
-        this.borderStyle = BorderStyle.none,
-        this.onTapOfSuffixIcon,
-        this.onTapOfLeadingIcon,
-        this.borderRadius = Sizes.RADIUS_12,
-        this.borderWidth = Sizes.WIDTH_0,
-        this.contentPaddingHorizontal = Sizes.PADDING_0,
-        this.contentPaddingVertical = Sizes.PADDING_22,
-        this.hintText,
-        this.suffixIconImagePath,
-        this.borderColor = Colors.grey,
-        this.prefixIconColor = AppColors.accentText,
-        this.suffixIconColor = AppColors.accentText,
-        this.fillColor = AppColors.fillColor,
-        this.filled = true,
-        this.obscured = false,
-      });
+  FoodyBiteSearchInputField(this.prefixIconImagePath, {
+    this.controller,
+    this.textFormFieldStyle = Styles.normalTextStyle,
+    this.hintTextStyle = Styles.normalTextStyle,
+    this.borderStyle = BorderStyle.none,
+    this.onTapOfSuffixIcon,
+    this.onTapOfLeadingIcon,
+    this.borderRadius = Sizes.RADIUS_12,
+    this.borderWidth = Sizes.WIDTH_0,
+    this.contentPaddingHorizontal = Sizes.PADDING_0,
+    this.contentPaddingVertical = Sizes.PADDING_22,
+    this.hintText,
+    this.suffixIconImagePath,
+    this.borderColor = Colors.grey,
+    this.prefixIconColor = AppColors.accentText,
+    this.suffixIconColor = AppColors.accentText,
+    this.fillColor = AppColors.fillColor,
+    this.filled = true,
+    this.obscured = false,
+    this.hasSuffixIcon = true,
+    this.onChanged,
+    this.suffixIcon,
+    this.prefixIcon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +58,8 @@ class FoodyBiteSearchInputField extends StatelessWidget {
         controller: controller,
         style: textFormFieldStyle,
         decoration: InputDecoration(
-          enabledBorder:  OutlineInputBorder(
+
+          enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: borderColor, width: borderWidth),
           ),
           focusedBorder: OutlineInputBorder(
@@ -68,18 +75,12 @@ class FoodyBiteSearchInputField extends StatelessWidget {
           ),
           prefixIcon: InkWell(
             onTap: onTapOfLeadingIcon,
-            child: ImageIcon(
-              AssetImage(prefixIconImagePath),
-              color: prefixIconColor,
-            ),
+            child: prefixIcon ?? defaultPrefixIcon(),
           ),
-          suffixIcon: InkWell(
+          suffixIcon: hasSuffixIcon ? InkWell(
             onTap: onTapOfSuffixIcon,
-            child: ImageIcon(
-              AssetImage(suffixIconImagePath),
-              color: suffixIconColor,
-            ),
-          ),
+            child: suffixIcon ?? defaultSuffixIcon(),
+          ) : null,
           contentPadding: EdgeInsets.symmetric(
             horizontal: contentPaddingHorizontal,
             vertical: contentPaddingVertical,
@@ -90,7 +91,22 @@ class FoodyBiteSearchInputField extends StatelessWidget {
           fillColor: fillColor,
         ),
         obscureText: obscured,
+        onChanged: onChanged,
       ),
+    );
+  }
+
+  Widget defaultSuffixIcon() {
+    return ImageIcon(
+      AssetImage(suffixIconImagePath),
+      color: suffixIconColor,
+    );
+  }
+
+  Widget defaultPrefixIcon() {
+    return ImageIcon(
+      AssetImage(prefixIconImagePath),
+      color: prefixIconColor,
     );
   }
 }

@@ -45,7 +45,6 @@ class Styles {
     fontSize: Sizes.TEXT_SIZE_14,
   );
 
-
   static TextStyle customNormalTextStyle({
     Color color = AppColors.secondaryText,
     String fontFamily = StringConst.FONT_FAMILY,
@@ -54,11 +53,12 @@ class Styles {
     double letterSpacing = 0,
   }) {
     return TextStyle(
-        color: color,
-        fontFamily: fontFamily,
-        fontWeight: fontWeight,
-        fontSize: fontSize,
-        letterSpacing: letterSpacing);
+      color: color,
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      fontSize: fontSize,
+      letterSpacing: letterSpacing,
+    );
   }
 
   static const TextStyle mediumTextStyle = TextStyle(

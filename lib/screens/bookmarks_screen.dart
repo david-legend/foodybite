@@ -2,20 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/screens/restaurant_details_screen.dart';
-import 'package:potbelly/screens/root.dart';
+import 'package:potbelly/screens/root_screen.dart';
 import 'package:potbelly/values/data.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/spaces.dart';
 
 class BookmarksScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.BOOKMARKS_ROUTE;
+  static const int TAB_NO = 1;
 
   @override
   Widget build(BuildContext context) {
-    void navigateToDetailScreen() {
-      Navigator.pushNamed(context, RestaurantDetailsScreen.ROUTE_NAME);
-    }
+
 
     return Scaffold(
       appBar: AppBar(

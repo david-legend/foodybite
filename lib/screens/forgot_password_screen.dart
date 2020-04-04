@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/utils/navigation.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
 import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.FORGOT_PASSWORD_ROUTE;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +78,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                           children: [
                             Expanded(
                               child: CustomTextFormField(
-                                ImagePath.emailIcon,
+                                prefixIconImagePath: ImagePath.emailIcon,
                                 hintText: StringConst.HINT_TEXT_EMAIL,
                               ),
                             ),

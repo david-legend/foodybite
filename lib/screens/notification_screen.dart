@@ -3,7 +3,7 @@ import 'package:potbelly/screens/restaurant_details_screen.dart';
 import 'package:potbelly/values/values.dart';
 
 class NotificationsScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.NOTIFICATIONS_ROUTE;
+  static const int TAB_NO = 2;
 
   NotificationsScreen({Key key}) : super(key: key);
 

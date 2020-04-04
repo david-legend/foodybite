@@ -97,7 +97,8 @@ class FoodyBiteCard extends StatelessWidget {
                                     Shadows.secondaryShadow,
                                   ],
                                   borderRadius: BorderRadius.all(
-                                      Radius.circular(tagRadius)),
+                                    Radius.circular(tagRadius),
+                                  ),
                                 ),
                               ),
                               SizedBox(width: 5.0),
@@ -240,15 +241,16 @@ class FoodyBiteCard extends StatelessWidget {
                       top: (cardHeight / 2) + 16,
                       left: width - 60,
                       child: Container(
-                          height: 60,
-                          width: 60,
-                          child: Card(
-                            elevation: 4.0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                            ),
-                            child: Image.asset(ImagePath.activeBookmarksIcon2),
-                          )),
+                        height: 60,
+                        width: 60,
+                        child: Card(
+                          elevation: 4.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          child: Image.asset(ImagePath.activeBookmarksIcon2),
+                        ),
+                      ),
                     )
                   : Container()
             ],

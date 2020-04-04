@@ -9,12 +9,14 @@ class CustomAppBar extends StatelessWidget {
     this.hasTrailing = true,
     this.onActionTap,
     this.trailing,
+    this.leading,
     this.onLeadingTap,
   });
 
   final GestureTapCallback onLeadingTap;
   final GestureTapCallback onActionTap;
   final List<Widget> trailing;
+  final Widget leading;
   final bool hasLeading;
   final bool hasTrailing;
   final String title;
@@ -23,13 +25,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0.0,
-      leading: hasLeading ? InkWell(
-        onTap: () => Router.navigator.pop(),
-        child: Image.asset(
-          ImagePath.arrowBackIcon,
-          color: AppColors.headingText,
-        ),
-      ) : null,
+      leading: hasLeading ? (leading ?? defaultLeading()) : null,
       centerTitle: true,
       title: Text(
         title,
@@ -53,5 +49,15 @@ class CustomAppBar extends StatelessWidget {
         ) ,
       )
     ];
+  }
+
+  Widget defaultLeading() {
+    return InkWell(
+      onTap: () => Router.navigator.pop(),
+      child: Image.asset(
+        ImagePath.arrowBackIcon,
+        color: AppColors.headingText,
+      ),
+    );
   }
 }

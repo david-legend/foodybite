@@ -66,8 +66,8 @@ class EditProfileScreen extends StatelessWidget {
               ],
             ),
             Spacer(flex: 1),
-//            SpaceH20(),
-            CustomTextFormField(
+
+            CustomTextFormField(prefixIconImagePath:
               ImagePath.personIcon,
               textFormFieldStyle: textFormFieldTextStyle,
               hintText: "John Williams",
@@ -77,7 +77,7 @@ class EditProfileScreen extends StatelessWidget {
               borderWidth: Sizes.WIDTH_1,
             ),
             SpaceH20(),
-            CustomTextFormField(
+            CustomTextFormField(prefixIconImagePath:
               ImagePath.emailIcon,
               textFormFieldStyle: textFormFieldTextStyle,
               hintText: "john.williams@gmail.com",

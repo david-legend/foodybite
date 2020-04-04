@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:potbelly/routes/router.dart';
+import 'package:potbelly/screens/new_review_screen.dart';
 import 'package:potbelly/screens/profile_screen.dart';
 import 'package:potbelly/values/values.dart';
 
@@ -8,6 +10,10 @@ import 'notification_screen.dart';
 
 class RootScreen extends StatefulWidget {
   static const String ROUTE_NAME = StringConst.ROOT_ROUTE;
+
+  RootScreen({this.currentScreen});
+
+  final CurrentScreen currentScreen;
 
   @override
   _RootScreenState createState() => _RootScreenState();
@@ -20,9 +26,10 @@ class _RootScreenState extends State<RootScreen> {
 
   @override
   initState() {
+    print("byhart");
     super.initState();
-    currentScreen = HomeScreen();
-    currentTab = 0;
+    currentScreen = widget.currentScreen?.currentScreen ?? HomeScreen();
+    currentTab = widget.currentScreen?.tab_no ?? 0;
   }
 
   changeScreen({
@@ -46,7 +53,10 @@ class _RootScreenState extends State<RootScreen> {
         child: Image.asset(ImagePath.addIcon),
         backgroundColor: AppColors.secondaryElement,
         elevation: 8.0,
-        onPressed: () {},
+        onPressed: () => changeScreen(
+          currentScreen: NewReviewScreen(),
+          currentTab: NewReviewScreen.TAB_NO,
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
@@ -78,7 +88,7 @@ class _RootScreenState extends State<RootScreen> {
                   SizedBox(width: 40),
                   bottomNavigationIcon(
                     destination: BookmarksScreen(),
-                    currentTab: 1,
+                    currentTab: BookmarksScreen.TAB_NO,
                     activeIcon: ImagePath.activeBookmarksIcon2,
                     nonActiveIcon: ImagePath.bookmarksIcon,
                   ),
@@ -91,14 +101,14 @@ class _RootScreenState extends State<RootScreen> {
                 children: <Widget>[
                   bottomNavigationIcon(
                     destination: NotificationsScreen(),
-                    currentTab: 2,
+                    currentTab: NotificationsScreen.TAB_NO,
                     activeIcon: ImagePath.activeNotificationIcon,
                     nonActiveIcon: ImagePath.notificationIcon,
                   ),
                   SizedBox(width: 40),
                   bottomNavigationIcon(
                     destination: ProfileScreen(),
-                    currentTab: 3,
+                    currentTab: ProfileScreen.TAB_NO,
                     activeIcon: ImagePath.activePersonIcon,
                     nonActiveIcon: ImagePath.personGreyIcon,
                   ),

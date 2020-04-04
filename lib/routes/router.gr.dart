@@ -12,10 +12,10 @@ import 'package:potbelly/screens/forgot_password_screen.dart';
 import 'package:potbelly/screens/register_screen.dart';
 import 'package:potbelly/screens/set_location_screen.dart';
 import 'package:potbelly/screens/home_screen.dart';
-import 'package:potbelly/screens/root.dart';
+import 'package:potbelly/screens/root_screen.dart';
+import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/screens/trending_restaurant_screen.dart';
 import 'package:potbelly/screens/restaurant_details_screen.dart';
-import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/screens/bookmarks_screen.dart';
 import 'package:potbelly/screens/notification_screen.dart';
 import 'package:potbelly/screens/profile_screen.dart';
@@ -32,6 +32,7 @@ import 'package:potbelly/screens/settings_screen.dart';
 import 'package:potbelly/screens/change_password_screen.dart';
 import 'package:potbelly/screens/change_language_screen.dart';
 import 'package:potbelly/screens/edit_profile_screen.dart';
+import 'package:potbelly/screens/new_review_screen.dart';
 
 class Router {
   static const loginScreen = '/';
@@ -58,6 +59,7 @@ class Router {
   static const changePasswordScreen = '/change-password-screen';
   static const changeLanguageScreen = '/change-language-screen';
   static const editProfileScreen = '/edit-profile-screen';
+  static const newReviewScreen = '/new-review-screen';
   static final navigator = ExtendedNavigator();
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -92,8 +94,12 @@ class Router {
           settings: settings,
         );
       case Router.rootScreen:
+        if (hasInvalidArgs<CurrentScreen>(args)) {
+          return misTypedArgsRoute<CurrentScreen>(args);
+        }
+        final typedArgs = args as CurrentScreen;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => RootScreen(),
+          builder: (_) => RootScreen(currentScreen: typedArgs),
           settings: settings,
         );
       case Router.trendingRestaurantsScreen:
@@ -200,6 +206,11 @@ class Router {
       case Router.editProfileScreen:
         return MaterialPageRoute<dynamic>(
           builder: (_) => EditProfileScreen(),
+          settings: settings,
+        );
+      case Router.newReviewScreen:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => NewReviewScreen(),
           settings: settings,
         );
       default:

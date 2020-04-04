@@ -3,7 +3,7 @@ import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/screens/restaurant_details_screen.dart';
-import 'package:potbelly/screens/root.dart';
+import 'package:potbelly/screens/root_screen.dart';
 import 'package:potbelly/values/data.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';

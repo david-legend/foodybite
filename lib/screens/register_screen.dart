@@ -84,7 +84,7 @@ class RegisterScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: CustomTextFormField(
+                            child: CustomTextFormField(prefixIconImagePath:
                               ImagePath.personIcon,
                               hintText: StringConst.HINT_TEXT_NAME,
                             ),
@@ -102,7 +102,7 @@ class RegisterScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: CustomTextFormField(
+                            child: CustomTextFormField(prefixIconImagePath:
                               ImagePath.emailIcon,
                               hintText: StringConst.HINT_TEXT_EMAIL,
                             ),
@@ -120,7 +120,7 @@ class RegisterScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: CustomTextFormField(
+                            child: CustomTextFormField(prefixIconImagePath:
                               ImagePath.passwordIcon,
                               hintText: StringConst.HINT_TEXT_PASSWORD,
                               obscured: true,
@@ -139,7 +139,7 @@ class RegisterScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: CustomTextFormField(
+                            child: CustomTextFormField(prefixIconImagePath:
                               ImagePath.passwordIcon,
                               hintText: StringConst.HINT_TEXT_CONFIRM_PASSWORD,
                               obscured: true,

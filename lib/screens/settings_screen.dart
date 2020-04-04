@@ -4,7 +4,6 @@ import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_app_bar.dart';
 
 class SettingsScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,16 +53,17 @@ class SettingsScreen extends StatelessWidget {
               tiles: <Widget>[
                 SettingsListTile(
                   title: "Change Password",
-                  onTap: () => Router.navigator.pushNamed(Router.changePasswordScreen),
+                  onTap: () =>
+                      Router.navigator.pushNamed(Router.changePasswordScreen),
                 ),
                 SettingsListTile(
                   title: "Change Language",
-                  onTap: () => Router.navigator.pushNamed(Router.changeLanguageScreen),
+                  onTap: () =>
+                      Router.navigator.pushNamed(Router.changeLanguageScreen),
                 )
               ],
             ).toList(),
           )
-
         ],
       ),
     );
@@ -109,12 +109,103 @@ class SettingsScreen extends StatelessWidget {
                   title: "Logout",
                   titleColor: AppColors.secondaryElement,
                   hasTrailing: false,
-                  onTap: () {},
-                )
+                  onTap: () => _logoutDialog(context),
+                ),
               ],
             ).toList(),
           ),
         ],
+      ),
+    );
+  }
+
+  Future<void> _logoutDialog(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return _buildAlertDialog(context);
+      },
+    );
+  }
+
+  Widget _buildAlertDialog(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(Sizes.RADIUS_32),
+        ),
+      ),
+      child: AlertDialog(
+        contentPadding: EdgeInsets.fromLTRB(
+          Sizes.PADDING_0,
+          Sizes.PADDING_36,
+          Sizes.PADDING_0,
+          Sizes.PADDING_0,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(Sizes.RADIUS_20),
+        ),
+        elevation: Sizes.ELEVATION_4,
+        content: Container(
+          height: Sizes.HEIGHT_150,
+          width: Sizes.WIDTH_300,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              SingleChildScrollView(
+                child: Center(
+                  child: Text(
+                    'Are you sure you want to Logout ?',
+                    style: textTheme.title.copyWith(
+                      fontSize: Sizes.TEXT_SIZE_20,
+                    ),
+                  ),
+                ),
+              ),
+              Spacer(flex: 1),
+              Row(
+                children: <Widget>[
+                  AlertDialogButton(
+                    buttonText: "No",
+                    width: Sizes.WIDTH_150,
+                    border: Border(
+                      top: BorderSide(
+                        width: 1,
+                        color: AppColors.greyShade1,
+                      ),
+                      right: BorderSide(
+                        width: 1,
+                        color: AppColors.greyShade1,
+                      ),
+                    ),
+                    textStyle:
+                        textTheme.button.copyWith(color: AppColors.accentText),
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
+                  AlertDialogButton(
+                    buttonText: "Yes",
+                    width: Sizes.WIDTH_150,
+                    border: Border(
+                      top: BorderSide(
+                        width: 1,
+                        color: AppColors.greyShade1,
+                      ),
+                    ),
+                    textStyle: textTheme.button
+                        .copyWith(color: AppColors.secondaryElement),
+                    onPressed: () => Router.navigator.pushNamedAndRemoveUntil(
+                      Router.loginScreen,
+                      (Route<dynamic> route) => false,
+                    ),
+                  ),
+
+                ],
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -148,10 +239,44 @@ class SettingsListTile extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: Sizes.MARGIN_8),
           child: Text(
             title,
-            style: textTheme.title.copyWith(fontSize: Sizes.TEXT_SIZE_20, color: titleColor),
+            style: textTheme.title
+                .copyWith(fontSize: Sizes.TEXT_SIZE_20, color: titleColor),
           ),
         ),
         trailing: hasTrailing ? Icon(iconData, color: AppColors.indigo) : null,
+      ),
+    );
+  }
+}
+
+class AlertDialogButton extends StatelessWidget {
+  AlertDialogButton({
+    @required this.buttonText,
+    this.textStyle,
+    this.border,
+    this.width,
+    this.onPressed,
+  });
+
+  final TextStyle textStyle;
+  final String buttonText;
+  final VoidCallback onPressed;
+  final Border border;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      decoration: BoxDecoration(
+        border: border,
+      ),
+      child: FlatButton(
+        child: Text(
+          buttonText,
+          style: textStyle,
+        ),
+        onPressed: onPressed,
       ),
     );
   }

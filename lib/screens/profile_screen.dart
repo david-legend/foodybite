@@ -5,7 +5,8 @@ import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class ProfileScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.NOTIFICATIONS_ROUTE;
+  static const int TAB_NO = 3;
+
   ProfileScreen({Key key}) : super(key: key);
 
   @override

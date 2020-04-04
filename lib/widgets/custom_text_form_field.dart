@@ -13,13 +13,19 @@ class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final Color prefixIconColor;
   final Color borderColor;
+  final Color focusedBorderColor;
+  final Color enabledBorderColor;
   final Color fillColor;
   final bool filled;
   final bool obscured;
+  final bool hasPrefixIcon;
+  final int maxLines;
 
-  CustomTextFormField(
-    this.prefixIconImagePath, {
-    this.textFormFieldStyle =  Styles.normalTextStyle,
+  CustomTextFormField({
+    this.hasPrefixIcon = true,
+    this.prefixIconImagePath,
+    this.maxLines = 1,
+    this.textFormFieldStyle = Styles.normalTextStyle,
     this.hintTextStyle = Styles.normalTextStyle,
     this.borderStyle = BorderStyle.none,
     this.borderRadius = Sizes.RADIUS_12,
@@ -29,6 +35,8 @@ class CustomTextFormField extends StatelessWidget {
     this.hintText,
     this.prefixIconColor = AppColors.secondaryText,
     this.borderColor = AppColors.greyShade1,
+    this.focusedBorderColor = AppColors.greyShade1,
+    this.enabledBorderColor = AppColors.greyShade1,
     this.fillColor = AppColors.fillColor,
     this.filled = true,
     this.obscured = false,
@@ -39,6 +47,7 @@ class CustomTextFormField extends StatelessWidget {
     return Container(
       child: TextFormField(
         style: textFormFieldStyle,
+        maxLines: maxLines,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius),
@@ -51,7 +60,7 @@ class CustomTextFormField extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius),
             borderSide: BorderSide(
-              color: borderColor,
+              color: enabledBorderColor,
               width: borderWidth,
               style: borderStyle,
             ),
@@ -59,15 +68,15 @@ class CustomTextFormField extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius),
             borderSide: BorderSide(
-              color: borderColor,
+              color: focusedBorderColor,
               width: borderWidth,
               style: borderStyle,
             ),
           ),
-          prefixIcon: ImageIcon(
+          prefixIcon: hasPrefixIcon ? ImageIcon(
             AssetImage(prefixIconImagePath),
             color: prefixIconColor,
-          ),
+          ): null,
           contentPadding: EdgeInsets.symmetric(
             horizontal: contentPaddingHorizontal,
             vertical: contentPaddingVertical,

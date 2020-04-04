@@ -60,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                             child: Row(
                               children: [
                                 Expanded(
-                                  child: CustomTextFormField(
+                                  child: CustomTextFormField(prefixIconImagePath:
                                     ImagePath.emailIcon,
                                     hintText: StringConst.HINT_TEXT_EMAIL,
                                   ),
@@ -78,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                             child: Row(
                               children: [
                                 Expanded(
-                                  child: CustomTextFormField(
+                                  child: CustomTextFormField(prefixIconImagePath:
                                     ImagePath.passwordIcon,
                                     hintText: StringConst.HINT_TEXT_PASSWORD,
                                     obscured: true,
@@ -91,7 +91,8 @@ class LoginScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.topRight,
                           child: InkWell(
-                            onTap: () => Router.navigator.pushNamed(Router.forgotPasswordScreen),
+                            onTap: () => Router.navigator
+                                .pushNamed(Router.forgotPasswordScreen),
                             child: Container(
                               margin: EdgeInsets.only(
                                   top: Sizes.MARGIN_16, right: Sizes.MARGIN_48),
@@ -111,15 +112,18 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     child: PotbellyButton(
                       StringConst.LOGIN,
-
-                      onTap: () => Router.navigator.pushReplacementNamed(Router.rootScreen),
+                      onTap: () => Router.navigator.pushNamedAndRemoveUntil(
+                        Router.rootScreen,
+                        (Route<dynamic> route) => false,
+                      ),
                     ),
                   ),
                   SizedBox(height: Sizes.HEIGHT_60),
                   Align(
                     alignment: Alignment.topCenter,
                     child: InkWell(
-                      onTap: () => Router.navigator.pushNamed(Router.registerScreen),
+                      onTap: () =>
+                          Router.navigator.pushNamed(Router.registerScreen),
                       child: Container(
                         width: Sizes.WIDTH_150,
                         height: Sizes.HEIGHT_24,
@@ -152,7 +156,4 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
-
-
-
 }
