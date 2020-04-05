@@ -4,7 +4,6 @@ import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class FilterScreen extends StatefulWidget {
-  static const String ROUTE_NAME = StringConst.FILTER_ROUTE;
 
   @override
   _FilterScreenState createState() => _FilterScreenState();

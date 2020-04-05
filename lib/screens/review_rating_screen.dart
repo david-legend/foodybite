@@ -4,7 +4,6 @@ import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/ratings_widget.dart';
 
 class ReviewRatingScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.REVIEW_RATING_ROUTE;
 
   TextStyle subTitleTextStyle = Styles.customNormalTextStyle(
     color: AppColors.accentText,

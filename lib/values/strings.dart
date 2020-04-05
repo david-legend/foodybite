@@ -50,25 +50,6 @@ class StringConst {
   static const String AMERICAN = "American";
   static const String KOREAN = "Korean";
 
-  //Routes
-  static const String LOGIN_ROUTE = "/login";
-  static const String REGISTER_ROUTE = "/register";
-  static const String FORGOT_PASSWORD_ROUTE = "/forgotPassword";
-  static const String SET_LOCATION_ROUTE = "/setLocation";
-  static const String ROOT_ROUTE = "/root";
-  static const String HOME_ROUTE = "/home";
-  static const String TRENDING_RESTAURANTS_ROUTE = "/trendingRestaurants";
-  static const String SEARCH_RESULTS_ROUTE = "/searchResults";
-  static const String BOOKMARKS_ROUTE = "/bookmarks";
-  static const String NOTIFICATIONS_ROUTE = "/notifications";
-  static const String PREVIEW_MENU_PHOTOS_ROUTE = "/previewMenuPhotos";
-  static const String PROFILE_ROUTE = "/profile";
-  static const String RESTAURANT_DETAILS_ROUTE = "/restaurantDetail";
-  static const String MENU_PHOTOS_ROUTE = "/menuPhotos";
-  static const String REVIEW_RATING_ROUTE = "/reviewRating";
-  static const String ADD_RATINGS_ROUTE = "/addRatings";
-  static const String FILTER_ROUTE = "/filter";
-  static const String CATEGORIES_ROUTE = "/categories";
 
   //Font Family
   static const String FONT_FAMILY = "Josefin Sans";

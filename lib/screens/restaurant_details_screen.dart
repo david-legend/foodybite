@@ -1,21 +1,15 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/screens/add_ratings_screen.dart';
-import 'package:potbelly/screens/review_rating_screen.dart';
 import 'package:potbelly/values/data.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/card_tags.dart';
-import 'package:potbelly/widgets/category_card.dart';
 import 'package:potbelly/widgets/heading_row.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 import 'package:potbelly/widgets/ratings_widget.dart';
 
-import 'home_screen.dart';
-import 'menu_photos_screen.dart';
 
 class RestaurantDetailsScreen extends StatelessWidget {
 

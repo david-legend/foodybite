@@ -35,7 +35,6 @@ final List child = map<Widget>(
 ).toList();
 
 class PreviewMenuPhotosScreen extends StatefulWidget {
-  static const String ROUTE_NAME = StringConst.PREVIEW_MENU_PHOTOS_ROUTE;
 
   @override
   _PreviewMenuPhotosScreenState createState() =>

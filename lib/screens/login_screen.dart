@@ -1,14 +1,11 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
 import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class LoginScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.LOGIN_ROUTE;
 
   @override
   Widget build(BuildContext context) {

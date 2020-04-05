@@ -9,7 +9,6 @@ import 'home_screen.dart';
 import 'notification_screen.dart';
 
 class RootScreen extends StatefulWidget {
-  static const String ROUTE_NAME = StringConst.ROOT_ROUTE;
 
   RootScreen({this.currentScreen});
 

@@ -124,21 +124,21 @@ class FoodyBiteCard extends StatelessWidget {
                                           Positioned(
                                             left: 21,
                                             child: Image.asset(
-                                              "assets/images/cbx-263152-unsplash.png",
+                                              ImagePath.cardImage1,
                                               fit: BoxFit.none,
                                             ),
                                           ),
                                           Positioned(
                                             left: 12,
                                             child: Image.asset(
-                                              "assets/images/a-l-l-e-f-v-i-n-i-c-i-u-s-173820-unsplash.png",
+                                              ImagePath.cardImage2,
                                               fit: BoxFit.none,
                                             ),
                                           ),
                                           Positioned(
                                             left: 0,
                                             child: Image.asset(
-                                              "assets/images/brooke-cagle-274465-unsplash-5.png",
+                                              ImagePath.cardImage1,
                                               fit: BoxFit.none,
                                             ),
                                           ),

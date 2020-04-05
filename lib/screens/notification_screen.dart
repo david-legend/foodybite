@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/screens/restaurant_details_screen.dart';
 import 'package:potbelly/values/values.dart';
 
 class NotificationsScreen extends StatelessWidget {

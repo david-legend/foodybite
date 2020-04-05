@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/screens/filter_screen.dart';
-import 'package:potbelly/screens/search_results.dart';
-import 'package:potbelly/screens/trending_restaurant_screen.dart';
-import 'package:potbelly/utils/navigation.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/values/data.dart';
 import 'package:potbelly/widgets/category_card.dart';
@@ -12,8 +8,6 @@ import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/heading_row.dart';
 import 'package:potbelly/widgets/search_input_field.dart';
 
-import 'categories_screen.dart';
-import 'restaurant_details_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const int TAB_NO = 0;

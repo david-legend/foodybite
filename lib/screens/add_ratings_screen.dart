@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/main.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class AddRatingsScreen extends StatefulWidget {
-  static const String ROUTE_NAME = StringConst.ADD_RATINGS_ROUTE;
 
   @override
   _AddRatingsScreenState createState() => _AddRatingsScreenState();

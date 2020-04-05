@@ -6,7 +6,6 @@ import 'package:potbelly/widgets/category_card.dart';
 import 'package:potbelly/widgets/spaces.dart';
 
 class CategoriesScreen extends StatefulWidget {
-  static const String ROUTE_NAME = StringConst.CATEGORIES_ROUTE;
 
   @override
   _CategoriesScreenState createState() => _CategoriesScreenState();

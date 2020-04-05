@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/screens/login_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
 import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class RegisterScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.REGISTER_ROUTE;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//      resizeToAvoidBottomPadding: false,
       body: Container(
         constraints: BoxConstraints.expand(),
         decoration: Decorations.regularDecoration,

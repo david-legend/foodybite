@@ -5,7 +5,6 @@ import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class SetLocationScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.SET_LOCATION_ROUTE;
 
   @override
   Widget build(BuildContext context) {

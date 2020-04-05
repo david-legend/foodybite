@@ -8,7 +8,6 @@ import 'package:potbelly/widgets/search_input_field.dart';
 import 'package:potbelly/widgets/spaces.dart';
 
 class TrendingRestaurantsScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.TRENDING_RESTAURANTS_ROUTE;
 
   @override
   Widget build(BuildContext context) {

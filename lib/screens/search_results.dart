@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/screens/home_screen.dart';
-import 'package:potbelly/screens/restaurant_details_screen.dart';
-import 'package:potbelly/screens/root_screen.dart';
 import 'package:potbelly/values/data.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
@@ -11,7 +8,6 @@ import 'package:potbelly/widgets/search_input_field.dart';
 import 'package:potbelly/widgets/spaces.dart';
 
 class SearchResultsScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.SEARCH_RESULTS_ROUTE;
 
   final SearchValue searchValue;
 

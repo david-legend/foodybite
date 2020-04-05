@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 
-import 'preview_menu_photos.dart';
 
 class MenuPhotosScreen extends StatelessWidget {
-  static const String ROUTE_NAME = StringConst.MENU_PHOTOS_ROUTE;
   final double heightForSmallImages = 100.0;
   final double heightForBigImages = 200.0;
 
