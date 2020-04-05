@@ -46,7 +46,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         ],
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16, vertical: Sizes.MARGIN_16),
+        margin: EdgeInsets.symmetric(
+            horizontal: Sizes.MARGIN_16, vertical: Sizes.MARGIN_16),
         child: ListView.separated(
           itemCount: categoryListImagePaths.length,
           separatorBuilder: (context, index) {
@@ -55,7 +56,16 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           itemBuilder: (context, index) {
             return Container(
               child: FoodyBiteCategoryCard(
-                onTap: () => Router.navigator.pushNamed(Router.categoryDetailScreen),
+                onTap: () => Router.navigator.pushNamed(
+                  Router.categoryDetailScreen,
+                  arguments: CategoryDetailScreenArguments(
+                    categoryName: category[index],
+                    imagePath: categoryListImagePaths[index],
+                    selectedCategory: index,
+                    numberOfCategories: categoryListImagePaths.length,
+                    gradient: gradients[index],
+                  ),
+                ),
                 width: MediaQuery.of(context).size.width,
                 imagePath: categoryListImagePaths[index],
                 gradient: gradients[index],

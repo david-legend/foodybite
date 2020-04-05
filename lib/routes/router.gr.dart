@@ -179,8 +179,18 @@ class Router {
           settings: settings,
         );
       case Router.categoryDetailScreen:
+        if (hasInvalidArgs<CategoryDetailScreenArguments>(args,
+            isRequired: true)) {
+          return misTypedArgsRoute<CategoryDetailScreenArguments>(args);
+        }
+        final typedArgs = args as CategoryDetailScreenArguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => CategoryDetailScreen(),
+          builder: (_) => CategoryDetailScreen(
+              categoryName: typedArgs.categoryName,
+              imagePath: typedArgs.imagePath,
+              numberOfCategories: typedArgs.numberOfCategories,
+              selectedCategory: typedArgs.selectedCategory,
+              gradient: typedArgs.gradient),
           settings: settings,
         );
       case Router.findFriendsScreen:
@@ -217,4 +227,23 @@ class Router {
         return unknownRoutePage(settings.name);
     }
   }
+}
+
+//**************************************************************************
+// Arguments holder classes
+//***************************************************************************
+
+//CategoryDetailScreen arguments holder class
+class CategoryDetailScreenArguments {
+  final String categoryName;
+  final String imagePath;
+  final int numberOfCategories;
+  final int selectedCategory;
+  final Gradient gradient;
+  CategoryDetailScreenArguments(
+      {@required this.categoryName,
+      @required this.imagePath,
+      @required this.numberOfCategories,
+      @required this.selectedCategory,
+      @required this.gradient});
 }

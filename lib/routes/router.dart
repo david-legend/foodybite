@@ -99,3 +99,4 @@ class CurrentScreen{
     @required this.currentScreen,
   });
 }
+

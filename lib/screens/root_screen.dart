@@ -26,7 +26,6 @@ class _RootScreenState extends State<RootScreen> {
 
   @override
   initState() {
-    print("byhart");
     super.initState();
     currentScreen = widget.currentScreen?.currentScreen ?? HomeScreen();
     currentTab = widget.currentScreen?.tab_no ?? 0;

@@ -38,7 +38,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: buildLightTheme(context),
-      initialRoute: Router.loginScreen,
+      initialRoute: Router.rootScreen,
       onGenerateRoute: Router.onGenerateRoute,
       navigatorKey: Router.navigator.key,
     );
