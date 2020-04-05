@@ -44,8 +44,9 @@ class ChangePasswordScreen extends StatelessWidget {
             horizontal: Sizes.MARGIN_20, vertical: Sizes.MARGIN_20),
         child: Column(
           children: <Widget>[
-            CustomTextFormField(prefixIconImagePath:
-              ImagePath.passwordIcon,
+            CustomTextFormField(
+              hasPrefixIcon: true,
+              prefixIconImagePath: ImagePath.passwordIcon,
               textFormFieldStyle: textFormFieldTextStyle,
               hintText: "Current Password",
               prefixIconColor: AppColors.indigo,
@@ -55,8 +56,9 @@ class ChangePasswordScreen extends StatelessWidget {
               obscured: true,
             ),
             SpaceH20(),
-            CustomTextFormField(prefixIconImagePath:
-              ImagePath.passwordIcon,
+            CustomTextFormField(
+              hasPrefixIcon: true,
+              prefixIconImagePath: ImagePath.passwordIcon,
               textFormFieldStyle: textFormFieldTextStyle,
               hintText: "New Password",
               hintTextStyle: hintTextStyle,
@@ -66,8 +68,9 @@ class ChangePasswordScreen extends StatelessWidget {
               prefixIconColor: AppColors.indigo,
             ),
             SpaceH20(),
-            CustomTextFormField(prefixIconImagePath:
-              ImagePath.passwordIcon,
+            CustomTextFormField(
+              hasPrefixIcon: true,
+              prefixIconImagePath: ImagePath.passwordIcon,
               textFormFieldStyle: textFormFieldTextStyle,
               hintText: "Confirm Password",
               hintTextStyle: hintTextStyle,

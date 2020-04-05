@@ -22,7 +22,7 @@ class CustomTextFormField extends StatelessWidget {
   final int maxLines;
 
   CustomTextFormField({
-    this.hasPrefixIcon = true,
+    this.hasPrefixIcon = false,
     this.prefixIconImagePath,
     this.maxLines = 1,
     this.textFormFieldStyle = Styles.normalTextStyle,

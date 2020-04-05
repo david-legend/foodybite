@@ -66,9 +66,9 @@ class EditProfileScreen extends StatelessWidget {
               ],
             ),
             Spacer(flex: 1),
-
-            CustomTextFormField(prefixIconImagePath:
-              ImagePath.personIcon,
+            CustomTextFormField(
+              hasPrefixIcon: true,
+              prefixIconImagePath: ImagePath.personIcon,
               textFormFieldStyle: textFormFieldTextStyle,
               hintText: "John Williams",
               prefixIconColor: AppColors.secondaryElement,
@@ -77,8 +77,9 @@ class EditProfileScreen extends StatelessWidget {
               borderWidth: Sizes.WIDTH_1,
             ),
             SpaceH20(),
-            CustomTextFormField(prefixIconImagePath:
-              ImagePath.emailIcon,
+            CustomTextFormField(
+              hasPrefixIcon: true,
+              prefixIconImagePath: ImagePath.emailIcon,
               textFormFieldStyle: textFormFieldTextStyle,
               hintText: "john.williams@gmail.com",
               hintTextStyle: hintTextStyle,

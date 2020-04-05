@@ -60,7 +60,9 @@ class LoginScreen extends StatelessWidget {
                             child: Row(
                               children: [
                                 Expanded(
-                                  child: CustomTextFormField(prefixIconImagePath:
+                                  child: CustomTextFormField(
+                                    hasPrefixIcon: true,
+                                    prefixIconImagePath:
                                     ImagePath.emailIcon,
                                     hintText: StringConst.HINT_TEXT_EMAIL,
                                   ),
@@ -78,7 +80,9 @@ class LoginScreen extends StatelessWidget {
                             child: Row(
                               children: [
                                 Expanded(
-                                  child: CustomTextFormField(prefixIconImagePath:
+                                  child: CustomTextFormField(
+                                    hasPrefixIcon: true,
+                                    prefixIconImagePath:
                                     ImagePath.passwordIcon,
                                     hintText: StringConst.HINT_TEXT_PASSWORD,
                                     obscured: true,

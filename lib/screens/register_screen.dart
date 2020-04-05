@@ -84,8 +84,9 @@ class RegisterScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: CustomTextFormField(prefixIconImagePath:
-                              ImagePath.personIcon,
+                            child: CustomTextFormField(
+                              hasPrefixIcon: true,
+                              prefixIconImagePath: ImagePath.personIcon,
                               hintText: StringConst.HINT_TEXT_NAME,
                             ),
                           ),
@@ -102,8 +103,9 @@ class RegisterScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: CustomTextFormField(prefixIconImagePath:
-                              ImagePath.emailIcon,
+                            child: CustomTextFormField(
+                              hasPrefixIcon: true,
+                              prefixIconImagePath: ImagePath.emailIcon,
                               hintText: StringConst.HINT_TEXT_EMAIL,
                             ),
                           ),
@@ -120,8 +122,9 @@ class RegisterScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: CustomTextFormField(prefixIconImagePath:
-                              ImagePath.passwordIcon,
+                            child: CustomTextFormField(
+                              hasPrefixIcon: true,
+                              prefixIconImagePath: ImagePath.passwordIcon,
                               hintText: StringConst.HINT_TEXT_PASSWORD,
                               obscured: true,
                             ),
@@ -139,8 +142,9 @@ class RegisterScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           Expanded(
-                            child: CustomTextFormField(prefixIconImagePath:
-                              ImagePath.passwordIcon,
+                            child: CustomTextFormField(
+                              hasPrefixIcon: true,
+                              prefixIconImagePath: ImagePath.passwordIcon,
                               hintText: StringConst.HINT_TEXT_CONFIRM_PASSWORD,
                               obscured: true,
                             ),
@@ -154,7 +158,8 @@ class RegisterScreen extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     child: PotbellyButton(
                       StringConst.REGISTER,
-                      onTap: () => Router.navigator.pushNamed(Router.setLocationScreen),
+                      onTap: () =>
+                          Router.navigator.pushNamed(Router.setLocationScreen),
                     ),
                   ),
                   SizedBox(height: Sizes.HEIGHT_40),
@@ -172,7 +177,8 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 16.0),
                           InkWell(
-                            onTap: () => Router.navigator.pushReplacementNamed(Router.loginScreen),
+                            onTap: () => Router.navigator
+                                .pushReplacementNamed(Router.loginScreen),
                             child: Text(
                               StringConst.LOGIN,
                               textAlign: TextAlign.left,
@@ -192,8 +198,4 @@ class RegisterScreen extends StatelessWidget {
       ),
     );
   }
-
-
 }
-
-

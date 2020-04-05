@@ -78,6 +78,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                           children: [
                             Expanded(
                               child: CustomTextFormField(
+                                hasPrefixIcon: true,
                                 prefixIconImagePath: ImagePath.emailIcon,
                                 hintText: StringConst.HINT_TEXT_EMAIL,
                               ),

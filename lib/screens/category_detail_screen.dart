@@ -5,7 +5,6 @@ import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/spaces.dart';
 
 class CategoryDetailScreen extends StatelessWidget {
-//  cakeBig
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,6 @@ class CategoryDetailScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80.0),
         child: AppBar(
-
           automaticallyImplyLeading: false,
           title: SafeArea(
             child: Container(
