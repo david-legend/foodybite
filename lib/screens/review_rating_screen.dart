@@ -111,7 +111,7 @@ class ReviewRatingScreen extends StatelessWidget {
                   userNames[i - 1],
                   style: listTitleTextStyle,
                 ),
-                RatingsWidget(ratings[i - 1]),
+                Ratings(ratings[i - 1]),
               ],
             ),
             subtitle: Text(

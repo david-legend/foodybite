@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
+import 'package:potbelly/widgets/ratings_widget.dart';
 
 class FilterScreen extends StatefulWidget {
 
@@ -172,24 +173,8 @@ class _FilterScreenState extends State<FilterScreen> {
                   ],
                 ),
                 SizedBox(height: 24.0),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text('Ratings', style: subTitleTextStyle),
-                    SizedBox(height: 24.0),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 24.0),
-                      width: MediaQuery.of(context).size.width,
-                      height: 80.0,
-                      decoration: BoxDecoration(
-                          color: AppColors.kFoodyBiteSkyBlue,
-                          borderRadius: BorderRadius.all(Radius.circular(8))),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: createRatingStars(numberOfStars: 5),
-                      ),
-                    ),
-                  ],
+                RatingsBar(
+                  hasSubtitle: false,
                 ),
               ],
             ),
@@ -262,31 +247,6 @@ class _FilterScreenState extends State<FilterScreen> {
     );
   }
 
-  Widget ratingStar(int value) {
-    return InkWell(
-      onTap: () => setState(() => ratingValue = value),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Image.asset(
-          ImagePath.starIcon,
-          color: value <= ratingValue
-              ? AppColors.kFoodyBiteYellow
-              : AppColors.kFoodyBiteGreyRatingStar,
-        ),
-      ),
-    );
-  }
-
-  createRatingStars({@required numberOfStars}) {
-    List<Widget> ratingStars = [];
-
-    List<int> list = List<int>.generate(numberOfStars, (i) => i + 1);
-
-    list.forEach((i) {
-      ratingStars.add(ratingStar(i));
-    });
-    return ratingStars;
-  }
 
   createCategoryButtons({@required numberOfButtons}) {
     List<Widget> categoryButtons = <Widget>[];

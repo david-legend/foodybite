@@ -9,6 +9,7 @@ import 'package:potbelly/widgets/card_tags.dart';
 import 'package:potbelly/widgets/heading_row.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 import 'package:potbelly/widgets/ratings_widget.dart';
+import 'package:potbelly/widgets/spaces.dart';
 
 
 class RestaurantDetailsScreen extends StatelessWidget {
@@ -214,7 +215,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Spacer(flex: 1),
-                                  RatingsWidget(restaurantDetails.rating)
+                                  Ratings(restaurantDetails.rating)
                                 ],
                               ),
                               SizedBox(height: 16.0),
@@ -235,7 +236,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                   ]))
                             ],
                           ),
-                          SizedBox(height: 16.0),
+                          SpaceH24(),
                           HeadingRow(
                             title: StringConst.MENU_AND_PHOTOS,
                             number: StringConst.SEE_ALL_32,
@@ -263,7 +264,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                               },
                             ),
                           ),
-                          SizedBox(height: 16.0),
+                          SpaceH24(),
                           HeadingRow(
                             title: StringConst.REVIEWS_AND_RATINGS,
                             number: StringConst.SEE_ALL_32,
@@ -340,7 +341,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
               userNames[i - 1],
               style: subHeadingTextStyle,
             ),
-            RatingsWidget(ratings[i - 1]),
+            Ratings(ratings[i - 1]),
           ],
         ),
         contentPadding: EdgeInsets.symmetric(horizontal: 0),

@@ -5,6 +5,7 @@ import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
+import 'package:potbelly/widgets/ratings_widget.dart';
 import 'package:potbelly/widgets/search_card.dart';
 import 'package:potbelly/widgets/search_input_field.dart';
 import 'package:potbelly/widgets/spaces.dart';
@@ -155,7 +156,7 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
                   )
                 : Container(),
             SpaceH30(),
-            _buildingRating(context: context),
+            RatingsBar(),
             SpaceH30(),
             _buildReview(context: context),
           ],
@@ -184,55 +185,6 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
       this.isCardShowing = isCardShowing;
       this.canPost = canPost;
     });
-  }
-
-  Widget _buildingRating({@required BuildContext context}) {
-    var textTheme = Theme.of(context).textTheme;
-    return Column(
-      children: <Widget>[
-        Text(
-          "Rating",
-          style: Styles.customTitleTextStyle(
-            color: AppColors.headingText,
-            fontWeight: FontWeight.w600,
-            fontSize: Sizes.TEXT_SIZE_20,
-          ),
-        ),
-        SpaceH16(),
-        Container(
-          width: MediaQuery.of(context).size.width - 60,
-          padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 16.0),
-          decoration: BoxDecoration(
-            color: AppColors.kFoodyBiteSkyBlue,
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-          ),
-          child: Center(
-            child: RatingBar(
-              initialRating: 0,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemSize: 48,
-              unratedColor: AppColors.kFoodyBiteGreyRatingStar,
-              itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-              itemBuilder: (context, _) => Icon(
-                Icons.star,
-                color: Colors.amber,
-              ),
-              onRatingUpdate: (rating) {
-                print(rating);
-              },
-            ),
-          ),
-        ),
-        SpaceH12(),
-        Text(
-          "Rate your experience",
-          style: subTitleTextStyle,
-        ),
-      ],
-    );
   }
 
   Widget _buildReview({@required BuildContext context}) {
