@@ -6,22 +6,19 @@ import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class LoginScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+    var heightOfImage = MediaQuery.of(context).size.height;
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Container(
-        constraints: BoxConstraints.expand(),
         decoration: Decorations.regularDecoration,
         child: Stack(
-          alignment: Alignment.center,
           children: <Widget>[
             Positioned(
-              left: -158,
-              right: -45,
               child: Image.asset(
                 ImagePath.boiledEggs,
+                height: heightOfImage,
                 fit: BoxFit.cover,
               ),
             ),
@@ -59,8 +56,7 @@ class LoginScreen extends StatelessWidget {
                                 Expanded(
                                   child: CustomTextFormField(
                                     hasPrefixIcon: true,
-                                    prefixIconImagePath:
-                                    ImagePath.emailIcon,
+                                    prefixIconImagePath: ImagePath.emailIcon,
                                     hintText: StringConst.HINT_TEXT_EMAIL,
                                   ),
                                 ),
@@ -79,8 +75,7 @@ class LoginScreen extends StatelessWidget {
                                 Expanded(
                                   child: CustomTextFormField(
                                     hasPrefixIcon: true,
-                                    prefixIconImagePath:
-                                    ImagePath.passwordIcon,
+                                    prefixIconImagePath: ImagePath.passwordIcon,
                                     hintText: StringConst.HINT_TEXT_PASSWORD,
                                     obscured: true,
                                   ),

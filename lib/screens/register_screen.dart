@@ -6,23 +6,19 @@ import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class RegisterScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+    var heightOfImage = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        constraints: BoxConstraints.expand(),
         decoration: Decorations.regularDecoration,
         child: Stack(
-          alignment: Alignment.centerRight,
           children: [
             Positioned(
-              left: -57,
-              top: -61,
-              right: -155,
               child: Image.asset(
                 ImagePath.pancakesInAPan,
                 fit: BoxFit.cover,
+                height: heightOfImage,
               ),
             ),
             DarkOverLay(),
@@ -32,7 +28,6 @@ class RegisterScreen extends StatelessWidget {
               right: 0,
               bottom: 40,
               child: ListView(
-//                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(height: 35.0),
                   Center(
@@ -174,13 +169,15 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 16.0),
                           InkWell(
-                            onTap: () => Router.navigator
+                            onTap: () =>
+                                Router.navigator
                                 .pushReplacementNamed(Router.loginScreen),
                             child: Text(
                               StringConst.LOGIN,
                               textAlign: TextAlign.left,
                               style: Styles.customNormalTextStyle(
-                                  color: AppColors.secondaryElement),
+                                color: AppColors.secondaryElement,
+                              ),
                             ),
                           ),
                         ],

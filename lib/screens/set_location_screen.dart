@@ -8,31 +8,24 @@ class SetLocationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var heightOfImage = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
-        constraints: BoxConstraints.expand(),
         decoration: Decorations.regularDecoration,
         child: Stack(
-          alignment: Alignment.centerLeft,
           children: [
             Positioned(
-              left: -29,
-              top: 0,
-              right: -30,
-              bottom: 0,
               child: Image.asset(
                 ImagePath.salad,
                 fit: BoxFit.cover,
+                height: heightOfImage,
               ),
             ),
             DarkOverLay(
               gradient: Gradients.fullScreenOverGradient,
             ),
             Positioned(
-              left: 0,
-              top: 0,
-              right: 0,
-              bottom: 0,
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16),
                 child: Column(

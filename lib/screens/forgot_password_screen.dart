@@ -9,30 +9,24 @@ class ForgotPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var heightOfImage = MediaQuery.of(context).size.height;
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Container(
-        constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 255, 255, 255),
         ),
         child: Stack(
-          alignment: Alignment.topCenter,
           children: [
             Positioned(
-              left: -158,
-              right: -45,
               child: Image.asset(
                 ImagePath.boiledEggs,
                 fit: BoxFit.cover,
+                height: heightOfImage,
               ),
             ),
             DarkOverLay(),
             Positioned(
-              left: 0,
-              top: 0,
-              right: 0,
-              bottom: 0,
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_24),
                 child: Column(

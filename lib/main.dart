@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
+import 'package:potbelly/screens/login_screen.dart';
+import 'package:potbelly/screens/register_screen.dart';
 import 'package:potbelly/theme.dart';
-
 
 //Restaurant Details Screen
 //TODO::  vertical divider and directions icon on header screen
