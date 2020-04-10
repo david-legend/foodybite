@@ -36,7 +36,7 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
           title: "Change Language",
           trailing: <Widget>[
             InkWell(
-              onTap: () => Router.navigator.pushNamed(Router.settingsScreen),
+              onTap: () => Router.navigator.pop(),
               child: Center(
                 child: Container(
                   margin:
