@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:potbelly/routes/router.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/screens/new_review_screen.dart';
 import 'package:potbelly/screens/profile_screen.dart';
 import 'package:potbelly/values/values.dart';
+import 'dart:math' as math;
 
 import 'bookmarks_screen.dart';
 import 'home_screen.dart';
@@ -18,16 +19,32 @@ class RootScreen extends StatefulWidget {
   _RootScreenState createState() => _RootScreenState();
 }
 
-class _RootScreenState extends State<RootScreen> {
+class _RootScreenState extends State<RootScreen>
+    with SingleTickerProviderStateMixin {
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen;
   int currentTab;
+  AnimationController _controller;
+
+//  final double pi = math.pi;
+  final double tilt90Degrees = 90;
+  double angle = math.pi;
+
+  bool get _isPanelVisible {
+    return angle == tilt90Degrees ? true : false;
+  }
 
   @override
   initState() {
     super.initState();
+    print("init runs");
     currentScreen = widget.currentScreen?.currentScreen ?? HomeScreen();
     currentTab = widget.currentScreen?.tab_no ?? 0;
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 200),
+//      value: 1,
+      vsync: this,
+    );
   }
 
   changeScreen({
@@ -38,6 +55,18 @@ class _RootScreenState extends State<RootScreen> {
       this.currentScreen = currentScreen;
       this.currentTab = currentTab;
     });
+  }
+
+  void changeAngle() {
+    if (angle == math.pi) {
+      setState(() {
+        angle = tilt90Degrees;
+      });
+    } else {
+      setState(() {
+        angle = math.pi;
+      });
+    }
   }
 
   @override
@@ -57,27 +86,38 @@ class _RootScreenState extends State<RootScreen> {
 //      ),
 //    );
     return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.dark.copyWith(
-          systemNavigationBarColor: Colors.white,
-          systemNavigationBarDividerColor: Colors.white,
-          statusBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.light,
-        ),
-        child: PageStorage(
-          child: currentScreen,
-          bucket: bucket,
-        ),
+      body: PageStorage(
+        child: currentScreen,
+        bucket: bucket,
       ),
       floatingActionButton: FloatingActionButton(
-        child: Image.asset(ImagePath.addIcon),
+        child: AnimatedBuilder(
+          animation: _controller,
+          child: Icon(
+            Icons.add,
+            size: 36,
+            color: AppColors.white,
+          ),
+          builder: (context, child) => Transform.rotate(
+            angle: angle,
+            child: child,
+          ),
+        ),
         backgroundColor: AppColors.secondaryElement,
         elevation: 8.0,
-        onPressed: () => changeScreen(
-          currentScreen: NewReviewScreen(),
-          currentTab: NewReviewScreen.TAB_NO,
-        ),
+        onPressed: () {
+          changeAngle();
+          _isPanelVisible ? _controller.forward() : _controller.reverse();
+          _isPanelVisible
+              ? changeScreen(
+                  currentScreen: NewReviewScreen(),
+                  currentTab: NewReviewScreen.TAB_NO,
+                )
+              : changeScreen(
+                  currentScreen: HomeScreen(),
+                  currentTab: HomeScreen.TAB_NO,
+                );
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
@@ -149,8 +189,15 @@ class _RootScreenState extends State<RootScreen> {
     @required String nonActiveIcon,
   }) {
     return InkWell(
-      onTap: () =>
-          changeScreen(currentScreen: destination, currentTab: currentTab),
+      onTap: () {
+        if(angle == tilt90Degrees) {
+          setState(() {
+            angle = math.pi;
+          });
+        }
+        changeScreen(currentScreen: destination, currentTab: currentTab);
+      }
+          ,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Image.asset(

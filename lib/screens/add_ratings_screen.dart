@@ -24,71 +24,80 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
 
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        leading: InkWell(
-          onTap: () => Router.navigator.pop(),
-          child: Image.asset(
-            ImagePath.arrowBackIcon,
-            color: AppColors.headingText,
-          ),
-        ),
-        centerTitle: true,
-        title: Text(
-          'Review & Ratings',
-          style: Styles.customTitleTextStyle(
-            color: AppColors.headingText,
-            fontWeight: FontWeight.w600,
-            fontSize: Sizes.TEXT_SIZE_20,
-          ),
-        ),
-        actions: <Widget>[
-          InkWell(
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0.0,
+          leading: InkWell(
             onTap: () => Router.navigator.pop(),
             child: Image.asset(
-              ImagePath.closeIcon,
-              color: Colors.grey,
+              ImagePath.arrowBackIcon,
+              color: AppColors.headingText,
             ),
           ),
-        ],
-      ),
-      body: Container(
-        margin: EdgeInsets.only(top: Sizes.MARGIN_16,),
-        child: Column(
-          children: <Widget>[
-            RatingsBar(hasTitle: false),
-            SpaceH30(),
-            Container(margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_30),
-              child: CustomTextFormField(
-                hasPrefixIcon: false,
-                maxLines: 10,
-                hintText: "Write your experience",
-                hintTextStyle: subTitleTextStyle,
-                borderWidth: Sizes.WIDTH_1,
-                borderRadius: Sizes.RADIUS_12,
-                borderStyle: BorderStyle.solid,
-                focusedBorderColor: AppColors.indigo,
-                textFormFieldStyle: textTheme.body1,
-                contentPaddingHorizontal: Sizes.MARGIN_16,
-              ),
+          centerTitle: true,
+          title: Text(
+            'Review & Ratings',
+            style: Styles.customTitleTextStyle(
+              color: AppColors.headingText,
+              fontWeight: FontWeight.w600,
+              fontSize: Sizes.TEXT_SIZE_20,
             ),
-            Expanded(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: PotbellyButton(
-                  'Done',
-                  onTap: () => Router.navigator.pop(),
-                  buttonHeight: 65,
-                  buttonWidth: MediaQuery.of(context).size.width,
-                  decoration: Decorations.customHalfCurvedButtonDecoration(
-                    topleftRadius: Sizes.RADIUS_24,
-                    topRightRadius: Sizes.RADIUS_24,
-                  ),
-                ),
+          ),
+          actions: <Widget>[
+            InkWell(
+              onTap: () => Router.navigator.pop(),
+              child: Image.asset(
+                ImagePath.closeIcon,
+                color: Colors.grey,
               ),
             ),
           ],
+        ),
+        body: Container(
+          margin: EdgeInsets.only(top: Sizes.MARGIN_16,),
+          child: Column(
+            children: <Widget>[
+              RatingsBar(hasTitle: false),
+              SpaceH30(),
+              Container(margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_30),
+                child: CustomTextFormField(
+                  hasPrefixIcon: false,
+                  maxLines: 10,
+                  hintText: "Write your experience",
+                  hintTextStyle: subTitleTextStyle,
+                  borderWidth: Sizes.WIDTH_1,
+                  borderRadius: Sizes.RADIUS_12,
+                  borderStyle: BorderStyle.solid,
+                  focusedBorderColor: AppColors.indigo,
+                  textFormFieldStyle: textTheme.body1,
+                  contentPaddingHorizontal: Sizes.MARGIN_16,
+                ),
+              ),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: PotbellyButton(
+                    'Done',
+                    onTap: () => Router.navigator.pop(),
+                    buttonHeight: 65,
+                    buttonWidth: MediaQuery.of(context).size.width,
+                    decoration: Decorations.customHalfCurvedButtonDecoration(
+                      topleftRadius: Sizes.RADIUS_24,
+                      topRightRadius: Sizes.RADIUS_24,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

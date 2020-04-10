@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/theme.dart';
 
-
-//Filter Screen
-//TODO::  Fix padding issues on filter screen(category buttons ->pointed out by emma)
-//TODO::  clean up filter in terms (use of constants and paddings)
-
 void main() => runApp(App());
 
 class App extends StatelessWidget {

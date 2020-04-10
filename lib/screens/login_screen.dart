@@ -9,144 +9,152 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var heightOfImage = MediaQuery.of(context).size.height;
-    return Scaffold(
-      resizeToAvoidBottomPadding: false,
-      body: Container(
-        decoration: Decorations.regularDecoration,
-        child: Stack(
-          children: <Widget>[
-            Positioned(
-              child: Image.asset(
-                ImagePath.boiledEggs,
-                height: heightOfImage,
-                fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: Scaffold(
+        resizeToAvoidBottomPadding: false,
+        body: Container(
+          decoration: Decorations.regularDecoration,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                child: Image.asset(
+                  ImagePath.boiledEggs,
+                  height: heightOfImage,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            DarkOverLay(),
-            Positioned(
-              left: 0,
-              top: 0,
-              right: 0,
-              bottom: 36,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      margin: EdgeInsets.only(top: Sizes.MARGIN_60),
-                      child: Text(
-                        StringConst.FOODY_BITE,
-                        textAlign: TextAlign.center,
-                        style: Styles.titleTextStyleWithSecondaryTextColor,
+              DarkOverLay(),
+              Positioned(
+                left: 0,
+                top: 0,
+                right: 0,
+                bottom: 36,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                        margin: EdgeInsets.only(top: Sizes.MARGIN_60),
+                        child: Text(
+                          StringConst.FOODY_BITE,
+                          textAlign: TextAlign.center,
+                          style: Styles.titleTextStyleWithSecondaryTextColor,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: Sizes.HEIGHT_240),
-                  Form(
-                    child: Column(
-                      children: <Widget>[
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: Container(
-                            width: Sizes.WIDTH_300,
-                            height: Sizes.HEIGHT_60,
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: CustomTextFormField(
-                                    hasPrefixIcon: true,
-                                    prefixIconImagePath: ImagePath.emailIcon,
-                                    hintText: StringConst.HINT_TEXT_EMAIL,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: Sizes.HEIGHT_16),
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: Container(
-                            width: Sizes.WIDTH_300,
-                            height: Sizes.HEIGHT_60,
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: CustomTextFormField(
-                                    hasPrefixIcon: true,
-                                    prefixIconImagePath: ImagePath.passwordIcon,
-                                    hintText: StringConst.HINT_TEXT_PASSWORD,
-                                    obscured: true,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: InkWell(
-                            onTap: () => Router.navigator
-                                .pushNamed(Router.forgotPasswordScreen),
+                    SizedBox(height: Sizes.HEIGHT_240),
+                    Form(
+                      child: Column(
+                        children: <Widget>[
+                          Align(
+                            alignment: Alignment.topCenter,
                             child: Container(
-                              margin: EdgeInsets.only(
-                                  top: Sizes.MARGIN_16, right: Sizes.MARGIN_48),
-                              child: Text(
-                                StringConst.FORGOT_PASSWORD_QUESTION,
-                                textAlign: TextAlign.right,
-                                style: Styles.customNormalTextStyle(),
+                              width: Sizes.WIDTH_300,
+                              height: Sizes.HEIGHT_60,
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: CustomTextFormField(
+                                      hasPrefixIcon: true,
+                                      prefixIconImagePath: ImagePath.emailIcon,
+                                      hintText: StringConst.HINT_TEXT_EMAIL,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Spacer(),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: PotbellyButton(
-                      StringConst.LOGIN,
-                      onTap: () => Router.navigator.pushNamedAndRemoveUntil(
-                        Router.rootScreen,
-                        (Route<dynamic> route) => false,
+                          SizedBox(height: Sizes.HEIGHT_16),
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              width: Sizes.WIDTH_300,
+                              height: Sizes.HEIGHT_60,
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: CustomTextFormField(
+                                      hasPrefixIcon: true,
+                                      prefixIconImagePath: ImagePath.passwordIcon,
+                                      hintText: StringConst.HINT_TEXT_PASSWORD,
+                                      obscured: true,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: InkWell(
+                              onTap: () => Router.navigator
+                                  .pushNamed(Router.forgotPasswordScreen),
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    top: Sizes.MARGIN_16, right: Sizes.MARGIN_48),
+                                child: Text(
+                                  StringConst.FORGOT_PASSWORD_QUESTION,
+                                  textAlign: TextAlign.right,
+                                  style: Styles.customNormalTextStyle(),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                  SizedBox(height: Sizes.HEIGHT_60),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: InkWell(
-                      onTap: () => Router.navigator.pushNamed(Router.registerScreen),
-                      child: Container(
-                        width: Sizes.WIDTH_150,
-                        height: Sizes.HEIGHT_24,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              StringConst.CREATE_NEW_ACCOUNT,
-                              textAlign: TextAlign.center,
-                              style: Styles.customNormalTextStyle(),
-                            ),
-                            Spacer(),
-                            Container(
-                              height: 1,
-                              margin: EdgeInsets.symmetric(horizontal: 1),
-                              decoration: Decorations.horizontalBarDecoration,
-                              child: Container(),
-                            ),
-                          ],
+                    Spacer(),
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: PotbellyButton(
+                        StringConst.LOGIN,
+                        onTap: () => Router.navigator.pushNamedAndRemoveUntil(
+                          Router.rootScreen,
+                          (Route<dynamic> route) => false,
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                    SizedBox(height: Sizes.HEIGHT_60),
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: InkWell(
+                        onTap: () => Router.navigator.pushNamed(Router.registerScreen),
+                        child: Container(
+                          width: Sizes.WIDTH_150,
+                          height: Sizes.HEIGHT_24,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                StringConst.CREATE_NEW_ACCOUNT,
+                                textAlign: TextAlign.center,
+                                style: Styles.customNormalTextStyle(),
+                              ),
+                              Spacer(),
+                              Container(
+                                height: 1,
+                                margin: EdgeInsets.symmetric(horizontal: 1),
+                                decoration: Decorations.horizontalBarDecoration,
+                                child: Container(),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

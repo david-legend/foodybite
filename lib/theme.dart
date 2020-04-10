@@ -3,6 +3,22 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:potbelly/values/values.dart';
 
 
+const MaterialColor white = const MaterialColor(
+  0xFFFFFFFF,
+  const <int, Color>{
+    50: const Color(0xFFFFFFFF),
+    100: const Color(0xFFFFFFFF),
+    200: const Color(0xFFFFFFFF),
+    300: const Color(0xFFFFFFFF),
+    400: const Color(0xFFFFFFFF),
+    500: const Color(0xFFFFFFFF),
+    600: const Color(0xFFFFFFFF),
+    700: const Color(0xFFFFFFFF),
+    800: const Color(0xFFFFFFFF),
+    900: const Color(0xFFFFFFFF),
+  },
+);
+
 TextTheme _buildTextTheme(BuildContext context) {
   var textTheme = Theme.of(context).textTheme;
 
@@ -62,8 +78,9 @@ ThemeData buildLightTheme(BuildContext context) {
   );
   final ThemeData base = ThemeData(
     brightness: Brightness.light,
-    primarySwatch: Colors.blue,
-    accentColorBrightness: Brightness.dark,
+//    primarySwatch: white,
+    primaryColorBrightness: Brightness.light,
+    accentColorBrightness: Brightness.light,
     colorScheme: colorScheme,
     primaryColor: primaryColor,
     buttonColor: AppColors.secondaryColor,

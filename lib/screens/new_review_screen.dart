@@ -33,133 +33,141 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
 
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(68.0),
-        child: Container(
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(68.0),
+          child: Container(
+            margin: const EdgeInsets.symmetric(
+              horizontal: Sizes.MARGIN_16,
+              vertical: Sizes.MARGIN_16,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                InkWell(
+                  onTap: () => Router.navigator.pushNamedAndRemoveUntil(
+                    Router.rootScreen, (Route<dynamic> route) => false,
+                    arguments: CurrentScreen(
+                      tab_no: HomeScreen.TAB_NO,
+                      currentScreen: HomeScreen(),
+                    ),
+                  ),
+                  child: Center(
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 4),
+                      child: Text(
+                        'Cancel',
+                        style: textTheme.body1.copyWith(
+                          color: AppColors.accentText,
+                          fontSize: Sizes.TEXT_SIZE_20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  "New Review",
+                  style: Styles.customTitleTextStyle(
+                    color: AppColors.headingText,
+                    fontWeight: FontWeight.w600,
+                    fontSize: Sizes.TEXT_SIZE_22,
+                  ),
+                ),
+                InkWell(
+                  onTap: () => canPost
+                      ? Router.navigator.pushNamedAndRemoveUntil(
+                    Router.rootScreen, (Route<dynamic> route) => false,
+                    arguments: CurrentScreen(
+                      tab_no: HomeScreen.TAB_NO,
+                      currentScreen: HomeScreen(),
+                    ),
+                  )
+                      : null,
+                  child: Center(
+                    child: Container(
+                      margin: const EdgeInsets.only(right: 8),
+                      child: Text(
+                        'Post',
+                        style: textTheme.body1.copyWith(
+                          color: canPost
+                              ? AppColors.secondaryElement
+                              : AppColors.accentText,
+                          fontSize: Sizes.TEXT_SIZE_20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        body: Container(
           margin: const EdgeInsets.symmetric(
             horizontal: Sizes.MARGIN_16,
             vertical: Sizes.MARGIN_16,
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: ListView(
             children: <Widget>[
-              InkWell(
-                onTap: () => Router.navigator.pushNamedAndRemoveUntil(
-                  Router.rootScreen, (Route<dynamic> route) => false,
-                  arguments: CurrentScreen(
-                    tab_no: HomeScreen.TAB_NO,
-                    currentScreen: HomeScreen(),
-                  ),
-                ),
-                child: Center(
-                  child: Container(
-                    margin: const EdgeInsets.only(left: 4),
-                    child: Text(
-                      'Cancel',
-                      style: textTheme.body1.copyWith(
-                        color: AppColors.accentText,
-                        fontSize: Sizes.TEXT_SIZE_20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
+              FoodyBiteSearchInputField(
+                ImagePath.searchIcon,
+                controller: controller,
+                textFormFieldStyle:
+                    Styles.customNormalTextStyle(color: AppColors.accentText),
+                hintText: StringConst.HINT_TEXT_HOME_SEARCH_BAR,
+                hintTextStyle:
+                    Styles.customNormalTextStyle(color: AppColors.accentText),
+                hasSuffixIcon: showSuffixIcon,
+                suffixIcon: suffixIcon(),
+                suffixIconImagePath: ImagePath.settingsIcon,
+                borderWidth: 0.0,
+                onTapOfLeadingIcon: () {},
+                onTapOfSuffixIcon: () {
+                  controller.clear();
+                  changeState(
+                    showSuffixIcon: false,
+                    isCardShowing: false,
+                    hasRestaurantBeenAdded: false,
+                  );
+                },
+                borderStyle: BorderStyle.solid,
+                onChanged: (value) => _onChange(value),
               ),
-              Text(
-                "New Review",
-                style: Styles.customTitleTextStyle(
-                  color: AppColors.headingText,
-                  fontWeight: FontWeight.w600,
-                  fontSize: Sizes.TEXT_SIZE_22,
-                ),
-              ),
-              InkWell(
-                onTap: () => canPost
-                    ? Router.navigator.pushNamedAndRemoveUntil(
-                  Router.rootScreen, (Route<dynamic> route) => false,
-                  arguments: CurrentScreen(
-                    tab_no: HomeScreen.TAB_NO,
-                    currentScreen: HomeScreen(),
-                  ),
-                )
-                    : null,
-                child: Center(
-                  child: Container(
-                    margin: const EdgeInsets.only(right: 8),
-                    child: Text(
-                      'Post',
-                      style: textTheme.body1.copyWith(
-                        color: canPost
-                            ? AppColors.secondaryElement
-                            : AppColors.accentText,
-                        fontSize: Sizes.TEXT_SIZE_20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              isCardShowing ? SpaceH30() : Container(),
+              isCardShowing
+                  ? FoodyBiteSearchCard(
+                      hasBeenAdded: hasRestaurantBeenAdded,
+                      onPressed: () {
+                        changeState(
+                            hasRestaurantBeenAdded: true,
+                            isCardShowing: true,
+                            showSuffixIcon: true,
+                            canPost: true);
+                      },
+                      onPressClose: () {
+                        changeState(
+                          isCardShowing: false,
+                          hasRestaurantBeenAdded: false,
+                          showSuffixIcon: true,
+                        );
+                      },
+                    )
+                  : Container(),
+              SpaceH30(),
+              RatingsBar(),
+              SpaceH30(),
+              _buildReview(context: context),
             ],
           ),
-        ),
-      ),
-      body: Container(
-        margin: const EdgeInsets.symmetric(
-          horizontal: Sizes.MARGIN_16,
-          vertical: Sizes.MARGIN_16,
-        ),
-        child: ListView(
-          children: <Widget>[
-            FoodyBiteSearchInputField(
-              ImagePath.searchIcon,
-              controller: controller,
-              textFormFieldStyle:
-                  Styles.customNormalTextStyle(color: AppColors.accentText),
-              hintText: StringConst.HINT_TEXT_HOME_SEARCH_BAR,
-              hintTextStyle:
-                  Styles.customNormalTextStyle(color: AppColors.accentText),
-              hasSuffixIcon: showSuffixIcon,
-              suffixIcon: suffixIcon(),
-              suffixIconImagePath: ImagePath.settingsIcon,
-              borderWidth: 0.0,
-              onTapOfLeadingIcon: () {},
-              onTapOfSuffixIcon: () {
-                controller.clear();
-                changeState(
-                  showSuffixIcon: false,
-                  isCardShowing: false,
-                  hasRestaurantBeenAdded: false,
-                );
-              },
-              borderStyle: BorderStyle.solid,
-              onChanged: (value) => _onChange(value),
-            ),
-            isCardShowing ? SpaceH30() : Container(),
-            isCardShowing
-                ? FoodyBiteSearchCard(
-                    hasBeenAdded: hasRestaurantBeenAdded,
-                    onPressed: () {
-                      changeState(
-                          hasRestaurantBeenAdded: true,
-                          isCardShowing: true,
-                          showSuffixIcon: true,
-                          canPost: true);
-                    },
-                    onPressClose: () {
-                      changeState(
-                        isCardShowing: false,
-                        hasRestaurantBeenAdded: false,
-                        showSuffixIcon: true,
-                      );
-                    },
-                  )
-                : Container(),
-            SpaceH30(),
-            RatingsBar(),
-            SpaceH30(),
-            _buildReview(context: context),
-          ],
         ),
       ),
     );
