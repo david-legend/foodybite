@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -7,7 +8,6 @@ import 'package:potbelly/widgets/category_card.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/heading_row.dart';
 import 'package:potbelly/widgets/search_input_field.dart';
-
 
 class HomeScreen extends StatelessWidget {
   static const int TAB_NO = 0;
@@ -19,10 +19,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light,
         child: Container(
           margin: EdgeInsets.symmetric(
-              horizontal: Sizes.MARGIN_16, vertical: Sizes.MARGIN_8),
+            horizontal: Sizes.MARGIN_16,
+            vertical: Sizes.MARGIN_8,
+          ),
           child: ListView(
             children: <Widget>[
               FoodyBiteSearchInputField(

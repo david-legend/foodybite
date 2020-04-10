@@ -3,6 +3,7 @@ import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
+import 'package:potbelly/widgets/spaces.dart';
 
 class ProfileScreen extends StatelessWidget {
   static const int TAB_NO = 3;
@@ -13,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 0.0,
+          elevation: Sizes.ELEVATION_0,
           centerTitle: true,
           title: Text(
             'Profile',
@@ -32,37 +33,37 @@ class ProfileScreen extends StatelessWidget {
                 children: <Widget>[
                   CircleAvatar(
                     backgroundImage: AssetImage(ImagePath.andy),
-                    minRadius: 60.0,
-                    maxRadius: 60.0,
+                    minRadius: Sizes.RADIUS_60,
+                    maxRadius: Sizes.RADIUS_60,
                   ),
-                  SizedBox(height: 8.0),
+                  SpaceH8(),
                   Text('John Williams', style: Styles.foodyBiteTitleTextStyle),
-                  SizedBox(height: 8.0),
+                  SpaceH8(),
                   Text('john.williams@gmail.com',
                       style: Styles.foodyBiteSubtitleTextStyle),
                 ],
               ),
-              SizedBox(height: 24.0),
+              SpaceH24(),
               IntrinsicHeight(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     detail(number: "250", text: "Reviews"),
                     VerticalDivider(
-                      width: 40.0,
+                      width: Sizes.WIDTH_40,
                       thickness: 1.0,
                     ),
                     detail(number: "100k", text: "Followers"),
                     VerticalDivider(
-                      width: 40.0,
+                      width: Sizes.WIDTH_40,
                       thickness: 1.0,
                     ),
                     detail(number: "30", text: "Following"),
-                    SizedBox(height: 24.0),
+                    SpaceH24(),
                   ],
                 ),
               ),
-              SizedBox(height: 24.0),
+              SpaceH24(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -70,14 +71,14 @@ class ProfileScreen extends StatelessWidget {
                     'Edit Profile',
                     onTap: () => Router.navigator.pushNamed(Router.editProfileScreen),
                     buttonWidth: MediaQuery.of(context).size.width / 3,
-                    buttonHeight: 50,
+                    buttonHeight: Sizes.HEIGHT_50,
                   ),
-                  SizedBox(width: 16.0),
+                  SpaceW16(),
                   PotbellyButton(
                     'Settings',
                     onTap: () => Router.navigator.pushNamed(Router.settingsScreen),
                     buttonWidth: MediaQuery.of(context).size.width / 3,
-                    buttonHeight: 50,
+                    buttonHeight: Sizes.HEIGHT_50,
                     decoration: BoxDecoration(
                       color: AppColors.primaryColor,
                       border: Border.all(
@@ -95,7 +96,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
               Divider(
-                height: 40.0,
+                height: Sizes.HEIGHT_40,
                 thickness: 3.0,
                 color: Colors.grey[200],
               ),
@@ -111,7 +112,7 @@ class ProfileScreen extends StatelessWidget {
                     isThereStatus: false,
                     onTap: () {},
                   ),
-                  SizedBox(height: 16.0),
+                  SpaceH16(),
                   FoodyBiteCard(
                     imagePath: ImagePath.breakfastInBed,
                     status: StringConst.STATUS_OPEN,

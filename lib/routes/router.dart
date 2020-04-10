@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/screens/add_ratings_screen.dart';
@@ -27,24 +28,33 @@ import 'package:potbelly/screens/settings_screen.dart';
 import 'package:potbelly/screens/trending_restaurant_screen.dart';
 import 'package:meta/meta.dart';
 
-@MaterialAutoRouter()
+//@MaterialAutoRouter()
+//@CustomAutoRouter(transitionsBuilder: TransitionsBuilders.slideLeft, durationInMilliseconds: 200)
+
+@CupertinoAutoRouter()
 class $Router {
   @initial
   LoginScreen loginScreen;
 
   ForgotPasswordScreen forgotPasswordScreen;
 
+  @MaterialRoute()
   RegisterScreen registerScreen;
+
   SetLocationScreen setLocationScreen;
+
   HomeScreen homeScreen;
+
   RootScreen rootScreen;
+
+  ProfileScreen profileScreen;
+
+  NotificationsScreen notificationsScreen;
 
   TrendingRestaurantsScreen trendingRestaurantsScreen;
   RestaurantDetailsScreen restaurantDetailsScreen;
   BookmarksScreen bookmarksScreen;
-  NotificationsScreen notificationsScreen;
 
-  ProfileScreen profileScreen;
   FilterScreen filterScreen;
   SearchResultsScreen searchResultsScreen;
   ReviewRatingScreen reviewRatingScreen;

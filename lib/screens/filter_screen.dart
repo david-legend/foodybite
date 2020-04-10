@@ -1,11 +1,10 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 import 'package:potbelly/widgets/ratings_widget.dart';
 
 class FilterScreen extends StatefulWidget {
-
   @override
   _FilterScreenState createState() => _FilterScreenState();
 }
@@ -67,116 +66,84 @@ class _FilterScreenState extends State<FilterScreen> {
         children: <Widget>[
           Container(
             margin: EdgeInsets.only(top: 24.0, left: 8.0, right: 8.0),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Select Category',
-                      style: subTitleTextStyle,
-                    ),
-                  ],
-                ),
-                SizedBox(height: 24.0),
-                Wrap(
-                  direction: Axis.horizontal,
-                  spacing: 16,
-                  runAlignment: WrapAlignment.spaceBetween,
-                  children: createCategoryButtons(numberOfButtons: 9),
-                ),
-                SizedBox(height: 24.0),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Distance',
-                      style: subTitleTextStyle,
-                    ),
-                    SizedBox(height: 24.0),
-                    SliderTheme(
-                      data: SliderTheme.of(context).copyWith(
-                        trackHeight: 8,
-                        activeTrackColor: AppColors.secondaryElement,
-//                        inactiveTrackColor: Color((0xFFEDEEFF)),
-//                        activeTickMarkColor: AppColors.secondaryElement,
-                        trackShape: RetroSliderTrackShape(),
-                        thumbColor: AppColors.secondaryElement,
-                        thumbShape: RetroSliderThumbShape(thumbRadius: 12),
-                        overlayShape:
-                            RoundSliderOverlayShape(overlayRadius: 0.0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Select Category',
+                        style: subTitleTextStyle,
                       ),
-                      child: Slider(
-                          value: initialSliderValue,
-                          min: 0,
-                          max: 100,
-                          onChanged: (value) {
-                            setState(() {
-                              initialSliderValue = value;
-                            });
-                          }),
-                    ),
-//                    SliderTheme(
-//                      data: SliderTheme.of(context).copyWith(
-//                        activeTrackColor: AppColors.secondaryElement,
-//                        inactiveTrackColor: Colors.white,
-//                        thumbColor: AppColors.secondaryElement,
-//                        trackHeight: 3.0,
-//                        thumbShape:
-//                            RoundSliderThumbShape(enabledThumbRadius: 12.0),
-//                        overlayColor: Colors.purple.withAlpha(32),
-//                        overlayShape:
-//                            RoundSliderOverlayShape(overlayRadius: 14.0),
-//                      ),
-//                      child: Slider(
-//                          value: initialSliderValue,
-//                          min: 0,
-//                          max: 100,
-//                          onChanged: (value) {
-//                            setState(() {
-//                              initialSliderValue = value;
-//                            });
-//                          }),
-//                    ),
-//                    Slider(
-//                      value: initialSliderValue,
-//                      min: 0,
-//                      max: 100,
-//                      activeColor: Colors.red,
-//                      inactiveColor: Colors.grey,
-//                      label: "$initialSliderValue",
-//                      onChanged: (newValue) {
-//                        setState(() {
-//                          initialSliderValue = newValue;
-//                        });
-//                      },
-//                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.only(left: 24),
-                          child: Text(
-                            '0',
-                            style: lightTextStyle,
-                          ),
+                    ],
+                  ),
+                  SizedBox(height: 24.0),
+                  Wrap(
+                    direction: Axis.horizontal,
+                    spacing: 16,
+                    runAlignment: WrapAlignment.spaceBetween,
+                    children: createCategoryButtons(numberOfButtons: 9),
+                  ),
+                  SizedBox(height: 24.0),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Distance (km)',
+                        style: subTitleTextStyle,
+                      ),
+                      SizedBox(height: 60.0),
+                      SliderTheme(
+                        data: SliderTheme.of(context).copyWith(
+                          inactiveTrackColor: AppColors.purpleShade1,
+                          activeTrackColor: AppColors.secondaryElement,
+                          trackHeight: 8,
+                          valueIndicatorColor: AppColors.secondaryElement,
+                          showValueIndicator:
+                              ShowValueIndicator.onlyForContinuous,
+                          valueIndicatorTextStyle: TextStyle(),
+                          thumbColor: AppColors.secondaryElement,
+                          thumbShape: RetroSliderThumbShape(thumbRadius: 0),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(right: 24),
-                          child: Text(
-                            '100',
-                            style: lightTextStyle,
+                        child: Slider(
+//                          label: '$initialSliderValue players',
+                            min: 0,
+                            max: 100,
+                            value: initialSliderValue,
+                            onChanged: (value) {
+                              setState(() {
+                                initialSliderValue = value;
+                              });
+                            }),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(left: 24),
+                            child: Text(
+                              '0',
+                              style: lightTextStyle,
+                            ),
                           ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(height: 24.0),
-                RatingsBar(
-                  hasSubtitle: false,
-                ),
-              ],
+                          Container(
+                            margin: EdgeInsets.only(right: 24),
+                            child: Text(
+                              '100',
+                              style: lightTextStyle,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 24.0),
+                  RatingsBar(
+                    hasSubtitle: false,
+                  ),
+                ],
+              ),
             ),
           ),
           Row(
@@ -198,6 +165,7 @@ class _FilterScreenState extends State<FilterScreen> {
               ),
               PotbellyButton(
                 'Apply',
+                onTap: () => Router.navigator.pushNamed(Router.trendingRestaurantsScreen),
                 buttonHeight: 65,
                 buttonWidth: (MediaQuery.of(context).size.width / 2) - 0.25,
                 decoration: Decorations.customHalfCurvedButtonDecoration(
@@ -217,10 +185,10 @@ class _FilterScreenState extends State<FilterScreen> {
     @required int index,
     Color backgroundColor = AppColors.primaryColor,
   }) {
-    return InkWell(
-      onTap: () => setState(() => activeButtonValue = index),
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 12),
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: Sizes.MARGIN_12),
+      child: InkWell(
+        onTap: () => setState(() => activeButtonValue = index),
         child: PotbellyButton(
           buttonTitle,
           buttonWidth: 100,
@@ -246,7 +214,6 @@ class _FilterScreenState extends State<FilterScreen> {
       ),
     );
   }
-
 
   createCategoryButtons({@required numberOfButtons}) {
     List<Widget> categoryButtons = <Widget>[];
@@ -297,111 +264,120 @@ class RetroSliderThumbShape extends SliderComponentShape {
     TextDirection textDirection,
     double value,
   }) {
+    String sliderValue = (value * 100).toInt().toString();
     final Canvas canvas = context.canvas;
-
-    final rect = Rect.fromCircle(center: center, radius: thumbRadius);
-
-    final rrect = RRect.fromRectAndRadius(
-      Rect.fromPoints(
-        Offset(rect.left - 1, rect.top),
-        Offset(rect.right + 1, rect.bottom),
-      ),
-      Radius.circular(thumbRadius - 2),
-    );
-
-    final fillPaint = Paint()
-      ..color = sliderTheme.activeTrackColor
-      ..style = PaintingStyle.fill;
+    final paint = Paint()
+      ..style = PaintingStyle.fill
+//      ..strokeWidth = 2.0
+      ..strokeCap = StrokeCap.round
+      ..color = AppColors.secondaryElement;
+//labelPainter.text ="kk";
 
     final borderPaint = Paint()
-      ..color = Colors.grey
-      ..strokeWidth = 1.5
+      ..color = AppColors.purpleShade1
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 2.0
       ..style = PaintingStyle.stroke;
 
-    canvas.drawRRect(rrect, fillPaint);
-    canvas.drawRRect(rrect, borderPaint);
+    final path = Path();
+    path.moveTo(center.dx, center.dy);
+
+    var width = 28;
+    var midWidth = width / 2;
+    var height = 50;
+    var midHeight = height / 2;
+    var crown = 84;
+    var midCrown = crown - crown / 5;
+
+    //open legs of thumb
+    path.lineTo(center.dx - midWidth, center.dy - midHeight);
+
+    //startPoint1 for bezier curve
+    //path.moveTo(center.dx - midWidth, center.dy - midHeight);
+    var endPoint1 = Offset(center.dx - midWidth, center.dy - midCrown);
+    var controlPoint1 = Offset(center.dx - width, center.dy - height);
+    path.quadraticBezierTo(
+        controlPoint1.dx, controlPoint1.dy, endPoint1.dx, endPoint1.dy);
+
+//    //startPoint2 for bezier curve
+//    path.moveTo(center.dx - midWidth ,center.dy- midCrown);
+    var endPoint2 = Offset(center.dx + midWidth, center.dy - midCrown);
+    var controlPoint2 = Offset(center.dx, center.dy - crown);
+    path.quadraticBezierTo(
+        controlPoint2.dx, controlPoint2.dy, endPoint2.dx, endPoint2.dy);
+
+    //startPoint3 for bezier curve
+//    path.moveTo(center.dx + midWidth , center.dy - midCrown);
+    var endPoint3 = Offset(center.dx + midWidth, center.dy - midHeight);
+    var controlPoint3 = Offset(center.dx + width, center.dy - height);
+    path.quadraticBezierTo(
+        controlPoint3.dx, controlPoint3.dy, endPoint3.dx, endPoint3.dy);
+
+    path.lineTo(center.dx, center.dy);
+    canvas.drawPath(path, paint);
+    canvas.drawPath(path, borderPaint);
+
+    TextSpan span = TextSpan(
+        style: Styles.customNormalTextStyle(color: AppColors.white),
+        text: sliderValue,);
+    TextPainter tp = TextPainter(
+        text: span,
+        textAlign: TextAlign.center,
+        textDirection: TextDirection.ltr);
+    tp.layout();
+    tp.paint(canvas, Offset(center.dx - calculateOffset(sliderValue), center.dy - height - 4));
   }
 }
 
-class RetroSliderTrackShape extends SliderTrackShape {
-  @override
-  Rect getPreferredRect({
-    RenderBox parentBox,
-    Offset offset = Offset.zero,
-    SliderThemeData sliderTheme,
-    bool isEnabled,
-    bool isDiscrete,
-  }) {
-    final double thumbWidth =
-        sliderTheme.thumbShape.getPreferredSize(true, isDiscrete).width;
-    final double trackHeight = sliderTheme.trackHeight;
-    assert(thumbWidth >= 0);
-    assert(trackHeight >= 0);
-    assert(parentBox.size.width >= thumbWidth);
-    assert(parentBox.size.height >= trackHeight);
-
-    final double trackLeft = offset.dx + thumbWidth / 2;
-    final double trackTop =
-        offset.dy + (parentBox.size.height - trackHeight) / 2;
-    final double trackWidth = parentBox.size.width - thumbWidth;
-    return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
+ int calculateOffset(String value) {
+  if (value.length == 1){
+    return 4;
+  } else if (value.length == 2) {
+    return 8;
+  } else  {
+    return 12;
   }
 
-  @override
-  void paint(
-    PaintingContext context,
-    Offset offset, {
-    RenderBox parentBox,
-    SliderThemeData sliderTheme,
-    Animation<double> enableAnimation,
-    TextDirection textDirection,
-    Offset thumbCenter,
-    bool isDiscrete,
-    bool isEnabled,
-  }) {
-    if (sliderTheme.trackHeight == 0) {
-      return;
-    }
-
-    final Rect trackRect = getPreferredRect(
-      parentBox: parentBox,
-      offset: offset,
-      sliderTheme: sliderTheme,
-      isEnabled: isEnabled,
-      isDiscrete: isDiscrete,
-    );
-
-    final Paint fillPaint = Paint()
-//      ..color = sliderTheme.activeTrackColor
-      ..style = PaintingStyle.stroke;
-
-    final Paint borderPaint = Paint()
-      ..color = Colors.black
-      ..strokeWidth = 0.1
-      ..style = PaintingStyle.stroke;
-
-    final pathSegment = Path()
-      ..moveTo(trackRect.left, trackRect.top)
-      ..lineTo(trackRect.right, trackRect.top)
-      ..arcTo(
-          Rect.fromPoints(
-            Offset(trackRect.right + 7, trackRect.top),
-            Offset(trackRect.right - 7, trackRect.bottom),
-          ),
-          -pi / 2,
-          pi,
-          false)
-      ..lineTo(trackRect.left, trackRect.bottom)
-      ..arcTo(
-          Rect.fromPoints(
-            Offset(trackRect.left + 7, trackRect.top),
-            Offset(trackRect.left - 7, trackRect.bottom),
-          ),
-          -pi * 3 / 2,
-          pi,
-          false);
-
-    context.canvas.drawPath(pathSegment, fillPaint);
-    context.canvas.drawPath(pathSegment, borderPaint);
-  }
 }
+
+///Initial CustomSlider
+///final path = Path();
+//    path.moveTo(center.dx, center.dy);
+//
+//    var width = 28;
+//    var midWidth = width / 2;
+//    var height = 50;
+//    var midHeight = height/ 2;
+//    var crown = 80;
+//    var midCrown = crown - crown/5;
+//
+//    //open legs of thumb
+//    path.lineTo(center.dx - midWidth, center.dy - midHeight);
+////    path.moveTo(center.dx, center.dy);
+////    path.lineTo(center.dx + midWidth, center.dy - midHeight);
+//
+//    //**********
+////    path.moveTo(center.dx - width, center.dy - height);
+////    path.lineTo(center.dx, center.dy - crown);
+////    path.lineTo(center.dx + width, center.dy - height);
+//
+//    //startPoint1 for bezier curve
+////    path.moveTo(center.dx - midWidth, center.dy - midHeight);
+//    var endPoint1 = Offset(center.dx - midWidth ,center.dy- midCrown);
+//    var controlPoint1 = Offset(center.dx - width, center.dy - height);
+//    path.quadraticBezierTo(controlPoint1.dx, controlPoint1.dy, endPoint1.dx, endPoint1.dy);
+////
+////    //startPoint2 for bezier curve
+////    path.moveTo(center.dx - midWidth ,center.dy- midCrown);
+//    var endPoint2 = Offset(center.dx + midWidth , center.dy - midCrown);
+//    var controlPoint2 = Offset(center.dx, center.dy - crown);
+//    path.quadraticBezierTo(controlPoint2.dx, controlPoint2.dy, endPoint2.dx, endPoint2.dy);
+////
+////
+////    //startPoint3 for bezier curve
+////    path.moveTo(center.dx + midWidth , center.dy - midCrown);
+//    var endPoint3 = Offset(center.dx + midWidth , center.dy - midHeight);
+//    var controlPoint3 = Offset(center.dx + width, center.dy - height);
+//    path.quadraticBezierTo(controlPoint3.dx, controlPoint3.dy, endPoint3.dx, endPoint3.dy);
+//
+//    canvas.drawPath(path, paint);

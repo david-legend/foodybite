@@ -14,11 +14,11 @@ import 'package:potbelly/screens/set_location_screen.dart';
 import 'package:potbelly/screens/home_screen.dart';
 import 'package:potbelly/screens/root_screen.dart';
 import 'package:potbelly/routes/router.dart';
+import 'package:potbelly/screens/profile_screen.dart';
+import 'package:potbelly/screens/notification_screen.dart';
 import 'package:potbelly/screens/trending_restaurant_screen.dart';
 import 'package:potbelly/screens/restaurant_details_screen.dart';
 import 'package:potbelly/screens/bookmarks_screen.dart';
-import 'package:potbelly/screens/notification_screen.dart';
-import 'package:potbelly/screens/profile_screen.dart';
 import 'package:potbelly/screens/filter_screen.dart';
 import 'package:potbelly/screens/search_results.dart';
 import 'package:potbelly/screens/review_rating_screen.dart';
@@ -41,11 +41,11 @@ class Router {
   static const setLocationScreen = '/set-location-screen';
   static const homeScreen = '/home-screen';
   static const rootScreen = '/root-screen';
+  static const profileScreen = '/profile-screen';
+  static const notificationsScreen = '/notifications-screen';
   static const trendingRestaurantsScreen = '/trending-restaurants-screen';
   static const restaurantDetailsScreen = '/restaurant-details-screen';
   static const bookmarksScreen = '/bookmarks-screen';
-  static const notificationsScreen = '/notifications-screen';
-  static const profileScreen = '/profile-screen';
   static const filterScreen = '/filter-screen';
   static const searchResultsScreen = '/search-results-screen';
   static const reviewRatingScreen = '/review-rating-screen';
@@ -65,12 +65,12 @@ class Router {
     final args = settings.arguments;
     switch (settings.name) {
       case Router.loginScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => LoginScreen(),
           settings: settings,
         );
       case Router.forgotPasswordScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => ForgotPasswordScreen(),
           settings: settings,
         );
@@ -80,7 +80,7 @@ class Router {
           settings: settings,
         );
       case Router.setLocationScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => SetLocationScreen(),
           settings: settings,
         );
@@ -89,7 +89,7 @@ class Router {
           return misTypedArgsRoute<Key>(args);
         }
         final typedArgs = args as Key;
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => HomeScreen(key: typedArgs),
           settings: settings,
         );
@@ -98,12 +98,30 @@ class Router {
           return misTypedArgsRoute<CurrentScreen>(args);
         }
         final typedArgs = args as CurrentScreen;
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => RootScreen(currentScreen: typedArgs),
           settings: settings,
         );
+      case Router.profileScreen:
+        if (hasInvalidArgs<Key>(args)) {
+          return misTypedArgsRoute<Key>(args);
+        }
+        final typedArgs = args as Key;
+        return CupertinoPageRoute<dynamic>(
+          builder: (_) => ProfileScreen(key: typedArgs),
+          settings: settings,
+        );
+      case Router.notificationsScreen:
+        if (hasInvalidArgs<Key>(args)) {
+          return misTypedArgsRoute<Key>(args);
+        }
+        final typedArgs = args as Key;
+        return CupertinoPageRoute<dynamic>(
+          builder: (_) => NotificationsScreen(key: typedArgs),
+          settings: settings,
+        );
       case Router.trendingRestaurantsScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => TrendingRestaurantsScreen(),
           settings: settings,
         );
@@ -112,35 +130,17 @@ class Router {
           return misTypedArgsRoute<RestaurantDetails>(args);
         }
         final typedArgs = args as RestaurantDetails;
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => RestaurantDetailsScreen(restaurantDetails: typedArgs),
           settings: settings,
         );
       case Router.bookmarksScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => BookmarksScreen(),
           settings: settings,
         );
-      case Router.notificationsScreen:
-        if (hasInvalidArgs<Key>(args)) {
-          return misTypedArgsRoute<Key>(args);
-        }
-        final typedArgs = args as Key;
-        return MaterialPageRoute<dynamic>(
-          builder: (_) => NotificationsScreen(key: typedArgs),
-          settings: settings,
-        );
-      case Router.profileScreen:
-        if (hasInvalidArgs<Key>(args)) {
-          return misTypedArgsRoute<Key>(args);
-        }
-        final typedArgs = args as Key;
-        return MaterialPageRoute<dynamic>(
-          builder: (_) => ProfileScreen(key: typedArgs),
-          settings: settings,
-        );
       case Router.filterScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => FilterScreen(),
           settings: settings,
         );
@@ -149,32 +149,32 @@ class Router {
           return misTypedArgsRoute<SearchValue>(args);
         }
         final typedArgs = args as SearchValue;
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => SearchResultsScreen(typedArgs),
           settings: settings,
         );
       case Router.reviewRatingScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => ReviewRatingScreen(),
           settings: settings,
         );
       case Router.addRatingsScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => AddRatingsScreen(),
           settings: settings,
         );
       case Router.menuPhotosScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => MenuPhotosScreen(),
           settings: settings,
         );
       case Router.previewMenuPhotosScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => PreviewMenuPhotosScreen(),
           settings: settings,
         );
       case Router.categoriesScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => CategoriesScreen(),
           settings: settings,
         );
@@ -184,7 +184,7 @@ class Router {
           return misTypedArgsRoute<CategoryDetailScreenArguments>(args);
         }
         final typedArgs = args as CategoryDetailScreenArguments;
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => CategoryDetailScreen(
               categoryName: typedArgs.categoryName,
               imagePath: typedArgs.imagePath,
@@ -194,32 +194,32 @@ class Router {
           settings: settings,
         );
       case Router.findFriendsScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => FindFriendsScreen(),
           settings: settings,
         );
       case Router.settingsScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => SettingsScreen(),
           settings: settings,
         );
       case Router.changePasswordScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => ChangePasswordScreen(),
           settings: settings,
         );
       case Router.changeLanguageScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => ChangeLanguageScreen(),
           settings: settings,
         );
       case Router.editProfileScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => EditProfileScreen(),
           settings: settings,
         );
       case Router.newReviewScreen:
-        return MaterialPageRoute<dynamic>(
+        return CupertinoPageRoute<dynamic>(
           builder: (_) => NewReviewScreen(),
           settings: settings,
         );

@@ -118,8 +118,7 @@ class LoginScreen extends StatelessWidget {
                   Align(
                     alignment: Alignment.topCenter,
                     child: InkWell(
-                      onTap: () =>
-                          Router.navigator.pushNamed(Router.registerScreen),
+                      onTap: () => Router.navigator.pushNamed(Router.registerScreen),
                       child: Container(
                         width: Sizes.WIDTH_150,
                         height: Sizes.HEIGHT_24,

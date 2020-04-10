@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/screens/new_review_screen.dart';
 import 'package:potbelly/screens/profile_screen.dart';
@@ -9,7 +10,6 @@ import 'home_screen.dart';
 import 'notification_screen.dart';
 
 class RootScreen extends StatefulWidget {
-
   RootScreen({this.currentScreen});
 
   final CurrentScreen currentScreen;
@@ -42,10 +42,33 @@ class _RootScreenState extends State<RootScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //set statusBarColor color to secondary color
+    //This is done to make the statusBarColor consistent
+    // because there are screens inside the app that AppBar is not being used
+//    SystemChrome.setSystemUIOverlayStyle(
+//      SystemUiOverlayStyle.dark.copyWith(
+//        // statusBarColor is used to set Status bar color in Android devices.
+//          statusBarColor: AppColors.secondaryColor,
+//          // To make Status bar icons color white in Android devices.
+//          statusBarIconBrightness: Brightness.light,
+//          // statusBarBrightness is used to set Status bar icon color in iOS.
+//          statusBarBrightness: Brightness.light
+//        // Here light means dark color Status bar icons.
+//      ),
+//    );
     return Scaffold(
-      body: PageStorage(
-        child: currentScreen,
-        bucket: bucket,
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.dark.copyWith(
+          systemNavigationBarColor: Colors.white,
+          systemNavigationBarDividerColor: Colors.white,
+          statusBarColor: Colors.white,
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.light,
+        ),
+        child: PageStorage(
+          child: currentScreen,
+          bucket: bucket,
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Image.asset(ImagePath.addIcon),

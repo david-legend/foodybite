@@ -3,9 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:potbelly/values/values.dart';
 
 
-
-//final ThemeData kDarkFoodyBiteTheme = _buildDarkTheme();
-
 TextTheme _buildTextTheme(BuildContext context) {
   var textTheme = Theme.of(context).textTheme;
 
@@ -65,6 +62,7 @@ ThemeData buildLightTheme(BuildContext context) {
   );
   final ThemeData base = ThemeData(
     brightness: Brightness.light,
+    primarySwatch: Colors.blue,
     accentColorBrightness: Brightness.dark,
     colorScheme: colorScheme,
     primaryColor: primaryColor,

@@ -42,6 +42,7 @@ class AppColors {
   static const Color indigoShade1 = Color.fromRGBO( 34, 36, 85, 0.5);
   //purple
   static const Color purple = Color(0xFFF6F7FF);
+  static const Color purpleShade1 = Color(0xFFE6E7FF);
   //green
   static const Color green = Color(0xFF4CD964);
 }
