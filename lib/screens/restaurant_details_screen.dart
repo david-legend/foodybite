@@ -1,19 +1,19 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/data.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/card_tags.dart';
+import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/heading_row.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 import 'package:potbelly/widgets/ratings_widget.dart';
 import 'package:potbelly/widgets/spaces.dart';
 
-
 class RestaurantDetailsScreen extends StatelessWidget {
-
   final RestaurantDetails restaurantDetails;
 
   RestaurantDetailsScreen({@required this.restaurantDetails});
@@ -79,22 +79,30 @@ class RestaurantDetailsScreen extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
+                        DarkOverLay(gradient: Gradients.restaurantDetailsGradient),
                         Positioned(
                           child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 16.0, vertical: 16.0),
+                            padding: EdgeInsets.only(
+                              right: Sizes.MARGIN_16,
+                              top: Sizes.MARGIN_16,
+                            ),
                             child: Row(
                               children: <Widget>[
                                 InkWell(
                                   onTap: () => Router.navigator.pop(),
-                                  child: Image.asset(ImagePath.arrowBackIcon),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: Sizes.MARGIN_16,
+                                      right: Sizes.MARGIN_16,
+                                    ),
+                                    child: Image.asset(ImagePath.arrowBackIcon),
+                                  ),
                                 ),
                                 Spacer(flex: 1),
                                 InkWell(
-                                  child: Image.asset(ImagePath.bookmarksIcon,
-                                      color: Colors.white),
+                                  child: Icon(FeatherIcons.share2, color: AppColors.white,),
                                 ),
-                                SizedBox(width: 16.0),
+                                SpaceW20(),
                                 InkWell(
                                   child: Image.asset(ImagePath.bookmarksIcon,
                                       color: Colors.white),
@@ -240,7 +248,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.MENU_AND_PHOTOS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () => Router.navigator.pushNamed(Router.menuPhotosScreen),
+                            onTapOfNumber: () => Router.navigator
+                                .pushNamed(Router.menuPhotosScreen),
                           ),
                           SizedBox(height: 16.0),
                           Container(
@@ -268,7 +277,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.REVIEWS_AND_RATINGS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () => Router.navigator.pushNamed(Router.reviewRatingScreen),
+                            onTapOfNumber: () => Router.navigator
+                                .pushNamed(Router.reviewRatingScreen),
                           ),
                           SizedBox(height: 16.0),
                           Column(
@@ -283,7 +293,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
               ),
               PotbellyButton(
                 'Rate Your Experience ',
-                onTap: () => Router.navigator.pushNamed(Router.addRatingsScreen),
+                onTap: () =>
+                    Router.navigator.pushNamed(Router.addRatingsScreen),
                 buttonHeight: 65,
                 buttonWidth: MediaQuery.of(context).size.width,
                 decoration: Decorations.customHalfCurvedButtonDecoration(

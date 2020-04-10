@@ -93,6 +93,7 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
 
   List<Widget> _buildLanguageTiles(List languages) {
     List<Widget> languageTiles = [];
+    var textTheme = Theme.of(context).textTheme;
     for (var index = 0; index < languages.length; index++) {
       languageTiles.add(
         Container(
@@ -104,7 +105,13 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
                 languages[index].isSelected = true;
               });
             },
-            title: Text(defaultLanguagesList[index]),
+            title: Text(
+              defaultLanguagesList[index],
+              style: Styles.customTitleTextStyle(
+                color: languages[index].isSelected ? AppColors.secondaryElement: AppColors.primaryText,
+                fontSize: Sizes.TEXT_SIZE_18,
+              ),
+            ),
             trailing: RadioItem(languages[index]),
           ),
         ),

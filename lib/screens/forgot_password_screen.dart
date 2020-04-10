@@ -6,7 +6,6 @@ import 'package:potbelly/widgets/dark_overlay.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     var heightOfImage = MediaQuery.of(context).size.height;
@@ -21,7 +20,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         resizeToAvoidBottomPadding: false,
         body: Container(
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: AppColors.primaryColor,
           ),
           child: Stack(
             children: [
@@ -45,9 +44,17 @@ class ForgotPasswordScreen extends StatelessWidget {
                         children: <Widget>[
                           InkWell(
                             onTap: () => Router.navigator.pop(),
-                            child: Image.asset(
-                              ImagePath.arrowBackIcon,
-                              fit: BoxFit.none,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                left: Sizes.MARGIN_12,
+                                right: Sizes.MARGIN_12,
+                                top: Sizes.MARGIN_4,
+                                bottom: Sizes.MARGIN_4,
+                              ),
+                              child: Image.asset(
+                                ImagePath.arrowBackIcon,
+                                fit: BoxFit.none,
+                              ),
                             ),
                           ),
                           Spacer(),

@@ -68,6 +68,19 @@ class Gradients {
     ],
   );
 
+  static const Gradient restaurantDetailsGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color.fromRGBO(0, 0, 0, 0.39),
+      Color.fromRGBO(255, 255, 255, 0),
+      Color.fromRGBO(0, 0, 0, 0.43),
+//      Color.fromARGB(105, 45, 45, 45),
+//      Color(0x00000000),
+//      Color(0xFFFFFFff),
+//      Color(0x0000006E),
+    ],
+  );
   static const Gradient italianGradient = LinearGradient(
     colors: [
       Color(0xFFFF5673),
