@@ -35,8 +35,10 @@ import 'package:meta/meta.dart';
 @CupertinoAutoRouter()
 class $Router {
   @initial
+  @CustomAutoRouter(transitionsBuilder: TransitionsBuilders.slideRight, durationInMilliseconds: 2000)
   LoginScreen loginScreen;
 
+  @CustomAutoRouter(transitionsBuilder: TransitionsBuilders.slideRight, durationInMilliseconds: 2000)
   SplashScreen splashScreen;
 
   ForgotPasswordScreen forgotPasswordScreen;

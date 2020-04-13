@@ -55,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   void textControllerListener() {
     if (_textController.status == AnimationStatus.completed) {
-      Future.delayed(Duration(milliseconds: 500), () {
+      Future.delayed(Duration(milliseconds: 1000), () {
         Router.navigator.pushNamedAndRemoveUntil(
           Router.loginScreen,
           (Route<dynamic> route) => false,
@@ -65,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void run() {
-    Future.delayed(Duration(milliseconds: 2000), () {
+    Future.delayed(Duration(milliseconds: 800), () {
       setState(() {
         hasImageAnimationStarted = true;
       });
