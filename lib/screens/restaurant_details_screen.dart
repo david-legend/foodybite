@@ -79,7 +79,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        DarkOverLay(gradient: Gradients.restaurantDetailsGradient),
+                        DarkOverLay(
+                            gradient: Gradients.restaurantDetailsGradient),
                         Positioned(
                           child: Container(
                             padding: EdgeInsets.only(
@@ -100,7 +101,10 @@ class RestaurantDetailsScreen extends StatelessWidget {
                                 ),
                                 Spacer(flex: 1),
                                 InkWell(
-                                  child: Icon(FeatherIcons.share2, color: AppColors.white,),
+                                  child: Icon(
+                                    FeatherIcons.share2,
+                                    color: AppColors.white,
+                                  ),
                                 ),
                                 SpaceW20(),
                                 InkWell(
@@ -233,15 +237,17 @@ class RestaurantDetailsScreen extends StatelessWidget {
                               ),
                               SizedBox(height: 8.0),
                               RichText(
-                                  text: TextSpan(
-                                      style: openingTimeTextStyle,
-                                      children: [
+                                text: TextSpan(
+                                  style: openingTimeTextStyle,
+                                  children: [
                                     TextSpan(text: "Open Now "),
                                     TextSpan(
                                         text: "daily time ",
                                         style: addressTextStyle),
                                     TextSpan(text: "9:30 am to 11:30 am "),
-                                  ]))
+                                  ],
+                                ),
+                              )
                             ],
                           ),
                           SpaceH24(),

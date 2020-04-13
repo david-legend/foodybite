@@ -73,13 +73,16 @@ class Styles {
     String fontFamily = StringConst.FONT_FAMILY,
     FontWeight fontWeight = FontWeight.w400,
     double fontSize = Sizes.TEXT_SIZE_20,
+    FontStyle fontStyle: FontStyle.normal,
     double letterSpacing = 0,
   }) {
     return TextStyle(
-        color: color,
-        fontFamily: fontFamily,
-        fontWeight: fontWeight,
-        fontSize: fontSize,
-        letterSpacing: letterSpacing);
+      color: color,
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      fontSize: fontSize,
+      fontStyle: fontStyle,
+      letterSpacing: letterSpacing,
+    );
   }
 }
