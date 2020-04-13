@@ -19,7 +19,6 @@ class ForgotPasswordScreen extends StatelessWidget {
         }
       },
       child: Scaffold(
-        resizeToAvoidBottomPadding: false,
         body: Container(
           decoration: BoxDecoration(
             color: AppColors.primaryColor,
@@ -27,6 +26,7 @@ class ForgotPasswordScreen extends StatelessWidget {
           child: Stack(
             children: [
               Positioned(
+                top: 0.0,
                 child: Image.asset(
                   ImagePath.boiledEggs,
                   fit: BoxFit.cover,

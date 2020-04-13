@@ -9,8 +9,8 @@ import 'package:potbelly/widgets/spaces.dart';
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var heightOfImage = MediaQuery.of(context).size.height;
-    var widthOfImage = MediaQuery.of(context).size.width;
+    var heightOfScreen = MediaQuery.of(context).size.height;
+    var widthOfScreen = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -20,14 +20,14 @@ class LoginScreen extends StatelessWidget {
       },
       child: Scaffold(
         body: Container(
-          decoration: Decorations.regularDecoration,
           child: Stack(
             children: <Widget>[
               Positioned(
+              top: 0.0,
                 child: Image.asset(
                   ImagePath.boiledEggs,
-                  height: heightOfImage,
-                  width: widthOfImage,
+                  height: heightOfScreen,
+                  width: widthOfScreen,
                   fit: BoxFit.cover,
                 ),
               ),

@@ -24,11 +24,12 @@ class RegisterScreen extends StatelessWidget {
           child: Stack(
             children: [
               Positioned(
+                top: 0.0,
                 child: Image.asset(
-                  ImagePath.pancakesInAPan,
-                  fit: BoxFit.cover,
+                  ImagePath.boiledEggs,
                   height: heightOfScreen,
                   width: widthOfScreen,
+                  fit: BoxFit.cover,
                 ),
               ),
               DarkOverLay(),
