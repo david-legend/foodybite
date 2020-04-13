@@ -25,6 +25,7 @@ import 'package:potbelly/screens/root_screen.dart';
 import 'package:potbelly/screens/search_results.dart';
 import 'package:potbelly/screens/set_location_screen.dart';
 import 'package:potbelly/screens/settings_screen.dart';
+import 'package:potbelly/screens/splash_screen.dart';
 import 'package:potbelly/screens/trending_restaurant_screen.dart';
 import 'package:meta/meta.dart';
 
@@ -35,6 +36,8 @@ import 'package:meta/meta.dart';
 class $Router {
   @initial
   LoginScreen loginScreen;
+
+  SplashScreen splashScreen;
 
   ForgotPasswordScreen forgotPasswordScreen;
 

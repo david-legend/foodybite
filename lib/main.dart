@@ -10,7 +10,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: buildLightTheme(context),
-      initialRoute: Router.loginScreen,
+      initialRoute: Router.splashScreen,
       onGenerateRoute: Router.onGenerateRoute,
       navigatorKey: Router.navigator.key,
     );
