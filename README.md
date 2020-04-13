@@ -6,6 +6,8 @@ Built with flutter
 Beautifully crafted with flutter and love, a useful UI Kit for developers and designers 
 who need food related app design.
 
+Find actual designs at (https://www.behance.net/gallery/81858385/Foodybite-Free-UI-Kit-for-Adobe-XD)
+
 ## Foody Bite Home
 ![Screenshot](assets/screenshots/foody_bite_home.png "Foody Bite Home")
 
