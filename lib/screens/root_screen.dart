@@ -47,6 +47,12 @@ class _RootScreenState extends State<RootScreen>
     );
   }
 
+  @override
+  dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   changeScreen({
     @required Widget currentScreen,
     @required int currentTab,
