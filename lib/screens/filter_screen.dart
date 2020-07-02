@@ -165,7 +165,8 @@ class _FilterScreenState extends State<FilterScreen> {
               ),
               PotbellyButton(
                 'Apply',
-                onTap: () => Router.navigator.pushNamed(Router.trendingRestaurantsScreen),
+                onTap: () => Router.navigator
+                    .pushNamed(Router.trendingRestaurantsScreen),
                 buttonHeight: 65,
                 buttonWidth: (MediaQuery.of(context).size.width / 2) - 0.25,
                 decoration: Decorations.customHalfCurvedButtonDecoration(
@@ -263,6 +264,8 @@ class RetroSliderThumbShape extends SliderComponentShape {
     SliderThemeData sliderTheme,
     TextDirection textDirection,
     double value,
+    double textScaleFactor,
+    Size sizeWithOverflow,
   }) {
     String sliderValue = (value * 100).toInt().toString();
     final Canvas canvas = context.canvas;
@@ -318,26 +321,29 @@ class RetroSliderThumbShape extends SliderComponentShape {
     canvas.drawPath(path, borderPaint);
 
     TextSpan span = TextSpan(
-        style: Styles.customNormalTextStyle(color: AppColors.white),
-        text: sliderValue,);
+      style: Styles.customNormalTextStyle(color: AppColors.white),
+      text: sliderValue,
+    );
     TextPainter tp = TextPainter(
         text: span,
         textAlign: TextAlign.center,
         textDirection: TextDirection.ltr);
     tp.layout();
-    tp.paint(canvas, Offset(center.dx - calculateOffset(sliderValue), center.dy - height - 4));
+    tp.paint(
+        canvas,
+        Offset(
+            center.dx - calculateOffset(sliderValue), center.dy - height - 4));
   }
 }
 
- int calculateOffset(String value) {
-  if (value.length == 1){
+int calculateOffset(String value) {
+  if (value.length == 1) {
     return 4;
   } else if (value.length == 2) {
     return 8;
-  } else  {
+  } else {
     return 12;
   }
-
 }
 
 ///Initial CustomSlider
