@@ -52,8 +52,8 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 InkWell(
-                  onTap: () => Router.navigator.pushNamedAndRemoveUntil(
-                    Router.rootScreen, (Route<dynamic> route) => false,
+                  onTap: () => AppRouter.navigator.pushNamedAndRemoveUntil(
+                    AppRouter.rootScreen, (Route<dynamic> route) => false,
                     arguments: CurrentScreen(
                       tab_no: HomeScreen.TAB_NO,
                       currentScreen: HomeScreen(),
@@ -83,8 +83,8 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
                 ),
                 InkWell(
                   onTap: () => canPost
-                      ? Router.navigator.pushNamedAndRemoveUntil(
-                    Router.rootScreen, (Route<dynamic> route) => false,
+                      ? AppRouter.navigator.pushNamedAndRemoveUntil(
+                    AppRouter.rootScreen, (Route<dynamic> route) => false,
                     arguments: CurrentScreen(
                       tab_no: HomeScreen.TAB_NO,
                       currentScreen: HomeScreen(),

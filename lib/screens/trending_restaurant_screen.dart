@@ -21,7 +21,7 @@ class TrendingRestaurantsScreen extends StatelessWidget {
           appBar: AppBar(
             elevation: 0.0,
             leading: InkWell(
-              onTap: () => Router.navigator.pop(),
+              onTap: () => AppRouter.navigator.pop(),
               child: Image.asset(
                 ImagePath.arrowBackIcon,
                 color: AppColors.headingText,
@@ -66,8 +66,8 @@ class TrendingRestaurantsScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Container(
                         child: FoodyBiteCard(
-                          onTap: () => Router.navigator.pushNamed(
-                            Router.restaurantDetailsScreen,
+                          onTap: () => AppRouter.navigator.pushNamed(
+                            AppRouter.restaurantDetailsScreen,
                             arguments: RestaurantDetails(
                               imagePath: imagePaths[index],
                               restaurantName: restaurantNames[index],

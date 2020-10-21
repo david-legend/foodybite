@@ -165,8 +165,8 @@ class _FilterScreenState extends State<FilterScreen> {
               ),
               PotbellyButton(
                 'Apply',
-                onTap: () => Router.navigator
-                    .pushNamed(Router.trendingRestaurantsScreen),
+                onTap: () => AppRouter.navigator
+                    .pushNamed(AppRouter.trendingRestaurantsScreen),
                 buttonHeight: 65,
                 buttonWidth: (MediaQuery.of(context).size.width / 2) - 0.25,
                 decoration: Decorations.customHalfCurvedButtonDecoration(

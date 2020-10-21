@@ -10,9 +10,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: buildLightTheme(context),
-      initialRoute: Router.splashScreen,
-      onGenerateRoute: Router.onGenerateRoute,
-      navigatorKey: Router.navigator.key,
+      initialRoute: AppRouter.splashScreen,
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      navigatorKey: AppRouter.navigator.key,
     );
   }
 }

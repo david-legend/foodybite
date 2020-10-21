@@ -54,12 +54,12 @@ class SettingsScreen extends StatelessWidget {
                 SettingsListTile(
                   title: "Change Password",
                   onTap: () =>
-                      Router.navigator.pushNamed(Router.changePasswordScreen),
+                      AppRouter.navigator.pushNamed(AppRouter.changePasswordScreen),
                 ),
                 SettingsListTile(
                   title: "Change Language",
                   onTap: () =>
-                      Router.navigator.pushNamed(Router.changeLanguageScreen),
+                      AppRouter.navigator.pushNamed(AppRouter.changeLanguageScreen),
                 )
               ],
             ).toList(),
@@ -195,8 +195,8 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     textStyle: textTheme.button
                         .copyWith(color: AppColors.secondaryElement),
-                    onPressed: () => Router.navigator.pushNamedAndRemoveUntil(
-                      Router.loginScreen,
+                    onPressed: () => AppRouter.navigator.pushNamedAndRemoveUntil(
+                      AppRouter.loginScreen,
                       (Route<dynamic> route) => false,
                     ),
                   ),

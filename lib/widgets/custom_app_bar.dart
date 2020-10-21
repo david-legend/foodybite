@@ -53,7 +53,7 @@ class CustomAppBar extends StatelessWidget {
 
   Widget defaultLeading() {
     return InkWell(
-      onTap: () => Router.navigator.pop(),
+      onTap: () => AppRouter.navigator.pop(),
       child: Image.asset(
         ImagePath.arrowBackIcon,
         color: AppColors.headingText,

@@ -68,8 +68,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                         child: PotbellyButton(
                           StringConst.SEND,
                           buttonWidth: widthOfScreen,
-                          onTap: () => Router.navigator
-                              .pushReplacementNamed(Router.loginScreen),
+                          onTap: () => AppRouter.navigator
+                              .pushReplacementNamed(AppRouter.loginScreen),
                         ),
                       )
                     ],
@@ -88,7 +88,7 @@ class ForgotPasswordScreen extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         InkWell(
-          onTap: () => Router.navigator.pop(),
+          onTap: () => AppRouter.navigator.pop(),
           child: Padding(
             padding: const EdgeInsets.only(
               left: Sizes.MARGIN_12,

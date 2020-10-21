@@ -54,8 +54,8 @@ class BookmarksScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               return Container(
                 child: FoodyBiteCard(
-                  onTap: () => Router.navigator.pushNamed(
-                    Router.restaurantDetailsScreen,
+                  onTap: () => AppRouter.navigator.pushNamed(
+                    AppRouter.restaurantDetailsScreen,
                     arguments: RestaurantDetails(
                       imagePath: imagePaths[index],
                       restaurantName: restaurantNames[index],
