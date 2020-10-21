@@ -90,7 +90,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                             child: Row(
                               children: <Widget>[
                                 InkWell(
-                                  onTap: () => Router.navigator.pop(),
+                                  onTap: () => AppRouter.navigator.pop(),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
                                       left: Sizes.MARGIN_16,
@@ -254,8 +254,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.MENU_AND_PHOTOS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () => Router.navigator
-                                .pushNamed(Router.menuPhotosScreen),
+                            onTapOfNumber: () => AppRouter.navigator
+                                .pushNamed(AppRouter.menuPhotosScreen),
                           ),
                           SizedBox(height: 16.0),
                           Container(
@@ -283,8 +283,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.REVIEWS_AND_RATINGS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () => Router.navigator
-                                .pushNamed(Router.reviewRatingScreen),
+                            onTapOfNumber: () => AppRouter.navigator
+                                .pushNamed(AppRouter.reviewRatingScreen),
                           ),
                           SizedBox(height: 16.0),
                           Column(
@@ -300,7 +300,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
               PotbellyButton(
                 'Rate Your Experience ',
                 onTap: () =>
-                    Router.navigator.pushNamed(Router.addRatingsScreen),
+                    AppRouter.navigator.pushNamed(AppRouter.addRatingsScreen),
                 buttonHeight: 65,
                 buttonWidth: MediaQuery.of(context).size.width,
                 decoration: Decorations.customHalfCurvedButtonDecoration(

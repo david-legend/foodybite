@@ -16,7 +16,7 @@ class SearchResultsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void navigateToDetailScreen() {
-      Router.navigator.pushNamed(Router.restaurantDetailsScreen);
+      AppRouter.navigator.pushNamed(AppRouter.restaurantDetailsScreen);
     }
 
     var controller = TextEditingController(text: searchValue.value);
@@ -55,8 +55,8 @@ class SearchResultsScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Container(
                       child: FoodyBiteCard(
-                        onTap: () => Router.navigator.pushNamed(
-                          Router.restaurantDetailsScreen,
+                        onTap: () => AppRouter.navigator.pushNamed(
+                          AppRouter.restaurantDetailsScreen,
                           arguments: RestaurantDetails(
                             imagePath: imagePaths[index],
                             restaurantName: restaurantNames[index],

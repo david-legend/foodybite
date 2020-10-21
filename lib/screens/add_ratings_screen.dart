@@ -36,7 +36,7 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
         appBar: AppBar(
           elevation: 0.0,
           leading: InkWell(
-            onTap: () => Router.navigator.pop(),
+            onTap: () => AppRouter.navigator.pop(),
             child: Image.asset(
               ImagePath.arrowBackIcon,
               color: AppColors.headingText,
@@ -53,7 +53,7 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
           ),
           actions: <Widget>[
             InkWell(
-              onTap: () => Router.navigator.pop(),
+              onTap: () => AppRouter.navigator.pop(),
               child: Image.asset(
                 ImagePath.closeIcon,
                 color: Colors.grey,
@@ -86,7 +86,7 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
                   alignment: Alignment.bottomCenter,
                   child: PotbellyButton(
                     'Done',
-                    onTap: () => Router.navigator.pop(),
+                    onTap: () => AppRouter.navigator.pop(),
                     buttonHeight: 65,
                     buttonWidth: MediaQuery.of(context).size.width,
                     decoration: Decorations.customHalfCurvedButtonDecoration(

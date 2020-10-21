@@ -52,7 +52,7 @@ class _PreviewMenuPhotosScreenState extends State<PreviewMenuPhotosScreen> {
         backgroundColor: AppColors.kFoodyBiteDarkBackground,
         elevation: 0.0,
         leading: InkWell(
-          onTap: () => Router.navigator.pop(context),
+          onTap: () => AppRouter.navigator.pop(context),
           child: Image.asset(
             ImagePath.arrowBackIcon,
             color: AppColors.primaryColor,

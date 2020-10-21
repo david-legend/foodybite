@@ -43,22 +43,22 @@ class HomeScreen extends StatelessWidget {
                     Styles.customNormalTextStyle(color: AppColors.accentText),
                 suffixIconImagePath: ImagePath.settingsIcon,
                 borderWidth: 0.0,
-                onTapOfLeadingIcon: () => Router.navigator.pushNamed(
-                  Router.searchResultsScreen,
+                onTapOfLeadingIcon: () => AppRouter.navigator.pushNamed(
+                  AppRouter.searchResultsScreen,
                   arguments: SearchValue(
                     controller.text,
                   ),
                 ),
                 onTapOfSuffixIcon: () =>
-                    Router.navigator.pushNamed(Router.filterScreen),
+                    AppRouter.navigator.pushNamed(AppRouter.filterScreen),
                 borderStyle: BorderStyle.solid,
               ),
               SizedBox(height: 16.0),
               HeadingRow(
                 title: StringConst.TRENDING_RESTAURANTS,
                 number: StringConst.SEE_ALL_45,
-                onTapOfNumber: () => Router.navigator
-                    .pushNamed(Router.trendingRestaurantsScreen),
+                onTapOfNumber: () => AppRouter.navigator
+                    .pushNamed(AppRouter.trendingRestaurantsScreen),
               ),
               SizedBox(height: 16.0),
               Container(
@@ -71,8 +71,8 @@ class HomeScreen extends StatelessWidget {
                       return Container(
                         margin: EdgeInsets.only(right: 4.0),
                         child: FoodyBiteCard(
-                          onTap: () => Router.navigator.pushNamed(
-                            Router.restaurantDetailsScreen,
+                          onTap: () => AppRouter.navigator.pushNamed(
+                            AppRouter.restaurantDetailsScreen,
                             arguments: RestaurantDetails(
                               imagePath: imagePaths[index],
                               restaurantName: restaurantNames[index],
@@ -98,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                 title: StringConst.CATEGORY,
                 number: StringConst.SEE_ALL_9,
                 onTapOfNumber: () =>
-                    Router.navigator.pushNamed(Router.categoriesScreen),
+                    AppRouter.navigator.pushNamed(AppRouter.categoriesScreen),
               ),
               SizedBox(height: 16.0),
               Container(
@@ -122,8 +122,8 @@ class HomeScreen extends StatelessWidget {
               HeadingRow(
                 title: StringConst.FRIENDS,
                 number: StringConst.SEE_ALL_56,
-                onTapOfNumber: () => Router.navigator.pushNamed(
-                  Router.findFriendsScreen,
+                onTapOfNumber: () => AppRouter.navigator.pushNamed(
+                  AppRouter.findFriendsScreen,
                 ),
               ),
               SizedBox(height: 16.0),

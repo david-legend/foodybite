@@ -19,7 +19,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       appBar: AppBar(
         elevation: 0.0,
         leading: InkWell(
-          onTap: () => Router.navigator.pop(),
+          onTap: () => AppRouter.navigator.pop(),
           child: Image.asset(
             ImagePath.arrowBackIcon,
             color: AppColors.headingText,
@@ -55,8 +55,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           itemBuilder: (context, index) {
             return Container(
               child: FoodyBiteCategoryCard(
-                onTap: () => Router.navigator.pushNamed(
-                  Router.categoryDetailScreen,
+                onTap: () => AppRouter.navigator.pushNamed(
+                  AppRouter.categoryDetailScreen,
                   arguments: CategoryDetailScreenArguments(
                     categoryName: category[index],
                     imagePath: categoryListImagePaths[index],

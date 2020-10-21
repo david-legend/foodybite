@@ -49,8 +49,8 @@ class RegisterScreen extends StatelessWidget {
                       SpaceH40(),
                       PotbellyButton(
                         StringConst.REGISTER,
-                        onTap: () => Router.navigator
-                            .pushNamed(Router.setLocationScreen),
+                        onTap: () => AppRouter.navigator
+                            .pushNamed(AppRouter.setLocationScreen),
                       ),
                     SpaceH40(),
                       Row(
@@ -63,8 +63,8 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           SpaceW16(),
                           InkWell(
-                            onTap: () => Router.navigator
-                                .pushReplacementNamed(Router.loginScreen),
+                            onTap: () => AppRouter.navigator
+                                .pushReplacementNamed(AppRouter.loginScreen),
                             child: Text(
                               StringConst.LOGIN,
                               textAlign: TextAlign.left,

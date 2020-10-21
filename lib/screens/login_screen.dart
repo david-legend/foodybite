@@ -89,7 +89,7 @@ class LoginScreen extends StatelessWidget {
             alignment: Alignment.topRight,
             child: InkWell(
               onTap: () =>
-                  Router.navigator.pushNamed(Router.forgotPasswordScreen),
+                  AppRouter.navigator.pushNamed(AppRouter.forgotPasswordScreen),
               child: Container(
                 margin: EdgeInsets.only(top: Sizes.MARGIN_16),
                 child: Text(
@@ -110,14 +110,14 @@ class LoginScreen extends StatelessWidget {
       children: <Widget>[
         PotbellyButton(
           StringConst.LOGIN,
-          onTap: () => Router.navigator.pushNamedAndRemoveUntil(
-            Router.rootScreen,
+          onTap: () => AppRouter.navigator.pushNamedAndRemoveUntil(
+            AppRouter.rootScreen,
             (Route<dynamic> route) => false,
           ),
         ),
         SizedBox(height: Sizes.HEIGHT_60),
         InkWell(
-          onTap: () => Router.navigator.pushNamed(Router.registerScreen),
+          onTap: () => AppRouter.navigator.pushNamed(AppRouter.registerScreen),
           child: Container(
             width: Sizes.WIDTH_150,
             height: Sizes.HEIGHT_24,
