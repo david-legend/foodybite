@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/values.dart';
 
 class CustomAppBar extends StatelessWidget {
   CustomAppBar({
@@ -39,14 +39,14 @@ class CustomAppBar extends StatelessWidget {
     );
   }
 
-   List<Widget> defaultTrailing() {
+  List<Widget> defaultTrailing() {
     return <Widget>[
       InkWell(
         onTap: () {},
         child: Image.asset(
           ImagePath.searchIcon,
           color: AppColors.headingText,
-        ) ,
+        ),
       )
     ];
   }

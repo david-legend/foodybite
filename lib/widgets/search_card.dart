@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/values/values.dart';
 
 import 'card_tags.dart';
 
@@ -155,31 +155,33 @@ class FoodyBiteSearchCard extends StatelessWidget {
               ),
             ),
             // close button
-            hasBeenAdded ? Positioned(
-              left: width - 32,
-              top: 8.0,
-              child: Row(
-                children: <Widget>[
-                  Card(
-                    elevation: 4.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(60.0),
-                    ),
-                    child: Container(
-                      padding: const EdgeInsets.all(Sizes.PADDING_4),
-                      child: InkWell(
-                          onTap: onPressClose,
-                          child: Icon(
-                            Icons.clear,
-                            color: Colors.red,
-                            size: 18,
+            hasBeenAdded
+                ? Positioned(
+                    left: width - 32,
+                    top: 8.0,
+                    child: Row(
+                      children: <Widget>[
+                        Card(
+                          elevation: 4.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(60.0),
+                          ),
+                          child: Container(
+                            padding: const EdgeInsets.all(Sizes.PADDING_4),
+                            child: InkWell(
+                              onTap: onPressClose,
+                              child: Icon(
+                                Icons.clear,
+                                color: Colors.red,
+                                size: 18,
+                              ),
+                            ),
                           ),
                         ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-            ) : Container(),
+                  )
+                : Container(),
           ],
         ),
       ),

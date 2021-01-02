@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/data.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/foody_bite_card.dart';
-import 'package:potbelly/widgets/spaces.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/data.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/foody_bite_card.dart';
+import 'package:Foodybite/widgets/spaces.dart';
 
 class CategoryDetailScreen extends StatelessWidget {
   CategoryDetailScreen({
@@ -29,7 +29,6 @@ class CategoryDetailScreen extends StatelessWidget {
     var margin =
         marginAroundPills + ((numberOfCategories - 1) * marginBetweenPills);
     var widthOfEachPill = (widthOfScreen - margin) / numberOfCategories;
-
 
     return Scaffold(
       appBar: PreferredSize(
@@ -150,7 +149,8 @@ class CategoryDetailScreen extends StatelessWidget {
           color: (index == selectedCategory)
               ? AppColors.white
               : AppColors.whiteShade_50,
-          marginRight: (index == numberOfPills - 1) ? Sizes.MARGIN_0 : Sizes.MARGIN_4,
+          marginRight:
+              (index == numberOfPills - 1) ? Sizes.MARGIN_0 : Sizes.MARGIN_4,
         ),
       );
     }

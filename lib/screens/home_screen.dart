@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:potbelly/routes/router.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/values/data.dart';
-import 'package:potbelly/widgets/category_card.dart';
-import 'package:potbelly/widgets/foody_bite_card.dart';
-import 'package:potbelly/widgets/heading_row.dart';
-import 'package:potbelly/widgets/search_input_field.dart';
+import 'package:Foodybite/routes/router.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/values/data.dart';
+import 'package:Foodybite/widgets/category_card.dart';
+import 'package:Foodybite/widgets/foody_bite_card.dart';
+import 'package:Foodybite/widgets/heading_row.dart';
+import 'package:Foodybite/widgets/search_input_field.dart';
 
 class HomeScreen extends StatelessWidget {
   static const int TAB_NO = 0;

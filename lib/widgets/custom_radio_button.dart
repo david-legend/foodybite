@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/values/values.dart';
 
 class RadioModel {
   bool isSelected;
@@ -29,16 +29,16 @@ class RadioItem extends StatelessWidget {
           border: _item.isSelected
               ? null
               : Border.all(
-            color: AppColors.indigo,
-          ),
+                  color: AppColors.indigo,
+                ),
         ),
         child: _item.isSelected
             ? Center(
-          child: Icon(
-            Icons.done,
-            color: AppColors.primaryColor,
-          ),
-        )
+                child: Icon(
+                  Icons.done,
+                  color: AppColors.primaryColor,
+                ),
+              )
             : null,
       ),
     );

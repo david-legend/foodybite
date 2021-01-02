@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/theme.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/theme.dart';
 
 void main() => runApp(App());
 

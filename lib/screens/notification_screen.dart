@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/values/values.dart';
 
 class NotificationsScreen extends StatelessWidget {
   static const int TAB_NO = 2;
@@ -83,7 +83,6 @@ class NotificationsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,

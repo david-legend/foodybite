@@ -2,16 +2,16 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-import 'package:potbelly/routes/router.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/data.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/card_tags.dart';
-import 'package:potbelly/widgets/dark_overlay.dart';
-import 'package:potbelly/widgets/heading_row.dart';
-import 'package:potbelly/widgets/potbelly_button.dart';
-import 'package:potbelly/widgets/ratings_widget.dart';
-import 'package:potbelly/widgets/spaces.dart';
+import 'package:Foodybite/routes/router.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/data.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/card_tags.dart';
+import 'package:Foodybite/widgets/dark_overlay.dart';
+import 'package:Foodybite/widgets/heading_row.dart';
+import 'package:Foodybite/widgets/potbelly_button.dart';
+import 'package:Foodybite/widgets/ratings_widget.dart';
+import 'package:Foodybite/widgets/spaces.dart';
 
 class RestaurantDetailsScreen extends StatelessWidget {
   final RestaurantDetails restaurantDetails;

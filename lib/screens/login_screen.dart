@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/custom_text_form_field.dart';
-import 'package:potbelly/widgets/dark_overlay.dart';
-import 'package:potbelly/widgets/potbelly_button.dart';
-import 'package:potbelly/widgets/spaces.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/custom_text_form_field.dart';
+import 'package:Foodybite/widgets/dark_overlay.dart';
+import 'package:Foodybite/widgets/potbelly_button.dart';
+import 'package:Foodybite/widgets/spaces.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Positioned(
-              top: 0.0,
+                top: 0.0,
                 child: Image.asset(
                   ImagePath.boiledEggs,
                   height: heightOfScreen,

@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/values/values.dart';
 
 class HeadingRow extends StatelessWidget {
   final String title;
   final String number;
   final GestureTapCallback onTapOfNumber;
 
-  HeadingRow({
-    this.title,
-    this.number,
-    this.onTapOfNumber
-  });
+  HeadingRow({this.title, this.number, this.onTapOfNumber});
 
   @override
   Widget build(BuildContext context) {

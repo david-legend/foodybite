@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/custom_text_form_field.dart';
-import 'package:potbelly/widgets/potbelly_button.dart';
-import 'package:potbelly/widgets/ratings_widget.dart';
-import 'package:potbelly/widgets/spaces.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/custom_text_form_field.dart';
+import 'package:Foodybite/widgets/potbelly_button.dart';
+import 'package:Foodybite/widgets/ratings_widget.dart';
+import 'package:Foodybite/widgets/spaces.dart';
 
 class AddRatingsScreen extends StatefulWidget {
-
   @override
   _AddRatingsScreenState createState() => _AddRatingsScreenState();
 }
@@ -62,12 +61,15 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
           ],
         ),
         body: Container(
-          margin: EdgeInsets.only(top: Sizes.MARGIN_16,),
+          margin: EdgeInsets.only(
+            top: Sizes.MARGIN_16,
+          ),
           child: Column(
             children: <Widget>[
               RatingsBar(hasTitle: false),
               SpaceH30(),
-              Container(margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_30),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_30),
                 child: CustomTextFormField(
                   hasPrefixIcon: false,
                   maxLines: 10,
@@ -102,6 +104,4 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
       ),
     );
   }
-
-
 }

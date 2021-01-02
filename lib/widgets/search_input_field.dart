@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/values/values.dart';
 
 class FoodyBiteSearchInputField extends StatelessWidget {
   final TextEditingController controller;
@@ -26,7 +26,8 @@ class FoodyBiteSearchInputField extends StatelessWidget {
   Widget suffixIcon;
   Widget prefixIcon;
 
-  FoodyBiteSearchInputField(this.prefixIconImagePath, {
+  FoodyBiteSearchInputField(
+    this.prefixIconImagePath, {
     this.controller,
     this.textFormFieldStyle = Styles.normalTextStyle,
     this.hintTextStyle = Styles.normalTextStyle,
@@ -58,7 +59,6 @@ class FoodyBiteSearchInputField extends StatelessWidget {
         controller: controller,
         style: textFormFieldStyle,
         decoration: InputDecoration(
-
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: borderColor, width: borderWidth),
           ),
@@ -77,10 +77,12 @@ class FoodyBiteSearchInputField extends StatelessWidget {
             onTap: onTapOfLeadingIcon,
             child: prefixIcon ?? defaultPrefixIcon(),
           ),
-          suffixIcon: hasSuffixIcon ? InkWell(
-            onTap: onTapOfSuffixIcon,
-            child: suffixIcon ?? defaultSuffixIcon(),
-          ) : null,
+          suffixIcon: hasSuffixIcon
+              ? InkWell(
+                  onTap: onTapOfSuffixIcon,
+                  child: suffixIcon ?? defaultSuffixIcon(),
+                )
+              : null,
           contentPadding: EdgeInsets.symmetric(
             horizontal: contentPaddingHorizontal,
             vertical: contentPaddingVertical,

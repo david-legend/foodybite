@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/custom_app_bar.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/custom_app_bar.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
@@ -53,13 +53,13 @@ class SettingsScreen extends StatelessWidget {
               tiles: <Widget>[
                 SettingsListTile(
                   title: "Change Password",
-                  onTap: () =>
-                      AppRouter.navigator.pushNamed(AppRouter.changePasswordScreen),
+                  onTap: () => AppRouter.navigator
+                      .pushNamed(AppRouter.changePasswordScreen),
                 ),
                 SettingsListTile(
                   title: "Change Language",
-                  onTap: () =>
-                      AppRouter.navigator.pushNamed(AppRouter.changeLanguageScreen),
+                  onTap: () => AppRouter.navigator
+                      .pushNamed(AppRouter.changeLanguageScreen),
                 )
               ],
             ).toList(),
@@ -195,12 +195,12 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     textStyle: textTheme.button
                         .copyWith(color: AppColors.secondaryElement),
-                    onPressed: () => AppRouter.navigator.pushNamedAndRemoveUntil(
+                    onPressed: () =>
+                        AppRouter.navigator.pushNamedAndRemoveUntil(
                       AppRouter.loginScreen,
                       (Route<dynamic> route) => false,
                     ),
                   ),
-
                 ],
               )
             ],

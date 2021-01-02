@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:potbelly/routes/router.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/screens/home_screen.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/custom_text_form_field.dart';
-import 'package:potbelly/widgets/ratings_widget.dart';
-import 'package:potbelly/widgets/search_card.dart';
-import 'package:potbelly/widgets/search_input_field.dart';
-import 'package:potbelly/widgets/spaces.dart';
+import 'package:Foodybite/routes/router.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/screens/home_screen.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/custom_text_form_field.dart';
+import 'package:Foodybite/widgets/ratings_widget.dart';
+import 'package:Foodybite/widgets/search_card.dart';
+import 'package:Foodybite/widgets/search_input_field.dart';
+import 'package:Foodybite/widgets/spaces.dart';
 
 class NewReviewScreen extends StatefulWidget {
   static const int TAB_NO = 4;
@@ -53,7 +52,8 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
               children: <Widget>[
                 InkWell(
                   onTap: () => AppRouter.navigator.pushNamedAndRemoveUntil(
-                    AppRouter.rootScreen, (Route<dynamic> route) => false,
+                    AppRouter.rootScreen,
+                    (Route<dynamic> route) => false,
                     arguments: CurrentScreen(
                       tab_no: HomeScreen.TAB_NO,
                       currentScreen: HomeScreen(),
@@ -84,12 +84,13 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
                 InkWell(
                   onTap: () => canPost
                       ? AppRouter.navigator.pushNamedAndRemoveUntil(
-                    AppRouter.rootScreen, (Route<dynamic> route) => false,
-                    arguments: CurrentScreen(
-                      tab_no: HomeScreen.TAB_NO,
-                      currentScreen: HomeScreen(),
-                    ),
-                  )
+                          AppRouter.rootScreen,
+                          (Route<dynamic> route) => false,
+                          arguments: CurrentScreen(
+                            tab_no: HomeScreen.TAB_NO,
+                            currentScreen: HomeScreen(),
+                          ),
+                        )
                       : null,
                   child: Center(
                     child: Container(

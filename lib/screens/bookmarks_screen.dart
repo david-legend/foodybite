@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/data.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/foody_bite_card.dart';
-import 'package:potbelly/widgets/spaces.dart';
+import 'package:Foodybite/routes/router.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/data.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/foody_bite_card.dart';
+import 'package:Foodybite/widgets/spaces.dart';
 
 class BookmarksScreen extends StatelessWidget {
   static const int TAB_NO = 1;
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-
         title: Text(
           'My Favourite',
           style: Styles.customTitleTextStyle(

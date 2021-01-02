@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/custom_app_bar.dart';
-import 'package:potbelly/widgets/potbelly_button.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/custom_app_bar.dart';
+import 'package:Foodybite/widgets/potbelly_button.dart';
 
 class FindFriendsScreen extends StatelessWidget {
   @override
@@ -162,15 +162,14 @@ class FriendsListTile extends StatelessWidget {
     var textTheme = Theme.of(context).textTheme;
 
     return ListTile(
-      contentPadding: const EdgeInsets.symmetric(vertical: Sizes.PADDING_4, horizontal: Sizes.PADDING_16),
+      contentPadding: const EdgeInsets.symmetric(
+          vertical: Sizes.PADDING_4, horizontal: Sizes.PADDING_16),
       leading: Image.asset(imageUrl),
       title: Container(
         margin: const EdgeInsets.only(bottom: Sizes.MARGIN_8),
         child: Text(
           title,
-          style: textTheme.title.copyWith(
-            fontSize: Sizes.TEXT_SIZE_20
-          ),
+          style: textTheme.title.copyWith(fontSize: Sizes.TEXT_SIZE_20),
         ),
       ),
       subtitle: Text(

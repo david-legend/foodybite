@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/values/values.dart';
 
 class DarkOverLay extends StatelessWidget {
   final Gradient gradient;
@@ -16,7 +16,6 @@ class DarkOverLay extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Positioned(
-
       width: this.width ?? width,
       height: height,
       child: Container(

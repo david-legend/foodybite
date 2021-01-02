@@ -1,32 +1,32 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:potbelly/screens/add_ratings_screen.dart';
-import 'package:potbelly/screens/bookmarks_screen.dart';
-import 'package:potbelly/screens/categories_screen.dart';
-import 'package:potbelly/screens/category_detail_screen.dart';
-import 'package:potbelly/screens/change_language_screen.dart';
-import 'package:potbelly/screens/change_password_screen.dart';
-import 'package:potbelly/screens/edit_profile_screen.dart';
-import 'package:potbelly/screens/filter_screen.dart';
-import 'package:potbelly/screens/find_friends_screen.dart';
-import 'package:potbelly/screens/forgot_password_screen.dart';
-import 'package:potbelly/screens/home_screen.dart';
-import 'package:potbelly/screens/login_screen.dart';
-import 'package:potbelly/screens/menu_photos_screen.dart';
-import 'package:potbelly/screens/new_review_screen.dart';
-import 'package:potbelly/screens/notification_screen.dart';
-import 'package:potbelly/screens/preview_menu_photos.dart';
-import 'package:potbelly/screens/profile_screen.dart';
-import 'package:potbelly/screens/register_screen.dart';
-import 'package:potbelly/screens/restaurant_details_screen.dart';
-import 'package:potbelly/screens/review_rating_screen.dart';
-import 'package:potbelly/screens/root_screen.dart';
-import 'package:potbelly/screens/search_results.dart';
-import 'package:potbelly/screens/set_location_screen.dart';
-import 'package:potbelly/screens/settings_screen.dart';
-import 'package:potbelly/screens/splash_screen.dart';
-import 'package:potbelly/screens/trending_restaurant_screen.dart';
+import 'package:Foodybite/screens/add_ratings_screen.dart';
+import 'package:Foodybite/screens/bookmarks_screen.dart';
+import 'package:Foodybite/screens/categories_screen.dart';
+import 'package:Foodybite/screens/category_detail_screen.dart';
+import 'package:Foodybite/screens/change_language_screen.dart';
+import 'package:Foodybite/screens/change_password_screen.dart';
+import 'package:Foodybite/screens/edit_profile_screen.dart';
+import 'package:Foodybite/screens/filter_screen.dart';
+import 'package:Foodybite/screens/find_friends_screen.dart';
+import 'package:Foodybite/screens/forgot_password_screen.dart';
+import 'package:Foodybite/screens/home_screen.dart';
+import 'package:Foodybite/screens/login_screen.dart';
+import 'package:Foodybite/screens/menu_photos_screen.dart';
+import 'package:Foodybite/screens/new_review_screen.dart';
+import 'package:Foodybite/screens/notification_screen.dart';
+import 'package:Foodybite/screens/preview_menu_photos.dart';
+import 'package:Foodybite/screens/profile_screen.dart';
+import 'package:Foodybite/screens/register_screen.dart';
+import 'package:Foodybite/screens/restaurant_details_screen.dart';
+import 'package:Foodybite/screens/review_rating_screen.dart';
+import 'package:Foodybite/screens/root_screen.dart';
+import 'package:Foodybite/screens/search_results.dart';
+import 'package:Foodybite/screens/set_location_screen.dart';
+import 'package:Foodybite/screens/settings_screen.dart';
+import 'package:Foodybite/screens/splash_screen.dart';
+import 'package:Foodybite/screens/trending_restaurant_screen.dart';
 import 'package:meta/meta.dart';
 
 //@MaterialAutoRouter()
@@ -35,10 +35,14 @@ import 'package:meta/meta.dart';
 @CupertinoAutoRouter()
 class $Router {
   @initial
-  @CustomAutoRouter(transitionsBuilder: TransitionsBuilders.slideRight, durationInMilliseconds: 2000)
+  @CustomAutoRouter(
+      transitionsBuilder: TransitionsBuilders.slideRight,
+      durationInMilliseconds: 2000)
   LoginScreen loginScreen;
 
-  @CustomAutoRouter(transitionsBuilder: TransitionsBuilders.slideRight, durationInMilliseconds: 2000)
+  @CustomAutoRouter(
+      transitionsBuilder: TransitionsBuilders.slideRight,
+      durationInMilliseconds: 2000)
   SplashScreen splashScreen;
 
   ForgotPasswordScreen forgotPasswordScreen;
@@ -77,8 +81,6 @@ class $Router {
   ChangeLanguageScreen changeLanguageScreen;
   EditProfileScreen editProfileScreen;
   NewReviewScreen newReviewScreen;
-
-
 }
 
 class SearchValue {
@@ -105,7 +107,7 @@ class RestaurantDetails {
   });
 }
 
-class CurrentScreen{
+class CurrentScreen {
   final Widget currentScreen;
   final int tab_no;
 
@@ -114,4 +116,3 @@ class CurrentScreen{
     @required this.currentScreen,
   });
 }
-

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/values/values.dart';
 
 class PotbellyButton extends StatelessWidget {
   final double buttonWidth;
@@ -9,13 +9,12 @@ class PotbellyButton extends StatelessWidget {
   final TextStyle buttonTextStyle;
   final GestureTapCallback onTap;
 
-  PotbellyButton(this.buttonText, {
-    this.buttonWidth = Sizes.WIDTH_300,
-    this.buttonHeight = Sizes.HEIGHT_60,
-    this.decoration = Decorations.primaryButtonDecoration,
-    this.buttonTextStyle = Styles.normalTextStyle,
-    this.onTap
-  });
+  PotbellyButton(this.buttonText,
+      {this.buttonWidth = Sizes.WIDTH_300,
+      this.buttonHeight = Sizes.HEIGHT_60,
+      this.decoration = Decorations.primaryButtonDecoration,
+      this.buttonTextStyle = Styles.normalTextStyle,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {

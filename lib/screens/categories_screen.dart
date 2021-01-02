@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/data.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/category_card.dart';
-import 'package:potbelly/widgets/spaces.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/data.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/category_card.dart';
+import 'package:Foodybite/widgets/spaces.dart';
 
 class CategoriesScreen extends StatefulWidget {
-
   @override
   _CategoriesScreenState createState() => _CategoriesScreenState();
 }

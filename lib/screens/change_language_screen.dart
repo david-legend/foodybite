@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/data.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/custom_app_bar.dart';
-import 'package:potbelly/widgets/custom_radio_button.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/data.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/custom_app_bar.dart';
+import 'package:Foodybite/widgets/custom_radio_button.dart';
 
 class ChangeLanguageScreen extends StatefulWidget {
   @override
@@ -108,7 +108,9 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
             title: Text(
               defaultLanguagesList[index],
               style: Styles.customTitleTextStyle(
-                color: languages[index].isSelected ? AppColors.secondaryElement: AppColors.primaryText,
+                color: languages[index].isSelected
+                    ? AppColors.secondaryElement
+                    : AppColors.primaryText,
                 fontSize: Sizes.TEXT_SIZE_18,
               ),
             ),

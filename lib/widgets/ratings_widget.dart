@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/spaces.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/spaces.dart';
 
 class Ratings extends StatelessWidget {
   final String rating;
@@ -55,14 +55,16 @@ class RatingsBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        hasTitle ? Text(
-          title,
-          style: Styles.customTitleTextStyle(
-            color: AppColors.headingText,
-            fontWeight: FontWeight.w600,
-            fontSize: Sizes.TEXT_SIZE_20,
-          ),
-        ) : Container(),
+        hasTitle
+            ? Text(
+                title,
+                style: Styles.customTitleTextStyle(
+                  color: AppColors.headingText,
+                  fontWeight: FontWeight.w600,
+                  fontSize: Sizes.TEXT_SIZE_20,
+                ),
+              )
+            : Container(),
         hasTitle ? SpaceH16() : Container(),
         Container(
           width: MediaQuery.of(context).size.width - 60,
@@ -92,13 +94,15 @@ class RatingsBar extends StatelessWidget {
           ),
         ),
         SpaceH12(),
-        hasSubtitle ? Text(
-          subtitle,
-          style: Styles.customNormalTextStyle(
-            color: AppColors.accentText,
-            fontSize: Sizes.TEXT_SIZE_16,
-          ),
-        ) : Container(),
+        hasSubtitle
+            ? Text(
+                subtitle,
+                style: Styles.customNormalTextStyle(
+                  color: AppColors.accentText,
+                  fontSize: Sizes.TEXT_SIZE_16,
+                ),
+              )
+            : Container(),
       ],
     );
   }

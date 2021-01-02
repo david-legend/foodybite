@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/values.dart';
 import 'dart:math' as math;
 
 class SplashScreen extends StatefulWidget {
@@ -28,7 +28,8 @@ class _SplashScreenState extends State<SplashScreen>
       duration: const Duration(milliseconds: 500),
       vsync: this,
     );
-    _imageAnimation = Tween<double>(begin: 1, end: 1.5).animate(_imageController);
+    _imageAnimation =
+        Tween<double>(begin: 1, end: 1.5).animate(_imageController);
     _textAnimation = Tween<double>(begin: 3, end: 0.5).animate(_textController);
     _imageController.addListener(imageControllerListener);
     _textController.addListener(textControllerListener);

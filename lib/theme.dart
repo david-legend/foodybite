@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:potbelly/values/values.dart';
-
+import 'package:Foodybite/values/values.dart';
 
 const MaterialColor white = const MaterialColor(
   0xFFFFFFFF,
@@ -57,8 +56,7 @@ TextTheme _buildTextTheme(BuildContext context) {
         fontSize: Sizes.TEXT_SIZE_18,
         color: AppColors.primaryText,
         fontStyle: FontStyle.normal,
-        fontWeight: FontWeight.bold
-    ),
+        fontWeight: FontWeight.bold),
     subtitle: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
@@ -67,7 +65,6 @@ TextTheme _buildTextTheme(BuildContext context) {
     ),
   );
 }
-
 
 ThemeData buildLightTheme(BuildContext context) {
   const Color primaryColor = AppColors.primaryColor;
@@ -118,7 +115,6 @@ ThemeData buildLightTheme(BuildContext context) {
     accentTextTheme: _buildTextTheme(context),
   );
 }
-
 
 //ThemeData _buildDarkTheme() {
 //  const Color primaryColor = Color(0xFF0175c2);

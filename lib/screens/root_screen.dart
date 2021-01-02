@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/screens/new_review_screen.dart';
-import 'package:potbelly/screens/profile_screen.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/routes/router.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/screens/new_review_screen.dart';
+import 'package:Foodybite/screens/profile_screen.dart';
+import 'package:Foodybite/values/values.dart';
 import 'dart:math' as math;
 
 import 'bookmarks_screen.dart';
@@ -196,14 +196,13 @@ class _RootScreenState extends State<RootScreen>
   }) {
     return InkWell(
       onTap: () {
-        if(angle == tilt90Degrees) {
+        if (angle == tilt90Degrees) {
           setState(() {
             angle = math.pi;
           });
         }
         changeScreen(currentScreen: destination, currentTab: currentTab);
-      }
-          ,
+      },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Image.asset(

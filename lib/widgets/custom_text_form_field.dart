@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/values/values.dart';
+import 'package:Foodybite/values/values.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextStyle textFormFieldStyle;
@@ -73,10 +73,12 @@ class CustomTextFormField extends StatelessWidget {
               style: borderStyle,
             ),
           ),
-          prefixIcon: hasPrefixIcon ? ImageIcon(
-            AssetImage(prefixIconImagePath),
-            color: prefixIconColor,
-          ): null,
+          prefixIcon: hasPrefixIcon
+              ? ImageIcon(
+                  AssetImage(prefixIconImagePath),
+                  color: prefixIconColor,
+                )
+              : null,
           contentPadding: EdgeInsets.symmetric(
             horizontal: contentPaddingHorizontal,
             vertical: contentPaddingVertical,

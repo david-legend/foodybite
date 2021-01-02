@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
-import 'package:potbelly/values/values.dart';
-import 'package:potbelly/widgets/foody_bite_card.dart';
-import 'package:potbelly/widgets/potbelly_button.dart';
-import 'package:potbelly/widgets/spaces.dart';
+import 'package:Foodybite/routes/router.gr.dart';
+import 'package:Foodybite/values/values.dart';
+import 'package:Foodybite/widgets/foody_bite_card.dart';
+import 'package:Foodybite/widgets/potbelly_button.dart';
+import 'package:Foodybite/widgets/spaces.dart';
 
 class ProfileScreen extends StatelessWidget {
   static const int TAB_NO = 3;
@@ -69,21 +69,21 @@ class ProfileScreen extends StatelessWidget {
                 children: <Widget>[
                   PotbellyButton(
                     'Edit Profile',
-                    onTap: () => AppRouter.navigator.pushNamed(AppRouter.editProfileScreen),
+                    onTap: () => AppRouter.navigator
+                        .pushNamed(AppRouter.editProfileScreen),
                     buttonWidth: MediaQuery.of(context).size.width / 3,
                     buttonHeight: Sizes.HEIGHT_50,
                   ),
                   SpaceW16(),
                   PotbellyButton(
                     'Settings',
-                    onTap: () => AppRouter.navigator.pushNamed(AppRouter.settingsScreen),
+                    onTap: () =>
+                        AppRouter.navigator.pushNamed(AppRouter.settingsScreen),
                     buttonWidth: MediaQuery.of(context).size.width / 3,
                     buttonHeight: Sizes.HEIGHT_50,
                     decoration: BoxDecoration(
                       color: AppColors.primaryColor,
-                      border: Border.all(
-                        color: AppColors.indigo
-                      ),
+                      border: Border.all(color: AppColors.indigo),
                       borderRadius: BorderRadius.all(
                         Radius.circular(Sizes.RADIUS_8),
                       ),
@@ -129,7 +129,6 @@ class ProfileScreen extends StatelessWidget {
           ),
         ));
   }
-
 
   Widget detail({@required String number, @required String text}) {
     return Container(
