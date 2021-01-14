@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Foodybite/routes/router.gr.dart';
-import 'package:Foodybite/values/values.dart';
+import 'package:potbelly/routes/router.gr.dart';
+import 'package:potbelly/values/values.dart';
 
 class CustomAppBar extends StatelessWidget {
   CustomAppBar({

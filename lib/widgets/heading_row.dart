@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Foodybite/values/values.dart';
+import 'package:potbelly/values/values.dart';
 
 class HeadingRow extends StatelessWidget {
   final String title;

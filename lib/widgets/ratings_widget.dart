@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:Foodybite/values/values.dart';
-import 'package:Foodybite/widgets/spaces.dart';
+import 'package:potbelly/values/values.dart';
+import 'package:potbelly/widgets/spaces.dart';
 
 class Ratings extends StatelessWidget {
   final String rating;

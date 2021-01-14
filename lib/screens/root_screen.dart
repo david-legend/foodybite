@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:Foodybite/routes/router.dart';
-import 'package:Foodybite/routes/router.gr.dart';
-import 'package:Foodybite/screens/new_review_screen.dart';
-import 'package:Foodybite/screens/profile_screen.dart';
-import 'package:Foodybite/values/values.dart';
+import 'package:potbelly/routes/router.dart';
+import 'package:potbelly/routes/router.gr.dart';
+import 'package:potbelly/screens/new_review_screen.dart';
+import 'package:potbelly/screens/profile_screen.dart';
+import 'package:potbelly/values/values.dart';
 import 'dart:math' as math;
 
 import 'bookmarks_screen.dart';

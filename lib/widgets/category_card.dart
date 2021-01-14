@@ -1,5 +1,5 @@
+import 'package:potbelly/values/values.dart';
 import 'package:flutter/material.dart';
-import 'package:Foodybite/values/values.dart';
 
 class FoodyBiteCategoryCard extends StatelessWidget {
   final double width;

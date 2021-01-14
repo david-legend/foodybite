@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Foodybite/values/values.dart';
+import 'package:potbelly/values/values.dart';
 
 class NotificationsScreen extends StatelessWidget {
   static const int TAB_NO = 2;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:Foodybite/values/values.dart';
-import 'package:Foodybite/widgets/custom_app_bar.dart';
-import 'package:Foodybite/widgets/potbelly_button.dart';
+import 'package:potbelly/values/values.dart';
+import 'package:potbelly/widgets/custom_app_bar.dart';
+import 'package:potbelly/widgets/potbelly_button.dart';
 
 class FindFriendsScreen extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:Foodybite/routes/router.gr.dart';
-import 'package:Foodybite/values/values.dart';
-import 'package:Foodybite/widgets/ratings_widget.dart';
+import 'package:potbelly/routes/router.gr.dart';
+import 'package:potbelly/values/values.dart';
+import 'package:potbelly/widgets/ratings_widget.dart';
 
 class ReviewRatingScreen extends StatelessWidget {
   TextStyle subTitleTextStyle = Styles.customNormalTextStyle(

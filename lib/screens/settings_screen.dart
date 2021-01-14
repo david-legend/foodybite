@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:Foodybite/routes/router.gr.dart';
-import 'package:Foodybite/values/values.dart';
-import 'package:Foodybite/widgets/custom_app_bar.dart';
+import 'package:potbelly/routes/router.gr.dart';
+import 'package:potbelly/values/values.dart';
+import 'package:potbelly/widgets/custom_app_bar.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override

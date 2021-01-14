@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:Foodybite/routes/router.gr.dart';
-import 'package:Foodybite/values/data.dart';
-import 'package:Foodybite/values/values.dart';
-import 'package:Foodybite/widgets/foody_bite_card.dart';
-import 'package:Foodybite/widgets/spaces.dart';
+import 'package:potbelly/routes/router.gr.dart';
+import 'package:potbelly/values/data.dart';
+import 'package:potbelly/values/values.dart';
+import 'package:potbelly/widgets/foody_bite_card.dart';
+import 'package:potbelly/widgets/spaces.dart';
 
 class CategoryDetailScreen extends StatelessWidget {
   CategoryDetailScreen({

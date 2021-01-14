@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:Foodybite/values/values.dart';
+import 'package:potbelly/values/values.dart';
 
 const MaterialColor white = const MaterialColor(
   0xFFFFFFFF,

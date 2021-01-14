@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:Foodybite/routes/router.gr.dart';
-import 'package:Foodybite/values/values.dart';
-import 'package:Foodybite/widgets/dark_overlay.dart';
-import 'package:Foodybite/widgets/potbelly_button.dart';
-import 'package:Foodybite/widgets/spaces.dart';
+import 'package:potbelly/routes/router.gr.dart';
+import 'package:potbelly/values/values.dart';
+import 'package:potbelly/widgets/dark_overlay.dart';
+import 'package:potbelly/widgets/potbelly_button.dart';
+import 'package:potbelly/widgets/spaces.dart';
 
 class SetLocationScreen extends StatelessWidget {
   @override
