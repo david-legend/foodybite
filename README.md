@@ -13,7 +13,7 @@ who need food related app design.
 </p>
 
 
-<a href="https://play.google.com/store/apps/details?id=com.davidcobbina.drop" target="_blank"><img src="assets/screenshots/playstore.png"/></a>
+<a href="https://play.google.com/store/apps/details?id=com.davidcobbina.potbelly" target="_blank"><img src="assets/screenshots/playstore.png"/></a>
 
 ## Foody Bite Home
 ![Screenshot](assets/screenshots/foody_bite_home.png "Foody Bite Home")
