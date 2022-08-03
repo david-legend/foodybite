@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -21,7 +22,7 @@ class ReviewRatingScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         leading: InkWell(
-          onTap: () => AppRouter.navigator.pop(),
+          onTap: () => AutoRouter.of(context).pop(),
           child: Image.asset(
             ImagePath.arrowBackIcon,
             color: AppColors.headingText,

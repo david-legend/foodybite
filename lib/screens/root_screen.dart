@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.dart';
-import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/screens/new_review_screen.dart';
 import 'package:potbelly/screens/profile_screen.dart';
 import 'package:potbelly/values/values.dart';
@@ -13,7 +12,7 @@ import 'notification_screen.dart';
 class RootScreen extends StatefulWidget {
   RootScreen({this.currentScreen});
 
-  final CurrentScreen currentScreen;
+  final CurrentScreen? currentScreen;
 
   @override
   _RootScreenState createState() => _RootScreenState();
@@ -22,9 +21,9 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen>
     with SingleTickerProviderStateMixin {
   final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen;
-  int currentTab;
-  AnimationController _controller;
+  late Widget currentScreen;
+  late int currentTab;
+  late AnimationController _controller;
 
 //  final double pi = math.pi;
   final double tilt90Degrees = 90;
@@ -39,7 +38,7 @@ class _RootScreenState extends State<RootScreen>
     super.initState();
     print("init runs");
     currentScreen = widget.currentScreen?.currentScreen ?? HomeScreen();
-    currentTab = widget.currentScreen?.tab_no ?? 0;
+    currentTab = widget.currentScreen?.tabNum ?? 0;
     _controller = AnimationController(
       duration: const Duration(milliseconds: 200),
 //      value: 1,
@@ -54,8 +53,8 @@ class _RootScreenState extends State<RootScreen>
   }
 
   changeScreen({
-    @required Widget currentScreen,
-    @required int currentTab,
+    required Widget currentScreen,
+    required int currentTab,
   }) {
     setState(() {
       this.currentScreen = currentScreen;
@@ -167,7 +166,7 @@ class _RootScreenState extends State<RootScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   bottomNavigationIcon(
-                    destination: NotificationsScreen(),
+                    destination:  NotificationsScreen(),
                     currentTab: NotificationsScreen.TAB_NO,
                     activeIcon: ImagePath.activeNotificationIcon,
                     nonActiveIcon: ImagePath.notificationIcon,
@@ -189,10 +188,10 @@ class _RootScreenState extends State<RootScreen>
   }
 
   Widget bottomNavigationIcon({
-    @required Widget destination,
-    @required int currentTab,
-    @required String activeIcon,
-    @required String nonActiveIcon,
+    required Widget destination,
+    required int currentTab,
+    required String activeIcon,
+    required String nonActiveIcon,
   }) {
     return InkWell(
       onTap: () {

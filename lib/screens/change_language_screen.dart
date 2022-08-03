@@ -1,5 +1,5 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/data.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_app_bar.dart';
@@ -11,7 +11,7 @@ class ChangeLanguageScreen extends StatefulWidget {
 }
 
 class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
-  List<RadioModel> languages = List<RadioModel>();
+  List<RadioModel> languages = <RadioModel>[];
 
   @override
   void initState() {
@@ -36,14 +36,14 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
           title: "Change Language",
           trailing: <Widget>[
             InkWell(
-              onTap: () => AppRouter.navigator.pop(),
+              onTap: () => AutoRouter.of(context).pop(),
               child: Center(
                 child: Container(
                   margin:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   child: Text(
                     'Update',
-                    style: textTheme.body1.copyWith(
+                    style: textTheme.bodyMedium?.copyWith(
                         color: AppColors.secondaryElement,
                         fontSize: Sizes.TEXT_SIZE_20,
                         fontWeight: FontWeight.bold),
@@ -68,7 +68,7 @@ class _ChangeLanguageScreenState extends State<ChangeLanguageScreen> {
                 children: <Widget>[
                   Text(
                     "Select Language",
-                    style: textTheme.title.copyWith(
+                    style: textTheme.titleMedium?.copyWith(
                       fontSize: Sizes.TEXT_SIZE_20,
                       color: AppColors.indigoShade1,
                     ),

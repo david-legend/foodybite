@@ -19,48 +19,78 @@ const MaterialColor white = const MaterialColor(
 );
 
 TextTheme _buildTextTheme(BuildContext context) {
-  var textTheme = Theme.of(context).textTheme;
 
-  return GoogleFonts.josefinSansTextTheme(textTheme).copyWith(
-    display1: GoogleFonts.josefinSans(
+  return TextTheme(
+    displayLarge: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_36,
       color: AppColors.primaryText,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.normal,
     ),
-    headline: GoogleFonts.josefinSans(
+    displayMedium: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_36,
       color: AppColors.primaryText,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.normal,
     ),
-    subhead: GoogleFonts.josefinSans(
+    displaySmall: GoogleFonts.josefinSans(
+      fontSize: Sizes.TEXT_SIZE_36,
+      color: AppColors.primaryText,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+    ),
+    headlineLarge: GoogleFonts.josefinSans(
+      fontSize: Sizes.TEXT_SIZE_36,
+      color: AppColors.primaryText,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+    ),
+    headlineMedium: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
       fontWeight: FontWeight.w600,
       fontStyle: FontStyle.normal,
     ),
-    title: GoogleFonts.josefinSans(
+    headlineSmall: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
       fontWeight: FontWeight.w600,
       fontStyle: FontStyle.normal,
     ),
-    body1: GoogleFonts.josefinSans(
+    titleLarge: GoogleFonts.josefinSans(
+      fontSize: Sizes.TEXT_SIZE_20,
+      color: AppColors.primaryText,
+      fontWeight: FontWeight.w600,
+      fontStyle: FontStyle.normal,
+    ),
+    titleMedium: GoogleFonts.josefinSans(
+      fontSize: Sizes.TEXT_SIZE_18,
+      color: AppColors.primaryText,
+      fontWeight: FontWeight.w600,
+      fontStyle: FontStyle.normal,
+    ),
+    titleSmall: GoogleFonts.josefinSans(
+      fontSize: Sizes.TEXT_SIZE_18,
+      color: AppColors.primaryText,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+    ),
+    bodyLarge: GoogleFonts.josefinSans(
+      fontSize: Sizes.TEXT_SIZE_20,
+      color: AppColors.primaryText,
+      fontWeight: FontWeight.normal,
+      fontStyle: FontStyle.normal,
+    ),
+    bodyMedium: GoogleFonts.josefinSans(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
       fontWeight: FontWeight.normal,
       fontStyle: FontStyle.normal,
     ),
-    button: GoogleFonts.josefinSans(
-        fontSize: Sizes.TEXT_SIZE_18,
-        color: AppColors.primaryText,
-        fontStyle: FontStyle.normal,
-        fontWeight: FontWeight.bold),
-    subtitle: GoogleFonts.josefinSans(
-      fontSize: Sizes.TEXT_SIZE_18,
+    bodySmall: GoogleFonts.josefinSans(
+      fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.primaryText,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.normal,
       fontStyle: FontStyle.normal,
     ),
   );
@@ -75,7 +105,6 @@ ThemeData buildLightTheme(BuildContext context) {
   );
   final ThemeData base = ThemeData(
     brightness: Brightness.light,
-//    primarySwatch: white,
     primaryColorBrightness: Brightness.light,
     accentColorBrightness: Brightness.light,
     colorScheme: colorScheme,
@@ -112,7 +141,6 @@ ThemeData buildLightTheme(BuildContext context) {
   return base.copyWith(
     textTheme: _buildTextTheme(context),
     primaryTextTheme: _buildTextTheme(context),
-    accentTextTheme: _buildTextTheme(context),
   );
 }
 

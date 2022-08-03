@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/routes/router.gr.dart';
@@ -51,20 +52,14 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 InkWell(
-                  onTap: () => AppRouter.navigator.pushNamedAndRemoveUntil(
-                    AppRouter.rootScreen,
-                    (Route<dynamic> route) => false,
-                    arguments: CurrentScreen(
-                      tab_no: HomeScreen.TAB_NO,
-                      currentScreen: HomeScreen(),
-                    ),
-                  ),
+                  onTap: () =>
+                      AutoRouter.of(context).replaceAll([RootScreen()]),
                   child: Center(
                     child: Container(
                       margin: const EdgeInsets.only(left: 4),
                       child: Text(
                         'Cancel',
-                        style: textTheme.body1.copyWith(
+                        style: textTheme.bodyMedium?.copyWith(
                           color: AppColors.accentText,
                           fontSize: Sizes.TEXT_SIZE_20,
                           fontWeight: FontWeight.bold,
@@ -83,21 +78,14 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
                 ),
                 InkWell(
                   onTap: () => canPost
-                      ? AppRouter.navigator.pushNamedAndRemoveUntil(
-                          AppRouter.rootScreen,
-                          (Route<dynamic> route) => false,
-                          arguments: CurrentScreen(
-                            tab_no: HomeScreen.TAB_NO,
-                            currentScreen: HomeScreen(),
-                          ),
-                        )
+                      ? AutoRouter.of(context).replaceAll([RootScreen()])
                       : null,
                   child: Center(
                     child: Container(
                       margin: const EdgeInsets.only(right: 8),
                       child: Text(
                         'Post',
-                        style: textTheme.body1.copyWith(
+                        style: textTheme.bodyMedium?.copyWith(
                           color: canPost
                               ? AppColors.secondaryElement
                               : AppColors.accentText,
@@ -196,7 +184,7 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
     });
   }
 
-  Widget _buildReview({@required BuildContext context}) {
+  Widget _buildReview({required BuildContext context}) {
     var textTheme = Theme.of(context).textTheme;
     return Column(
       children: <Widget>[
@@ -218,7 +206,7 @@ class _NewReviewScreenState extends State<NewReviewScreen> {
           borderRadius: Sizes.RADIUS_12,
           borderStyle: BorderStyle.solid,
           focusedBorderColor: AppColors.indigo,
-          textFormFieldStyle: textTheme.body1,
+          textFormFieldStyle: textTheme.bodyMedium,
           contentPaddingHorizontal: Sizes.MARGIN_16,
         ),
       ],

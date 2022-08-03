@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_app_bar.dart';
+
+import '../routes/router.gr.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
@@ -23,7 +25,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAccountSettings({@required BuildContext context}) {
+  Widget _buildAccountSettings({required BuildContext context}) {
     var textTheme = Theme.of(context).textTheme;
     return Container(
       child: Column(
@@ -38,7 +40,7 @@ class SettingsScreen extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "Account",
-                  style: textTheme.title.copyWith(
+                  style: textTheme.titleMedium?.copyWith(
                     fontSize: Sizes.TEXT_SIZE_20,
                     color: AppColors.indigoShade1,
                   ),
@@ -53,13 +55,13 @@ class SettingsScreen extends StatelessWidget {
               tiles: <Widget>[
                 SettingsListTile(
                   title: "Change Password",
-                  onTap: () => AppRouter.navigator
-                      .pushNamed(AppRouter.changePasswordScreen),
+                  onTap: () => AutoRouter.of(context)
+                      .push(ChangePasswordScreen()),
                 ),
                 SettingsListTile(
                   title: "Change Language",
-                  onTap: () => AppRouter.navigator
-                      .pushNamed(AppRouter.changeLanguageScreen),
+                  onTap: () => AutoRouter.of(context)
+                      .push(ChangeLanguageScreen()),
                 )
               ],
             ).toList(),
@@ -69,7 +71,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildOtherSettings({@required BuildContext context}) {
+  Widget _buildOtherSettings({required BuildContext context}) {
     var textTheme = Theme.of(context).textTheme;
     return Container(
       child: Column(
@@ -84,7 +86,7 @@ class SettingsScreen extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "Others",
-                  style: textTheme.title.copyWith(
+                  style: textTheme.titleMedium?.copyWith(
                     fontSize: Sizes.TEXT_SIZE_20,
                     color: AppColors.indigoShade1,
                   ),
@@ -158,7 +160,7 @@ class SettingsScreen extends StatelessWidget {
                 child: Center(
                   child: Text(
                     'Are you sure you want to Logout ?',
-                    style: textTheme.title.copyWith(
+                    style: textTheme.titleMedium?.copyWith(
                       fontSize: Sizes.TEXT_SIZE_20,
                     ),
                   ),
@@ -181,7 +183,7 @@ class SettingsScreen extends StatelessWidget {
                       ),
                     ),
                     textStyle:
-                        textTheme.button.copyWith(color: AppColors.accentText),
+                        textTheme.button?.copyWith(color: AppColors.accentText),
                     onPressed: () => Navigator.of(context).pop(),
                   ),
                   AlertDialogButton(
@@ -194,12 +196,9 @@ class SettingsScreen extends StatelessWidget {
                       ),
                     ),
                     textStyle: textTheme.button
-                        .copyWith(color: AppColors.secondaryElement),
+                        ?.copyWith(color: AppColors.secondaryElement),
                     onPressed: () =>
-                        AppRouter.navigator.pushNamedAndRemoveUntil(
-                      AppRouter.loginScreen,
-                      (Route<dynamic> route) => false,
-                    ),
+                        AutoRouter.of(context).replaceAll([LoginScreen()]),
                   ),
                 ],
               )
@@ -213,7 +212,7 @@ class SettingsScreen extends StatelessWidget {
 
 class SettingsListTile extends StatelessWidget {
   SettingsListTile({
-    this.title,
+    required this.title,
     this.titleColor = AppColors.primaryText,
     this.iconData = Icons.arrow_forward_ios,
     this.onTap,
@@ -223,7 +222,7 @@ class SettingsListTile extends StatelessWidget {
   final String title;
   final Color titleColor;
   final IconData iconData;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
   final bool hasTrailing;
 
   @override
@@ -239,8 +238,8 @@ class SettingsListTile extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: Sizes.MARGIN_8),
           child: Text(
             title,
-            style: textTheme.title
-                .copyWith(fontSize: Sizes.TEXT_SIZE_20, color: titleColor),
+            style: textTheme.titleMedium
+                ?.copyWith(fontSize: Sizes.TEXT_SIZE_20, color: titleColor),
           ),
         ),
         trailing: hasTrailing ? Icon(iconData, color: AppColors.indigo) : null,
@@ -251,18 +250,18 @@ class SettingsListTile extends StatelessWidget {
 
 class AlertDialogButton extends StatelessWidget {
   AlertDialogButton({
-    @required this.buttonText,
+    required this.buttonText,
     this.textStyle,
     this.border,
     this.width,
     this.onPressed,
   });
 
-  final TextStyle textStyle;
   final String buttonText;
-  final VoidCallback onPressed;
-  final Border border;
-  final double width;
+  final TextStyle? textStyle;
+  final VoidCallback? onPressed;
+  final Border? border;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -271,7 +270,7 @@ class AlertDialogButton extends StatelessWidget {
       decoration: BoxDecoration(
         border: border,
       ),
-      child: FlatButton(
+      child: TextButton(
         child: Text(
           buttonText,
           style: textStyle,

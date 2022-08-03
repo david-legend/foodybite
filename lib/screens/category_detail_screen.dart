@@ -1,5 +1,5 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/data.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/foody_bite_card.dart';
@@ -7,11 +7,11 @@ import 'package:potbelly/widgets/spaces.dart';
 
 class CategoryDetailScreen extends StatelessWidget {
   CategoryDetailScreen({
-    @required this.categoryName,
-    @required this.imagePath,
-    @required this.numberOfCategories,
-    @required this.selectedCategory,
-    @required this.gradient,
+    required this.categoryName,
+    required this.imagePath,
+    required this.numberOfCategories,
+    required this.selectedCategory,
+    required this.gradient,
   });
 
   final String categoryName;
@@ -66,13 +66,13 @@ class CategoryDetailScreen extends StatelessWidget {
                         Row(
                           children: <Widget>[
                             InkWell(
-                              onTap: () => AppRouter.navigator.pop(),
+                              onTap: () => AutoRouter.of(context).pop(),
                               child: Image.asset(ImagePath.arrowBackIcon),
                             ),
                             Spacer(flex: 1),
                             Text(
                               categoryName,
-                              style: textTheme.title.copyWith(
+                              style: textTheme.titleMedium?.copyWith(
                                 fontSize: Sizes.TEXT_SIZE_22,
                                 color: AppColors.white,
                               ),
@@ -138,8 +138,8 @@ class CategoryDetailScreen extends StatelessWidget {
   }
 
   List<Widget> generatePills({
-    @required int numberOfPills,
-    @required double widthOfPill,
+    required int numberOfPills,
+    required double widthOfPill,
   }) {
     List<Widget> pills = [];
     for (var index = 0; index < numberOfPills; index++) {

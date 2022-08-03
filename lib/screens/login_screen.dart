@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -41,9 +42,9 @@ class LoginScreen extends StatelessWidget {
                   children: <Widget>[
                     _buildHeader(),
                     SizedBox(height: Sizes.HEIGHT_200),
-                    _buildForm(),
+                    _buildForm(context),
                     SpaceH36(),
-                    _buildFooter()
+                    _buildFooter(context)
                   ],
                 ),
               )
@@ -68,7 +69,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildForm() {
+  Widget _buildForm(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_48),
       child: Column(
@@ -88,8 +89,7 @@ class LoginScreen extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: InkWell(
-              onTap: () =>
-                  AppRouter.navigator.pushNamed(AppRouter.forgotPasswordScreen),
+              onTap: () => AutoRouter.of(context).push(ForgotPasswordScreen()),
               child: Container(
                 margin: EdgeInsets.only(top: Sizes.MARGIN_16),
                 child: Text(
@@ -105,19 +105,17 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildFooter() {
+  Widget _buildFooter(BuildContext context) {
     return Column(
       children: <Widget>[
         PotbellyButton(
           StringConst.LOGIN,
-          onTap: () => AppRouter.navigator.pushNamedAndRemoveUntil(
-            AppRouter.rootScreen,
-            (Route<dynamic> route) => false,
-          ),
+          onTap: () =>
+              AutoRouter.of(context).popUntilRouteWithName('/root-screen'),
         ),
         SizedBox(height: Sizes.HEIGHT_60),
         InkWell(
-          onTap: () => AppRouter.navigator.pushNamed(AppRouter.registerScreen),
+          onTap: () => AutoRouter.of(context).push(RegisterScreen()),
           child: Container(
             width: Sizes.WIDTH_150,
             height: Sizes.HEIGHT_24,

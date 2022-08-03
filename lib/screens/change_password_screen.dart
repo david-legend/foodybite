@@ -1,5 +1,5 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_app_bar.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
@@ -11,9 +11,9 @@ class ChangePasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
     var hintTextStyle =
-        textTheme.subtitle.copyWith(color: AppColors.accentText);
+        textTheme.titleSmall?.copyWith(color: AppColors.accentText);
     var textFormFieldTextStyle =
-        textTheme.subtitle.copyWith(color: AppColors.accentText);
+        textTheme.titleSmall?.copyWith(color: AppColors.accentText);
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -28,14 +28,14 @@ class ChangePasswordScreen extends StatelessWidget {
             title: "Change Password",
             trailing: <Widget>[
               InkWell(
-                onTap: () => AppRouter.navigator.pop(),
+                onTap: () => AutoRouter.of(context).pop(),
                 child: Center(
                   child: Container(
                     margin:
                         const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     child: Text(
                       'Cancel',
-                      style: textTheme.body1.copyWith(
+                      style: textTheme.bodyMedium?.copyWith(
                           color: AppColors.accentText,
                           fontSize: Sizes.TEXT_SIZE_20,
                           fontWeight: FontWeight.bold),
@@ -90,10 +90,10 @@ class ChangePasswordScreen extends StatelessWidget {
               PotbellyButton(
                 "Update",
                 buttonWidth: MediaQuery.of(context).size.width,
-                onTap: () => AppRouter.navigator.pushNamedAndRemoveUntil(
-                  AppRouter.loginScreen,
-                  (Route<dynamic> route) => false,
-                ),
+                onTap: () => AutoRouter.of(context).popUntilRouteWithName('/')
+                    
+                    
+                ,
               ),
               Spacer(flex: 1),
             ],

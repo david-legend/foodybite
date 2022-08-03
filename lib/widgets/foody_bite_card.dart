@@ -11,7 +11,7 @@ class FoodyBiteCard extends StatelessWidget {
   final String category;
   final String distance;
   final String address;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
   final bool bookmark;
   final bool isThereStatus;
   final bool isThereRatings;
@@ -21,16 +21,16 @@ class FoodyBiteCard extends StatelessWidget {
   final double imageHeight;
   final double cardElevation;
   final double ratingsAndStatusCardElevation;
-  final List<String> followersImagePath;
+  final List<String>? followersImagePath;
 
   FoodyBiteCard({
     this.status = "OPEN",
     this.rating = "4.5",
-    this.imagePath,
-    this.cardTitle,
-    this.category,
-    this.distance,
-    this.address,
+    required this.imagePath,
+    required this.cardTitle,
+    required this.category,
+    required this.distance,
+    required this.address,
     this.width = 340.0,
     this.cardHeight = 280.0,
     this.imageHeight = 180.0,

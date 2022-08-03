@@ -15,8 +15,8 @@ class FoodyBiteSearchCard extends StatelessWidget {
   final double imageHeight;
   final double cardElevation;
   final double ratingsAndStatusCardElevation;
-  final VoidCallback onPressed;
-  final VoidCallback onPressClose;
+  final VoidCallback? onPressed;
+  final VoidCallback? onPressClose;
   final bool hasBeenAdded;
 
   FoodyBiteSearchCard({

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final TextStyle textFormFieldStyle;
-  final TextStyle hintTextStyle;
+  final TextStyle? textFormFieldStyle;
+  final TextStyle? hintTextStyle;
   final BorderStyle borderStyle;
   final double borderRadius;
   final double borderWidth;
   final double contentPaddingHorizontal;
   final double contentPaddingVertical;
-  final String prefixIconImagePath;
+  final String? prefixIconImagePath;
   final String hintText;
   final Color prefixIconColor;
   final Color borderColor;
@@ -32,7 +32,7 @@ class CustomTextFormField extends StatelessWidget {
     this.borderWidth = Sizes.WIDTH_0,
     this.contentPaddingHorizontal = Sizes.PADDING_0,
     this.contentPaddingVertical = Sizes.PADDING_22,
-    this.hintText,
+    this.hintText = "",
     this.prefixIconColor = AppColors.secondaryText,
     this.borderColor = AppColors.greyShade1,
     this.focusedBorderColor = AppColors.greyShade1,
@@ -73,12 +73,7 @@ class CustomTextFormField extends StatelessWidget {
               style: borderStyle,
             ),
           ),
-          prefixIcon: hasPrefixIcon
-              ? ImageIcon(
-                  AssetImage(prefixIconImagePath),
-                  color: prefixIconColor,
-                )
-              : null,
+          prefixIcon: hasPrefixIcon ? prefixImage() : null,
           contentPadding: EdgeInsets.symmetric(
             horizontal: contentPaddingHorizontal,
             vertical: contentPaddingVertical,
@@ -91,5 +86,16 @@ class CustomTextFormField extends StatelessWidget {
         obscureText: obscured,
       ),
     );
+  }
+
+  Widget? prefixImage() {
+    if (prefixIconImagePath != null) {
+      return ImageIcon(
+        AssetImage(prefixIconImagePath!),
+        color: prefixIconColor,
+      );
+    }
+
+    return null;
   }
 }

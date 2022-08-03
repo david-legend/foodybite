@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -10,10 +11,10 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
-  AnimationController _imageController;
-  AnimationController _textController;
-  Animation<double> _imageAnimation;
-  Animation<double> _textAnimation;
+  late AnimationController _imageController;
+  late AnimationController _textController;
+  late Animation<double> _imageAnimation;
+  late Animation<double> _textAnimation;
   bool hasImageAnimationStarted = false;
   bool hasTextAnimationStarted = false;
 
@@ -57,10 +58,7 @@ class _SplashScreenState extends State<SplashScreen>
   void textControllerListener() {
     if (_textController.status == AnimationStatus.completed) {
       Future.delayed(Duration(milliseconds: 1000), () {
-        AppRouter.navigator.pushNamedAndRemoveUntil(
-          AppRouter.loginScreen,
-          (Route<dynamic> route) => false,
-        );
+        AutoRouter.of(context).replaceAll([LoginScreen()]);
       });
     }
   }

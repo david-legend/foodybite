@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:potbelly/values/values.dart';
 
 class FoodyBiteSearchInputField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final TextStyle textFormFieldStyle;
   final TextStyle hintTextStyle;
   final BorderStyle borderStyle;
-  final GestureTapCallback onTapOfSuffixIcon;
-  final GestureTapCallback onTapOfLeadingIcon;
+  final GestureTapCallback? onTapOfSuffixIcon;
+  final GestureTapCallback? onTapOfLeadingIcon;
   final double borderRadius;
   final double borderWidth;
   final double contentPaddingHorizontal;
   final double contentPaddingVertical;
   final String prefixIconImagePath;
-  final String suffixIconImagePath;
+  final String? suffixIconImagePath;
   final String hintText;
   final Color borderColor;
   final Color prefixIconColor;
@@ -22,9 +22,9 @@ class FoodyBiteSearchInputField extends StatelessWidget {
   final bool filled;
   final bool obscured;
   final bool hasSuffixIcon;
-  ValueChanged<String> onChanged;
-  Widget suffixIcon;
-  Widget prefixIcon;
+  ValueChanged<String>? onChanged;
+  Widget? suffixIcon;
+  Widget? prefixIcon;
 
   FoodyBiteSearchInputField(
     this.prefixIconImagePath, {
@@ -38,7 +38,7 @@ class FoodyBiteSearchInputField extends StatelessWidget {
     this.borderWidth = Sizes.WIDTH_0,
     this.contentPaddingHorizontal = Sizes.PADDING_0,
     this.contentPaddingVertical = Sizes.PADDING_22,
-    this.hintText,
+    this.hintText = "",
     this.suffixIconImagePath,
     this.borderColor = Colors.grey,
     this.prefixIconColor = AppColors.accentText,
@@ -99,10 +99,15 @@ class FoodyBiteSearchInputField extends StatelessWidget {
   }
 
   Widget defaultSuffixIcon() {
-    return ImageIcon(
-      AssetImage(suffixIconImagePath),
-      color: suffixIconColor,
-    );
+     if (suffixIconImagePath != null) {
+       return ImageIcon(
+        AssetImage(suffixIconImagePath!),
+        color: suffixIconColor,
+      );
+    }
+
+     return SizedBox();
+
   }
 
   Widget defaultPrefixIcon() {

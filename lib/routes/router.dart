@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:auto_route/auto_route_annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/screens/add_ratings_screen.dart';
 import 'package:potbelly/screens/bookmarks_screen.dart';
@@ -27,61 +26,49 @@ import 'package:potbelly/screens/set_location_screen.dart';
 import 'package:potbelly/screens/settings_screen.dart';
 import 'package:potbelly/screens/splash_screen.dart';
 import 'package:potbelly/screens/trending_restaurant_screen.dart';
-import 'package:meta/meta.dart';
 
-//@MaterialAutoRouter()
-//@CustomAutoRouter(transitionsBuilder: TransitionsBuilders.slideLeft, durationInMilliseconds: 200)
-
-@CupertinoAutoRouter()
-class $Router {
-  @initial
-  @CustomAutoRouter(
+@CupertinoAutoRouter(
+  replaceInRouteName: 'Page,Route',
+  routes: <AutoRoute>[
+    CustomRoute(
+      page: SplashScreen,
+      initial: true,
       transitionsBuilder: TransitionsBuilders.slideRight,
-      durationInMilliseconds: 2000)
-  LoginScreen loginScreen;
-
-  @CustomAutoRouter(
+      durationInMilliseconds: 2000,
+    ),
+    CustomRoute(
+      page: LoginScreen,
       transitionsBuilder: TransitionsBuilders.slideRight,
-      durationInMilliseconds: 2000)
-  SplashScreen splashScreen;
+      durationInMilliseconds: 2000,
+    ),
 
-  ForgotPasswordScreen forgotPasswordScreen;
-
-  @MaterialRoute()
-  RegisterScreen registerScreen;
-
-  SetLocationScreen setLocationScreen;
-
-  HomeScreen homeScreen;
-
-  RootScreen rootScreen;
-
-  ProfileScreen profileScreen;
-
-  NotificationsScreen notificationsScreen;
-
-  TrendingRestaurantsScreen trendingRestaurantsScreen;
-  RestaurantDetailsScreen restaurantDetailsScreen;
-  BookmarksScreen bookmarksScreen;
-
-  FilterScreen filterScreen;
-  SearchResultsScreen searchResultsScreen;
-  ReviewRatingScreen reviewRatingScreen;
-
-  AddRatingsScreen addRatingsScreen;
-  MenuPhotosScreen menuPhotosScreen;
-  PreviewMenuPhotosScreen previewMenuPhotosScreen;
-  CategoriesScreen categoriesScreen;
-
-  CategoryDetailScreen categoryDetailScreen;
-  FindFriendsScreen findFriendsScreen;
-  SettingsScreen settingsScreen;
-  ChangePasswordScreen changePasswordScreen;
-
-  ChangeLanguageScreen changeLanguageScreen;
-  EditProfileScreen editProfileScreen;
-  NewReviewScreen newReviewScreen;
-}
+    AutoRoute(page: ForgotPasswordScreen),
+    MaterialRoute(page: RegisterScreen),
+    AutoRoute(page: SetLocationScreen),
+    AutoRoute(page: HomeScreen),
+    AutoRoute(page: RootScreen),
+    AutoRoute(page: ProfileScreen),
+    AutoRoute(page: NotificationsScreen),
+    AutoRoute(page: TrendingRestaurantsScreen),
+    AutoRoute(page: RestaurantDetailsScreen),
+    AutoRoute(page: BookmarksScreen),
+    AutoRoute(page: FilterScreen),
+    AutoRoute(page: SearchResultsScreen),
+    AutoRoute(page: ReviewRatingScreen),
+    AutoRoute(page: AddRatingsScreen),
+    AutoRoute(page: MenuPhotosScreen),
+    AutoRoute(page: PreviewMenuPhotosScreen),
+    AutoRoute(page: CategoriesScreen),
+    AutoRoute(page: CategoryDetailScreen),
+    AutoRoute(page: FindFriendsScreen),
+    AutoRoute(page: SettingsScreen),
+    AutoRoute(page: ChangePasswordScreen),
+    AutoRoute(page: ChangeLanguageScreen),
+    AutoRoute(page: EditProfileScreen),
+    AutoRoute(page: NewReviewScreen),
+  ],
+)
+class $AppRouter {}
 
 class SearchValue {
   final String value;
@@ -98,21 +85,21 @@ class RestaurantDetails {
   final String rating;
 
   RestaurantDetails({
-    @required this.imagePath,
-    @required this.restaurantName,
-    @required this.restaurantAddress,
-    @required this.category,
-    @required this.distance,
-    @required this.rating,
+    required this.imagePath,
+    required this.restaurantName,
+    required this.restaurantAddress,
+    required this.category,
+    required this.distance,
+    required this.rating,
   });
 }
 
 class CurrentScreen {
   final Widget currentScreen;
-  final int tab_no;
+  final int tabNum;
 
   CurrentScreen({
-    @required this.tab_no,
-    @required this.currentScreen,
+    required this.tabNum,
+    required this.currentScreen,
   });
 }

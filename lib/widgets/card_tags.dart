@@ -6,8 +6,8 @@ class CardTags extends StatelessWidget {
   final BoxDecoration decoration;
 
   CardTags({
-    @required this.title,
-    this.decoration,
+    required this.title,
+    this.decoration = Decorations.regularDecoration,
   });
 
   @override

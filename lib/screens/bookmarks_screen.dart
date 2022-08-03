@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.dart';
@@ -51,15 +52,16 @@ class BookmarksScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               return Container(
                 child: FoodyBiteCard(
-                  onTap: () => AppRouter.navigator.pushNamed(
-                    AppRouter.restaurantDetailsScreen,
-                    arguments: RestaurantDetails(
-                      imagePath: imagePaths[index],
-                      restaurantName: restaurantNames[index],
-                      restaurantAddress: addresses[index],
-                      rating: ratings[index],
-                      category: category[index],
-                      distance: distance[index],
+                  onTap: () => AutoRouter.of(context).push(
+                    RestaurantDetailsScreen(
+                      restaurantDetails: RestaurantDetails(
+                        imagePath: imagePaths[index],
+                        restaurantName: restaurantNames[index],
+                        restaurantAddress: addresses[index],
+                        rating: ratings[index],
+                        category: category[index],
+                        distance: distance[index],
+                      ),
                     ),
                   ),
                   imagePath: imagePaths[index],

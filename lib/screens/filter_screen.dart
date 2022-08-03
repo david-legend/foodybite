@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -165,8 +166,9 @@ class _FilterScreenState extends State<FilterScreen> {
               ),
               PotbellyButton(
                 'Apply',
-                onTap: () => AppRouter.navigator
-                    .pushNamed(AppRouter.trendingRestaurantsScreen),
+                onTap: () => AutoRouter.of(context).push(
+                  TrendingRestaurantsScreen(),
+                ),
                 buttonHeight: 65,
                 buttonWidth: (MediaQuery.of(context).size.width / 2) - 0.25,
                 decoration: Decorations.customHalfCurvedButtonDecoration(
@@ -182,8 +184,8 @@ class _FilterScreenState extends State<FilterScreen> {
   }
 
   Widget categoryButton({
-    @required String buttonTitle,
-    @required int index,
+    required String buttonTitle,
+    required int index,
     Color backgroundColor = AppColors.primaryColor,
   }) {
     return Container(
@@ -199,7 +201,7 @@ class _FilterScreenState extends State<FilterScreen> {
               : BoxDecoration(
                   color: backgroundColor,
                   border: Border.all(
-                    color: Colors.grey[400],
+                    color: Colors.grey[400]!,
                   ),
                   borderRadius: BorderRadius.all(
                     Radius.circular(Sizes.RADIUS_8),
@@ -256,16 +258,16 @@ class RetroSliderThumbShape extends SliderComponentShape {
   void paint(
     PaintingContext context,
     Offset center, {
-    Animation<double> activationAnimation,
-    Animation<double> enableAnimation,
-    bool isDiscrete,
-    TextPainter labelPainter,
-    RenderBox parentBox,
-    SliderThemeData sliderTheme,
-    TextDirection textDirection,
-    double value,
-    double textScaleFactor,
-    Size sizeWithOverflow,
+    required Animation<double> activationAnimation,
+    required Animation<double> enableAnimation,
+    required bool isDiscrete,
+    required TextPainter labelPainter,
+    required RenderBox parentBox,
+    required SliderThemeData sliderTheme,
+    required TextDirection textDirection,
+    required double value,
+    required double textScaleFactor,
+    required Size sizeWithOverflow,
   }) {
     String sliderValue = (value * 100).toInt().toString();
     final Canvas canvas = context.canvas;

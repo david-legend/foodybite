@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -19,7 +20,7 @@ class MenuPhotosScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         leading: InkWell(
-          onTap: () => AppRouter.navigator.pop(),
+          onTap: () => AutoRouter.of(context).pop(),
           child: Image.asset(
             ImagePath.arrowBackIcon,
             color: AppColors.headingText,
@@ -41,14 +42,20 @@ class MenuPhotosScreen extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             straightLineImageRow(
-                imageWidth: widthOfSmallImage, context: context),
+              imageWidth: widthOfSmallImage,
+              context: context,
+            ),
             SizedBox(height: Sizes.MARGIN_16),
             gridImageRow(
-                widthOfSmallImage: widthOfSmallImage,
-                widthOfLargeImage: widthOfLargeImage,
-                context: context),
+              widthOfSmallImage: widthOfSmallImage,
+              widthOfLargeImage: widthOfLargeImage,
+              context: context,
+            ),
             SizedBox(height: Sizes.MARGIN_16),
-            straightLineImageRow(imageWidth: widthOfSmallImage),
+            straightLineImageRow(
+              imageWidth: widthOfSmallImage,
+              context: context,
+            ),
             SizedBox(height: Sizes.MARGIN_16),
             fullWidth(width: widthOfScreen, context: context)
           ],
@@ -58,8 +65,8 @@ class MenuPhotosScreen extends StatelessWidget {
   }
 
   Widget straightLineImageRow({
-    @required double imageWidth,
-    @required BuildContext context,
+    required double imageWidth,
+    required BuildContext context,
   }) {
     return Row(
       children: createImageRow(
@@ -71,9 +78,9 @@ class MenuPhotosScreen extends StatelessWidget {
   }
 
   Widget gridImageRow({
-    @required double widthOfSmallImage,
-    @required double widthOfLargeImage,
-    @required BuildContext context,
+    required double widthOfSmallImage,
+    required double widthOfLargeImage,
+    required BuildContext context,
   }) {
     return Row(
       children: <Widget>[
@@ -125,7 +132,7 @@ class MenuPhotosScreen extends StatelessWidget {
   }
 
   Widget fullWidth(
-      {@required width, height = 200.0, @required BuildContext context}) {
+      {required width, height = 200.0, required BuildContext context}) {
     return InkWell(
       onTap: () => navigateToPreviewPhotos(context),
       child: ClipRRect(
@@ -141,9 +148,9 @@ class MenuPhotosScreen extends StatelessWidget {
   }
 
   List<Widget> createImageRow(
-      {@required numberOfImages,
-      @required imageWidth,
-      @required BuildContext context}) {
+      {required numberOfImages,
+      required imageWidth,
+      required BuildContext context}) {
     List<Widget> images = [];
     List<String> imagePaths = [
       ImagePath.breakfastInBed,
@@ -177,6 +184,6 @@ class MenuPhotosScreen extends StatelessWidget {
   }
 
   void navigateToPreviewPhotos(BuildContext context) {
-    AppRouter.navigator.pushNamed(AppRouter.previewMenuPhotosScreen);
+    AutoRouter.of(context).push(PreviewMenuPhotosScreen());
   }
 }

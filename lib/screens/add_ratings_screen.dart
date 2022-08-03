@@ -1,5 +1,5 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 import 'package:potbelly/widgets/custom_text_form_field.dart';
 import 'package:potbelly/widgets/potbelly_button.dart';
@@ -35,7 +35,7 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
         appBar: AppBar(
           elevation: 0.0,
           leading: InkWell(
-            onTap: () => AppRouter.navigator.pop(),
+            onTap: () => AutoRouter.of(context).pop(),
             child: Image.asset(
               ImagePath.arrowBackIcon,
               color: AppColors.headingText,
@@ -52,7 +52,7 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
           ),
           actions: <Widget>[
             InkWell(
-              onTap: () => AppRouter.navigator.pop(),
+              onTap: () => AutoRouter.of(context).pop(),
               child: Image.asset(
                 ImagePath.closeIcon,
                 color: Colors.grey,
@@ -79,7 +79,7 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
                   borderRadius: Sizes.RADIUS_12,
                   borderStyle: BorderStyle.solid,
                   focusedBorderColor: AppColors.indigo,
-                  textFormFieldStyle: textTheme.body1,
+                  textFormFieldStyle: textTheme.bodyMedium,
                   contentPaddingHorizontal: Sizes.MARGIN_16,
                 ),
               ),
@@ -88,7 +88,7 @@ class _AddRatingsScreenState extends State<AddRatingsScreen> {
                   alignment: Alignment.bottomCenter,
                   child: PotbellyButton(
                     'Done',
-                    onTap: () => AppRouter.navigator.pop(),
+                    onTap: () => AutoRouter.of(context).pop(),
                     buttonHeight: 65,
                     buttonWidth: MediaQuery.of(context).size.width,
                     decoration: Decorations.customHalfCurvedButtonDecoration(

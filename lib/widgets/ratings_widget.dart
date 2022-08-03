@@ -74,7 +74,7 @@ class RatingsBar extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
           child: Center(
-            child: RatingBar(
+            child: RatingBar.builder(
               initialRating: 0,
               minRating: 1,
               direction: Axis.horizontal,

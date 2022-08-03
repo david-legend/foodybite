@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -41,7 +42,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   child: ListView(
                     children: [
                       SpaceH16(),
-                      _buildAppBar(),
+                      _buildAppBar(context),
                       Container(
                         margin: EdgeInsets.only(top: Sizes.MARGIN_60),
                         child: Text(
@@ -68,8 +69,9 @@ class ForgotPasswordScreen extends StatelessWidget {
                         child: PotbellyButton(
                           StringConst.SEND,
                           buttonWidth: widthOfScreen,
-                          onTap: () => AppRouter.navigator
-                              .pushReplacementNamed(AppRouter.loginScreen),
+                          onTap: () => AutoRouter.of(context).replace(
+                            LoginScreen(),
+                          ),
                         ),
                       )
                     ],
@@ -83,12 +85,12 @@ class ForgotPasswordScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildAppBar() {
+  Widget _buildAppBar(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         InkWell(
-          onTap: () => AppRouter.navigator.pop(),
+          onTap: () => AutoRouter.of(context).pop(),
           child: Padding(
             padding: const EdgeInsets.only(
               left: Sizes.MARGIN_12,

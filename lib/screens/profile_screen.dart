@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -8,7 +9,7 @@ import 'package:potbelly/widgets/spaces.dart';
 class ProfileScreen extends StatelessWidget {
   static const int TAB_NO = 3;
 
-  ProfileScreen({Key key}) : super(key: key);
+  ProfileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -69,16 +70,15 @@ class ProfileScreen extends StatelessWidget {
                 children: <Widget>[
                   PotbellyButton(
                     'Edit Profile',
-                    onTap: () => AppRouter.navigator
-                        .pushNamed(AppRouter.editProfileScreen),
+                    onTap: () =>
+                        AutoRouter.of(context).push(EditProfileScreen()),
                     buttonWidth: MediaQuery.of(context).size.width / 3,
                     buttonHeight: Sizes.HEIGHT_50,
                   ),
                   SpaceW16(),
                   PotbellyButton(
                     'Settings',
-                    onTap: () =>
-                        AppRouter.navigator.pushNamed(AppRouter.settingsScreen),
+                    onTap: () => AutoRouter.of(context).push(SettingsScreen()),
                     buttonWidth: MediaQuery.of(context).size.width / 3,
                     buttonHeight: Sizes.HEIGHT_50,
                     decoration: BoxDecoration(
@@ -130,7 +130,7 @@ class ProfileScreen extends StatelessWidget {
         ));
   }
 
-  Widget detail({@required String number, @required String text}) {
+  Widget detail({required String number, required String text}) {
     return Container(
       child: Column(
         children: <Widget>[

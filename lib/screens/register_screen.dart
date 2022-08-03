@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -50,8 +51,8 @@ class RegisterScreen extends StatelessWidget {
                       SpaceH40(),
                       PotbellyButton(
                         StringConst.REGISTER,
-                        onTap: () => AppRouter.navigator
-                            .pushNamed(AppRouter.setLocationScreen),
+                        onTap: () =>
+                            AutoRouter.of(context).push(SetLocationScreen()),
                       ),
                       SpaceH40(),
                       Row(
@@ -64,8 +65,8 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           SpaceW16(),
                           InkWell(
-                            onTap: () => AppRouter.navigator
-                                .pushReplacementNamed(AppRouter.loginScreen),
+                            onTap: () =>
+                                AutoRouter.of(context).replace(LoginScreen()),
                             child: Text(
                               StringConst.LOGIN,
                               textAlign: TextAlign.left,

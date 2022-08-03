@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.dart';
 import 'package:potbelly/routes/router.gr.dart';
@@ -11,7 +12,7 @@ import 'package:potbelly/widgets/search_input_field.dart';
 class HomeScreen extends StatelessWidget {
   static const int TAB_NO = 0;
 
-  HomeScreen({Key key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
   TextEditingController controller = TextEditingController();
 
@@ -42,22 +43,23 @@ class HomeScreen extends StatelessWidget {
                     Styles.customNormalTextStyle(color: AppColors.accentText),
                 suffixIconImagePath: ImagePath.settingsIcon,
                 borderWidth: 0.0,
-                onTapOfLeadingIcon: () => AppRouter.navigator.pushNamed(
-                  AppRouter.searchResultsScreen,
-                  arguments: SearchValue(
-                    controller.text,
+                onTapOfLeadingIcon: () => AutoRouter.of(context).push(
+                  SearchResultsScreen(
+                    searchValue: SearchValue(
+                      controller.text,
+                    ),
                   ),
                 ),
                 onTapOfSuffixIcon: () =>
-                    AppRouter.navigator.pushNamed(AppRouter.filterScreen),
+                    AutoRouter.of(context).push(FilterScreen()),
                 borderStyle: BorderStyle.solid,
               ),
               SizedBox(height: 16.0),
               HeadingRow(
                 title: StringConst.TRENDING_RESTAURANTS,
                 number: StringConst.SEE_ALL_45,
-                onTapOfNumber: () => AppRouter.navigator
-                    .pushNamed(AppRouter.trendingRestaurantsScreen),
+                onTapOfNumber: () =>
+                    AutoRouter.of(context).push(TrendingRestaurantsScreen()),
               ),
               SizedBox(height: 16.0),
               Container(
@@ -70,15 +72,16 @@ class HomeScreen extends StatelessWidget {
                       return Container(
                         margin: EdgeInsets.only(right: 4.0),
                         child: FoodyBiteCard(
-                          onTap: () => AppRouter.navigator.pushNamed(
-                            AppRouter.restaurantDetailsScreen,
-                            arguments: RestaurantDetails(
-                              imagePath: imagePaths[index],
-                              restaurantName: restaurantNames[index],
-                              restaurantAddress: addresses[index],
-                              rating: ratings[index],
-                              category: category[index],
-                              distance: distance[index],
+                          onTap: () => AutoRouter.of(context).push(
+                            RestaurantDetailsScreen(
+                              restaurantDetails: RestaurantDetails(
+                                imagePath: imagePaths[index],
+                                restaurantName: restaurantNames[index],
+                                restaurantAddress: addresses[index],
+                                rating: ratings[index],
+                                category: category[index],
+                                distance: distance[index],
+                              ),
                             ),
                           ),
                           imagePath: imagePaths[index],
@@ -97,7 +100,7 @@ class HomeScreen extends StatelessWidget {
                 title: StringConst.CATEGORY,
                 number: StringConst.SEE_ALL_9,
                 onTapOfNumber: () =>
-                    AppRouter.navigator.pushNamed(AppRouter.categoriesScreen),
+                    AutoRouter.of(context).push(CategoriesScreen()),
               ),
               SizedBox(height: 16.0),
               Container(
@@ -121,8 +124,8 @@ class HomeScreen extends StatelessWidget {
               HeadingRow(
                 title: StringConst.FRIENDS,
                 number: StringConst.SEE_ALL_56,
-                onTapOfNumber: () => AppRouter.navigator.pushNamed(
-                  AppRouter.findFriendsScreen,
+                onTapOfNumber: () => AutoRouter.of(context).push(
+                  FindFriendsScreen()
                 ),
               ),
               SizedBox(height: 16.0),

@@ -1,10 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 
 class CustomAppBar extends StatelessWidget {
   CustomAppBar({
-    this.title,
+    required this.title,
     this.hasLeading = true,
     this.hasTrailing = true,
     this.onActionTap,
@@ -13,10 +13,10 @@ class CustomAppBar extends StatelessWidget {
     this.onLeadingTap,
   });
 
-  final GestureTapCallback onLeadingTap;
-  final GestureTapCallback onActionTap;
-  final List<Widget> trailing;
-  final Widget leading;
+  final GestureTapCallback? onLeadingTap;
+  final GestureTapCallback? onActionTap;
+  final List<Widget>? trailing;
+  final Widget? leading;
   final bool hasLeading;
   final bool hasTrailing;
   final String title;
@@ -25,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0.0,
-      leading: hasLeading ? (leading ?? defaultLeading()) : null,
+      leading: hasLeading ? (leading ?? defaultLeading(context)) : null,
       centerTitle: true,
       title: Text(
         title,
@@ -51,9 +51,9 @@ class CustomAppBar extends StatelessWidget {
     ];
   }
 
-  Widget defaultLeading() {
+  Widget defaultLeading(BuildContext context) {
     return InkWell(
-      onTap: () => AppRouter.navigator.pop(),
+      onTap: () => AutoRouter.of(context).pop(),
       child: Image.asset(
         ImagePath.arrowBackIcon,
         color: AppColors.headingText,

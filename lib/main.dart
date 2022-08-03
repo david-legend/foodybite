@@ -7,12 +7,13 @@ void main() => runApp(App());
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final _appRouter = AppRouter();
+
+    return MaterialApp.router(
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
       debugShowCheckedModeBanner: false,
       theme: buildLightTheme(context),
-      initialRoute: AppRouter.splashScreen,
-      onGenerateRoute: AppRouter.onGenerateRoute,
-      navigatorKey: AppRouter.navigator.key,
     );
   }
 }

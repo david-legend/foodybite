@@ -4,9 +4,9 @@ import 'package:potbelly/values/values.dart';
 class HeadingRow extends StatelessWidget {
   final String title;
   final String number;
-  final GestureTapCallback onTapOfNumber;
+  final GestureTapCallback? onTapOfNumber;
 
-  HeadingRow({this.title, this.number, this.onTapOfNumber});
+  HeadingRow({required this.title, required this.number, this.onTapOfNumber});
 
   @override
   Widget build(BuildContext context) {

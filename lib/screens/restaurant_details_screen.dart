@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:potbelly/routes/router.dart';
@@ -16,7 +17,7 @@ import 'package:potbelly/widgets/spaces.dart';
 class RestaurantDetailsScreen extends StatelessWidget {
   final RestaurantDetails restaurantDetails;
 
-  RestaurantDetailsScreen({@required this.restaurantDetails});
+  RestaurantDetailsScreen({required this.restaurantDetails});
 
   TextStyle addressTextStyle = Styles.customNormalTextStyle(
     color: AppColors.accentText,
@@ -90,7 +91,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
                             child: Row(
                               children: <Widget>[
                                 InkWell(
-                                  onTap: () => AppRouter.navigator.pop(),
+                                  onTap: () => AutoRouter.of(context).pop(),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
                                       left: Sizes.MARGIN_16,
@@ -254,8 +255,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.MENU_AND_PHOTOS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () => AppRouter.navigator
-                                .pushNamed(AppRouter.menuPhotosScreen),
+                            onTapOfNumber: () =>
+                                AutoRouter.of(context).push(MenuPhotosScreen()),
                           ),
                           SizedBox(height: 16.0),
                           Container(
@@ -283,8 +284,8 @@ class RestaurantDetailsScreen extends StatelessWidget {
                           HeadingRow(
                             title: StringConst.REVIEWS_AND_RATINGS,
                             number: StringConst.SEE_ALL_32,
-                            onTapOfNumber: () => AppRouter.navigator
-                                .pushNamed(AppRouter.reviewRatingScreen),
+                            onTapOfNumber: () => AutoRouter.of(context)
+                                .push(ReviewRatingScreen()),
                           ),
                           SizedBox(height: 16.0),
                           Column(
@@ -300,7 +301,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
               PotbellyButton(
                 'Rate Your Experience ',
                 onTap: () =>
-                    AppRouter.navigator.pushNamed(AppRouter.addRatingsScreen),
+                    AutoRouter.of(context).push(AddRatingsScreen()),
                 buttonHeight: 65,
                 buttonWidth: MediaQuery.of(context).size.width,
                 decoration: Decorations.customHalfCurvedButtonDecoration(

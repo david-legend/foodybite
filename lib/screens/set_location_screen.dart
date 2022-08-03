@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
@@ -36,7 +37,7 @@ class SetLocationScreen extends StatelessWidget {
                     SpaceH40(),
                     Align(
                       alignment: Alignment.topRight,
-                      child: _buildSkipButton(),
+                      child: _buildSkipButton(context),
                     ),
                     SpaceH200(),
                     Column(
@@ -83,10 +84,9 @@ class SetLocationScreen extends StatelessWidget {
                     PotbellyButton(
                       StringConst.TURN_GPS,
                       buttonWidth: widthOfScreen,
-                      onTap: () => AppRouter.navigator.pushNamedAndRemoveUntil(
-                        AppRouter.rootScreen,
-                        (Route<dynamic> route) => false,
-                      ),
+                      onTap: () => AutoRouter.of(context).replaceAll([
+                        RootScreen()
+                      ]),
                     ),
                     Spacer(),
                   ],
@@ -99,12 +99,11 @@ class SetLocationScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSkipButton() {
+  Widget _buildSkipButton(BuildContext context) {
     return InkWell(
-      onTap: () => AppRouter.navigator.pushNamedAndRemoveUntil(
-        AppRouter.rootScreen,
-        (Route<dynamic> route) => false,
-      ),
+      onTap: () => AutoRouter.of(context).replaceAll([
+        RootScreen()
+      ]),
       child: Container(
         width: 80,
         height: 40,

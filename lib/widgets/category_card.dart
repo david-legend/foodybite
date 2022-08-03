@@ -10,22 +10,23 @@ class FoodyBiteCategoryCard extends StatelessWidget {
   final Gradient gradient;
   final String category;
   final bool hasHandle;
-  final TextStyle categoryTextStyle;
+  final TextStyle? categoryTextStyle;
   final Color handleColor;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
 
-  FoodyBiteCategoryCard(
-      {this.width = Sizes.WIDTH_100,
-      this.height = Sizes.HEIGHT_100,
-      this.borderRadius = Sizes.RADIUS_8,
-      this.opacity = 0.65,
-      this.imagePath,
-      this.category = "Italian",
-      this.gradient,
-      this.hasHandle = false,
-      this.handleColor = AppColors.whiteShade_50,
-      this.categoryTextStyle = Styles.normalTextStyle,
-      this.onTap});
+  FoodyBiteCategoryCard({
+    this.width = Sizes.WIDTH_100,
+    this.height = Sizes.HEIGHT_100,
+    this.borderRadius = Sizes.RADIUS_8,
+    this.opacity = 0.65,
+    required this.imagePath,
+    this.category = "Italian",
+    required this.gradient,
+    this.hasHandle = false,
+    this.handleColor = AppColors.whiteShade_50,
+    this.categoryTextStyle = Styles.normalTextStyle,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {

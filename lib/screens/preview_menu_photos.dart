@@ -1,6 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/values.dart';
 
 final List<String> images = [
@@ -21,7 +21,7 @@ List<T> map<T>(List list, Function handler) {
   return result;
 }
 
-final List child = map<Widget>(
+final List<Widget> children = map<Widget>(
   images,
   (index, i) {
     return Container(
@@ -51,7 +51,7 @@ class _PreviewMenuPhotosScreenState extends State<PreviewMenuPhotosScreen> {
         backgroundColor: AppColors.kFoodyBiteDarkBackground,
         elevation: 0.0,
         leading: InkWell(
-          onTap: () => AppRouter.navigator.pop(context),
+          onTap: () => AutoRouter.of(context).pop(context),
           child: Image.asset(
             ImagePath.arrowBackIcon,
             color: AppColors.primaryColor,
@@ -77,17 +77,18 @@ class _PreviewMenuPhotosScreenState extends State<PreviewMenuPhotosScreen> {
               child: Align(
                 alignment: Alignment.center,
                 child: CarouselSlider(
-                  height: 400,
-                  items: child,
-                  autoPlay: false,
-                  enlargeCenterPage: false,
-                  viewportFraction: 1.0,
-                  onPageChanged: (index) {
-                    setState(() {
-                      _current = index;
-                    });
-                  },
-                ),
+                    items: children,
+                    options: CarouselOptions(
+                      height: 400,
+                      autoPlay: false,
+                      enlargeCenterPage: false,
+                      viewportFraction: 1.0,
+                      onPageChanged: (index, _) {
+                        setState(() {
+                          _current = index;
+                        });
+                      },
+                    )),
               ),
             ),
             Expanded(

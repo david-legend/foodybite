@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:potbelly/routes/router.gr.dart';
 import 'package:potbelly/values/data.dart';
@@ -18,7 +19,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       appBar: AppBar(
         elevation: 0.0,
         leading: InkWell(
-          onTap: () => AppRouter.navigator.pop(),
+          onTap: () => AutoRouter.of(context).pop(),
           child: Image.asset(
             ImagePath.arrowBackIcon,
             color: AppColors.headingText,
@@ -54,9 +55,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           itemBuilder: (context, index) {
             return Container(
               child: FoodyBiteCategoryCard(
-                onTap: () => AppRouter.navigator.pushNamed(
-                  AppRouter.categoryDetailScreen,
-                  arguments: CategoryDetailScreenArguments(
+                onTap: () => AutoRouter.of(context).push(
+                  CategoryDetailScreen(
                     categoryName: category[index],
                     imagePath: categoryListImagePaths[index],
                     selectedCategory: index,
@@ -70,7 +70,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 category: category[index],
                 hasHandle: true,
                 opacity: 0.85,
-                categoryTextStyle: textTheme.title.copyWith(
+                categoryTextStyle: textTheme.titleMedium?.copyWith(
                   color: AppColors.primaryColor,
                   fontSize: Sizes.TEXT_SIZE_22,
                 ),

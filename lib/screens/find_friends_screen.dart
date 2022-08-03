@@ -29,7 +29,7 @@ class FindFriendsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildContacts({@required BuildContext context}) {
+  Widget _buildContacts({required BuildContext context}) {
     var textTheme = Theme.of(context).textTheme;
     return Container(
       child: Column(
@@ -44,7 +44,7 @@ class FindFriendsScreen extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "Contacts",
-                  style: textTheme.title.copyWith(
+                  style: textTheme.titleMedium?.copyWith(
                     fontSize: Sizes.TEXT_SIZE_20,
                     color: AppColors.indigoShade1,
                   ),
@@ -83,7 +83,7 @@ class FindFriendsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSuggestions({@required BuildContext context}) {
+  Widget _buildSuggestions({required BuildContext context}) {
     var textTheme = Theme.of(context).textTheme;
     return Container(
       child: Column(
@@ -98,7 +98,7 @@ class FindFriendsScreen extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "Suggestions",
-                  style: textTheme.title.copyWith(
+                  style: textTheme.titleMedium?.copyWith(
                     fontSize: Sizes.TEXT_SIZE_20,
                     color: AppColors.indigoShade1,
                   ),
@@ -144,10 +144,10 @@ class FindFriendsScreen extends StatelessWidget {
 
 class FriendsListTile extends StatelessWidget {
   FriendsListTile({
-    this.imageUrl,
-    this.title,
-    this.subtitle,
-    this.buttonText,
+    required this.imageUrl,
+    required this.title,
+    required this.subtitle,
+    required this.buttonText,
     this.isFollowing = true,
   });
 
@@ -169,12 +169,12 @@ class FriendsListTile extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: Sizes.MARGIN_8),
         child: Text(
           title,
-          style: textTheme.title.copyWith(fontSize: Sizes.TEXT_SIZE_20),
+          style: textTheme.titleMedium?.copyWith(fontSize: Sizes.TEXT_SIZE_20),
         ),
       ),
       subtitle: Text(
         subtitle,
-        style: textTheme.subtitle.copyWith(
+        style: textTheme.titleSmall?.copyWith(
           color: AppColors.accentText,
           fontSize: Sizes.TEXT_SIZE_16,
         ),
@@ -198,7 +198,7 @@ class FriendsListTile extends StatelessWidget {
                   Radius.circular(Sizes.RADIUS_8),
                 ),
               ),
-              buttonTextStyle: textTheme.button.copyWith(
+              buttonTextStyle: textTheme.button?.copyWith(
                 color: AppColors.accentText,
                 fontSize: Sizes.TEXT_SIZE_16,
               ),

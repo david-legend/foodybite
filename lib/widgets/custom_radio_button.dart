@@ -12,7 +12,10 @@ class RadioItem extends StatelessWidget {
   final RadioModel _item;
   final bool isSelected;
 
-  RadioItem(this._item, {this.isSelected});
+  RadioItem(
+    this._item, {
+    this.isSelected = false,
+  });
 
   @override
   Widget build(BuildContext context) {

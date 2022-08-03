@@ -4,7 +4,7 @@ import 'package:potbelly/values/values.dart';
 class NotificationsScreen extends StatelessWidget {
   static const int TAB_NO = 2;
 
-  NotificationsScreen({Key key}) : super(key: key);
+  NotificationsScreen({Key? key}) : super(key: key);
 
   List<NotificationInfo> notifications = [
     NotificationInfo(
@@ -149,9 +149,9 @@ class NotificationInfo {
   final String subtitle;
 
   NotificationInfo({
-    @required this.imageUrl,
-    @required this.title,
-    @required this.time,
-    @required this.subtitle,
+    required this.imageUrl,
+    required this.title,
+    required this.time,
+    required this.subtitle,
   });
 }
