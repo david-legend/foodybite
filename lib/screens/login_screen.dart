@@ -111,7 +111,7 @@ class LoginScreen extends StatelessWidget {
         PotbellyButton(
           StringConst.LOGIN,
           onTap: () =>
-              AutoRouter.of(context).popUntilRouteWithName('/root-screen'),
+              AutoRouter.of(context).push(RootScreen()),
         ),
         SizedBox(height: Sizes.HEIGHT_60),
         InkWell(

@@ -198,7 +198,7 @@ class FriendsListTile extends StatelessWidget {
                   Radius.circular(Sizes.RADIUS_8),
                 ),
               ),
-              buttonTextStyle: textTheme.button?.copyWith(
+              buttonTextStyle: textTheme.bodyMedium?.copyWith(
                 color: AppColors.accentText,
                 fontSize: Sizes.TEXT_SIZE_16,
               ),

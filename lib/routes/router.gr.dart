@@ -53,7 +53,7 @@ class AppRouter extends _i27.RootStackRouter {
           routeData: routeData,
           child: _i1.SplashScreen(),
           transitionsBuilder: _i27.TransitionsBuilders.slideRight,
-          durationInMilliseconds: 2000,
+          durationInMilliseconds: 1500,
           opaque: true,
           barrierDismissible: false);
     },
@@ -62,7 +62,7 @@ class AppRouter extends _i27.RootStackRouter {
           routeData: routeData,
           child: _i2.LoginScreen(),
           transitionsBuilder: _i27.TransitionsBuilders.slideRight,
-          durationInMilliseconds: 2000,
+          durationInMilliseconds: 1500,
           opaque: true,
           barrierDismissible: false);
     },

@@ -34,12 +34,12 @@ import 'package:potbelly/screens/trending_restaurant_screen.dart';
       page: SplashScreen,
       initial: true,
       transitionsBuilder: TransitionsBuilders.slideRight,
-      durationInMilliseconds: 2000,
+      durationInMilliseconds: 1000,
     ),
     CustomRoute(
       page: LoginScreen,
       transitionsBuilder: TransitionsBuilders.slideRight,
-      durationInMilliseconds: 2000,
+      durationInMilliseconds: 1000,
     ),
 
     AutoRoute(page: ForgotPasswordScreen),
